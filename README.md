@@ -3,13 +3,18 @@ O TerraFinder consiste em criar uma plataforma digital cujo objetivo é facilita
 ### Integrantes
 
 Gabriel de Marco - RA: 580211
+
 Marcos Felipe - RA: 580562
+
 Paulo Waib - RA: 598984
 
 ### Tecnologias
 
 Server: NodeJs
+
 Web: React Native
+
 Banco de Dados: SQLite
+
 Controle de versão: Github
 
