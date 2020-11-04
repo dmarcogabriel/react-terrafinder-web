@@ -1,14 +1,16 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
-import Home from './home';
+import Home from './app/Home';
 import 'fontsource-roboto';
-import './styles/global.scss';
-import './tailwind.output.css';
+import './styles/index.scss';
+import ThemeProvider from './contexts/Styles';
 
-const App = () => (
-  <Router>
-    <Route path="/" exact component={Home} />
-  </Router>
-);
-
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <Router>
+        <Route path="/" exact component={Home} />
+      </Router>
+    </ThemeProvider>
+  );
+}

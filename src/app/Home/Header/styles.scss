@@ -1,0 +1,41 @@
+@import '../../../styles/';
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  background: $white;
+  padding: $size-sm $size-md;
+
+  img {
+    height: 4rem
+  }
+
+  a {
+    font-size: $size-md;
+    color: $black
+  }
+
+  .contactButton {
+    display: flex;
+    flex-direction: column;
+    padding: $size-2xs 0;
+    background: $primary-dark;
+    color: $white;
+
+    p {
+      visibility: hidden;
+      color: $black
+    }
+
+    .content {
+      display: flex;
+      justify-content: center
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@import '../../styles/';
+
+.container {
+  position: relative;
+  width: 10rem
+}
+
+.button {
+  padding: $size-sm $size-xs;
+  background: $white;
+  border-radius: $size-md;
+  cursor: pointer;
+
+  p {
+    font-size: $size-xs;
+    color: $orange
+  }
+
+  .content {
+    display: flex;
+    flex-direction: row
+  }
+}
+
+.optionsList {
+  position: absolute;
+  background: $white;
+
+  li {
+    width: 10rem;
+
+    .option-button {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding: $size-sm 0;
+      font-size: $size-xs;
+      background: $white;
+      color: $orange;
+      cursor: pointer
+    }
+
+    .selected {
+      background: $orange;
+      color: $white
+    }
+  }
+}

@@ -1,12 +1,22 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons';
+import { MdArrowDropUp, MdArrowDropDown } from 'react-icons/md';
+import { useTheme } from 'styled-components';
+import cn from 'classnames';
+import './styles.scss';
 
-const Select = ({ label, value, options = [], id, onChange = () => {} }) => {
+export default function Select({
+  label,
+  value,
+  options = [],
+  id,
+  onChange = () => {},
+}) {
   const [showOptions, setShowOptions] = useState(false);
   const [defaultValue, setDefaultValue] = useState(value || 'Selecione...');
   const [optionsList, setOptionsList] = useState(options);
+  const { colors } = useTheme();
 
-  const handleClickOutside = e => {
+  const handleClickOutside = (e) => {
     const { classList } = e.target;
 
     if (
@@ -17,9 +27,9 @@ const Select = ({ label, value, options = [], id, onChange = () => {} }) => {
     }
   };
 
-  const handleSelectOption = e => {
+  const handleSelectOption = (e) => {
     setOptionsList(
-      optionsList.map(option => {
+      optionsList.map((option) => {
         return option.key === e.key
           ? { ...option, selected: true }
           : { ...option, selected: false };
@@ -30,9 +40,6 @@ const Select = ({ label, value, options = [], id, onChange = () => {} }) => {
     onChange(e);
   };
 
-  const isSelected = selected =>
-    selected ? 'bg-orange-500 text-white' : 'bg-white text-orange-500';
-
   useEffect(() => {
     document.addEventListener('mousedown', handleClickOutside);
 
@@ -40,38 +47,33 @@ const Select = ({ label, value, options = [], id, onChange = () => {} }) => {
   });
 
   return (
-    <div className="relative w-40">
+    <div className="container">
       <button
+        className="button"
         type="button"
-        className="py-3 px-2 bg-white rounded-sm cursor-pointer"
         onClick={() => setShowOptions(!showOptions)}
       >
-        <p label={id} className="text-sm text-orange-500">
-          {label}
-        </p>
+        <p label={id}>{label}</p>
 
-        <div className="flex flex-row">
+        <div className="content">
           <p>{defaultValue}</p>
 
           {showOptions ? (
-            <ArrowDropUp className="text-orange-500" />
+            <MdArrowDropUp style={{ color: colors.orange }} />
           ) : (
-            <ArrowDropDown className="text-orange-500" />
+            <MdArrowDropDown style={{ color: colors.orange }} />
           )}
         </div>
       </button>
 
       {showOptions && (
-        <ul id={id} className="absolute bg-white shadow-lg">
-          {optionsList.map(option => (
-            <li className="w-40">
+        <ul className="optionsList" id={id}>
+          {optionsList.map((option) => (
+            <li>
               <button
                 type="button"
-                className={`option flex justify-center w-full py-3 font-base cursor-pointer ${isSelected(
-                  option.selected
-                )}`}
-                data-name={option.name}
                 key={option.key}
+                className={cn('option-button', option.selected && 'selected')}
                 onClick={() => handleSelectOption(option)}
               >
                 {option.name}
@@ -82,6 +84,4 @@ const Select = ({ label, value, options = [], id, onChange = () => {} }) => {
       )}
     </div>
   );
-};
-
-export default Select;
+}

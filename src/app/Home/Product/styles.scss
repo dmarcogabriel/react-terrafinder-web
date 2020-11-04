@@ -1,0 +1,43 @@
+@import '../../../styles/';
+
+.container {
+  position: relative;
+  margin-left: $size-lg;
+  margin-right: $size-lg;
+  margin-bottom: 2.5rem;
+  border-radius: $size-lg;
+  box-shadow: $shadow-base;
+
+  img {
+    width: 100%;
+    border-radius: $size-lg
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: $size-md 0;
+
+    .title {
+      font-size: $size-md;
+      margin-bottom: $size-xs
+    }
+
+    .text {
+      font-size: $size-2xs;
+      margin: 0 $size-xs
+    }
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin-left: auto;
+    margin-right: auto;
+    padding: $size-sm $size-md;
+    font-size: $size-md;
+    color: $white
+  }
+}

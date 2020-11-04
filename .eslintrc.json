@@ -25,7 +25,6 @@
   "plugins": ["react", "prettier"],
   "rules": {
     "prettier/prettier": "error",
-    "prettier/prettier.arrowParens": "off",
     "react/jsx-filename-extension": [
       "warn",
       {
@@ -39,6 +38,9 @@
     "react/prop-types": "off",
     "no-param-reassign": "off",
     "no-console": "off",
-    "arrow-parens": ["error", "as-needed"]
+    "import/no-unresolved": [2, {
+      "ignore": ["static/*", "common/*"]
+    }],
+    "max-lines": ["error", 200]
   }
 }

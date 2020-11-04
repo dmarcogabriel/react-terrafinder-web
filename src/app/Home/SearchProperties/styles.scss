@@ -1,0 +1,19 @@
+@import '../../../styles/';
+
+.container {
+  margin-top: 10rem;
+  display: flex;
+  flex-direction: row;
+  background: $white;
+  border-radius: $size-sm;
+  box-shadow: $shadow-base;
+
+  button {
+    background: $primary-dark;
+    color: $white;
+    font-size: $size-md;
+    padding: 0 $size-lg;
+    border-bottom-right-radius: $size-sm;
+    border-bottom-left-radius: $size-sm
+  }
+}

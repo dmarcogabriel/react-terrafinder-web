@@ -1,0 +1,10 @@
+@import '../../styles';
+
+.button {
+  background: $primary-dark;
+  color: $white;
+  padding: $size-sm;
+  border-radius: $size-xs;
+  box-shadow: 0 7px 32px 2px rgba(0, 0, 0, 0.75);
+  cursor: pointer
+}

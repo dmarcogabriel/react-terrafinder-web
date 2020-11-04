@@ -1,117 +1,37 @@
-import React, { useState } from 'react';
-import {
-  Menu as MenuIcon,
-  PhoneInTalkOutlined as PhoneIcon,
-} from '@material-ui/icons';
-import backgroundImage from '../static/background-banner3.jpg';
-import cardImg from '../static/arrendamento.jpg';
-import logo from '../static/logo_terrafinder.png';
-import Select from '../common/Select';
-import benefitsBg from '../static/benefits-background.jpg';
+import React from 'react';
+import backgroundImage from '../../static/background-banner3.jpg';
+import cardImg from '../../static/arrendamento.jpg';
+import benefitsBg from '../../static/benefits-background.jpg';
+import Button from '../../common/Button';
+import Header from './Header';
+import SearchProperties from './SearchProperties';
+import Product from './Product';
+import './styles.scss';
 
 const CARDS = Array.from(Array(4));
 
-const FARM_KINDS = [
-  {
-    key: 'farm',
-    name: 'Fazenda',
-  },
-];
-
 const Home = () => {
-  const [propertyKind, setPropertyKind] = useState();
-
   return (
     <>
-      <header className="fixed z-50 top-0 left-0 bg-white right-0 shadow flex justify-between py-3 px-4 items-center">
-        <img alt="logo" src={logo} className="h-16" />
-
-        <a href="/#" className="text-lg">
-          Procurar Imóvel
-        </a>
-        <a href="/#" className="text-lg">
-          Quero anunciar meu imóvel
-        </a>
-        <a href="/#" className="text-lg">
-          Como funciona?
-        </a>
-
-        <button
-          type="button"
-          className="flex flex-col bg-primary text-white py-1 md:px-4 rounded-sm shadow-lg"
-        >
-          <p className="invisible">ligue para nós!</p>
-
-          <div className="flex justify-center">
-            <PhoneIcon />
-
-            <p className="invisible">+55 (14) 99999-9999</p>
-          </div>
-        </button>
-      </header>
+      <Header />
 
       <div
-        className="w-full h-screen bg-cover bg-white"
+        className="background"
         style={{ backgroundImage: `url(${backgroundImage})` }}
       >
-        <div className="flex flex-col items-center justify-between h-full py-40">
-          <h1 className="text-3xl text-white mb-auto text-shadow">
-            Encontre a propriedade ideal para você!
-          </h1>
+        <div className="content">
+          <h1 className="title">Encontre a propriedade ideal para você!</h1>
 
-          <div className="rounded-sm shadow bg-white flex flex-row">
-            <Select
-              id="propertyKind"
-              label="Tipo de Propriedade"
-              options={FARM_KINDS}
-              value={propertyKind}
-              onChange={setPropertyKind}
-            />
-            <Select label="Área do Imóvel" options={FARM_KINDS} />
-            <Select label="Estado" options={FARM_KINDS} />
-            <Select label="Intervalo de Preço" options={FARM_KINDS} />
-
-            <button
-              type="button"
-              className="bg-primary text-white h-full rounded-r-sm px-5 text-base"
-            >
-              Procurar Imóvel
-            </button>
-          </div>
+          <SearchProperties />
         </div>
       </div>
 
-      <div className="mb-10">
-        <h1 className="text-3xl text-black my-10 text-center font-bold">
-          O que você precisa?
-        </h1>
+      <div className="session">
+        <h2 className="subtitle">O que você precisa?</h2>
 
-        <div className="flex flex-row">
+        <div className="products">
           {CARDS.map((_, i) => (
-            <div
-              key={String(i)}
-              className="relative m-5 mb-10 shadow-lg rounded-sm"
-            >
-              <img src={cardImg} className="w-full rounded-sm" alt="test" />
-
-              <div className="flex flex-col items-center py-4">
-                <p className="font-bold text-base mb-2">
-                  Anunciar imóvel rural
-                </p>
-
-                <p className="mx-3 text-sm">
-                  Quero criar um anúncio para vender minha fazenda, chácara ou
-                  sítio.
-                </p>
-              </div>
-
-              <button
-                type="button"
-                className="absolute py-3 px-4 right-0 left-0 mx-auto shadow-xl bg-primary text-white rounded-r-sm text-base"
-              >
-                Anunciar
-              </button>
-            </div>
+            <Product key={String(i)} image={cardImg} />
           ))}
         </div>
       </div>
@@ -137,8 +57,8 @@ const Home = () => {
             Culpa, ut ad? At?
           </p>
 
-          <button type="button">Quero anunciar meu imóvel</button>
-          <button type="button">Quero achar uma propriedade</button>
+          <Button>Quero anunciar meu imóvel</Button>
+          <Button>Quero achar uma propriedade</Button>
         </div>
 
         <div>
