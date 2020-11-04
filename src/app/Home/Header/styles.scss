@@ -1,6 +1,6 @@
 @import '../../../styles/';
 
-.container {
+.header {
   position: fixed;
   top: 0;
   left: 0;
@@ -12,30 +12,30 @@
   background: $white;
   padding: $size-sm $size-md;
 
-  img {
-    height: 4rem
+  .header--logo {
+    height: 4rem;
   }
 
-  a {
+  .header--link {
     font-size: $size-md;
-    color: $black
+    color: $black;
   }
 
-  .contactButton {
+  .header--button {
     display: flex;
     flex-direction: column;
     padding: $size-2xs 0;
     background: $primary-dark;
     color: $white;
 
-    p {
+    .header--button-contactText {
       visibility: hidden;
-      color: $black
+      color: $black;
     }
 
-    .content {
+    .header--button-content {
       display: flex;
-      justify-content: center
+      justify-content: center;
     }
   }
 }

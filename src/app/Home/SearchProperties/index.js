@@ -20,7 +20,9 @@ export default function SearchProperties() {
       <Select label="Estado" options={FARM_KINDS} />
       <Select label="Intervalo de Preço" options={FARM_KINDS} />
 
-      <button type="button">Procurar Imóvel</button>
+      <button className="searchButton" type="button">
+        Procurar Imóvel
+      </button>
     </div>
   );
 }

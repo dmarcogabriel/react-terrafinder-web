@@ -4,7 +4,7 @@ import './styles.scss';
 export default function Product({ image, key }) {
   return (
     <div className="container" key={key}>
-      <img src={image} alt="test" />
+      <img className="productImage" src={image} alt="test" />
 
       <div className="content">
         <p className="title">Anunciar imóvel rural</p>
@@ -14,7 +14,9 @@ export default function Product({ image, key }) {
         </p>
       </div>
 
-      <button type="button">Anunciar</button>
+      <button className="actionButton" type="button">
+        Anunciar
+      </button>
     </div>
   );
 }

@@ -1,35 +1,35 @@
 @import '../../styles/';
 
-.container {
+.selectInput {
   position: relative;
-  width: 10rem
+  width: 10rem;
+
+  .selectInput--button {
+    padding: $size-sm $size-xs;
+    background: $white;
+    border-radius: $size-md;
+    cursor: pointer;
+
+    .selectInput--button--label {
+      font-size: $size-xs;
+      color: $orange;
+    }
+
+    .selectInput--button--content {
+      display: flex;
+      flex-direction: row;
+    }
+  }
 }
 
-.button {
-  padding: $size-sm $size-xs;
-  background: $white;
-  border-radius: $size-md;
-  cursor: pointer;
-
-  p {
-    font-size: $size-xs;
-    color: $orange
-  }
-
-  .content {
-    display: flex;
-    flex-direction: row
-  }
-}
-
-.optionsList {
+.selectOptionList {
   position: absolute;
   background: $white;
 
-  li {
+  .selectOptionList--option {
     width: 10rem;
 
-    .option-button {
+    .selectOptionList--optionButton {
       display: flex;
       justify-content: center;
       width: 100%;
@@ -37,12 +37,12 @@
       font-size: $size-xs;
       background: $white;
       color: $orange;
-      cursor: pointer
+      cursor: pointer;
     }
 
-    .selected {
+    .selectOptionList--optionButton-selected {
       background: $orange;
-      color: $white
+      color: $white;
     }
   }
 }

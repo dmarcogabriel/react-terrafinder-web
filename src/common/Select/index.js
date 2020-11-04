@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { MdArrowDropUp, MdArrowDropDown } from 'react-icons/md';
-import { useTheme } from 'styled-components';
 import cn from 'classnames';
 import './styles.scss';
 
@@ -14,7 +13,6 @@ export default function Select({
   const [showOptions, setShowOptions] = useState(false);
   const [defaultValue, setDefaultValue] = useState(value || 'Selecione...');
   const [optionsList, setOptionsList] = useState(options);
-  const { colors } = useTheme();
 
   const handleClickOutside = (e) => {
     const { classList } = e.target;
@@ -47,33 +45,38 @@ export default function Select({
   });
 
   return (
-    <div className="container">
+    <div className="selectInput">
       <button
-        className="button"
+        className="selectInput--button"
         type="button"
         onClick={() => setShowOptions(!showOptions)}
       >
-        <p label={id}>{label}</p>
+        <p className="selectInput--button--label" label={id}>
+          {label}
+        </p>
 
-        <div className="content">
+        <div className="selectInput--button--content">
           <p>{defaultValue}</p>
 
           {showOptions ? (
-            <MdArrowDropUp style={{ color: colors.orange }} />
+            <MdArrowDropUp className="selectArrow" />
           ) : (
-            <MdArrowDropDown style={{ color: colors.orange }} />
+            <MdArrowDropDown className="selectArrow" />
           )}
         </div>
       </button>
 
       {showOptions && (
-        <ul className="optionsList" id={id}>
+        <ul className="selectOptionList" id={id}>
           {optionsList.map((option) => (
-            <li>
+            <li className="selectOptionList--option">
               <button
                 type="button"
                 key={option.key}
-                className={cn('option-button', option.selected && 'selected')}
+                className={cn(
+                  'selectOptionList--optionButton',
+                  option.selected && 'selectOptionList--optionButton-selected'
+                )}
                 onClick={() => handleSelectOption(option)}
               >
                 {option.name}

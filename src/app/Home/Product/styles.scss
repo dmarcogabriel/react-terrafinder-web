@@ -8,9 +8,9 @@
   border-radius: $size-lg;
   box-shadow: $shadow-base;
 
-  img {
+  .productImage {
     width: 100%;
-    border-radius: $size-lg
+    border-radius: $size-lg;
   }
 
   .content {
@@ -21,16 +21,16 @@
 
     .title {
       font-size: $size-md;
-      margin-bottom: $size-xs
+      margin-bottom: $size-xs;
     }
 
     .text {
       font-size: $size-2xs;
-      margin: 0 $size-xs
+      margin: 0 $size-xs;
     }
   }
 
-  button {
+  .actionButton {
     position: absolute;
     right: 0;
     left: 0;
@@ -38,6 +38,6 @@
     margin-right: auto;
     padding: $size-sm $size-md;
     font-size: $size-md;
-    color: $white
+    color: $white;
   }
 }
