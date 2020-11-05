@@ -2,20 +2,21 @@
 
 .selectInput {
   position: relative;
-  width: 10rem;
+  min-width: 10rem;
 
-  .selectInput--button {
-    padding: $size-sm $size-xs;
+  .button {
+    padding: $size-sm $size-sm;
     background: $white;
     border-radius: $size-md;
+    width: 100%;
     cursor: pointer;
 
-    .selectInput--button--label {
-      font-size: $size-xs;
+    .label {
+      font-size: $size-sm;
       color: $orange;
     }
 
-    .selectInput--button--content {
+    .content {
       display: flex;
       flex-direction: row;
     }
@@ -26,10 +27,10 @@
   position: absolute;
   background: $white;
 
-  .selectOptionList--option {
+  .selectOption {
     width: 10rem;
 
-    .selectOptionList--optionButton {
+    .selectOptionButton {
       display: flex;
       justify-content: center;
       width: 100%;
@@ -40,9 +41,13 @@
       cursor: pointer;
     }
 
-    .selectOptionList--optionButton-selected {
+    .selected {
       background: $orange;
       color: $white;
     }
   }
+}
+
+.selectArrowIcon {
+  color: $orange;
 }

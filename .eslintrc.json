@@ -41,6 +41,10 @@
     "import/no-unresolved": [2, {
       "ignore": ["static/*", "common/*"]
     }],
-    "max-lines": ["error", 200]
+    "max-lines": ["error", {
+      "max": 200, 
+      "skipBlankLines": true, 
+      "skipComments": true
+    }]
   }
 }

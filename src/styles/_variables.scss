@@ -21,4 +21,7 @@ $size-sm: 0.75rem;
 $size-md: 1rem;
 $size-lg: 1.25rem;
 
-$shadow-base: '0px 7px 32px 2px rgba(0, 0, 0, 0.75)'
+$shadow-sm: 1px 3px 30px -2px rgba(0, 0, 0, 0.75);
+$shadow-base: 1px 3px 20px -2px rgba(0, 0, 0, 0.7);
+
+$desktop: 'min-width: 768px';

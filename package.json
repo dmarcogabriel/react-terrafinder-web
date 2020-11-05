@@ -23,7 +23,8 @@
     "eject": "react-scripts eject",
     "lint": "eslint ./src --fix && yarn lint:css",
     "lint:css": "stylelint './src/**/*scss' --fix",
-    "css:build": "tailwindcss build src/tailwind.css -o src/tailwind.output.css"
+    "css:build": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
+    "generate": "hygen"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -51,6 +52,7 @@
     "eslint-plugin-react": "^7.21.4",
     "eslint-plugin-react-hooks": "^4.1.2",
     "husky": "^4.3.0",
+    "hygen": "^6.0.4",
     "lint-staged": "^10.5.1",
     "normalize.css": "^8.0.1",
     "prettier": "^2.1.2",

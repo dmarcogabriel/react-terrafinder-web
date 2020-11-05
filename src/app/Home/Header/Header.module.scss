@@ -1,0 +1,84 @@
+@import '../../../styles/';
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  background: $white;
+  padding: $size-sm $size-lg;
+
+  .menu {
+    display: inline-block;
+    font-size: 2.5rem;
+
+    @media ($desktop) {
+      display: none;
+    }
+  }
+
+  .logoDesktop {
+    height: 4rem;
+    display: none;
+
+    @media ($desktop) {
+      display: inline-block;
+    }
+  }
+
+  .logo {
+    display: inline-block;
+    height: 4rem;
+
+    @media ($desktop) {
+      display: none;
+    }
+  }
+
+  .link {
+    display: none;
+
+    @media ($desktop) {
+      display: inline-block;
+      font-size: $size-md;
+      color: $black;
+    }
+  }
+
+  .button {
+    // display: flex;
+    display: none; // todo: make it floating FAB
+    flex-direction: column;
+    padding: 1rem;
+    background: $primary-dark;
+    color: $white;
+
+    @media ($desktop) {
+      display: flex;
+    }
+
+    .buttonContactText {
+      display: inline-block;
+      font-size: $size-sm;
+      padding: 0.25rem 0;
+    }
+
+    .buttonContactContent {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .phoneIcon {
+        font-size: 2rem;
+
+        @media ($desktop) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

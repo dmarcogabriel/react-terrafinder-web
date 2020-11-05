@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "src",
     "paths": {
-      "common/*": ["src/common/*"],
-      "static/*": ["src/static/*"]
+      "common/*": ["src/common"],
+      "static/*": ["src/static"]
     }
   }
 }

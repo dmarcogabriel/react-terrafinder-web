@@ -1,31 +1,43 @@
 import React from 'react';
-import { MdPhoneInTalk } from 'react-icons/md';
-import logo from 'static/logo_terrafinder.png';
+import { MdPhoneInTalk, MdMenu } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import './styles.scss';
+import Button from 'common/Button';
+import LogoDesktop from './Logo.svg';
+import Logo from './Logo.png';
+import classes from './Header.module.scss';
 
 import LINKS from './links';
 
 export default function Header() {
   return (
-    <div className="header">
-      <img className="logo" alt="logo" src={logo} />
+    <div className={classes.header}>
+      <img className={classes.logo} src={Logo} alt="logo" />
+
+      <button type="button">
+        <MdMenu className={classes.menu} />
+      </button>
+
+      <img
+        className={classes.logoDesktop}
+        alt="logo desktop"
+        src={LogoDesktop}
+      />
 
       {LINKS.map((link) => (
-        <Link className="header--link" key={link.key} to={link.href}>
+        <Link className={classes.link} key={link.key} to={link.href}>
           {link.name}
         </Link>
       ))}
 
-      <div className="header--button">
-        <p className="header--button-contactText">ligue para nós!</p>
+      <Button className={classes.button}>
+        <p className={classes.buttonContactText}>Ligue para nós!</p>
 
-        <div className="header--button-content">
-          <MdPhoneInTalk />
+        <div className={classes.buttonContactContent}>
+          <MdPhoneInTalk className={classes.phoneIcon} />
 
-          <p className="header--button-contactText">+55 (14) 99999-9999</p>
+          <p className={classes.buttonContactText}>+55 (14) 99999-9999</p>
         </div>
-      </div>
+      </Button>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Select from 'common/Select';
-import './styles.scss';
+import Button from 'common/Button';
+import classes from './SearchProperties.module.scss';
 
 import FARM_KINDS from './farmKinds';
 
@@ -8,7 +9,7 @@ export default function SearchProperties() {
   const [propertyKind, setPropertyKind] = useState();
 
   return (
-    <div className="container">
+    <div className={classes.container}>
       <Select
         id="propertyKind"
         label="Tipo de Propriedade"
@@ -20,9 +21,7 @@ export default function SearchProperties() {
       <Select label="Estado" options={FARM_KINDS} />
       <Select label="Intervalo de Preço" options={FARM_KINDS} />
 
-      <button className="searchButton" type="button">
-        Procurar Imóvel
-      </button>
+      <Button className={classes.searchButton}>Procurar Imóvel</Button>
     </div>
   );
 }

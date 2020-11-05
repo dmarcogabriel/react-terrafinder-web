@@ -1,22 +1,27 @@
 import React from 'react';
-import './styles.scss';
+import Button from 'common/Button';
+import { MdArrowForward } from 'react-icons/md';
+import classes from './Product.module.scss';
 
-export default function Product({ image, key }) {
+export default function Product({ image }) {
   return (
-    <div className="container" key={key}>
-      <img className="productImage" src={image} alt="test" />
+    <div className={classes.container}>
+      <div className={classes.product}>
+        <img className={classes.image} src={image} alt="test" />
 
-      <div className="content">
-        <p className="title">Anunciar imóvel rural</p>
+        <div className={classes.content}>
+          <p className={classes.title}>Anunciar imóvel rural</p>
 
-        <p className="text">
-          Quero criar um anúncio para vender minha fazenda, chácara ou sítio.
-        </p>
+          <p className={classes.text}>
+            Quero criar um anúncio para vender minha fazenda, chácara ou sítio.
+          </p>
+        </div>
       </div>
 
-      <button className="actionButton" type="button">
-        Anunciar
-      </button>
+      <Button type="button" className={classes.actionButton}>
+        <p className={classes.buttonText}>Anunciar</p>
+        <MdArrowForward />
+      </Button>
     </div>
   );
 }

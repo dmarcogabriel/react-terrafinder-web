@@ -1,0 +1,70 @@
+@import 'styles';
+
+.container {
+  height: 100vh;
+  background-color: #f0e3d0;
+  padding: 5rem 0;
+
+  .title {
+    text-align: center;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .content {
+    padding: 2.5rem 5rem;
+    display: flex;
+    justify-content: center;
+
+    .column {
+      margin: 0 2rem;
+    }
+
+    .subtitle {
+      font-weight: normal;
+      font-size: 2rem;
+      margin: 2rem 0;
+    }
+
+    .text {
+      font-size: $size-md;
+      margin: 1.5rem 0;
+    }
+
+    .actionButtons {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 4rem;
+    }
+
+    .actionButton {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cards {
+      background: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .card {
+        border-radius: 0.15rem;
+        background: $white;
+        color: $black;
+        box-shadow: $shadow-base;
+
+        .cardTitle {
+          font-weight: bold;
+          font-size: 1rem;
+        }
+
+        .cardText {
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}
