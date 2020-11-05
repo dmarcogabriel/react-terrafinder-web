@@ -1,27 +1,30 @@
+// Aqui são definidas as variáveis do app
+
+/* Colors */
 $primary-dark: #ffcb08;
 $primary-light: #ffde00;
-
 $white: #fff;
-$black: #0a1f07;
-
+$black: #333;
 $orange: #ed8936;
-
 $green-dark: #367c2b;
 $green: #62ac43;
 $green-light: #5ecc33;
-
 $blue-dark: #00314e;
 $blue-light: #01beff;
 
+/* Fonts */
 $font: 'Roboto';
 
+/* Sizing */
 $size-2xs: 0.25rem;
 $size-xs: 0.5rem;
 $size-sm: 0.75rem;
 $size-md: 1rem;
 $size-lg: 1.25rem;
 
+/* Shadows */
 $shadow-sm: 1px 3px 30px -2px rgba(0, 0, 0, 0.75);
 $shadow-base: 1px 3px 20px -2px rgba(0, 0, 0, 0.7);
 
+/* Responsive helpers */
 $desktop: 'min-width: 768px';
