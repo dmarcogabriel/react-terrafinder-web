@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MdArrowDropUp, MdArrowDropDown } from 'react-icons/md';
 import cn from 'classnames';
-import classes from './Select.module.scss';
+import './Select.scss';
 
 export default function Select({
   label,
@@ -45,37 +45,37 @@ export default function Select({
   });
 
   return (
-    <div className={classes.selectInput}>
+    <div className="selectInput">
       <button
-        className={classes.button}
+        className="searchInputButton"
         type="button"
         onClick={() => setShowOptions(!showOptions)}
       >
-        <p className={classes.label} label={id}>
+        <p className="searchInputLabel" label={id}>
           {label}
         </p>
 
-        <div className={classes.content}>
+        <div className="searchInputContent">
           <p>{defaultValue}</p>
 
           {showOptions ? (
-            <MdArrowDropUp className={classes.selectArrowIcon} />
+            <MdArrowDropUp className="selectArrowIcon" />
           ) : (
-            <MdArrowDropDown className={classes.selectArrowIcon} />
+            <MdArrowDropDown className="selectArrowIcon" />
           )}
         </div>
       </button>
 
       {showOptions && (
-        <ul className={classes.selectOptionList} id={id}>
+        <ul className="selectOptionList" id={id}>
           {optionsList.map((option) => (
-            <li className={classes.selectOption}>
+            <li key={option.key}>
               <button
                 type="button"
                 key={option.key}
                 className={cn(
-                  classes.selectOptionButton,
-                  option.selected && classes.selected
+                  'selectOptionButton',
+                  option.selected && 'selectedOption'
                 )}
                 onClick={() => handleSelectOption(option)}
               >

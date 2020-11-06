@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> matches snapshot 1`] = `
+<footer>
+  <hr />
+  <div>
+    <div>
+      <p>
+        Terrafinder
+      </p>
+    </div>
+    <div>
+      <p>
+        Institucional
+      </p>
+      <ul>
+        <li>
+          Página Inicial
+        </li>
+        <li>
+          Quem somos
+        </li>
+        <li>
+          Política de privacidade
+        </li>
+        <li>
+          Fale Conosco
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p>
+        Funcionalidades
+      </p>
+      <ul>
+        <li>
+          Quero anunciar meu imóvel
+        </li>
+        <li>
+          Quero comprar um imóvel
+        </li>
+        <li>
+          Preços e planos
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p>
+        Fique por dentro das novidades!
+      </p>
+      <p>
+        Se inscreva em nossa newsletter para receber os anúncios com os melhores preços!
+      </p>
+      <form>
+        <input
+          onChange={[Function]}
+          placeholder="Endereço de email"
+          type="email"
+          value=""
+        />
+        <button
+          onClick={[Function]}
+          type="button"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr />
+  <p>
+    Copyright C 2020 Terrafinder. Todos os direitos reservados.
+  </p>
+</footer>
+`;

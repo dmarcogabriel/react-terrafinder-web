@@ -8,6 +8,10 @@ import FARM_KINDS from './farmKinds';
 export default function SearchProperties() {
   const [propertyKind, setPropertyKind] = useState();
 
+  function searchProperties() {
+    // todo: search for properties
+  }
+
   return (
     <div className={classes.container}>
       <Select
@@ -21,7 +25,9 @@ export default function SearchProperties() {
       <Select label="Estado" options={FARM_KINDS} />
       <Select label="Intervalo de Preço" options={FARM_KINDS} />
 
-      <Button className={classes.searchButton}>Procurar Imóvel</Button>
+      <Button className={classes.searchButton} onClick={searchProperties}>
+        Procurar Imóvel
+      </Button>
     </div>
   );
 }

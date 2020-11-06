@@ -3,6 +3,7 @@ import Button from 'common/Button';
 import { MdArrowForward } from 'react-icons/md';
 import cn from 'classnames';
 import {
+  backgroundImage,
   container,
   title,
   content,
@@ -22,10 +23,11 @@ const CARDS = Array.from(Array(3));
 
 export default function Features() {
   return (
-    <div
-      className={container}
-      style={{ backgroundImage: `url(${FeaturesBackground})` }}
-    >
+    <div className={container}>
+      <div
+        className={backgroundImage}
+        style={{ backgroundImage: `url(${FeaturesBackground})` }}
+      />
       <h1 className={title}>Funcionalidades e Benefícios do Terrafinder</h1>
 
       <div className={content}>

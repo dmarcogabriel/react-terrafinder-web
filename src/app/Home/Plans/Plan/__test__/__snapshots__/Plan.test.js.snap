@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Plan /> matches snapshot 1`] = `
+<div
+  style={
+    Object {
+      "zIndex": 0,
+    }
+  }
+>
+  <div>
+    <p
+      className="text-green"
+    />
+    <p />
+  </div>
+  <div
+    className="bg-undefined"
+  >
+    <p />
+    <ul />
+    <button
+      className="text-green"
+      type="button"
+    >
+      Quero esse
+    </button>
+  </div>
+</div>
+`;

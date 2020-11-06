@@ -1,0 +1,65 @@
+@import 'styles';
+
+.container {
+  background: $white;
+  border-radius: 1rem;
+  box-shadow: $shadow-base;
+  margin: 2.5rem 0;
+  overflow: hidden;
+  max-width: 300px;
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2.5rem 1rem;
+    min-height: 5rem;
+
+    .title {
+      font-size: 2.5rem;
+    }
+
+    .plan {
+      font-size: 0.7rem;
+    }
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: $white;
+    height: 100%;
+
+    .planKind {
+      font-size: 1.25rem;
+      margin-top: 0.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .featureStyle {
+      display: flex;
+      align-items: center;
+
+      .iconStyle {
+        font-size: 1.5rem;
+      }
+
+      .featureName {
+        margin-left: 0.75rem;
+        font-size: 0.8rem;
+      }
+    }
+
+    .buttonStyle {
+      margin: 1.5rem 0;
+      border-radius: 4rem;
+      background: $white;
+      box-shadow: 0 10px 20px 2px rgba(0, 0, 0, 0.8);
+      padding: 0.5rem 3rem;
+      cursor: pointer;
+    }
+  }
+}

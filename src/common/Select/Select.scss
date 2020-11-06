@@ -1,0 +1,51 @@
+@import 'styles/';
+
+.selectInput {
+  position: relative;
+  min-width: 10rem;
+
+  .searchInputButton {
+    padding: $size-sm $size-sm;
+    background: $white;
+    width: 100%;
+    cursor: pointer;
+
+    .searchInputLabel {
+      font-size: $size-sm;
+      color: $orange;
+    }
+
+    .searchInputContent {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+.selectOptionList {
+  min-width: 100%;
+  position: absolute;
+  background: $white;
+  z-index: 50;
+  box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.5);
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .selectOptionButton {
+    font-size: 1rem;
+    background: $white;
+    color: $orange;
+    cursor: pointer;
+  }
+
+  .selectedOption {
+    background: $orange;
+    color: $white;
+  }
+}
+
+.selectArrowIcon {
+  color: $orange;
+}
