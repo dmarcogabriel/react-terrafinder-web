@@ -53,12 +53,14 @@ exports[`<Footer /> matches snapshot 1`] = `
       </p>
       <form>
         <input
+          data-testid="emailInput"
           onChange={[Function]}
           placeholder="Endereço de email"
           type="email"
           value=""
         />
         <button
+          data-testid="registerEmail"
           onClick={[Function]}
           type="button"
         >

@@ -13,13 +13,13 @@ export default function RegisterEmail() {
     <form className={container}>
       <input
         type="email"
-        testID="emailInput"
+        data-testid="emailInput"
         placeholder="Endereço de email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
       />
 
-      <button type="button" testID="registerEmail" onClick={registerEmail}>
+      <button type="button" data-testid="registerEmail" onClick={registerEmail}>
         Cadastrar
       </button>
     </form>

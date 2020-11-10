@@ -2,19 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 // import { render } from '@testing-library/react';
-import Register from '..';
+import { BrowserRouter } from 'react-router-dom';
+import Login from '..';
 
-describe('<Register />', () => {
+const Component = () => (
+  <BrowserRouter>
+    <Login />
+  </BrowserRouter>
+);
+
+describe('<Login />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Register />, div);
+    ReactDOM.render(<Component />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   // Add tests here...
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Register />).toJSON();
+    const tree = renderer.create(<Component />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

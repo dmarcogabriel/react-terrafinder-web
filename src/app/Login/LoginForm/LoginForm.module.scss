@@ -1,0 +1,34 @@
+@import 'styles';
+
+.container {
+  @media ($desktop) {
+    padding: 2rem 5rem;
+  }
+
+  > h2 {
+    color: $primary-dark;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  > p {
+    color: $gray-light;
+    text-align: center;
+  }
+
+  .my {
+    margin: 1.5rem 0;
+  }
+
+  .my2 {
+    margin: 2.5rem 0;
+  }
+
+  .registerButton {
+    background: $green;
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0 2.5rem;
+  }
+}
