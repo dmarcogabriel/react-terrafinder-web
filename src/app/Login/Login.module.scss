@@ -11,14 +11,14 @@ $padding: 1.5rem;
   }
 
   .welcome {
-    background-image: url('./images/background-mobile.jpeg');
+    background-image: url('./static/background-mobile.jpeg');
     background-size: cover;
     min-height: 10rem;
     background-repeat: no-repeat;
     padding: $padding;
 
     @media ($desktop) {
-      background-image: url('./images/background.jpg');
+      background-image: url('./static/background.jpg');
       height: 100vh;
       width: 50%;
       background-size: cover;

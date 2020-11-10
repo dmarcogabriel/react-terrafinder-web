@@ -1,13 +1,12 @@
 import React from 'react';
-import backgroundImage from './background.jpg';
-import cardImg from './product.jpg';
-import Header from './Header';
-import SearchProperties from './SearchProperties';
-import Product from './Product';
+import cardImg from './static/product.jpg';
+import Header from './components/Header';
+import SearchProperties from './components/SearchProperties';
+import Product from './components/Product';
 import classes from './Home.module.scss';
-import Features from './Features';
-import Plans from './Plans';
-import Footer from './Footer';
+import Features from './components/Features';
+import Plans from './components/Plans';
+import Footer from './components/Footer';
 
 const CARDS = Array.from(Array(4));
 
@@ -16,10 +15,7 @@ export default function Home() {
     <>
       <Header />
 
-      <div
-        className={classes.background}
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
+      <div className={classes.background}>
         <div className={classes.content}>
           <h1 className={classes.title}>
             Encontre a propriedade ideal para você!

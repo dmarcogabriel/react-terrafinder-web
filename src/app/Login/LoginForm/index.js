@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Input from 'common/Input';
 import Button from 'common/Button';
-import { container, registerButton, my, my2 } from './LoginForm.module.scss';
+import { container, registerButton, my, my2 } from '../Login.module.scss';
 
 export default function LoginForm() {
   return (
