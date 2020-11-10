@@ -67,14 +67,10 @@
     "stylelint": "^13.7.2",
     "stylelint-config-standard": "^20.0.0"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.js": [
-      "eslint ./src --fix"
+      "eslint ./src --fix",
+      "jest --watchAll=false"
     ],
     "*.scss": [
       "stylelint './src/**/*scss' --fix"
