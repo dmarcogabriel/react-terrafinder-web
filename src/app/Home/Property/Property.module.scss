@@ -1,0 +1,124 @@
+@import 'styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10rem;
+  padding: 0 2rem 3rem;
+
+  > h1 {
+    font-size: 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    background: $white;
+    padding: 1rem;
+    box-shadow: $shadow-base;
+
+    @media ($desktop) {
+      flex-direction: row;
+    }
+
+    .propertySession {
+      padding: 0 1rem;
+
+      @media ($desktop) {
+        width: 75vw;
+        padding: 0 2rem;
+      }
+
+      .propertyImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @media ($desktop) {
+          justify-content: flex-start;
+        }
+
+        > img {
+          width: 100%;
+
+          @media ($desktop) {
+            width: 80%;
+          }
+        }
+      }
+
+      .col {
+        margin-top: 2.5rem;
+
+        @media ($desktop) {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .row {
+          @media ($desktop) {
+            border-right: 1px solid $orange;
+          }
+        }
+
+        .session {
+          padding: 0.5rem;
+
+          > ul > li {
+            list-style-type: disc;
+            margin: 0.5rem 0;
+          }
+
+          > p {
+            margin: 0.5rem 0;
+          }
+
+          .title {
+            font-size: 1.5rem;
+            color: $primary-dark;
+            margin: 1rem 0;
+          }
+        }
+      }
+    }
+
+    .ownerSession {
+      padding: 0 1rem 2rem;
+
+      @media ($desktop) {
+        width: 30vw;
+      }
+
+      .ownerAvatar {
+        text-align: center;
+        margin: 1rem 0;
+
+        > img {
+          width: 75%;
+          border-radius: 100%;
+        }
+      }
+
+      @media ($desktop) {
+        padding: 0 2rem;
+      }
+
+      .ownerName {
+        font-size: 1.5rem;
+        text-align: center;
+        margin: 1rem 0;
+      }
+
+      .sendMessageButton {
+        display: flex;
+        background: $green;
+        align-items: center;
+        width: 100%;
+        margin: 2rem 0;
+      }
+    }
+  }
+}

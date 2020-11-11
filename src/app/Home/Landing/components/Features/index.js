@@ -17,17 +17,13 @@ import {
   cardTitle,
   cardText,
 } from './Features.module.scss';
-import FeaturesBackground from './featuresBackground.png';
 
 const CARDS = Array.from(Array(3));
 
 export default function Features() {
   return (
     <div className={container}>
-      <div
-        className={backgroundImage}
-        style={{ backgroundImage: `url(${FeaturesBackground})` }}
-      />
+      <div className={backgroundImage} />
       <h1 className={title}>Funcionalidades e Benefícios do Terrafinder</h1>
 
       <div className={content}>

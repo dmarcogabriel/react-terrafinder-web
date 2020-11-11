@@ -18,11 +18,11 @@ export default function Login() {
             <LoginForm />
           </Route>
 
-          <Route path="login/register">
+          <Route path="/login/register">
             <Register />
           </Route>
 
-          <Route path="login/forgot-password">
+          <Route path="/login/forgot-password">
             <ForgotPassword />
           </Route>
         </Switch>

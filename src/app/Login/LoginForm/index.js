@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Input from 'common/Input';
 import Button from 'common/Button';
-import { container, registerButton, my, my2 } from '../Login.module.scss';
+import { form, actionButton, my, my2 } from '../Login.module.scss';
 
 export default function LoginForm() {
   return (
-    <div className={container}>
+    <div className={form}>
       <h2>Faça login para acessar seu painel</h2>
 
       <p>
@@ -29,7 +29,7 @@ export default function LoginForm() {
           <Link to="/login/forgot-password">Clique aqui para redefinir</Link>
         </p>
 
-        <Button className={registerButton}>Fazer Login</Button>
+        <Button className={actionButton}>Fazer Login</Button>
       </div>
     </div>
   );

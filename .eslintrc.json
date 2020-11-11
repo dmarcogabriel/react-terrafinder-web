@@ -40,12 +40,13 @@
     "no-param-reassign": "off",
     "no-console": "off",
     "import/no-unresolved": [2, {
-      "ignore": ["static/*", "common/*"]
+      "ignore": ["static/*", "common/*", "utils/*"]
     }],
     "max-lines": ["error", {
       "max": 200, 
       "skipBlankLines": true, 
       "skipComments": true
-    }]
+    }],
+    "no-unused-vars": "warn"
   }
 }

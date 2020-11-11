@@ -15,16 +15,36 @@ exports[`<Footer /> matches snapshot 1`] = `
       </p>
       <ul>
         <li>
-          Página Inicial
+          <a
+            href="/home"
+            onClick={[Function]}
+          >
+            Página Inicial
+          </a>
         </li>
         <li>
-          Quem somos
+          <a
+            href="/home/about"
+            onClick={[Function]}
+          >
+            Quem somos
+          </a>
         </li>
         <li>
-          Política de privacidade
+          <a
+            href="/home/terms"
+            onClick={[Function]}
+          >
+            Política de privacidade
+          </a>
         </li>
         <li>
-          Fale Conosco
+          <a
+            href="/home/support"
+            onClick={[Function]}
+          >
+            Fale Conosco
+          </a>
         </li>
       </ul>
     </div>
@@ -34,13 +54,28 @@ exports[`<Footer /> matches snapshot 1`] = `
       </p>
       <ul>
         <li>
-          Quero anunciar meu imóvel
+          <a
+            href="/login"
+            onClick={[Function]}
+          >
+            Quero anunciar meu imóvel
+          </a>
         </li>
         <li>
-          Quero comprar um imóvel
+          <a
+            href="/home/search-property"
+            onClick={[Function]}
+          >
+            Quero comprar um imóvel
+          </a>
         </li>
         <li>
-          Preços e planos
+          <a
+            href="/home"
+            onClick={[Function]}
+          >
+            Preços e planos
+          </a>
         </li>
       </ul>
     </div>

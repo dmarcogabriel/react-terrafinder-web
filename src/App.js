@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import 'fontsource-roboto';
 import './styles/index.scss';
 
@@ -9,8 +9,15 @@ import Login from './app/Login';
 export default function App() {
   return (
     <Router>
-      <Route path="/" exact component={Home} />
-      <Route path="/login" component={Login} />
+      <Switch>
+        <Route path="/home">
+          <Home />
+        </Route>
+
+        <Route path="/login">
+          <Login />
+        </Route>
+      </Switch>
     </Router>
   );
 }

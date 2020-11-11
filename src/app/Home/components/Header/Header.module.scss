@@ -5,80 +5,104 @@
   top: 0;
   left: 0;
   right: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   z-index: 1000;
   background: $white;
-  padding: $size-sm $size-lg;
+  box-shadow: 1px 0 5px 5px rgba(0, 0, 0, 0.3);
 
-  .menu {
-    display: inline-block;
-    font-size: 2.5rem;
+  .content {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $size-sm $size-lg;
 
-    @media ($desktop) {
+    .menuIcon {
+      display: inline-block;
+      font-size: 2.5rem;
+
+      @media ($desktop) {
+        display: none;
+      }
+    }
+
+    .logoDesktop {
+      height: 4rem;
       display: none;
+      cursor: pointer;
+
+      @media ($desktop) {
+        display: inline-block;
+      }
     }
-  }
 
-  .logoDesktop {
-    height: 4rem;
-    display: none;
-
-    @media ($desktop) {
+    .logo {
       display: inline-block;
+      height: 4rem;
+
+      @media ($desktop) {
+        display: none;
+      }
     }
-  }
 
-  .logo {
-    display: inline-block;
-    height: 4rem;
-
-    @media ($desktop) {
+    .linkStyle {
       display: none;
-    }
-  }
 
-  .link {
-    display: none;
-
-    @media ($desktop) {
-      display: inline-block;
-      font-size: $size-md;
-      color: $black;
-    }
-  }
-
-  .button {
-    // display: flex;
-    display: none; // todo: make it floating FAB
-    flex-direction: column;
-    padding: 1rem;
-    background: $primary-dark;
-    color: $white;
-
-    @media ($desktop) {
-      display: flex;
+      @media ($desktop) {
+        display: inline-block;
+        font-size: $size-md;
+        color: $black;
+      }
     }
 
-    .buttonContactText {
-      display: inline-block;
-      font-size: $size-sm;
-      padding: 0.25rem 0;
-    }
+    .button {
+      display: none;
+      flex-direction: column;
+      padding: 1rem;
+      background: $primary-dark;
+      color: $white;
 
-    .buttonContactContent {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @media ($desktop) {
+        display: flex;
+      }
 
-      .phoneIcon {
-        font-size: 2rem;
+      .buttonContactText {
+        display: inline-block;
+        font-size: $size-sm;
+        padding: 0.25rem 0;
+      }
 
-        @media ($desktop) {
-          font-size: 1.5rem;
+      .buttonContactContent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .phoneIcon {
+          font-size: 2rem;
+
+          @media ($desktop) {
+            font-size: 1.5rem;
+          }
         }
       }
     }
+  }
+}
+
+.menuList {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+  background-color: $white;
+  padding: 5.5rem 2rem 1rem;
+  box-shadow: 1rem 0 1rem 1rem rgba(0, 0, 0, 0.3);
+
+  .menuItem {
+    font-size: $size-md;
+    color: $black;
+    margin: 1rem 0;
   }
 }

@@ -2,4 +2,72 @@
 
 .container {
   display: flex;
+  flex-direction: column;
+  padding: 10rem 2rem 2rem;
+
+  > h1 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 2rem;
+
+    @media ($desktop) {
+      font-size: 2.5rem;
+    }
+  }
+
+  .filtersCard {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    box-shadow: $shadow-base;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    .buttonLinkKind {
+      text-decoration: underline;
+      font-weight: bold;
+      color: $blue-light;
+      align-self: center;
+      margin: 1rem 0;
+    }
+
+    .cards {
+      display: flex;
+      flex-direction: column;
+
+      @media ($desktop) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .searchButton {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem 0;
+    }
+  }
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    background: $white;
+    box-shadow: $shadow-base;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin: 1rem 0;
+
+    @media ($desktop) {
+      width: 100%;
+      margin: 2rem 1rem;
+    }
+
+    .title {
+      font-weight: bold;
+      align-self: center;
+      margin: 1rem 0;
+    }
+  }
 }

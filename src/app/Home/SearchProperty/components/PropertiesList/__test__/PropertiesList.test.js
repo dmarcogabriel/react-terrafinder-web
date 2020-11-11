@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 // import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import Footer from '..';
+import PropertiesList from '..';
 
 const Component = (props) => (
   <BrowserRouter>
-    <Footer {...props} />
+    <PropertiesList {...props} />
   </BrowserRouter>
 );
 
-describe('<Footer />', () => {
+describe('<PropertiesList />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(<Component />, div);

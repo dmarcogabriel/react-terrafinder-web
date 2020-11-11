@@ -1,0 +1,45 @@
+@import 'styles';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 1.5rem 0;
+
+  @media ($desktop) {
+    margin: 0.25rem 0;
+  }
+
+  .labelView {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0.5rem 0;
+
+    > p {
+      color: $gray-light;
+    }
+
+    > span {
+      display: flex;
+      align-items: center;
+
+      .valid {
+        color: $green;
+      }
+
+      .invalid {
+        color: $red;
+      }
+    }
+  }
+
+  > textarea {
+    border: 1px solid $gray-light;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    padding: 0.8rem 0.5rem;
+    resize: none;
+  }
+}

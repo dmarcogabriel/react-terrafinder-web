@@ -1,43 +1,31 @@
 import React from 'react';
-import cardImg from './static/product.jpg';
-import Header from './components/Header';
-import SearchProperties from './components/SearchProperties';
-import Product from './components/Product';
-import classes from './Home.module.scss';
-import Features from './components/Features';
-import Plans from './components/Plans';
-import Footer from './components/Footer';
+import { Switch, Route } from 'react-router-dom';
+import { Header, Footer } from './components';
 
-const CARDS = Array.from(Array(4));
+import Landing from './Landing';
+import SearchProperty from './SearchProperty';
+import Property from './Property';
 
-export default function Home() {
+export default function Home({ location }) {
+  console.log('Location: ', location);
+
   return (
     <>
       <Header />
 
-      <div className={classes.background}>
-        <div className={classes.content}>
-          <h1 className={classes.title}>
-            Encontre a propriedade ideal para você!
-          </h1>
+      <Switch>
+        <Route exact path="/home">
+          <Landing />
+        </Route>
 
-          <SearchProperties />
-        </div>
-      </div>
+        <Route path="/home/search-property">
+          <SearchProperty />
+        </Route>
 
-      <div className={classes.session}>
-        <h2 className={classes.subtitle}>O que você precisa?</h2>
-
-        <div className={classes.products}>
-          {CARDS.map((_, i) => (
-            <Product key={String(i)} image={cardImg} />
-          ))}
-        </div>
-      </div>
-
-      <Features />
-
-      <Plans />
+        <Route path="/home/property">
+          <Property />
+        </Route>
+      </Switch>
 
       <Footer />
     </>

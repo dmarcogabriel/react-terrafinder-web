@@ -1,14 +1,14 @@
 import React from 'react';
 import { BiSmile, BiSad } from 'react-icons/bi';
-import { container, labelView, valid, invalid } from './Input.module.scss';
+import { container, labelView, valid, invalid } from './TextArea.module.scss';
 
-export default function Input({
+export default function TextArea({
   id,
   label,
   type,
   value,
   onChange,
-  errorMessage, // todo: implement error
+  errorMessage,
   placeholder,
 }) {
   return (
@@ -28,7 +28,8 @@ export default function Input({
         </span>
       </div>
 
-      <input
+      <textarea
+        rows={5}
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}

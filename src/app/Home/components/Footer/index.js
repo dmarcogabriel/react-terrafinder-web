@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   container,
   content,
@@ -24,10 +25,18 @@ export default function Footer() {
           <p className={title}>Institucional</p>
 
           <ul>
-            <li className={text}>Página Inicial</li>
-            <li className={text}>Quem somos</li>
-            <li className={text}>Política de privacidade</li>
-            <li className={text}>Fale Conosco</li>
+            <li className={text}>
+              <Link to="/home">Página Inicial</Link>
+            </li>
+            <li className={text}>
+              <Link to="/home/about">Quem somos</Link>
+            </li>
+            <li className={text}>
+              <Link to="/home/terms">Política de privacidade</Link>
+            </li>
+            <li className={text}>
+              <Link to="/home/support">Fale Conosco</Link>
+            </li>
           </ul>
         </div>
 
@@ -35,9 +44,15 @@ export default function Footer() {
           <p className={title}>Funcionalidades</p>
 
           <ul>
-            <li className={text}>Quero anunciar meu imóvel</li>
-            <li className={text}>Quero comprar um imóvel</li>
-            <li className={text}>Preços e planos</li>
+            <li className={text}>
+              <Link to="/login">Quero anunciar meu imóvel</Link>
+            </li>
+            <li className={text}>
+              <Link to="/home/search-property">Quero comprar um imóvel</Link>
+            </li>
+            <li className={text}>
+              <Link to="/home">Preços e planos</Link>
+            </li>
           </ul>
         </div>
 

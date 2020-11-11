@@ -2,26 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 // import { render } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import Footer from '..';
+import Input from '..';
 
-const Component = (props) => (
-  <BrowserRouter>
-    <Footer {...props} />
-  </BrowserRouter>
-);
-
-describe('<Footer />', () => {
+describe('<Input />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Component />, div);
+    ReactDOM.render(<Input />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   // Add tests here...
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Component />).toJSON();
+    const tree = renderer.create(<Input />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
