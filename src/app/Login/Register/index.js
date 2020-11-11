@@ -1,12 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Button from 'common/Button';
 import Input from 'common/Input';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
+import api from 'services/api';
 import { form, groupedInputs, actionButton } from '../Login.module.scss';
 
 export default function Register() {
+  const history = useHistory();
+
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
       firstName: '',
@@ -26,10 +29,17 @@ export default function Register() {
         .min(6, 'Mínimo 6 caracteres')
         .required('Campo obrigatório!'),
     }),
-    onSubmit() {
-      console.log(values);
+    async onSubmit() {
+      try {
+        const { data } = await api.post('users', { values });
+
+        if (data.message) history.push('/login');
+      } catch (error) {
+        // todo: modal de erro
+      }
     },
   });
+
   return (
     <div className={form}>
       <h2>Cadastre-se para cadastrar seu anúncio</h2>

@@ -11,6 +11,10 @@ const Component = () => (
   </BrowserRouter>
 );
 
+jest.mock('hooks/useUser', () => ({
+  useUser: () => ({ login: jest.fn() }),
+}));
+
 describe('<LoginForm />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');

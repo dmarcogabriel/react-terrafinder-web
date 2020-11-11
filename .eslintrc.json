@@ -39,14 +39,27 @@
     "react/prop-types": "off",
     "no-param-reassign": "off",
     "no-console": "off",
-    "import/no-unresolved": [2, {
-      "ignore": ["static/*", "common/*", "utils/*"]
-    }],
-    "max-lines": ["error", {
-      "max": 200, 
-      "skipBlankLines": true, 
-      "skipComments": true
-    }],
+    "import/no-unresolved": [
+      2,
+      {
+        "ignore": [
+          "static/*",
+          "common/*",
+          "utils/*",
+          "services/*",
+          "contexts/*",
+          "hooks/*"
+        ]
+      }
+    ],
+    "max-lines": [
+      "error",
+      {
+        "max": 200,
+        "skipBlankLines": true,
+        "skipComments": true
+      }
+    ],
     "no-unused-vars": "warn"
   }
 }
