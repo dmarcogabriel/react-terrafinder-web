@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from 'common/Button';
-import Input from 'common/Input';
+import { Button, Input } from 'common/components';
 import { MdArrowForward } from 'react-icons/md';
 import classes from './Property.module.scss';
 import propertyImg from './static/background-banner1.jpg';

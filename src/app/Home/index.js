@@ -1,6 +1,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Header, Footer } from './components';
+import Header from 'common/components/Header';
+import Footer from 'common/components/Footer';
 
 import Landing from './Landing';
 import SearchProperty from './SearchProperty';

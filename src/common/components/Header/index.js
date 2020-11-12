@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { MdPhoneInTalk, MdMenu } from 'react-icons/md';
 import { Link } from 'react-router-dom';
-import Button from 'common/Button';
-import LogoDesktop from '../../Logo.svg';
+import { Button } from 'common/components';
+import LogoDesktop from '../../static/Logo.svg';
 import Logo from './Logo.png';
 import {
   button,

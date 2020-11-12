@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Select from 'common/Select';
-import Button from 'common/Button';
+import { Select, Button } from 'common/components';
 import classes from './SearchProperties.module.scss';
 
 import FARM_KINDS from './farmKinds';

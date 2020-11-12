@@ -1,6 +1,6 @@
 import React from 'react';
+import LogoImg from 'common/static/Logo.svg';
 import classes from './About.module.scss';
-import LogoImg from '../Logo.svg';
 
 export default function About() {
   return (

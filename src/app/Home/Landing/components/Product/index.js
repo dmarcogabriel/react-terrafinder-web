@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'common/Button';
+import { Button } from 'common/components';
 import { MdArrowForward } from 'react-icons/md';
 import classes from './Product.module.scss';
 

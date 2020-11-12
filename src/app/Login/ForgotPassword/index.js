@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from 'common/Button';
-import Input from 'common/Input';
+import { Button, Input } from 'common/components';
 import { form, my2, actionButton } from '../Login.module.scss';
 
 export default function ForgotPassword() {
