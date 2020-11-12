@@ -5,6 +5,7 @@ import { Header, Footer } from './components';
 import Landing from './Landing';
 import SearchProperty from './SearchProperty';
 import Property from './Property';
+import About from './About';
 
 export default function Home({ location }) {
   console.log('Location: ', location);
@@ -24,6 +25,10 @@ export default function Home({ location }) {
 
         <Route path="/home/property">
           <Property />
+        </Route>
+
+        <Route path="/home/about">
+          <About />
         </Route>
       </Switch>
 

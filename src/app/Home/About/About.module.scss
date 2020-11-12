@@ -1,0 +1,71 @@
+@import 'styles';
+
+.about {
+  padding: 10rem 2rem 3rem;
+
+  > h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 1rem 0;
+  }
+
+  .card {
+    border-radius: 0.25rem;
+    box-shadow: $shadow-base;
+    padding: 1rem;
+
+    .row {
+      display: flex;
+      flex-direction: column;
+
+      > div > img {
+        margin: 1rem 0;
+        width: 100%;
+
+        @media ($desktop) {
+          width: 60%;
+        }
+      }
+
+      @media ($desktop) {
+        flex-direction: row;
+
+        > div {
+          width: 50%;
+          padding: 2rem 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+
+          > p {
+            line-height: 2rem;
+          }
+        }
+      }
+    }
+
+    .aboutValues {
+      border-top: 1px solid $orange;
+      margin: 0 2rem;
+      padding: 1rem 0;
+
+      > h2 {
+        color: $primary-dark;
+        font-size: 2rem;
+        font-weight: normal;
+        text-align: center;
+        margin: 0.5rem 0;
+      }
+
+      > p {
+        text-align: center;
+      }
+
+      > ul > li {
+        text-align: center;
+        line-height: 1.75rem;
+      }
+    }
+  }
+}
