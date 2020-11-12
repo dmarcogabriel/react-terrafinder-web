@@ -127,7 +127,6 @@ exports[`<Admin /> matches snapshot 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
-        tabIndex="0"
       >
         <img
           alt=""
@@ -135,7 +134,7 @@ exports[`<Admin /> matches snapshot 1`] = `
         />
         <div>
           <p>
-            Fazenda de Soja - Três Lagoas
+            Name
           </p>
           <p>
             R$ 1.000.000
@@ -226,7 +225,6 @@ exports[`<Admin /> matches snapshot 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
-        tabIndex="1"
       >
         <img
           alt=""
@@ -234,7 +232,7 @@ exports[`<Admin /> matches snapshot 1`] = `
         />
         <div>
           <p>
-            Fazenda de Soja - Três Lagoas
+            Name
           </p>
           <p>
             R$ 1.000.000
@@ -325,7 +323,6 @@ exports[`<Admin /> matches snapshot 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
-        tabIndex="2"
       >
         <img
           alt=""
@@ -333,7 +330,7 @@ exports[`<Admin /> matches snapshot 1`] = `
         />
         <div>
           <p>
-            Fazenda de Soja - Três Lagoas
+            Name
           </p>
           <p>
             R$ 1.000.000
@@ -424,7 +421,6 @@ exports[`<Admin /> matches snapshot 1`] = `
         onClick={[Function]}
         onKeyDown={[Function]}
         role="button"
-        tabIndex="3"
       >
         <img
           alt=""
@@ -432,7 +428,7 @@ exports[`<Admin /> matches snapshot 1`] = `
         />
         <div>
           <p>
-            Fazenda de Soja - Três Lagoas
+            Name
           </p>
           <p>
             R$ 1.000.000

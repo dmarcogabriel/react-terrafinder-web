@@ -2,25 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 // import { render } from '@testing-library/react';
-import Property from '..';
+import UploadPhotos from '..';
 
-const mockProperty = {
-  property: { _id: 'test', name: 'Test' },
-  index: 0,
-  photo: '',
-};
-
-describe('<Property />', () => {
+describe('<UploadPhotos />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Property {...mockProperty} />, div);
+    ReactDOM.render(<UploadPhotos />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   // Add tests here...
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Property {...mockProperty} />).toJSON();
+    const tree = renderer.create(<UploadPhotos />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

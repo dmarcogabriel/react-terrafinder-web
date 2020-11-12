@@ -7,5 +7,5 @@ import React from 'react';
 import classes from './<%= h.inflection.camelize(name) %>.module.scss';
 
 export default function <%= h.inflection.camelize(name) %>() {
-  return <div className={classes.<%= name %>}>{/* Code here... */}</div>;
+  return <div className={classes.<%= h.inflection.camelize(name, true) %>}>{/* Code here... */}</div>;
 }

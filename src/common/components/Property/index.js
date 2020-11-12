@@ -4,19 +4,19 @@ import { MdMap } from 'react-icons/md';
 import { RiPlantFill } from 'react-icons/ri';
 import classes from './Property.module.scss';
 
-export default function Property({ photo, i, onSelect }) {
+export default function Property({ property, index, photo, onSelect }) {
   return (
     <div
       role="button"
-      tabIndex={i}
-      onKeyDown={() => onSelect(i)}
+      tabIndex={index}
+      onKeyDown={() => onSelect(property._id)}
       className={classes.propertyItem}
-      onClick={() => onSelect(i)}
+      onClick={() => onSelect(property._id)}
     >
       <img src={photo} alt="" />
 
       <div className={classes.content}>
-        <p className={classes.name}>Fazenda de Soja - Três Lagoas</p>
+        <p className={classes.name}>{property.name}</p>
 
         <p className={classes.amount}>R$ 1.000.000</p>
 

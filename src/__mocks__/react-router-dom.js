@@ -5,4 +5,7 @@ module.exports = {
   useHistory: () => ({
     history: { push: jest.fn() },
   }),
+  useRouteMatch: () => ({
+    params: {},
+  }),
 };

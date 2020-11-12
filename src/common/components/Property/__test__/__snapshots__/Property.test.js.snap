@@ -5,13 +5,15 @@ exports[`<Property /> matches snapshot 1`] = `
   onClick={[Function]}
   onKeyDown={[Function]}
   role="button"
+  tabIndex={0}
 >
   <img
     alt=""
+    src=""
   />
   <div>
     <p>
-      Fazenda de Soja - Três Lagoas
+      Test
     </p>
     <p>
       R$ 1.000.000

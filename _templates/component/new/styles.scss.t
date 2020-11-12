@@ -4,6 +4,6 @@ unless_exists: true
 ---
 @import 'styles';
 
-.container {
-  display: flex;
+.<%= h.inflection.camelize(name, true) %> {
+  // styles here...
 }

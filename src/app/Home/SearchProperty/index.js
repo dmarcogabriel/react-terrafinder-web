@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'common/components';
 import { MdSearch } from 'react-icons/md';
 import Property from 'common/components/Property';
 import { useHistory } from 'react-router-dom';
+import api from 'services/api';
 import {
   container,
   card,
@@ -18,10 +19,21 @@ import propertyImg from './static/soja.jpg';
 
 export default function SearchProperty() {
   const history = useHistory();
+  const [properties, setProperties] = useState([]);
 
   const selectProperty = (id) => {
     history.push(`/home/property/${id}`);
   };
+
+  const loadProperties = async () => {
+    const res = await api.get('properties');
+
+    setProperties(res.data.properties);
+  };
+
+  useEffect(() => {
+    loadProperties();
+  }, []);
 
   return (
     <div className={container}>
@@ -66,12 +78,15 @@ export default function SearchProperty() {
           Buscar
         </Button>
       </div>
-
+      {/* 
+        //todo: add loading here
+      */}
       <div className={propertiesList}>
-        {Array.from(Array(4)).map((_, i) => (
+        {properties.map((property, i) => (
           <Property
             i={i}
-            key={String(i)}
+            key={property._id}
+            property={property}
             onSelect={selectProperty}
             photo={propertyImg}
           />

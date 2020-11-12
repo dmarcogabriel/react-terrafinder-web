@@ -1,0 +1,19 @@
+@import 'styles';
+
+.detailsForm {
+  padding: 0 2rem;
+
+  @media ($desktop) {
+    padding: 0;
+  }
+
+  .inlineInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @media ($desktop) {
+      flex-direction: row;
+    }
+  }
+}

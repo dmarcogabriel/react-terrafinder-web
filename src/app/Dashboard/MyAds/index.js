@@ -26,6 +26,7 @@ export default function MyAds() {
             photo={sojaImg}
             key={String(i)}
             i={String(i)}
+            property={{ name: 'Name' }}
             onSelect={handleSelect}
           />
         ))}

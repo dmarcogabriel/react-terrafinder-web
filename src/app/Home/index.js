@@ -24,7 +24,7 @@ export default function Home({ location }) {
           <SearchProperty />
         </Route>
 
-        <Route path="/home/property">
+        <Route path="/home/property/:id">
           <Property />
         </Route>
 
