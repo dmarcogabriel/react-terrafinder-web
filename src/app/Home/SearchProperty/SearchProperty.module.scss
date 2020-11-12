@@ -70,4 +70,16 @@
       margin: 1rem 0;
     }
   }
+
+  .propertiesList {
+    margin: 1rem 0;
+    display: flex;
+    flex-direction: column;
+
+    @media ($desktop) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+    }
+  }
 }

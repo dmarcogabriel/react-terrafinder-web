@@ -1,6 +1,8 @@
 import React from 'react';
 import { Button } from 'common/components';
 import { MdSearch } from 'react-icons/md';
+import Property from 'common/components/Property';
+import { useHistory } from 'react-router-dom';
 import {
   container,
   card,
@@ -9,10 +11,18 @@ import {
   title,
   cards,
   filtersCard,
+  propertiesList,
 } from './SearchProperty.module.scss';
-import { CheckBox, PropertiesList } from './components';
+import { CheckBox } from './components';
+import propertyImg from './static/soja.jpg';
 
 export default function SearchProperty() {
+  const history = useHistory();
+
+  const selectProperty = (id) => {
+    history.push(`/home/property/${id}`);
+  };
+
   return (
     <div className={container}>
       <h1>Use os filtros abaixo para melhorar o resultado de sua busca</h1>
@@ -57,7 +67,16 @@ export default function SearchProperty() {
         </Button>
       </div>
 
-      <PropertiesList />
+      <div className={propertiesList}>
+        {Array.from(Array(4)).map((_, i) => (
+          <Property
+            i={i}
+            key={String(i)}
+            onSelect={selectProperty}
+            photo={propertyImg}
+          />
+        ))}
+      </div>
     </div>
   );
 }

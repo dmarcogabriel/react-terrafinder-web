@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Property /> matches snapshot 1`] = `
+<div
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  role="button"
+>
+  <img
+    alt=""
+  />
+  <div>
+    <p>
+      Fazenda de Soja - Três Lagoas
+    </p>
+    <p>
+      R$ 1.000.000
+    </p>
+    <div>
+      <div>
+        <svg
+          fill="currentColor"
+          height={22}
+          size={22}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 1024 1024"
+          width={22}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M290 236.4l43.9-43.9a8.01 8.01 0 0 0-4.7-13.6L169 160c-5.1-.6-9.5 3.7-8.9 8.9L179 329.1c.8 6.6 8.9 9.4 13.6 4.7l43.7-43.7L370 423.7c3.1 3.1 8.2 3.1 11.3 0l42.4-42.3c3.1-3.1 3.1-8.2 0-11.3L290 236.4zm352.7 187.3c3.1 3.1 8.2 3.1 11.3 0l133.7-133.6 43.7 43.7a8.01 8.01 0 0 0 13.6-4.7L863.9 169c.6-5.1-3.7-9.5-8.9-8.9L694.8 179c-6.6.8-9.4 8.9-4.7 13.6l43.9 43.9L600.3 370a8.03 8.03 0 0 0 0 11.3l42.4 42.4zM845 694.9c-.8-6.6-8.9-9.4-13.6-4.7l-43.7 43.7L654 600.3a8.03 8.03 0 0 0-11.3 0l-42.4 42.3a8.03 8.03 0 0 0 0 11.3L734 787.6l-43.9 43.9a8.01 8.01 0 0 0 4.7 13.6L855 864c5.1.6 9.5-3.7 8.9-8.9L845 694.9zm-463.7-94.6a8.03 8.03 0 0 0-11.3 0L236.3 733.9l-43.7-43.7a8.01 8.01 0 0 0-13.6 4.7L160.1 855c-.6 5.1 3.7 9.5 8.9 8.9L329.2 845c6.6-.8 9.4-8.9 4.7-13.6L290 787.6 423.7 654c3.1-3.1 3.1-8.2 0-11.3l-42.4-42.4z"
+          />
+        </svg>
+        <p>
+          100ha
+        </p>
+      </div>
+      <div>
+        <svg
+          fill="currentColor"
+          height={22}
+          size={22}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={22}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g>
+            <path
+              d="M0 0H24V24H0z"
+              fill="none"
+            />
+            <path
+              d="M21 3v2c0 3.866-3.134 7-7 7h-1v1h5v7c0 1.105-.895 2-2 2H8c-1.105 0-2-.895-2-2v-7h5v-3c0-3.866 3.134-7 7-7h3zM5.5 2c2.529 0 4.765 1.251 6.124 3.169C10.604 6.51 10 8.185 10 10v1h-.5C5.358 11 2 7.642 2 3.5V2h3.5z"
+            />
+          </g>
+        </svg>
+        <p>
+          Soja/Milho
+        </p>
+      </div>
+      <div>
+        <svg
+          fill="currentColor"
+          height={22}
+          size={22}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={22}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M20.5 3l-.16.03L15 5.1 9 3 3.36 4.9c-.21.07-.36.25-.36.48V20.5c0 .28.22.5.5.5l.16-.03L9 18.9l6 2.1 5.64-1.9c.21-.07.36-.25.36-.48V3.5c0-.28-.22-.5-.5-.5zM15 19l-6-2.11V5l6 2.11V19z"
+          />
+        </svg>
+        <p>
+          Mato Grosso
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;

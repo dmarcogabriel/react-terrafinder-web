@@ -4,8 +4,8 @@ export const Context = createContext();
 
 const TOKEN_KEY = '@app:token';
 
-export const UserProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState();
+export const UserProvider = ({ children, token }) => {
+  const [currentUser, setCurrentUser] = useState({ token });
 
   const login = (user) => {
     window.localStorage.setItem(TOKEN_KEY, user.token);
