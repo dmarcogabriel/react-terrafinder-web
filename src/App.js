@@ -9,17 +9,17 @@ import 'fontsource-roboto';
 import './styles/index.scss';
 import { UserProvider } from 'contexts/User';
 import PrivateRoute from 'common/components/PrivateRoute';
-
+import { USER_KEY } from 'constants/userKey';
 import Home from './app/Home';
 import Login from './app/Login';
 import Dashboard from './app/Dashboard';
 import CreateProperty from './app/CreateProperty';
 
 export default function App() {
-  const token = window.localStorage.getItem('@app:token');
+  const storedUser = window.localStorage.getItem(USER_KEY);
 
   return (
-    <UserProvider token={token}>
+    <UserProvider storedUser={storedUser && JSON.parse(storedUser)}>
       <Router>
         <Switch>
           <Route path="/home">

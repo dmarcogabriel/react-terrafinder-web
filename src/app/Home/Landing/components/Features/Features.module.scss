@@ -64,10 +64,22 @@
     }
 
     .actionButton {
-      margin: 0.75rem 0;
+      margin: 0.75rem 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media ($desktop) {
+        margin: 0;
+      }
+    }
+
+    .greenActionButton {
+      margin: 0.75rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: $green;
 
       @media ($desktop) {
         margin: 0;

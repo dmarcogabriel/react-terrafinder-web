@@ -9,8 +9,7 @@ import {
 } from './Landing.module.scss';
 import { SearchProperties, Product, Plans, Features } from './components';
 import productImg from './static/product.jpg';
-
-const CARDS = Array.from(Array(4));
+import PRODUCT_CARDS from './productCards';
 
 export default function Landing() {
   return (
@@ -27,8 +26,8 @@ export default function Landing() {
         <h2 className={subtitle}>O que você precisa?</h2>
 
         <div className={products}>
-          {CARDS.map((_, i) => (
-            <Product key={String(i)} image={productImg} />
+          {PRODUCT_CARDS.map((product, i) => (
+            <Product key={String(i)} product={product} image={productImg} />
           ))}
         </div>
       </div>

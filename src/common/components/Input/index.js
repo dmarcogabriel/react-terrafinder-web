@@ -8,9 +8,11 @@ export default function Input({
   type,
   value,
   onChange,
-  errorMessage, // todo: implement error
+  errorMessage,
   placeholder,
+  ...props
 }) {
+  // todo: add format mask here...
   return (
     <div className={container}>
       <div className={labelView}>
@@ -33,6 +35,7 @@ export default function Input({
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
+        {...props}
       />
     </div>
   );

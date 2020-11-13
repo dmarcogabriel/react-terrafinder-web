@@ -1,25 +1,41 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
+import { USER_KEY } from 'constants/userKey';
+import api from 'services/api';
 
 export const Context = createContext();
 
-const TOKEN_KEY = '@app:token';
+export const UserProvider = ({ children, storedUser }) => {
+  const [currentUser, setCurrentUser] = useState(null);
+  const [loadingUser, setLoadingUser] = useState();
 
-export const UserProvider = ({ children, token }) => {
-  const [currentUser, setCurrentUser] = useState({ token });
+  const login = ({ token, email, firstName, _id, ...user }) => {
+    const data = { _id, firstName, email, token };
 
-  const login = (user) => {
-    window.localStorage.setItem(TOKEN_KEY, user.token);
-
-    setCurrentUser(user);
+    window.localStorage.setItem(USER_KEY, JSON.stringify(data));
+    setCurrentUser({ ...user, ...data });
   };
 
   const logout = () => {
-    window.localStorage.removeItem(TOKEN_KEY);
+    window.localStorage.removeItem(USER_KEY);
+    setCurrentUser(null);
   };
+
+  const loadUserData = async () => {
+    setLoadingUser(true);
+    const headers = { 'x-access-token': storedUser.token };
+
+    const res = await api.get(`users/${storedUser._id}`, { headers });
+    setCurrentUser({ ...res.data.user, token: storedUser.token });
+    setLoadingUser(false);
+  };
+
+  useEffect(() => {
+    if (storedUser) loadUserData();
+  }, []);
 
   return (
     <Context.Provider value={{ currentUser, login, logout }}>
-      {children}
+      {!loadingUser && children}
     </Context.Provider>
   );
 };

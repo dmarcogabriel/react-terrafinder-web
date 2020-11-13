@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Input, Button } from 'common/components';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
@@ -9,6 +9,7 @@ import { form, actionButton, my, my2 } from '../Login.module.scss';
 
 export default function LoginForm() {
   const { login } = useUser();
+  const history = useHistory();
 
   const { values, handleChange, errors, handleSubmit } = useFormik({
     initialValues: {
@@ -31,6 +32,7 @@ export default function LoginForm() {
       });
 
       login({ ...userData.data.user, token: response.data.token });
+      history.replace('/dashboard');
     },
   });
 

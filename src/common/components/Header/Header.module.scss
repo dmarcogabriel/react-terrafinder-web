@@ -37,7 +37,10 @@
 
     .logo {
       display: inline-block;
-      height: 4rem;
+
+      > img {
+        height: 4rem;
+      }
 
       @media ($desktop) {
         display: none;

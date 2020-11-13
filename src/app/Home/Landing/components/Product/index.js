@@ -3,23 +3,21 @@ import { Button } from 'common/components';
 import { MdArrowForward } from 'react-icons/md';
 import classes from './Product.module.scss';
 
-export default function Product({ image }) {
+export default function Product({ image, product }) {
   return (
     <div className={classes.container}>
       <div className={classes.product}>
         <img className={classes.image} src={image} alt="test" />
 
         <div className={classes.content}>
-          <p className={classes.title}>Anunciar imóvel rural</p>
+          <p className={classes.title}>{product.title}</p>
 
-          <p className={classes.text}>
-            Quero criar um anúncio para vender minha fazenda, chácara ou sítio.
-          </p>
+          <p className={classes.text}>{product.description}</p>
         </div>
       </div>
 
       <Button type="button" className={classes.actionButton}>
-        <p className={classes.buttonText}>Anunciar</p>
+        <p className={classes.buttonText}>{product.buttonText}</p>
         <MdArrowForward />
       </Button>
     </div>

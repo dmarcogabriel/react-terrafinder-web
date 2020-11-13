@@ -48,7 +48,7 @@ export default function SearchProperty() {
           Limpar Filtro
         </button>
 
-        <div className={cards}>
+        {/* <div className={cards}>
           <div className={card}>
             <p className={title}>Casa & Moradia</p>
 
@@ -71,7 +71,7 @@ export default function SearchProperty() {
             <CheckBox label="Cachoeiras" />
             <CheckBox label="Animais Silvestres" />
           </div>
-        </div>
+        </div> */}
 
         <Button className={searchButton}>
           <MdSearch size={22} />

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button } from 'common/components';
 import { MdArrowForward } from 'react-icons/md';
-import cn from 'classnames';
 import {
   backgroundImage,
   container,
@@ -16,6 +15,7 @@ import {
   card,
   cardTitle,
   cardText,
+  greenActionButton,
 } from './Features.module.scss';
 
 const CARDS = Array.from(Array(3));
@@ -51,7 +51,7 @@ export default function Features() {
               <MdArrowForward />
             </Button>
 
-            <Button className={cn('bg-green', actionButton)}>
+            <Button className={greenActionButton}>
               <p>Quero achar uma propriedade</p>
               <MdArrowForward />
             </Button>

@@ -1,0 +1,62 @@
+@import 'styles';
+
+.selectInput {
+  position: relative;
+
+  > button {
+    padding: $size-sm $size-sm;
+    background: $white;
+    width: 100%;
+    cursor: pointer;
+
+    .searchInputLabel {
+      color: $gray-light;
+      margin: 0.5rem 0;
+    }
+
+    .searchInputContent {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $gray-light;
+      border-radius: 0.25rem;
+      padding: 0.8rem 0.5rem;
+
+      .selectArrowIcon {
+        color: $gray-light;
+      }
+    }
+  }
+
+  .selectOptionList {
+    position: absolute;
+    bottom: -2.5rem;
+    left: 1rem;
+    right: 1rem;
+    z-index: 50;
+    box-shadow: $shadow-base;
+    border-bottom-left-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+    overflow: hidden;
+
+    > li {
+      > button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem 0;
+        cursor: pointer;
+        color: $gray-dark;
+        z-index: 51;
+        background: $white;
+        width: 100%;
+      }
+
+      .selected {
+        background: $orange;
+        width: 100%;
+      }
+    }
+  }
+}

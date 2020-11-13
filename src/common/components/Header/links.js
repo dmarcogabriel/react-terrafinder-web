@@ -5,7 +5,7 @@ export default [
     key: 'l1',
   },
   {
-    href: '/login/register',
+    href: '/create/property',
     name: 'Quero anunciar meu imóvel',
     key: 'l2',
   },

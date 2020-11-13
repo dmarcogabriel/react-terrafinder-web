@@ -4,21 +4,7 @@ import { Link } from 'react-router-dom';
 import { Button } from 'common/components';
 import LogoDesktop from '../../static/Logo.svg';
 import Logo from './Logo.png';
-import {
-  button,
-  buttonContactText,
-  buttonContactContent,
-  phoneIcon,
-  linkStyle,
-  header,
-  logo,
-  menuIcon,
-  logoDesktop,
-  content,
-  menuList,
-  menuItem,
-} from './Header.module.scss';
-
+import classes from './Header.module.scss';
 import LINKS from './links';
 
 export default function Header() {
@@ -26,40 +12,42 @@ export default function Header() {
 
   return (
     <>
-      <div className={header}>
-        <div className={content}>
-          <Link to="/home">
-            <img className={logo} src={Logo} alt="logo" />
+      <div className={classes.header}>
+        <div className={classes.content}>
+          <Link to="/home" className={classes.logo}>
+            <img src={Logo} alt="logo" />
           </Link>
 
           <button type="button" onClick={() => setShowMenu(!showMenu)}>
-            <MdMenu className={menuIcon} />
+            <MdMenu className={classes.menuIcon} />
           </button>
 
-          <img className={logoDesktop} alt="logo desktop" src={LogoDesktop} />
+          <Link to="/home" className={classes.logoDesktop}>
+            <img alt="logo desktop" src={LogoDesktop} />
+          </Link>
 
           {LINKS.map((link) => (
-            <Link className={linkStyle} key={link.key} to={link.href}>
+            <Link className={classes.linkStyle} key={link.key} to={link.href}>
               {link.name}
             </Link>
           ))}
 
-          <Button className={button}>
-            <p className={buttonContactText}>Ligue para nós!</p>
+          <Button className={classes.button}>
+            <p className={classes.buttonContactText}>Ligue para nós!</p>
 
-            <div className={buttonContactContent}>
-              <MdPhoneInTalk className={phoneIcon} />
+            <div className={classes.buttonContactContent}>
+              <MdPhoneInTalk className={classes.phoneIcon} />
 
-              <p className={buttonContactText}>+55 (14) 99999-9999</p>
+              <p className={classes.buttonContactText}>+55 (14) 99999-9999</p>
             </div>
           </Button>
         </div>
       </div>
 
       {showMenu && (
-        <div className={menuList}>
+        <div className={classes.menuList}>
           {LINKS.map((link) => (
-            <Link className={menuItem} key={link.key} to={link.href}>
+            <Link className={classes.menuItem} key={link.key} to={link.href}>
               {link.name}
             </Link>
           ))}

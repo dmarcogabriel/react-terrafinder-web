@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MdArrowDropUp, MdArrowDropDown } from 'react-icons/md';
-import cn from 'classnames';
-import './Select.scss';
+import classes from './Select.module.scss';
 
 export default function Select({
   label,
@@ -14,24 +13,21 @@ export default function Select({
   const [defaultValue, setDefaultValue] = useState(value || 'Selecione...');
   const [optionsList, setOptionsList] = useState(options);
 
-  const handleClickOutside = (e) => {
-    const { classList } = e.target;
-
-    if (
-      !classList.contains('option') &&
-      !classList.contains('selected-option')
-    ) {
-      setShowOptions(false);
-    }
+  const handleClickOutside = () => {
+    // todo: handle click outside
+    // const { classList } = e.target;
+    // console.log(classList.contains('Select_option'));
+    // if (!classList.contains('Select_option')) {
+    //   setShowOptions(false);
+    // }
   };
 
   const handleSelectOption = (e) => {
     setOptionsList(
-      optionsList.map((option) => {
-        return option.key === e.key
-          ? { ...option, selected: true }
-          : { ...option, selected: false };
-      })
+      optionsList.map((option) => ({
+        ...option,
+        selected: option.key === e.key,
+      }))
     );
     setDefaultValue(e.name);
     setShowOptions(false);
@@ -39,44 +35,35 @@ export default function Select({
   };
 
   useEffect(() => {
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    // document.addEventListener('mousedown', handleClickOutside);
+    // return () => document.removeEventListener('mousedown', handleClickOutside);
   });
 
   return (
-    <div className="selectInput">
-      <button
-        className="searchInputButton"
-        type="button"
-        onClick={() => setShowOptions(!showOptions)}
-      >
-        <p className="searchInputLabel" label={id}>
+    <div className={classes.selectInput}>
+      <button type="button" onClick={() => setShowOptions(!showOptions)}>
+        <p className={classes.searchInputLabel} label={id}>
           {label}
         </p>
 
-        <div className="searchInputContent">
+        <div className={classes.searchInputContent}>
           <p>{defaultValue}</p>
 
           {showOptions ? (
-            <MdArrowDropUp className="selectArrowIcon" />
+            <MdArrowDropUp className={classes.selectArrowIcon} size={22} />
           ) : (
-            <MdArrowDropDown className="selectArrowIcon" />
+            <MdArrowDropDown className={classes.selectArrowIcon} size={22} />
           )}
         </div>
       </button>
 
       {showOptions && (
-        <ul className="selectOptionList" id={id}>
+        <ul className={classes.selectOptionList} id={id}>
           {optionsList.map((option) => (
             <li key={option.key}>
               <button
                 type="button"
-                key={option.key}
-                className={cn(
-                  'selectOptionButton',
-                  option.selected && 'selectedOption'
-                )}
+                className={option.selected && classes.selected}
                 onClick={() => handleSelectOption(option)}
               >
                 {option.name}

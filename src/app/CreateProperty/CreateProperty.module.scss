@@ -25,41 +25,6 @@ $inactive-bg: rgb(159, 204, 128);
       text-align: center;
       color: $green;
     }
-
-    .navigator {
-      margin: 2rem 0;
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: space-between;
-      padding: 0 2rem;
-
-      @media ($desktop) {
-        flex-direction: row;
-        padding: 0;
-      }
-
-      .backButton {
-        text-align: center;
-        color: $blue;
-        cursor: pointer;
-        margin: 1rem 0;
-
-        @media ($desktop) {
-          font-size: 1.3rem;
-          margin: 0;
-        }
-      }
-
-      .nextButton {
-        margin: 1rem 0;
-        text-align: center;
-        background: $blue;
-
-        @media ($desktop) {
-          margin: 0;
-        }
-      }
-    }
   }
 
   .progress {

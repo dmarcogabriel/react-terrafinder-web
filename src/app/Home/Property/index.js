@@ -4,6 +4,7 @@ import { MdArrowForward } from 'react-icons/md';
 import { useRouteMatch } from 'react-router-dom';
 import api from 'services/api';
 import TextArea from 'common/components/TextArea';
+import { moneyFormat, farmingFormat } from 'utils/formatters';
 import classes from './Property.module.scss';
 import propertyImg from './static/background-banner1.jpg';
 import ownerPlaceholderImg from './static/ownerPlaceholder.png';
@@ -35,7 +36,10 @@ export default function Property() {
         <div className={classes.content}>
           <div className={classes.propertySession}>
             <div className={classes.propertyImage}>
-              <img src={propertyImg} alt="" />
+              <img
+                src={`http://localhost:8000/images/${property.photos[0]}`}
+                alt={property.photos[0]}
+              />
             </div>
 
             <div className={classes.col}>
@@ -43,27 +47,22 @@ export default function Property() {
                 <div className={classes.session}>
                   <p className={classes.title}>Resumo</p>
 
-                  <p>Valor: R$ 11.000,00</p>
-                  <p>Área: 300ha</p>
-                  <p>Código: {property._id}</p>
+                  <p>Valor: {moneyFormat(property.amount)}</p>
+                  <p>Área: {property.size}ha</p>
+                  <p>Código: #{property._id}</p>
                   <p>Cidade mais próxima: {property.nearbyCity}</p>
-                  <p>Estado: Mato Grosso do Sul</p>
+                  <p>Estado: {property.state}</p>
                   <p>Tipo de Propriedade: {property.propertyKind}</p>
-                  <p>Cultivo: Soja / Milho</p>
+                  <p>Cultivo: {farmingFormat(property.farming)}</p>
                 </div>
 
                 <div className={classes.session}>
                   <p className={classes.title}>Atividades e Destaques</p>
 
                   <ul>
-                    <li>Casa com 2 quartos</li>
-                    <li>Caseiro</li>
-                    <li>Animais domésticos</li>
-                    <li>Sinal de rede wifi</li>
-                    <li>Temporada de caça legalizada</li>
-                    <li>Fácil localização</li>
-                    <li>Cultivos alternativos</li>
-                    <li>Registrado</li>
+                    {property.activities.map((act, i) => (
+                      <li key={String(i)}>{act}</li>
+                    ))}
                   </ul>
                 </div>
               </div>

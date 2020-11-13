@@ -15,5 +15,23 @@
     @media ($desktop) {
       flex-direction: row;
     }
+
+    .col {
+      margin: 1rem 0;
+
+      > p {
+        color: $gray-light;
+      }
+
+      > div {
+        display: flex;
+        align-items: flex-end;
+
+        > button {
+          margin-left: 1rem;
+          background: $blue;
+        }
+      }
+    }
   }
 }
