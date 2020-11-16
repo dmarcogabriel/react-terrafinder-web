@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Input } from 'common/components';
-import { MdArrowForward } from 'react-icons/md';
+import { Button } from 'common/components';
 import { useRouteMatch } from 'react-router-dom';
 import api from 'services/api';
-import TextArea from 'common/components/TextArea';
 import { moneyFormat, farmingFormat } from 'utils/formatters';
 import classes from './Property.module.scss';
-import propertyImg from './static/background-banner1.jpg';
 import ownerPlaceholderImg from './static/ownerPlaceholder.png';
+import { message } from './message';
 
 export default function Property() {
   const { params } = useRouteMatch();
@@ -16,12 +14,22 @@ export default function Property() {
   const [loading, setLoading] = useState(true);
 
   const loadProperty = async () => {
-    setLoading(true);
-    const res = await api.get(`property/${params.id}`);
+    try {
+      setLoading(true);
+      const res = await api.get(`property/${params.id}`);
 
-    setProperty(res.data.property);
-    setOwner(res.data.property.user);
-    setLoading(false);
+      setProperty(res.data.property);
+      setOwner(res.data.property.user);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+    }
+  };
+
+  const handleSendMessage = () => {
+    window.location.href = `https://api.whatsapp.com/send?phone=55${
+      owner.phone
+    }&text=${message(owner.firstName, property.name)}`;
   };
 
   useEffect(() => {
@@ -79,7 +87,14 @@ export default function Property() {
 
           <div className={classes.ownerSession}>
             <div className={classes.ownerAvatar}>
-              <img src={ownerPlaceholderImg} alt="" />
+              <img
+                src={
+                  owner.avatar
+                    ? `http://localhost:8000/images/${owner.avatar}`
+                    : ownerPlaceholderImg
+                }
+                alt="avatar"
+              />
             </div>
 
             <p
@@ -88,7 +103,20 @@ export default function Property() {
 
             <p>Entre em contato com o proprietário pelo formulário abaixo:</p>
 
-            <Input label="Nome" placeholder="João da Silva" />
+            <Button
+              className={classes.sendMessageButton}
+              onClick={handleSendMessage}
+            >
+              Enviar mensagem ao proprietário
+            </Button>
+
+            {/* 
+              // ! ATTENTION
+
+              This code is disabled for mvp only, in future versions
+              send message will be in the dashboard
+            */}
+            {/* <Input label="Nome" placeholder="João da Silva" />
             <Input label="E-mail" placeholder="joao@dasilva.com" />
             <Input label="Telefone" placeholder="(11) 9999-9999" />
 
@@ -98,7 +126,7 @@ export default function Property() {
               <p>Enviar mensagem ao proprietário</p>
 
               <MdArrowForward size={22} />
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>

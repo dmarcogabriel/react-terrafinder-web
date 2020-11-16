@@ -26,24 +26,27 @@
     }
 
     .logoDesktop {
-      height: 4rem;
       display: none;
-      cursor: pointer;
 
       @media ($desktop) {
         display: inline-block;
+      }
+
+      > img {
+        height: 4rem;
+        cursor: pointer;
       }
     }
 
     .logo {
       display: inline-block;
 
-      > img {
-        height: 4rem;
-      }
-
       @media ($desktop) {
         display: none;
+      }
+
+      > img {
+        height: 4rem;
       }
     }
 
@@ -55,6 +58,20 @@
         font-size: $size-md;
         color: $black;
       }
+    }
+
+    .grettings,
+    .logout {
+      display: none;
+      color: $orange;
+
+      @media ($desktop) {
+        display: inline-block;
+      }
+    }
+
+    .logout {
+      cursor: pointer;
     }
 
     .button {
@@ -106,6 +123,12 @@
   .menuItem {
     font-size: $size-md;
     color: $black;
+    margin: 1rem 0;
+  }
+
+  .logoutLink {
+    font-size: $size-md;
+    color: $orange;
     margin: 1rem 0;
   }
 }

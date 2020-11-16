@@ -18,11 +18,20 @@
   .filtersCard {
     display: flex;
     flex-direction: column;
+    align-items: center;
     background: $white;
     box-shadow: $shadow-base;
     border-radius: 0.5rem;
     padding: 1rem;
     margin: 1rem 0;
+
+    .filters {
+      box-shadow: none;
+
+      @media ($desktop) {
+        width: 500px;
+      }
+    }
 
     .buttonLinkKind {
       text-decoration: underline;
@@ -30,6 +39,7 @@
       color: $blue-light;
       align-self: center;
       margin: 1rem 0;
+      cursor: pointer;
     }
 
     .cards {

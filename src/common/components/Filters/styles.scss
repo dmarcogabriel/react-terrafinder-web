@@ -1,19 +1,11 @@
-@import 'styles/';
+@import '~styles/';
 
-.container {
+.Filters__container {
   display: flex;
   flex-direction: column;
   background: $white;
-  border-radius: $size-xs;
-  width: 100%;
-  overflow: hidden;
   box-shadow: $shadow-base;
-
-  @media ($desktop) {
-    margin-top: 10rem;
-    flex-direction: row;
-    width: auto;
-  }
+  width: 100%;
 
   .searchButton {
     background: $primary-dark;

@@ -16,7 +16,6 @@ export default function Select({
   const handleClickOutside = () => {
     // todo: handle click outside
     // const { classList } = e.target;
-    // console.log(classList.contains('Select_option'));
     // if (!classList.contains('Select_option')) {
     //   setShowOptions(false);
     // }

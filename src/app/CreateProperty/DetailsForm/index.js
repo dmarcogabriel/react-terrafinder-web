@@ -40,10 +40,10 @@ export default function DetailsForm() {
             `/create/property/upload-photos/${res.data.property._id}?step=3`
           );
         } catch (err) {
-          console.log('Deu ruim', err);
+          // todo: show error
         }
       } else {
-        // show errors
+        // todo: show error
       }
     },
   });

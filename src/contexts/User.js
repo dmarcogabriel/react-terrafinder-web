@@ -22,11 +22,25 @@ export const UserProvider = ({ children, storedUser }) => {
 
   const loadUserData = async () => {
     setLoadingUser(true);
-    const headers = { 'x-access-token': storedUser.token };
 
-    const res = await api.get(`users/${storedUser._id}`, { headers });
-    setCurrentUser({ ...res.data.user, token: storedUser.token });
-    setLoadingUser(false);
+    try {
+      const headers = { 'x-access-token': storedUser.token };
+
+      const res = await api.get(`users/${storedUser._id}`, { headers });
+      setCurrentUser({ ...res.data.user, token: storedUser.token });
+      setLoadingUser(false);
+    } catch (err) {
+      const { status } = err.response;
+
+      if (status === 401) {
+        logout();
+      }
+      setLoadingUser(false);
+    }
+  };
+
+  const updateUser = (data) => {
+    setCurrentUser((old) => ({ ...old, ...data }));
   };
 
   useEffect(() => {
@@ -34,7 +48,7 @@ export const UserProvider = ({ children, storedUser }) => {
   }, []);
 
   return (
-    <Context.Provider value={{ currentUser, login, logout }}>
+    <Context.Provider value={{ currentUser, login, logout, updateUser }}>
       {!loadingUser && children}
     </Context.Provider>
   );

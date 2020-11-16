@@ -1,4 +1,22 @@
-export default [
+export const LOGGED_LINKS = [
+  {
+    href: '/dashboard',
+    name: 'Meus anúncios',
+    key: 'l1',
+  },
+  {
+    href: '/create/property',
+    name: 'Quero anunciar meu imóvel',
+    key: 'l2',
+  },
+  {
+    href: '/home/search-property',
+    name: 'Procurar Imóvel',
+    key: 'l3',
+  },
+];
+
+export const UNLOGGED_LINKS = [
   {
     href: '/home/search-property',
     name: 'Procurar Imóvel',
@@ -8,10 +26,5 @@ export default [
     href: '/create/property',
     name: 'Quero anunciar meu imóvel',
     key: 'l2',
-  },
-  {
-    href: '/home',
-    name: 'Como funciona?',
-    key: 'l3',
   },
 ];

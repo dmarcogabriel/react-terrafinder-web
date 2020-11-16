@@ -1,9 +1,16 @@
 import React from 'react';
 import { Button } from 'common/components';
 import { MdArrowForward } from 'react-icons/md';
+import { useHistory } from 'react-router-dom';
 import classes from './Product.module.scss';
 
 export default function Product({ image, product }) {
+  const history = useHistory();
+
+  const handleSelect = (link) => {
+    history.push(link);
+  };
+
   return (
     <div className={classes.container}>
       <div className={classes.product}>
@@ -16,7 +23,11 @@ export default function Product({ image, product }) {
         </div>
       </div>
 
-      <Button type="button" className={classes.actionButton}>
+      <Button
+        type="button"
+        className={classes.actionButton}
+        onClick={() => handleSelect(product.link)}
+      >
         <p className={classes.buttonText}>{product.buttonText}</p>
         <MdArrowForward />
       </Button>

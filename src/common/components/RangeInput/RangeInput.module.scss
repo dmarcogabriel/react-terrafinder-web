@@ -1,0 +1,47 @@
+@import 'styles';
+
+.rangeInput {
+  > button {
+    padding: $size-sm;
+    background: $white;
+    width: 100%;
+    cursor: pointer;
+
+    > p {
+      color: $gray-light;
+      margin: 0.5rem 0;
+    }
+
+    .value {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid $gray-light;
+      border-radius: 0.25rem;
+      padding: 0.8rem 0.5rem;
+    }
+  }
+
+  .buttons {
+    display: flex;
+    flex-direction: column-reverse;
+
+    @media ($desktop) {
+      margin-top: 1rem;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    .cancelButton {
+      background: transparent;
+      color: $blue;
+      margin: 1rem 0;
+    }
+
+    .okButton {
+      background: $blue;
+      margin: 1rem 0;
+    }
+  }
+}

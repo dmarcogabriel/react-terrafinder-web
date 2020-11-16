@@ -32,7 +32,7 @@ export default function Footer() {
               <Link to="/home/about">Quem somos</Link>
             </li>
             <li className={text}>
-              <Link to="/home/terms">Política de privacidade</Link>
+              <Link to="/home/privacy-policy">Política de privacidade</Link>
             </li>
             <li className={text}>
               <Link to="/home/support">Fale Conosco</Link>

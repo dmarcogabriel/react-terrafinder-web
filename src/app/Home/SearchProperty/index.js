@@ -1,34 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'common/components';
-import { MdSearch } from 'react-icons/md';
 import Property from 'common/components/Property';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import api from 'services/api';
-import {
-  container,
-  card,
-  searchButton,
-  buttonLinkKind,
-  title,
-  cards,
-  filtersCard,
-  propertiesList,
-} from './SearchProperty.module.scss';
-import { CheckBox } from './components';
+import queryString from 'query-string';
+import Filters from 'common/components/Filters';
+import classes from './SearchProperty.module.scss';
 import propertyImg from './static/soja.jpg';
 
 export default function SearchProperty() {
   const history = useHistory();
+  const { search } = useLocation();
   const [properties, setProperties] = useState([]);
 
   const selectProperty = (id) => {
     history.push(`/home/property/${id}`);
   };
 
-  const loadProperties = async () => {
-    const res = await api.get('properties');
+  const loadProperties = async (queryParams = null) => {
+    const res = await api.get(`properties${queryParams || search}`);
 
     setProperties(res.data.properties);
+  };
+
+  const cleanFilters = () => {};
+
+  const handleFilter = async (e) => {
+    await loadProperties(`?${queryString.stringify(e)}`);
   };
 
   useEffect(() => {
@@ -36,52 +33,24 @@ export default function SearchProperty() {
   }, []);
 
   return (
-    <div className={container}>
+    <div className={classes.container}>
       <h1>Use os filtros abaixo para melhorar o resultado de sua busca</h1>
 
-      <div className={filtersCard}>
-        {/*
-         // todo: Search Inputs
-        */}
+      <div className={classes.filtersCard}>
+        <Filters onSubmit={handleFilter} className={classes.filters} />
 
-        <button type="button" className={buttonLinkKind}>
+        <button
+          type="button"
+          className={classes.buttonLinkKind}
+          onClick={cleanFilters}
+        >
           Limpar Filtro
         </button>
-
-        {/* <div className={cards}>
-          <div className={card}>
-            <p className={title}>Casa & Moradia</p>
-
-            <CheckBox label="Número de Quartos" />
-            <CheckBox label="Número de Banheiros" />
-          </div>
-
-          <div className={card}>
-            <p className={title}>Tipos de solo e cultivo</p>
-
-            <CheckBox label="Soja" />
-            <CheckBox label="Milho" />
-          </div>
-
-          <div className={card}>
-            <p className={title}>Atividades & diferenciais</p>
-
-            <CheckBox label="Rio" />
-            <CheckBox label="Lago" />
-            <CheckBox label="Cachoeiras" />
-            <CheckBox label="Animais Silvestres" />
-          </div>
-        </div> */}
-
-        <Button className={searchButton}>
-          <MdSearch size={22} />
-          Buscar
-        </Button>
       </div>
       {/* 
         //todo: add loading here
       */}
-      <div className={propertiesList}>
+      <div className={classes.propertiesList}>
         {properties.map((property, i) => (
           <Property
             i={i}

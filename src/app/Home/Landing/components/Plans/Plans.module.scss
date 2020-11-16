@@ -25,4 +25,19 @@
       flex-direction: row;
     }
   }
+
+  .plansDescription {
+    padding: 0 2rem;
+    margin: 1rem 0 2rem;
+
+    @media ($desktop) {
+      padding: 0 10rem;
+    }
+
+    > p {
+      margin: 1rem 0;
+      color: $gray-dark;
+      line-height: 2rem;
+    }
+  }
 }
