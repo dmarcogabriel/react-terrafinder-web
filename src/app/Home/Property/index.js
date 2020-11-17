@@ -3,8 +3,9 @@ import { Button } from 'common/components';
 import { useRouteMatch } from 'react-router-dom';
 import api from 'services/api';
 import { moneyFormat, farmingFormat } from 'utils/formatters';
+import propertyImagePlaceholder from 'common/static/soja.jpg';
 import classes from './Property.module.scss';
-import ownerPlaceholderImg from './static/ownerPlaceholder.png';
+import ownerPlaceholderImg from './ownerPlaceholder.png';
 import { message } from './message';
 
 export default function Property() {
@@ -45,7 +46,11 @@ export default function Property() {
           <div className={classes.propertySession}>
             <div className={classes.propertyImage}>
               <img
-                src={`${process.env.REACT_APP_STATIC}/images/${property.photos[0]}`}
+                src={
+                  property.photos[0]
+                    ? `${process.env.REACT_APP_STATIC}/images/${property.photos[0]}`
+                    : propertyImagePlaceholder
+                }
                 alt={property.photos[0]}
               />
             </div>

@@ -3,6 +3,7 @@ import { AiOutlineFullscreen } from 'react-icons/ai';
 import { MdMap } from 'react-icons/md';
 import { RiPlantFill } from 'react-icons/ri';
 import { moneyFormat } from 'utils/formatters';
+import imagePlaceholder from 'common/static/soja.jpg';
 import classes from './Property.module.scss';
 
 export default function Property({ property, index, onSelect }) {
@@ -16,9 +17,16 @@ export default function Property({ property, index, onSelect }) {
       className={classes.propertyItem}
       onClick={() => onSelect(property._id)}
     >
+      {/* 
+        // todo: add carousel here
+      */}
       <img
-        src={`${process.env.REACT_APP_STATIC}/images/${photo}`}
-        alt={photo}
+        src={
+          photo
+            ? `${process.env.REACT_APP_STATIC}/images/${photo}`
+            : imagePlaceholder
+        }
+        alt={photo || 'Propriedade'}
       />
 
       <div className={classes.content}>

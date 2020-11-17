@@ -5,7 +5,6 @@ import api from 'services/api';
 import queryString from 'query-string';
 import Filters from 'common/components/Filters';
 import classes from './SearchProperty.module.scss';
-import propertyImg from './static/soja.jpg';
 
 export default function SearchProperty() {
   const history = useHistory();
@@ -57,7 +56,6 @@ export default function SearchProperty() {
             key={property._id}
             property={property}
             onSelect={selectProperty}
-            photo={propertyImg}
           />
         ))}
       </div>
