@@ -16,7 +16,10 @@ export default function Property({ property, index, onSelect }) {
       className={classes.propertyItem}
       onClick={() => onSelect(property._id)}
     >
-      <img src={`http://localhost:8000/images/${photo}`} alt={photo} />
+      <img
+        src={`${process.env.REACT_APP_BACKEND}/images/${photo}`}
+        alt={photo}
+      />
 
       <div className={classes.content}>
         <p className={classes.name}>{property.name}</p>

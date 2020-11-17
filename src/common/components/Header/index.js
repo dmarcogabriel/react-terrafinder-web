@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { MdPhoneInTalk, MdMenu } from 'react-icons/md';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { Button } from 'common/components';
 import { useUser } from 'hooks/useUser';
 import LogoDesktop from '../../static/Logo.svg';
@@ -12,9 +12,11 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const [links, setLinks] = useState([]);
   const { currentUser, logout } = useUser();
+  const history = useHistory();
 
   const handleLogout = () => {
     logout();
+    history.replace('/home');
   };
 
   useEffect(() => {
