@@ -18,6 +18,7 @@ export const UserProvider = ({ children, storedUser }) => {
   const logout = () => {
     window.localStorage.removeItem(USER_KEY);
     setCurrentUser(null);
+    window.location.href = '/home';
   };
 
   const loadUserData = async () => {
@@ -30,11 +31,7 @@ export const UserProvider = ({ children, storedUser }) => {
       setCurrentUser({ ...res.data.user, token: storedUser.token });
       setLoadingUser(false);
     } catch (err) {
-      const { status } = err.response;
-
-      if (status === 401) {
-        logout();
-      }
+      logout();
       setLoadingUser(false);
     }
   };

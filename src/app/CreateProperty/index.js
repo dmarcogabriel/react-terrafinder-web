@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route, useLocation } from 'react-router-dom';
 import { parseSearch } from 'utils/parseSearch';
-import { useNotification } from 'hooks/useNotification';
 import classes from './CreateProperty.module.scss';
 import GeneralForm from './GeneralForm';
 import DetailsForm from './DetailsForm';
@@ -11,13 +10,6 @@ import STEPS from './steps';
 export default function CreateProperty() {
   const { search } = useLocation();
   const currentStep = parseSearch(search).step;
-  const { showNotification } = useNotification();
-
-  React.useEffect(() => {
-    setTimeout(() => {
-      showNotification('Notification created');
-    }, 3000);
-  }, []);
 
   return (
     <div className={classes.createProperty}>

@@ -17,7 +17,7 @@ export default function Property({ property, index, onSelect }) {
       className={classes.propertyItem}
       onClick={() => onSelect(property._id)}
     >
-      {/* 
+      {/*
         // todo: add carousel here
       */}
       <img

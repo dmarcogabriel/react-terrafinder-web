@@ -32,11 +32,19 @@ export default function DetailsForm() {
     async onSubmit() {
       if (validateArrayOfInputs(activities) && validateArrayOfInputs(farming)) {
         try {
-          const res = await api.post('properties', {
-            ...values,
-            ...state.values,
-            user: currentUser._id,
-          });
+          const res = await api.post(
+            'properties',
+            {
+              ...values,
+              ...state.values,
+              user: currentUser._id,
+            },
+            {
+              headers: {
+                'x-access-token': currentUser.token,
+              },
+            }
+          );
 
           showNotification(
             'Propriedade criada com sucesso!',
@@ -47,10 +55,16 @@ export default function DetailsForm() {
             `/create/property/upload-photos/${res.data.property._id}?step=3`
           );
         } catch (err) {
-          // todo: show error
+          showNotification(
+            'Ops, ocorreu um erro na operação',
+            NOTIFICATION_TYPES.ERROR
+          );
         }
       } else {
-        // todo: show error
+        showNotification(
+          'Ops, ocorreu um erro na operação',
+          NOTIFICATION_TYPES.ERROR
+        );
       }
     },
   });
