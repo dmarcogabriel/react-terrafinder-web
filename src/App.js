@@ -10,6 +10,8 @@ import './styles/index.scss';
 import { UserProvider } from 'contexts/User';
 import PrivateRoute from 'common/components/PrivateRoute';
 import { USER_KEY } from 'constants/userKey';
+import { NotificationProvider } from 'contexts/Notification';
+import Nofitication from 'common/components/Notification';
 import Home from './app/Home';
 import Login from './app/Login';
 import Dashboard from './app/Dashboard';
@@ -20,27 +22,31 @@ export default function App() {
 
   return (
     <UserProvider storedUser={storedUser && JSON.parse(storedUser)}>
-      <Router>
-        <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
+      <NotificationProvider>
+        <Nofitication />
 
-          <Route path="/login">
-            <Login />
-          </Route>
+        <Router>
+          <Switch>
+            <Route path="/home">
+              <Home />
+            </Route>
 
-          <PrivateRoute path="/dashboard">
-            <Dashboard />
-          </PrivateRoute>
+            <Route path="/login">
+              <Login />
+            </Route>
 
-          <PrivateRoute path="/create/property">
-            <CreateProperty />
-          </PrivateRoute>
+            <PrivateRoute path="/dashboard">
+              <Dashboard />
+            </PrivateRoute>
 
-          <Redirect to="/home" />
-        </Switch>
-      </Router>
+            <PrivateRoute path="/create/property">
+              <CreateProperty />
+            </PrivateRoute>
+
+            <Redirect to="/home" />
+          </Switch>
+        </Router>
+      </NotificationProvider>
     </UserProvider>
   );
 }

@@ -27,13 +27,13 @@
     color: $gray-dark;
 
     > input {
-      visibility: hidden;
+      display: none;
     }
 
     .button {
       background: $gray-light;
       color: $gray-dark;
-      margin-bottom: 2rem;
+      margin: 2rem 0;
     }
 
     > span {

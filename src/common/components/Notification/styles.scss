@@ -1,0 +1,38 @@
+@import '~styles';
+
+.Notification__container {
+  position: fixed;
+  top: 2rem;
+  z-index: 5000;
+  right: 2rem;
+  left: 2rem;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  opacity: 0.8;
+  transition: opacity 5s;
+
+  > p {
+    opacity: 1;
+    text-align: center;
+  }
+}
+
+.success {
+  background: $green-light;
+  color: $green-dark;
+}
+
+.info {
+  background: $blue;
+  color: $blue-dark;
+}
+
+.warning {
+  background: $primary-light;
+  color: $orange;
+}
+
+.error {
+  background: $red;
+  color: $red-dark;
+}

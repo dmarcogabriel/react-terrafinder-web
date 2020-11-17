@@ -45,7 +45,7 @@ export default function Property() {
           <div className={classes.propertySession}>
             <div className={classes.propertyImage}>
               <img
-                src={`${process.env.REACT_APP_BACKEND}/images/${property.photos[0]}`}
+                src={`${process.env.REACT_APP_STATIC}/images/${property.photos[0]}`}
                 alt={property.photos[0]}
               />
             </div>
@@ -90,7 +90,7 @@ export default function Property() {
               <img
                 src={
                   owner.avatar
-                    ? `${process.env.REACT_APP_BACKEND}/images/${owner.avatar}`
+                    ? `${process.env.REACT_APP_STATIC}/images/${owner.avatar}`
                     : ownerPlaceholderImg
                 }
                 alt="avatar"

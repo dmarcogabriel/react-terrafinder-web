@@ -17,7 +17,7 @@ export default function Property({ property, index, onSelect }) {
       onClick={() => onSelect(property._id)}
     >
       <img
-        src={`${process.env.REACT_APP_BACKEND}/images/${photo}`}
+        src={`${process.env.REACT_APP_STATIC}/images/${photo}`}
         alt={photo}
       />
 

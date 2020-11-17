@@ -62,7 +62,7 @@ export default function Select({
             <li key={option.key}>
               <button
                 type="button"
-                className={option.selected && classes.selected}
+                className={option.selected ? classes.selected : ''}
                 onClick={() => handleSelectOption(option)}
               >
                 {option.name}

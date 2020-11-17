@@ -4,4 +4,9 @@ export default [
     name: 'Fazenda',
     selected: false,
   },
+  {
+    key: 'p2',
+    name: 'Sítio',
+    selected: false,
+  },
 ];

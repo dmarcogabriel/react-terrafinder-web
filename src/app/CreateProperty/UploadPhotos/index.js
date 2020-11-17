@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { MdCloudUpload } from 'react-icons/md';
 import Button from 'common/components/Button';
 import { validateFile } from 'utils/validators';
@@ -6,6 +6,7 @@ import { loadBase64Image } from 'utils/fileHelper';
 import { AiFillCloseCircle } from 'react-icons/ai';
 import { useHistory, useRouteMatch } from 'react-router-dom';
 import api from 'services/api';
+import { NOTIFICATION_TYPES, useNotification } from 'hooks/useNotification';
 import classes from './UploadPhotos.module.scss';
 import Navigator from '../Navigator';
 
@@ -15,6 +16,8 @@ export default function UploadPhotos() {
   const [, setUploading] = useState(false); // todo: show modal
   const history = useHistory();
   const { params } = useRouteMatch();
+  const { showNotification } = useNotification();
+  const inputRef = useRef();
 
   const handleDrop = async (e) => {
     e.preventDefault();
@@ -71,8 +74,28 @@ export default function UploadPhotos() {
 
       setUploading(false);
       history.replace('/dashboard');
+      showNotification(
+        'Fotos enviadas com sucesso!',
+        NOTIFICATION_TYPES.SUCCESS
+      );
     } catch (error) {
       setUploading(false);
+      showNotification(
+        'Ocorreu um erro ao enviar fotos!',
+        NOTIFICATION_TYPES.ERROR
+      );
+    }
+  };
+
+  const openGalery = () => inputRef.current.click();
+
+  const handleChangeFileInput = async (e) => {
+    if (selectedFiles.length < 3) {
+      const [file] = e.target.files;
+
+      file.data = await loadBase64Image(file);
+
+      setSelectedFiles((old) => [...old, file]);
     }
   };
 
@@ -91,8 +114,16 @@ export default function UploadPhotos() {
           Faça o upload ou araste a imagem aqui
         </p>
 
-        <input type="file" />
-        <Button className={classes.button}>Upload de Imagens</Button>
+        <input
+          onChange={handleChangeFileInput}
+          ref={inputRef}
+          accept="image/png, image/jpg"
+          type="file"
+        />
+
+        <Button className={classes.button} onClick={openGalery}>
+          Upload de Imagens
+        </Button>
 
         <span>JPG, JPEG, PNG</span>
 

@@ -8,6 +8,7 @@ import { MdAdd } from 'react-icons/md';
 import Button from 'common/components/Button';
 import { validateArrayOfInputs } from 'utils/validators';
 import { useUser } from 'hooks/useUser';
+import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import classes from './DetailsForm.module.scss';
 import Navigator from '../Navigator';
 
@@ -17,6 +18,7 @@ export default function DetailsForm() {
   const [activities, setActivities] = useState([{ value: '', error: '' }]);
   const history = useHistory();
   const { currentUser } = useUser();
+  const { showNotification } = useNotification();
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -35,6 +37,11 @@ export default function DetailsForm() {
             ...state.values,
             user: currentUser._id,
           });
+
+          showNotification(
+            'Propriedade criada com sucesso!',
+            NOTIFICATION_TYPES.SUCCESS
+          );
 
           history.push(
             `/create/property/upload-photos/${res.data.property._id}?step=3`
