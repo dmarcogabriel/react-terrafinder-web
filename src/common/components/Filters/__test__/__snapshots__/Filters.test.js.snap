@@ -1,0 +1,111 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Filters /> matches snapshot 1`] = `
+<div
+  className="Filters__container"
+>
+  <div>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <p
+        label="propertyKind"
+      >
+        Tipo de Propriedade
+      </p>
+      <div>
+        <p>
+          Selecione...
+        </p>
+        <svg
+          fill="currentColor"
+          height={22}
+          size={22}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={22}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+  <div>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <p>
+        Área do Imóvel
+      </p>
+      <div>
+        0 até 1
+      </div>
+    </button>
+  </div>
+  <div>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <p>
+        Estado
+      </p>
+      <div>
+        <p>
+          Selecione...
+        </p>
+        <svg
+          fill="currentColor"
+          height={22}
+          size={22}
+          stroke="currentColor"
+          strokeWidth="0"
+          style={
+            Object {
+              "color": undefined,
+            }
+          }
+          viewBox="0 0 24 24"
+          width={22}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M7 10l5 5 5-5z"
+          />
+        </svg>
+      </div>
+    </button>
+  </div>
+  <div>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      <p>
+        Intervalo de Preço
+      </p>
+      <div>
+        0 até 1
+      </div>
+    </button>
+  </div>
+  <button
+    className="button searchButton"
+    onClick={[Function]}
+    type="button"
+  >
+    Procurar Imóvel
+  </button>
+</div>
+`;

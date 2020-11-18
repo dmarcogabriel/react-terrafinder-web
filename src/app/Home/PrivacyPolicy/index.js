@@ -14,7 +14,7 @@ export default function PrivacyPolicy() {
           A sua privacidade é importante para nós. É política do Terrafinder
           respeitar a sua privacidade em relação a qualquer informação sua que
           possamos coletar no site{' '}
-          <a href="www.terrafinder.com.br">Terrafinder</a>, e outros sites que
+          <Link to="www.terrafinder.com.br">Terrafinder</Link>, e outros sites que
           possuímos e operamos.
         </p>
         <p>
@@ -232,7 +232,7 @@ export default function PrivacyPolicy() {
             B) Não divulgar conteúdo ou propaganda de natureza racista,
             xenofóbica,
             <Link
-              href="https://ondeapostar.pt/"
+              to="https://ondeapostar.pt/"
             >
               casas de apostas legais
             </Link>

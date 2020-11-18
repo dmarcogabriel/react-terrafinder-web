@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navigator /> matches snapshot 1`] = `
+<div>
+  <button
+    type="button"
+  >
+    Voltar
+  </button>
+  <button
+    className="button"
+    type="button"
+  >
+    Próximo
+  </button>
+</div>
+`;

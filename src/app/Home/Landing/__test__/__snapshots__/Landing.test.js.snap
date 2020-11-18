@@ -7,31 +7,27 @@ Array [
       <h1>
         Encontre a propriedade ideal para você!
       </h1>
-      <div>
-        <div
-          className="selectInput"
-        >
+      <div
+        className="Filters__container"
+      >
+        <div>
           <button
-            className="searchInputButton"
             onClick={[Function]}
             type="button"
           >
             <p
-              className="searchInputLabel"
               label="propertyKind"
             >
               Tipo de Propriedade
             </p>
-            <div
-              className="searchInputContent"
-            >
+            <div>
               <p>
                 Selecione...
               </p>
               <svg
-                className="selectArrowIcon"
                 fill="currentColor"
-                height="1em"
+                height={22}
+                size={22}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -40,7 +36,7 @@ Array [
                   }
                 }
                 viewBox="0 0 24 24"
-                width="1em"
+                width={22}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -50,70 +46,35 @@ Array [
             </div>
           </button>
         </div>
-        <div
-          className="selectInput"
-        >
+        <div>
           <button
-            className="searchInputButton"
             onClick={[Function]}
             type="button"
           >
-            <p
-              className="searchInputLabel"
-            >
+            <p>
               Área do Imóvel
             </p>
-            <div
-              className="searchInputContent"
-            >
-              <p>
-                Selecione...
-              </p>
-              <svg
-                className="selectArrowIcon"
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 10l5 5 5-5z"
-                />
-              </svg>
+            <div>
+              0 até 1
             </div>
           </button>
         </div>
-        <div
-          className="selectInput"
-        >
+        <div>
           <button
-            className="searchInputButton"
             onClick={[Function]}
             type="button"
           >
-            <p
-              className="searchInputLabel"
-            >
+            <p>
               Estado
             </p>
-            <div
-              className="searchInputContent"
-            >
+            <div>
               <p>
                 Selecione...
               </p>
               <svg
-                className="selectArrowIcon"
                 fill="currentColor"
-                height="1em"
+                height={22}
+                size={22}
                 stroke="currentColor"
                 strokeWidth="0"
                 style={
@@ -122,7 +83,7 @@ Array [
                   }
                 }
                 viewBox="0 0 24 24"
-                width="1em"
+                width={22}
                 xmlns="http://www.w3.org/2000/svg"
               >
                 <path
@@ -132,49 +93,21 @@ Array [
             </div>
           </button>
         </div>
-        <div
-          className="selectInput"
-        >
+        <div>
           <button
-            className="searchInputButton"
             onClick={[Function]}
             type="button"
           >
-            <p
-              className="searchInputLabel"
-            >
+            <p>
               Intervalo de Preço
             </p>
-            <div
-              className="searchInputContent"
-            >
-              <p>
-                Selecione...
-              </p>
-              <svg
-                className="selectArrowIcon"
-                fill="currentColor"
-                height="1em"
-                stroke="currentColor"
-                strokeWidth="0"
-                style={
-                  Object {
-                    "color": undefined,
-                  }
-                }
-                viewBox="0 0 24 24"
-                width="1em"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M7 10l5 5 5-5z"
-                />
-              </svg>
+            <div>
+              0 até 1
             </div>
           </button>
         </div>
         <button
-          className="button"
+          className="button searchButton"
           onClick={[Function]}
           type="button"
         >
@@ -196,7 +129,7 @@ Array [
           />
           <div>
             <p>
-              Anunciar imóvel rural
+              Anunciar Imóvel Rural
             </p>
             <p>
               Quero criar um anúncio para vender minha fazenda, chácara ou sítio.
@@ -205,6 +138,7 @@ Array [
         </div>
         <button
           className="button"
+          onClick={[Function]}
           type="button"
         >
           <p>
@@ -238,19 +172,20 @@ Array [
           />
           <div>
             <p>
-              Anunciar imóvel rural
+              Comprar Imóvel Rural
             </p>
             <p>
-              Quero criar um anúncio para vender minha fazenda, chácara ou sítio.
+              Tenho interesse em comprar um Imóvel rural.
             </p>
           </div>
         </div>
         <button
           className="button"
+          onClick={[Function]}
           type="button"
         >
           <p>
-            Anunciar
+            Comprar
           </p>
           <svg
             fill="currentColor"
@@ -280,61 +215,20 @@ Array [
           />
           <div>
             <p>
-              Anunciar imóvel rural
+              Anúncio Profissional
             </p>
             <p>
-              Quero criar um anúncio para vender minha fazenda, chácara ou sítio.
+              Quero contratar o serviço de criação de aunúncio profissional.
             </p>
           </div>
         </div>
         <button
           className="button"
+          onClick={[Function]}
           type="button"
         >
           <p>
-            Anunciar
-          </p>
-          <svg
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            strokeWidth="0"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
-        </button>
-      </div>
-      <div>
-        <div>
-          <img
-            alt="test"
-            src="test-file-stub"
-          />
-          <div>
-            <p>
-              Anunciar imóvel rural
-            </p>
-            <p>
-              Quero criar um anúncio para vender minha fazenda, chácara ou sítio.
-            </p>
-          </div>
-        </div>
-        <button
-          className="button"
-          type="button"
-        >
-          <p>
-            Anunciar
+            Virar Pro
           </p>
           <svg
             fill="currentColor"
@@ -377,6 +271,7 @@ Array [
         <div>
           <button
             className="button"
+            onClick={[Function]}
             type="button"
           >
             <p>
@@ -402,7 +297,8 @@ Array [
             </svg>
           </button>
           <button
-            className="button bg-green"
+            className="button"
+            onClick={[Function]}
             type="button"
           >
             <p>
@@ -844,6 +740,26 @@ Array [
           </button>
         </div>
       </div>
+    </div>
+    <div>
+      <p>
+        <b>
+          Gratuito:
+        </b>
+         Recomendado para iniciantes, é uma ótima forma de testar a plataforma. Você pode testar a plataforma. Você pode criar um anúncio gratuíto da sua propriedade, com as informações gerais do imóvel, e dura 7 dias.
+      </p>
+      <p>
+        <b>
+          Premium:
+        </b>
+         Recomendado para quem já tem conteúdos da propriedade como fotos, detalhes do imóvel como tipo de solo, atividades, topografia. Ele custa R$ 50,00 e seu anúncio ganha mais visibilidade dentro da plataforma.
+      </p>
+      <p>
+        <b>
+          Proffissional:
+        </b>
+         Entre em contato conosco para conversarmos e conhecermos melhor o seu imóvel rural. Iremos até a propriedade, colheremos as informações mais importanjtes dela e faremos excelentes gravações explorando o imóvel através de dones de ponta. Essa é a maneira mais fácil de vender.
+      </p>
     </div>
   </div>,
 ]

@@ -2,19 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 // import { render } from '@testing-library/react';
-import CreateProperty from '..';
+import DetailsForm from '..';
 
-describe('<CreateProperty />', () => {
+describe('<DetailsForm />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<CreateProperty />, div);
+    ReactDOM.render(<DetailsForm />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   // Add tests here...
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<CreateProperty />).toJSON();
+    const tree = renderer.create(<DetailsForm />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

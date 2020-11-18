@@ -5,15 +5,27 @@ exports[`<UploadPhotos /> matches snapshot 1`] = `
   <h2>
     Imagens do Imóvel
   </h2>
-  <div>
+  <div
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
     <p>
       Faça o upload ou araste a imagem aqui
     </p>
     <input
+      accept="image/png, image/jpg"
+      onChange={[Function]}
       type="file"
     />
     <button
       className="button"
+      onClick={[Function]}
       type="button"
     >
       Upload de Imagens
@@ -42,6 +54,22 @@ exports[`<UploadPhotos /> matches snapshot 1`] = `
         />
       </svg>
     </div>
+    <div />
+  </div>
+  <div>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Voltar
+    </button>
+    <button
+      className="button"
+      onClick={[Function]}
+      type="button"
+    >
+      Fazer Upload
+    </button>
   </div>
 </div>
 `;
