@@ -24,7 +24,7 @@ exports[`<About /> matches snapshot 1`] = `
       <div>
         <img
           alt=""
-          src="test-file-stub"
+          src="\\"Logo.svg\\""
         />
       </div>
     </div>

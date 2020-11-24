@@ -13,7 +13,7 @@ export default function MyAds() {
   const [myProperties, setMyProperties] = useState([]);
 
   const handleSelect = (id) => {
-    // todo: open details
+    history.push(`property/${id}`);
   };
 
   const loadMyProperties = async () => {
@@ -32,15 +32,20 @@ export default function MyAds() {
     <div className={classes.myAds}>
       <h1>Meus anúncios</h1>
 
-      <Button className={classes.createButton} onClick={newPropertyAd}>
+      <Button
+        dataTestId="createProperty"
+        className={classes.createButton}
+        onClick={newPropertyAd}
+      >
         <MdAdd size={22} />
 
         <p>Criar Anúncio</p>
       </Button>
 
-      <div className={classes.adsList}>
+      <div data-testid="propertyList" className={classes.adsList}>
         {myProperties.map((property, i) => (
           <Property
+            dataTestId={`property-${i}`}
             key={property._id}
             index={i}
             property={property}

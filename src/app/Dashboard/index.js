@@ -95,7 +95,11 @@ export default function Dashboard() {
                 Confirmar
               </Button>
             ) : (
-              <Button className={classes.button} onClick={openGalery}>
+              <Button
+                dataTestId="uploadPhoto"
+                className={classes.button}
+                onClick={openGalery}
+              >
                 Upload de foto
               </Button>
             )}
@@ -106,6 +110,7 @@ export default function Dashboard() {
           </div>
 
           <input
+            data-testid="fileInput"
             type="file"
             ref={inputRef}
             accept="image/png, image/jpeg"

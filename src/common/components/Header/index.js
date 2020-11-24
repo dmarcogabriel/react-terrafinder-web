@@ -35,7 +35,11 @@ export default function Header() {
             <img src={Logo} alt="logo" />
           </Link>
 
-          <button type="button" onClick={() => setShowMenu(!showMenu)}>
+          <button
+            data-testid="menuButton"
+            type="button"
+            onClick={() => setShowMenu(!showMenu)}
+          >
             <MdMenu className={classes.menuIcon} />
           </button>
 
@@ -52,10 +56,12 @@ export default function Header() {
           {currentUser ? (
             <>
               <p
+                data-testid="greetings"
                 className={classes.grettings}
               >{`Olá, ${currentUser.firstName}`}</p>
 
               <button
+                data-testid="logoutButton"
                 type="button"
                 className={classes.logout}
                 onClick={handleLogout}
@@ -78,7 +84,7 @@ export default function Header() {
       </div>
 
       {showMenu && (
-        <div className={classes.menuList}>
+        <div data-testid="menu" className={classes.menuList}>
           {links.map((link) => (
             <Link className={classes.menuItem} key={link.key} to={link.href}>
               {link.name}

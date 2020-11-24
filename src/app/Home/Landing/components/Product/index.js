@@ -25,6 +25,7 @@ export default function Product({ image, product }) {
 
       <Button
         type="button"
+        dataTestId="actionButton"
         className={classes.actionButton}
         onClick={() => handleSelect(product.link)}
       >

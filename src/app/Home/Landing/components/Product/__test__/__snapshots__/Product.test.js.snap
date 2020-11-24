@@ -1,20 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<MyAds /> matches snapshot 1`] = `
+exports[`<Property /> matches snapshot 1`] = `
 <div>
-  <h1>
-    Meus anúncios
-  </h1>
+  <div>
+    <img
+      alt="test"
+      src=""
+    />
+    <div>
+      <p>
+        test
+      </p>
+      <p>
+        This is a test
+      </p>
+    </div>
+  </div>
   <button
     className="button"
-    data-testid="createProperty"
+    data-testid="actionButton"
     onClick={[Function]}
     type="button"
   >
+    <p>
+      Go to test
+    </p>
     <svg
       fill="currentColor"
-      height={22}
-      size={22}
+      height="1em"
       stroke="currentColor"
       strokeWidth="0"
       style={
@@ -23,19 +36,13 @@ exports[`<MyAds /> matches snapshot 1`] = `
         }
       }
       viewBox="0 0 24 24"
-      width={22}
+      width="1em"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+        d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
       />
     </svg>
-    <p>
-      Criar Anúncio
-    </p>
   </button>
-  <div
-    data-testid="propertyList"
-  />
 </div>
 `;

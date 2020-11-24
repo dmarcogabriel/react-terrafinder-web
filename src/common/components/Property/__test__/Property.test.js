@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-// import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import Property from '..';
 
 const property = {
   _id: 'test',
   name: 'Test',
+  amount: 99999999,
+  size: '20',
+  state: 'ZZ',
   photos: ['testphoto.png'],
   farming: ['testFarming'],
 };
@@ -36,7 +39,30 @@ describe('<Property />', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  // Add tests here...
+  it('should render without photo', () => {
+    const { getByTestId } = render(
+      <Property property={{ ...property, photos: [] }} />
+    );
+
+    const photo = getByTestId('photo');
+
+    expect(photo).toHaveAttribute('alt', 'Propriedade');
+    expect(photo).toHaveAttribute('src', JSON.stringify('soja.jpg'));
+  });
+
+  it('should fire onselect event', () => {
+    const mockFn = jest.fn();
+    const { getByTestId } = render(
+      <Property property={{ ...property, photos: [] }} onSelect={mockFn} />
+    );
+
+    const propertyDiv = getByTestId('property');
+    fireEvent.click(propertyDiv);
+    fireEvent.keyDown(propertyDiv);
+
+    expect(mockFn).toHaveBeenCalled();
+    expect(mockFn.mock.calls).toHaveLength(2);
+  });
 
   it('matches snapshot', () => {
     const tree = renderer.create(<Property {...mockProperty} />).toJSON();

@@ -70,12 +70,12 @@ export default function DetailsForm() {
   });
 
   const addActivity = () => {
-    if (activities.length < 2)
+    if (activities.length < 5)
       setActivities((old) => [...old, { value: '', error: '' }]);
   };
 
   const addFarming = () => {
-    if (farming.length < 2)
+    if (farming.length < 5)
       setFarming((old) => [...old, { value: '', error: '' }]);
   };
 
@@ -119,17 +119,19 @@ export default function DetailsForm() {
             <MdAdd size={22} />
           </Button>
 
-          {farming.map((farm, i) => (
-            <div data-testid={`farm-${i}`} key={String(i)}>
-              <Input
-                dataTestId={`farmInput-${i}`}
-                key={String(i)}
-                value={farm.value}
-                onChange={(e) => handleChangeFarm(e, i)}
-                errorMessage={farm.error}
-              />
-            </div>
-          ))}
+          <div data-testid="farms">
+            {farming.map((farm, i) => (
+              <div data-testid={`farm-${i}`} key={String(i)}>
+                <Input
+                  dataTestId={`farmInput-${i}`}
+                  key={String(i)}
+                  value={farm.value}
+                  onChange={(e) => handleChangeFarm(e, i)}
+                  errorMessage={farm.error}
+                />
+              </div>
+            ))}
+          </div>
         </div>
 
         <div className={classes.col}>
@@ -139,17 +141,19 @@ export default function DetailsForm() {
             <MdAdd size={22} />
           </Button>
 
-          {activities.map((act, i) => (
-            <div key={String(i)} data-testid={`act-${i}`}>
-              <Input
-                dataTestId={`actInput-${i}`}
-                key={String(i)}
-                value={act.value}
-                onChange={(e) => handleChangeActivity(e, i)}
-                errorMessage={act.error}
-              />
-            </div>
-          ))}
+          <div data-testid="acts">
+            {activities.map((act, i) => (
+              <div key={String(i)} data-testid={`act-${i}`}>
+                <Input
+                  dataTestId={`actInput-${i}`}
+                  key={String(i)}
+                  value={act.value}
+                  onChange={(e) => handleChangeActivity(e, i)}
+                  errorMessage={act.error}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

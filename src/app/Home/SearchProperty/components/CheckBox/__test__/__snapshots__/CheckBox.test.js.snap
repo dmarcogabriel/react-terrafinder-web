@@ -2,6 +2,7 @@
 
 exports[`<CheckBox /> matches snapshot 1`] = `
 <button
+  data-testid="checkbox"
   onClick={[Function]}
   type="button"
 >

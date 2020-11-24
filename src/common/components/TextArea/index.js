@@ -10,6 +10,7 @@ export default function TextArea({
   onChange,
   errorMessage,
   placeholder,
+  dataTestId,
 }) {
   return (
     <div className={container}>
@@ -29,6 +30,7 @@ export default function TextArea({
       </div>
 
       <textarea
+        data-testid={dataTestId || 'textarea'}
         rows={5}
         type={type}
         value={value}

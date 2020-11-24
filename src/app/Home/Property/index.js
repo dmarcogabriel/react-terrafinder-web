@@ -13,6 +13,7 @@ export default function Property() {
   const [property, setProperty] = useState();
   const [owner, setOwner] = useState();
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   const loadProperty = async () => {
     try {
@@ -22,7 +23,8 @@ export default function Property() {
       setProperty(res.data.property);
       setOwner(res.data.property.user);
       setLoading(false);
-    } catch (error) {
+    } catch (err) {
+      setError('Falha ao carregar propriedade! Por favor tente mais tarde.');
       setLoading(false);
     }
   };
@@ -37,9 +39,11 @@ export default function Property() {
     loadProperty();
   }, []);
 
+  if (error) return <p data-testid="error">{error}</p>;
+
   return (
     !loading && (
-      <div className={classes.container}>
+      <div data-testid="property" className={classes.container}>
         <h1>{property.name}</h1>
 
         <div className={classes.content}>
@@ -109,6 +113,7 @@ export default function Property() {
             <p>Entre em contato com o proprietário pelo formulário abaixo:</p>
 
             <Button
+              dataTestId="sendMessage"
               className={classes.sendMessageButton}
               onClick={handleSendMessage}
             >

@@ -9,7 +9,7 @@ const CARDS = Array.from(Array(3));
 export default function Features() {
   const history = useHistory();
 
-  const handleCreateProperty = () => history.push('/create/property');
+  const handleCreateProperty = () => history.push('/create/property?step=1');
   const handleFindProperty = () => history.push('home/search-property');
 
   return (
@@ -40,6 +40,7 @@ export default function Features() {
 
           <div className={classes.actionButtons}>
             <Button
+              dataTestId="createProperty"
               className={classes.actionButton}
               onClick={handleCreateProperty}
             >
@@ -49,6 +50,7 @@ export default function Features() {
             </Button>
 
             <Button
+              dataTestId="findProperty"
               className={classes.greenActionButton}
               onClick={handleFindProperty}
             >

@@ -38,16 +38,16 @@ describe('<UploadPhotos />', () => {
   });
 
   // todo: test on change
-  // it('should fire change file input', () => {
-  //   const { getByTestId } = render(<Comp />);
+  it('should fire change file input', () => {
+    const { getByTestId } = render(<Comp />);
 
-  //   const uploadInput = getByTestId('uploadInput');
-  //   fireEvent.change(uploadInput, { target: { files: [mockImage] } });
+    const uploadInput = getByTestId('uploadInput');
+    fireEvent.change(uploadInput, { target: { files: [mockImage] } });
 
-  //   const image = getByTestId('image-0');
+    // const image = getByTestId('image-0');
 
-  //   expect(image).toBeInTheDocument();
-  // });
+    // expect(image).toBeInTheDocument();
+  });
 
   describe('drop zone', () => {
     it('should change drop zone opacity', () => {

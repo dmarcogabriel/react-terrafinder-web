@@ -36,12 +36,12 @@ export default function Register() {
         await api.post('users', { values });
 
         showNotification(
-          'Registro efetuado com sucesso',
+          'Cadastro efetuado com sucesso',
           NOTIFICATION_TYPES.SUCCESS
         );
         history.push('/login');
       } catch (error) {
-        // todo: modal de erro
+        showNotification('Erro ao efetuar cadastro', NOTIFICATION_TYPES.ERROR);
       }
     },
   });

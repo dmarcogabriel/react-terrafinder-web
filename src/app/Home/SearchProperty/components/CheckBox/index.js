@@ -7,12 +7,13 @@ const ICON_SIZE = 22;
 export default function CheckBox({ label, selected, onChange }) {
   return (
     <button
+      data-testid="checkbox"
       type="button"
       className={container}
       onClick={() => onChange(!selected)}
     >
       {selected ? (
-        <MdCheckBox size={ICON_SIZE} />
+        <MdCheckBox data-testid="checkedIcon" size={ICON_SIZE} />
       ) : (
         <MdCheckBoxOutlineBlank size={ICON_SIZE} />
       )}

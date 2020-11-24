@@ -3,6 +3,11 @@ module.exports = {
   moduleDirectories: ['node_modules', 'src'],
   moduleNameMapper: {
     '\\.(css|less|sass|scss)$': '<rootDir>/src/__mocks__/styleMock.js',
-    '\\.(gif|ttf|eot|svg|png|jpg|jpeg)$': '<rootDir>/src/__mocks__/fileMock.js',
+  },
+  testURL: 'http://test.com',
+  transform: {
+    '^.+\\.js$': 'babel-jest',
+    '^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|png|psd|svg|webp)$':
+      '<rootDir>/jest/mediaFileTransformer.js',
   },
 };

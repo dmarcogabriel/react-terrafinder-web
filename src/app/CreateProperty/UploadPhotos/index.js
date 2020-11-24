@@ -93,6 +93,7 @@ export default function UploadPhotos() {
   const openGalery = () => inputRef.current.click();
 
   const handleChangeFileInput = async (e) => {
+    console.log('Event: ', e.target.files);
     if (selectedFiles.length < 3) {
       const [file] = e.target.files;
 

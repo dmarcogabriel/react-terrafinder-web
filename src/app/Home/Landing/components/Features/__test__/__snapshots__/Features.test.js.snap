@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Property /> matches snapshot 1`] = `
+<div>
+  <div />
+  <h1>
+    Funcionalidades e Benefícios do Terrafinder
+  </h1>
+  <div>
+    <div>
+      <h2>
+        Conheça e aprenda a utilizar o Terrafinder
+      </h2>
+      <p>
+        Você que quer vender seu imóvel rural, encontrou o lugar ideal para anuncia-lo. É simples, rápido e eficiente.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt deserunt quisquam accusantium accusamus aliquid laborum nam quasi earum quaerat voluptate ratione cumque tempora minima, nihil sequi. Culpa, ut ad? At?
+      </p>
+      <div>
+        <button
+          className="button"
+          data-testid="createProperty"
+          onClick={[Function]}
+          type="button"
+        >
+          <p>
+            Quero anunciar meu imóvel
+          </p>
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+            />
+          </svg>
+        </button>
+        <button
+          className="button"
+          data-testid="findProperty"
+          onClick={[Function]}
+          type="button"
+        >
+          <p>
+            Quero achar uma propriedade
+          </p>
+          <svg
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            strokeWidth="0"
+            style={
+              Object {
+                "color": undefined,
+              }
+            }
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div>
+      <div>
+        <div>
+          <p>
+            Pague apenas pelo tempo do seu anúncio
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eius eum praesentium quos delectus vero commodi ipsum molestiae quod vel nostrum rerum alias minima explicabo dignissimos, iste tempora nulla perferendis.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <p>
+            Pague apenas pelo tempo do seu anúncio
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eius eum praesentium quos delectus vero commodi ipsum molestiae quod vel nostrum rerum alias minima explicabo dignissimos, iste tempora nulla perferendis.
+          </p>
+        </div>
+      </div>
+      <div>
+        <div>
+          <p>
+            Pague apenas pelo tempo do seu anúncio
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eius eum praesentium quos delectus vero commodi ipsum molestiae quod vel nostrum rerum alias minima explicabo dignissimos, iste tempora nulla perferendis.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

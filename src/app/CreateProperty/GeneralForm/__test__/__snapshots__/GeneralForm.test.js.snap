@@ -44,7 +44,7 @@ exports[`<GeneralForm /> matches snapshot 1`] = `
         </span>
       </div>
       <input
-        data-testid="input"
+        data-testid="propNameInput"
         onChange={[Function]}
         value=""
       />
@@ -90,9 +90,9 @@ exports[`<GeneralForm /> matches snapshot 1`] = `
         </span>
       </div>
       <input
-        data-testid="input"
+        data-testid="ownerNameInput"
         onChange={[Function]}
-        value=""
+        value="Tester"
       />
     </div>
   </div>
@@ -137,6 +137,7 @@ exports[`<GeneralForm /> matches snapshot 1`] = `
       </span>
     </div>
     <textarea
+      data-testid="descInput"
       onChange={[Function]}
       rows={5}
       value=""
@@ -222,7 +223,7 @@ exports[`<GeneralForm /> matches snapshot 1`] = `
         </span>
       </div>
       <input
-        data-testid="input"
+        data-testid="stateInput"
         maxLength={2}
         onChange={[Function]}
         value=""
@@ -269,7 +270,7 @@ exports[`<GeneralForm /> matches snapshot 1`] = `
         </span>
       </div>
       <input
-        data-testid="input"
+        data-testid="nearbyInput"
         onChange={[Function]}
         value=""
       />
@@ -316,7 +317,7 @@ exports[`<GeneralForm /> matches snapshot 1`] = `
       </span>
     </div>
     <input
-      data-testid="input"
+      data-testid="cepInput"
       onChange={[Function]}
       value=""
     />
@@ -324,7 +325,6 @@ exports[`<GeneralForm /> matches snapshot 1`] = `
   <div>
     <button
       data-testid="back"
-      onClick={[Function]}
       type="button"
     >
       Voltar

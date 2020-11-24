@@ -6,11 +6,12 @@ import { moneyFormat } from 'utils/formatters';
 import imagePlaceholder from 'common/static/soja.jpg';
 import classes from './Property.module.scss';
 
-export default function Property({ property, index, onSelect }) {
+export default function Property({ dataTestId, property, index, onSelect }) {
   const [photo] = property.photos;
 
   return (
     <div
+      data-testid={dataTestId || 'property'}
       role="button"
       tabIndex={index}
       onKeyDown={() => onSelect(property._id)}
@@ -21,6 +22,7 @@ export default function Property({ property, index, onSelect }) {
         // todo: add carousel here
       */}
       <img
+        data-testid="photo"
         src={
           photo
             ? `${process.env.REACT_APP_STATIC}/images/${photo}`

@@ -1,16 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, waitFor } from '@testing-library/react';
 import { UserProvider } from 'contexts/User';
-import { BrowserRouter } from 'react-router-dom';
 import GeneralForm from '..';
+
+let pushResponse;
+const mockPush = jest.fn((url) => {
+  pushResponse = url;
+});
+jest.mock('react-router-dom', () => ({
+  useHistory: () => ({
+    push: mockPush,
+  }),
+}));
+
+jest.mock('hooks/useUser', () => ({
+  useUser: jest.fn(() => ({
+    currentUser: { firstName: 'Tester' },
+  })),
+}));
 
 const Comp = () => (
   <UserProvider>
-    <BrowserRouter>
-      <GeneralForm />
-    </BrowserRouter>
+    <GeneralForm />
   </UserProvider>
 );
 
@@ -32,6 +45,41 @@ describe('<GeneralForm />', () => {
 
     const value = getByTestId('propertyKindValue');
     expect(value).toHaveTextContent('Fazenda');
+  });
+
+  it('should create property', async () => {
+    const { getByTestId } = render(<Comp />);
+
+    const propNameInput = getByTestId('propNameInput');
+    const descInput = getByTestId('descInput');
+    const propertyKind = getByTestId('propertyKind');
+    const stateInput = getByTestId('stateInput');
+    const nearbyInput = getByTestId('nearbyInput');
+    const cepInput = getByTestId('cepInput');
+
+    fireEvent.change(propNameInput, { target: { value: 'Testing Farm' } });
+    fireEvent.change(descInput, { target: { value: 'Some description' } });
+    fireEvent.change(stateInput, { target: { value: 'SP' } });
+    fireEvent.change(nearbyInput, { target: { value: 'Los Santos' } });
+    fireEvent.change(cepInput, { target: { value: '11222333' } });
+    fireEvent.click(propertyKind);
+
+    const option = getByTestId('option-p1');
+    fireEvent.click(option);
+    const propertyKindValue = getByTestId('propertyKindValue');
+
+    const submitButton = getByTestId('next');
+    await waitFor(() => fireEvent.click(submitButton));
+
+    expect(propNameInput).toHaveValue('Testing Farm');
+    expect(descInput).toHaveValue('Some description');
+    expect(stateInput).toHaveValue('SP');
+    expect(nearbyInput).toHaveValue('Los Santos');
+    expect(cepInput).toHaveValue('11222333');
+    expect(propertyKindValue).toHaveTextContent('Fazenda');
+    expect(mockPush).toHaveBeenCalled();
+
+    expect(pushResponse).toEqual('/create/property/details?step=2');
   });
 
   it('matches snapshot', () => {

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-// import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Dashboard from '..';
 
-const Component = () => (
+const Comp = () => (
   <Router>
     <Dashboard />
   </Router>
@@ -13,21 +13,37 @@ const Component = () => (
 
 jest.mock('hooks/useUser', () => ({
   useUser: () => ({
-    currentUser: {},
+    currentUser: {
+      _id: 'testId',
+      firstName: 'Tester',
+      avatar: null,
+    },
   }),
 }));
 
-describe('<Admin />', () => {
+describe('<Dashboard />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Component />, div);
+    ReactDOM.render(<Comp />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  // Add tests here...
+  it('should open galery', () => {
+    const { getByTestId } = render(<Comp />);
+
+    const fileInput = getByTestId('fileInput');
+    const spy = jest.spyOn(fileInput, 'click');
+
+    const uploadPhoto = getByTestId('uploadPhoto');
+    fireEvent.click(uploadPhoto);
+
+    expect(spy).toHaveBeenCalled();
+  });
+
+  // todo: test file upload
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Component />).toJSON();
+    const tree = renderer.create(<Comp />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

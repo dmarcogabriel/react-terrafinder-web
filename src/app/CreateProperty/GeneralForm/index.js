@@ -42,12 +42,14 @@ export default function GeneralForm() {
     <div className={classes.generalForm}>
       <div className={classes.inlineInputs}>
         <Input
+          dataTestId="propNameInput"
           label="Nome da Propriedade"
           value={values.name}
           onChange={handleChange('name')}
           errorMessage={errors.name}
         />
         <Input
+          dataTestId="ownerNameInput"
           label="Nome do Proprietário"
           value={values.ownerName}
           onChange={handleChange('ownerName')}
@@ -56,6 +58,7 @@ export default function GeneralForm() {
       </div>
 
       <TextArea
+        dataTestId="descInput"
         label="Descrição"
         value={values.description}
         onChange={handleChange('description')}
@@ -73,6 +76,7 @@ export default function GeneralForm() {
 
       <div className={classes.inlineInputs}>
         <Input
+          dataTestId="stateInput"
           label="Estado (em que o imóvel se encontra)"
           value={values.state}
           onChange={handleChange('state')}
@@ -80,6 +84,7 @@ export default function GeneralForm() {
           errorMessage={errors.state}
         />
         <Input
+          dataTestId="nearbyInput"
           label="Cidade Mais Próxima ao imóvel"
           value={values.nearbyCity}
           onChange={handleChange('nearbyCity')}
@@ -88,6 +93,7 @@ export default function GeneralForm() {
       </div>
 
       <Input
+        dataTestId="cepInput"
         label="CEP da Propriedade"
         value={values.cep}
         onChange={handleChange('cep')}

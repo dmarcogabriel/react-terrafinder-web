@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Admin /> matches snapshot 1`] = `
+exports[`<Dashboard /> matches snapshot 1`] = `
 <div>
   <div>
     <div>
@@ -10,10 +10,11 @@ exports[`<Admin /> matches snapshot 1`] = `
       >
         <img
           alt="logo"
-          src="test-file-stub"
+          src="\\"Logo.png\\""
         />
       </a>
       <button
+        data-testid="menuButton"
         onClick={[Function]}
         type="button"
       >
@@ -42,13 +43,16 @@ exports[`<Admin /> matches snapshot 1`] = `
       >
         <img
           alt="logo desktop"
-          src="test-file-stub"
+          src="\\"Logo.svg\\""
         />
       </a>
-      <p>
-        Olá, undefined
+      <p
+        data-testid="greetings"
+      >
+        Olá, Tester
       </p>
       <button
+        data-testid="logoutButton"
         onClick={[Function]}
         type="button"
       >
@@ -62,7 +66,7 @@ exports[`<Admin /> matches snapshot 1`] = `
     </h1>
     <button
       className="button"
-      data-testid="button"
+      data-testid="createProperty"
       onClick={[Function]}
       type="button"
     >
@@ -89,7 +93,9 @@ exports[`<Admin /> matches snapshot 1`] = `
         Criar Anúncio
       </p>
     </button>
-    <div />
+    <div
+      data-testid="propertyList"
+    />
   </div>
   <footer>
     <hr />

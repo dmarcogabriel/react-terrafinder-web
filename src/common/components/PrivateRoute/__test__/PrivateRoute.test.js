@@ -13,7 +13,9 @@ const Component = () => (
 
 jest.mock('hooks/useUser', () => ({
   useUser: () => ({
-    currentUser: {},
+    currentUser: {
+      token: 'test',
+    },
   }),
 }));
 
@@ -23,8 +25,6 @@ describe('<PrivateRoute />', () => {
     ReactDOM.render(<Component />, div);
     ReactDOM.unmountComponentAtNode(div);
   });
-
-  // Add tests here...
 
   it('matches snapshot', () => {
     const tree = renderer.create(<Component />).toJSON();

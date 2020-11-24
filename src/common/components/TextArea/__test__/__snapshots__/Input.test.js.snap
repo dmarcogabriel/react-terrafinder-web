@@ -40,6 +40,7 @@ exports[`<Input /> matches snapshot 1`] = `
     </span>
   </div>
   <textarea
+    data-testid="textarea"
     onChange={[Function]}
     rows={5}
   />

@@ -26,7 +26,6 @@ Array [
       Já tem uma conta?
       <a
         href="/login"
-        onClick={[Function]}
       >
          Faça o login aqui
       </a>
@@ -325,14 +324,12 @@ Array [
       Se cadastrando, você concorda com nossos
       <a
         href="/"
-        onClick={[Function]}
       >
         Termos de Uso
       </a>
        e 
       <a
         href="/"
-        onClick={[Function]}
       >
         Política de privacidade
       </a>

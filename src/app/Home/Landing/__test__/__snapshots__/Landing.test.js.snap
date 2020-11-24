@@ -141,7 +141,7 @@ Array [
         <div>
           <img
             alt="test"
-            src="test-file-stub"
+            src="\\"product.jpg\\""
           />
           <div>
             <p>
@@ -154,7 +154,7 @@ Array [
         </div>
         <button
           className="button"
-          data-testid="button"
+          data-testid="actionButton"
           onClick={[Function]}
           type="button"
         >
@@ -185,7 +185,7 @@ Array [
         <div>
           <img
             alt="test"
-            src="test-file-stub"
+            src="\\"product.jpg\\""
           />
           <div>
             <p>
@@ -198,7 +198,7 @@ Array [
         </div>
         <button
           className="button"
-          data-testid="button"
+          data-testid="actionButton"
           onClick={[Function]}
           type="button"
         >
@@ -229,7 +229,7 @@ Array [
         <div>
           <img
             alt="test"
-            src="test-file-stub"
+            src="\\"product.jpg\\""
           />
           <div>
             <p>
@@ -242,7 +242,7 @@ Array [
         </div>
         <button
           className="button"
-          data-testid="button"
+          data-testid="actionButton"
           onClick={[Function]}
           type="button"
         >
@@ -290,7 +290,7 @@ Array [
         <div>
           <button
             className="button"
-            data-testid="button"
+            data-testid="createProperty"
             onClick={[Function]}
             type="button"
           >
@@ -318,7 +318,7 @@ Array [
           </button>
           <button
             className="button"
-            data-testid="button"
+            data-testid="findProperty"
             onClick={[Function]}
             type="button"
           >
