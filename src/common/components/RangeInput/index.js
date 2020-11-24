@@ -9,6 +9,8 @@ export default function RangeInput({
   ligature = 'até',
   value = [0, 1],
   onChange,
+  dataTestId,
+  valueDataTestId,
 }) {
   const [showModal, setShowModal] = useState(false);
   const [minValue, setMinValue] = useState(value[0]);
@@ -24,28 +26,47 @@ export default function RangeInput({
   return (
     <div className={classes.rangeInput}>
       <button
+        data-testid={dataTestId || 'rangeInput'}
         type="button"
         className={classes.input}
         onClick={() => setShowModal(!showModal)}
       >
         <p>{label}</p>
 
-        <div className={classes.value}>
+        <div data-testid={valueDataTestId || 'value'} className={classes.value}>
           {`${minValue} ${ligature} ${maxValue}`}
         </div>
       </button>
 
       <Modal show={showModal}>
-        <Input label="Mínimo" value={minValue} onChange={setMinValue} />
+        <Input
+          dataTestId="minInput"
+          label="Mínimo"
+          value={minValue}
+          onChange={setMinValue}
+        />
 
-        <Input label="Maximo" value={maxValue} onChange={setMaxValue} />
+        <Input
+          dataTestId="maxInput"
+          label="Maximo"
+          value={maxValue}
+          onChange={setMaxValue}
+        />
 
         <div className={classes.buttons}>
-          <Button className={classes.cancelButton} onClick={handleClose}>
+          <Button
+            dataTestId="cancelButton"
+            className={classes.cancelButton}
+            onClick={handleClose}
+          >
             Cancelar
           </Button>
 
-          <Button className={classes.okButton} onClick={handleOk}>
+          <Button
+            dataTestId="okButton"
+            className={classes.okButton}
+            onClick={handleOk}
+          >
             Ok
           </Button>
         </div>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Select, Button } from 'common/components';
+import Select from 'common/components/Select';
+import Button from 'common/components/Button';
 import RangeInput from 'common/components/RangeInput';
 import { useFormik } from 'formik';
 import cn from 'classnames';
@@ -26,9 +27,14 @@ export default function Filters({ onSubmit, className }) {
   });
 
   return (
-    <div className={cn('Filters__container', className && className)}>
+    <div
+      data-testid="filters"
+      className={cn('Filters__container', className && className)}
+    >
       <Select
         id="propertyKind"
+        dataTestId="propertyKind"
+        valueDataTestId="propertyKindValue"
         label="Tipo de Propriedade"
         options={PROPERTY_KINDS}
         value={values.propertyKind}
@@ -36,22 +42,32 @@ export default function Filters({ onSubmit, className }) {
       />
 
       <RangeInput
+        dataTestId="propertySize"
+        valueDataTestId="propertySizeValue"
         label="Área do Imóvel"
         onChange={(e) => handleChange('size')(JSON.stringify(e))}
       />
 
       <Select
+        dataTestId="state"
+        valueDataTestId="stateValue"
         label="Estado"
         options={STATES}
         onChange={(e) => handleChange('state')(e.name)}
       />
 
       <RangeInput
+        dataTestId="amount"
+        valueDataTestId="amountValue"
         label="Intervalo de Preço"
         onChange={(e) => handleChange('amount')(JSON.stringify(e))}
       />
 
-      <Button className="searchButton" onClick={handleSubmit}>
+      <Button
+        dataTestId="submitButton"
+        className="searchButton"
+        onClick={handleSubmit}
+      >
         Procurar Imóvel
       </Button>
     </div>

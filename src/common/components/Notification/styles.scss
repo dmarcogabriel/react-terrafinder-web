@@ -3,12 +3,10 @@
 .Notification__container {
   position: fixed;
   top: 2rem;
-  z-index: 5000;
   right: 2rem;
   left: 2rem;
   padding: 1rem;
   border-radius: 0.25rem;
-  opacity: 0.8;
   transition: opacity 5s;
 
   > p {

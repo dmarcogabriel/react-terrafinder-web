@@ -107,6 +107,7 @@ export default function UploadPhotos() {
       <h2>Imagens do Imóvel</h2>
 
       <div
+        data-testid="dropZone"
         className={classes.dropZone}
         onDrop={handleDrop}
         onDragOver={handleDragOver}
@@ -118,13 +119,18 @@ export default function UploadPhotos() {
         </p>
 
         <input
+          data-testid="uploadInput"
           onChange={handleChangeFileInput}
           ref={inputRef}
           accept="image/png, image/jpg"
           type="file"
         />
 
-        <Button className={classes.button} onClick={openGalery}>
+        <Button
+          className={classes.button}
+          dataTestId="uploadButton"
+          onClick={openGalery}
+        >
           Upload de Imagens
         </Button>
 
@@ -138,8 +144,12 @@ export default function UploadPhotos() {
 
         <div className={classes.previewImages}>
           {selectedFiles.map((file, i) => (
-            <div key={String(i)}>
-              <button type="button" onClick={() => removeImage(i)}>
+            <div data-testid={`image-${i}`} key={String(i)}>
+              <button
+                data-testid={`delete-${i}`}
+                type="button"
+                onClick={() => removeImage(i)}
+              >
                 <AiFillCloseCircle
                   size={26}
                   className={classes.removeImageIcon}

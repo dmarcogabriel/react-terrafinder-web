@@ -5,8 +5,10 @@ import classes from './Select.module.scss';
 export default function Select({
   label,
   value,
-  options = [],
   id,
+  dataTestId,
+  valueDataTestId,
+  options = [],
   onChange = () => {},
 }) {
   const [showOptions, setShowOptions] = useState(false);
@@ -40,27 +42,40 @@ export default function Select({
 
   return (
     <div className={classes.selectInput}>
-      <button type="button" onClick={() => setShowOptions(!showOptions)}>
+      <button
+        type="button"
+        data-testid={dataTestId || 'select'}
+        onClick={() => setShowOptions(!showOptions)}
+      >
         <p className={classes.searchInputLabel} label={id}>
           {label}
         </p>
 
         <div className={classes.searchInputContent}>
-          <p>{defaultValue}</p>
+          <p data-testid={valueDataTestId || 'value'}>{defaultValue}</p>
 
           {showOptions ? (
-            <MdArrowDropUp className={classes.selectArrowIcon} size={22} />
+            <MdArrowDropUp
+              data-testid="arrowDropUp"
+              className={classes.selectArrowIcon}
+              size={22}
+            />
           ) : (
-            <MdArrowDropDown className={classes.selectArrowIcon} size={22} />
+            <MdArrowDropDown
+              data-testid="arrowDropDown"
+              className={classes.selectArrowIcon}
+              size={22}
+            />
           )}
         </div>
       </button>
 
       {showOptions && (
-        <ul className={classes.selectOptionList} id={id}>
+        <ul data-testid="options" className={classes.selectOptionList} id={id}>
           {optionsList.map((option) => (
             <li key={option.key}>
               <button
+                data-testid={`option-${option.key}`}
                 type="button"
                 className={option.selected ? classes.selected : ''}
                 onClick={() => handleSelectOption(option)}

@@ -10,6 +10,7 @@ export default function Input({
   onChange,
   errorMessage,
   placeholder,
+  dataTestId,
   ...props
 }) {
   // todo: add format mask here...
@@ -21,7 +22,9 @@ export default function Input({
         <span>
           {errorMessage ? (
             <>
-              <p className={invalid}>({errorMessage})</p>
+              <p data-testid="error" className={invalid}>
+                ({errorMessage})
+              </p>
               <BiSad className={invalid} size={22} />
             </>
           ) : (
@@ -31,6 +34,7 @@ export default function Input({
       </div>
 
       <input
+        data-testid={dataTestId || 'input'}
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}

@@ -56,6 +56,7 @@ exports[`<LoginForm /> matches snapshot 1`] = `
         </span>
       </div>
       <input
+        data-testid="input"
         onChange={[Function]}
         value=""
       />
@@ -101,6 +102,7 @@ exports[`<LoginForm /> matches snapshot 1`] = `
         </span>
       </div>
       <input
+        data-testid="input"
         onChange={[Function]}
         type="password"
         value=""
@@ -117,6 +119,7 @@ exports[`<LoginForm /> matches snapshot 1`] = `
     </p>
     <button
       className="button"
+      data-testid="button"
       onClick={[Function]}
       type="button"
     >

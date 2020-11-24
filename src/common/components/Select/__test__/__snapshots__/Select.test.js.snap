@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Select /> matches snapshot 1`] = `
+<div>
+  <button
+    data-testid="select"
+    onClick={[Function]}
+    type="button"
+  >
+    <p />
+    <div>
+      <p
+        data-testid="value"
+      >
+        Selecione...
+      </p>
+      <svg
+        data-testid="arrowDropDown"
+        fill="currentColor"
+        height={22}
+        size={22}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={22}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M7 10l5 5 5-5z"
+        />
+      </svg>
+    </div>
+  </button>
+</div>
+`;

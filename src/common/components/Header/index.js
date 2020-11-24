@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { MdPhoneInTalk, MdMenu } from 'react-icons/md';
 import { Link, useHistory } from 'react-router-dom';
-import { Button } from 'common/components';
+import Button from 'common/components/Button';
 import { useUser } from 'hooks/useUser';
 import LogoDesktop from '../../static/Logo.svg';
 import Logo from './Logo.png';

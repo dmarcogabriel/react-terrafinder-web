@@ -1,13 +1,16 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import { Button, Input } from 'common/components';
+import Button from 'common/components/Button';
+import Input from 'common/components/Input';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import api from 'services/api';
+import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import { form, groupedInputs, actionButton } from '../Login.module.scss';
 
 export default function Register() {
   const history = useHistory();
+  const { showNotification } = useNotification();
 
   const { values, errors, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -30,9 +33,13 @@ export default function Register() {
     }),
     async onSubmit() {
       try {
-        const { data } = await api.post('users', { values });
+        await api.post('users', { values });
 
-        if (data.message) history.push('/login');
+        showNotification(
+          'Registro efetuado com sucesso',
+          NOTIFICATION_TYPES.SUCCESS
+        );
+        history.push('/login');
       } catch (error) {
         // todo: modal de erro
       }
@@ -50,6 +57,7 @@ export default function Register() {
 
       <div className={groupedInputs}>
         <Input
+          dataTestId="firstNameInput"
           label="Primeiro nome"
           value={values.firstName}
           onChange={handleChange('firstName')}
@@ -57,6 +65,7 @@ export default function Register() {
         />
 
         <Input
+          dataTestId="lastNameInput"
           label="Sobrenome"
           value={values.lastName}
           onChange={handleChange('lastName')}
@@ -65,6 +74,7 @@ export default function Register() {
       </div>
 
       <Input
+        dataTestId="emailInput"
         label="E-mail"
         type="email"
         value={values.email}
@@ -74,6 +84,7 @@ export default function Register() {
 
       <div className={groupedInputs}>
         <Input
+          dataTestId="phoneInput"
           label="Telefone para contato"
           value={values.phone}
           onChange={handleChange('phone')}
@@ -81,6 +92,7 @@ export default function Register() {
         />
 
         <Input
+          dataTestId="cpfInput"
           label="CPF"
           value={values.cpf}
           onChange={handleChange('cpf')}
@@ -89,6 +101,7 @@ export default function Register() {
       </div>
 
       <Input
+        dataTestId="passInput"
         label="Senha"
         type="password"
         value={values.password}
@@ -96,7 +109,11 @@ export default function Register() {
         onChange={handleChange('password')}
       />
 
-      <Button className={actionButton} onClick={handleSubmit}>
+      <Button
+        dataTestId="registerButton"
+        className={actionButton}
+        onClick={handleSubmit}
+      >
         Cadastrar
       </Button>
 

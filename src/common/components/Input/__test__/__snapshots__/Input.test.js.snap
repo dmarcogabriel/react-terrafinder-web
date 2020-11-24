@@ -40,6 +40,7 @@ exports[`<Input /> matches snapshot 1`] = `
     </span>
   </div>
   <input
+    data-testid="input"
     onChange={[Function]}
   />
 </div>

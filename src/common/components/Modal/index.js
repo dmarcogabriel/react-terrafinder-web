@@ -5,6 +5,7 @@ export default function Modal({ show = false, children }) {
   return (
     show && (
       <div
+        data-testid="modal"
         className={classes.modal}
         // todo: add a close on click on background
         // role="button"

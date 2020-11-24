@@ -17,7 +17,7 @@ export default function GeneralForm() {
   const { values, handleChange, handleSubmit, errors } = useFormik({
     initialValues: {
       name: '',
-      ownerName: currentUser.firstName || '',
+      ownerName: currentUser ? currentUser.firstName : '',
       description: '',
       propertyKind: '',
       state: '',
@@ -62,6 +62,8 @@ export default function GeneralForm() {
         errorMessage={errors.description}
       />
       <Select
+        dataTestId="propertyKind"
+        valueDataTestId="propertyKindValue"
         label="Tipo de Imóvel"
         options={PROPERTY_KINDS}
         value={values.propertyKind}

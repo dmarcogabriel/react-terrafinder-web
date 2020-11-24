@@ -62,6 +62,7 @@ exports[`<Admin /> matches snapshot 1`] = `
     </h1>
     <button
       className="button"
+      data-testid="button"
       onClick={[Function]}
       type="button"
     >

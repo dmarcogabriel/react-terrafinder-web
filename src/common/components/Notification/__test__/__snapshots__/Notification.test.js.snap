@@ -1,3 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Notification /> matches snapshot 1`] = `null`;
+exports[`<Notification /> matches snapshot 1`] = `
+<div
+  className="Notification__container info"
+  data-testid="notification"
+  style={
+    Object {
+      "opacity": 0,
+      "zIndex": 5000,
+    }
+  }
+>
+  <p
+    data-testid="notificationMessage"
+  >
+    
+  </p>
+</div>
+`;

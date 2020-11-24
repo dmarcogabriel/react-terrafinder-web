@@ -3,11 +3,14 @@
 exports[`<RangeInput /> matches snapshot 1`] = `
 <div>
   <button
+    data-testid="rangeInput"
     onClick={[Function]}
     type="button"
   >
     <p />
-    <div>
+    <div
+      data-testid="value"
+    >
       0 até 1
     </div>
   </button>

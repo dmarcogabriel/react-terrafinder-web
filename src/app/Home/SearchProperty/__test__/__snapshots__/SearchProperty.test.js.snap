@@ -8,9 +8,11 @@ exports[`<SearchProperty /> matches snapshot 1`] = `
   <div>
     <div
       className="Filters__container"
+      data-testid="filters"
     >
       <div>
         <button
+          data-testid="propertyKind"
           onClick={[Function]}
           type="button"
         >
@@ -20,10 +22,13 @@ exports[`<SearchProperty /> matches snapshot 1`] = `
             Tipo de Propriedade
           </p>
           <div>
-            <p>
+            <p
+              data-testid="propertyKindValue"
+            >
               Selecione...
             </p>
             <svg
+              data-testid="arrowDropDown"
               fill="currentColor"
               height={22}
               size={22}
@@ -47,19 +52,23 @@ exports[`<SearchProperty /> matches snapshot 1`] = `
       </div>
       <div>
         <button
+          data-testid="propertySize"
           onClick={[Function]}
           type="button"
         >
           <p>
             Área do Imóvel
           </p>
-          <div>
+          <div
+            data-testid="propertySizeValue"
+          >
             0 até 1
           </div>
         </button>
       </div>
       <div>
         <button
+          data-testid="state"
           onClick={[Function]}
           type="button"
         >
@@ -67,10 +76,13 @@ exports[`<SearchProperty /> matches snapshot 1`] = `
             Estado
           </p>
           <div>
-            <p>
+            <p
+              data-testid="stateValue"
+            >
               Selecione...
             </p>
             <svg
+              data-testid="arrowDropDown"
               fill="currentColor"
               height={22}
               size={22}
@@ -94,19 +106,23 @@ exports[`<SearchProperty /> matches snapshot 1`] = `
       </div>
       <div>
         <button
+          data-testid="amount"
           onClick={[Function]}
           type="button"
         >
           <p>
             Intervalo de Preço
           </p>
-          <div>
+          <div
+            data-testid="amountValue"
+          >
             0 até 1
           </div>
         </button>
       </div>
       <button
         className="button searchButton"
+        data-testid="submitButton"
         onClick={[Function]}
         type="button"
       >

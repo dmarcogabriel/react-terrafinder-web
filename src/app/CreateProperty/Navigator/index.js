@@ -9,11 +9,16 @@ export default function Navigator({
 }) {
   return (
     <div className={classes.navigator}>
-      <button className={classes.backButton} type="button" onClick={onBack}>
+      <button
+        data-testid="back"
+        className={classes.backButton}
+        type="button"
+        onClick={onBack}
+      >
         Voltar
       </button>
 
-      <Button onClick={onNext} className={classes.nextButton}>
+      <Button dataTestId="next" onClick={onNext} className={classes.nextButton}>
         {nextButtonText}
       </Button>
     </div>

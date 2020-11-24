@@ -115,18 +115,19 @@ export default function DetailsForm() {
         <div className={classes.col}>
           <p>Cultivo (plantações)</p>
 
+          <Button dataTestId="addFarming" onClick={addFarming}>
+            <MdAdd size={22} />
+          </Button>
+
           {farming.map((farm, i) => (
-            <div key={String(i)}>
+            <div data-testid={`farm-${i}`} key={String(i)}>
               <Input
+                dataTestId={`farmInput-${i}`}
                 key={String(i)}
                 value={farm.value}
                 onChange={(e) => handleChangeFarm(e, i)}
                 errorMessage={farm.error}
               />
-
-              <Button onClick={addFarming}>
-                <MdAdd size={22} />
-              </Button>
             </div>
           ))}
         </div>
@@ -134,18 +135,19 @@ export default function DetailsForm() {
         <div className={classes.col}>
           <p>Atividades e Destaques</p>
 
+          <Button dataTestId="actButton" onClick={addActivity}>
+            <MdAdd size={22} />
+          </Button>
+
           {activities.map((act, i) => (
-            <div key={String(i)}>
+            <div key={String(i)} data-testid={`act-${i}`}>
               <Input
+                dataTestId={`actInput-${i}`}
                 key={String(i)}
                 value={act.value}
                 onChange={(e) => handleChangeActivity(e, i)}
                 errorMessage={act.error}
               />
-
-              <Button onClick={addActivity}>
-                <MdAdd size={22} />
-              </Button>
             </div>
           ))}
         </div>
