@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import Header from 'common/components/Header';
 import Footer from 'common/components/Footer';
-import Button from 'common/components/Button';
+import Button from 'common/components/atm/Button';
 import Modal from 'common/components/Modal';
 import { Route, Switch } from 'react-router-dom';
 import { useUser } from 'hooks/useUser';

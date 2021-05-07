@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { MdPhoneInTalk, MdMenu } from 'react-icons/md';
+import { MdMenu } from 'react-icons/md';
 import { Link, useHistory } from 'react-router-dom';
-import Button from 'common/components/Button';
 import { useUser } from 'hooks/useUser';
 import LogoDesktop from '../../static/Logo.svg';
 import Logo from './Logo.png';
 import classes from './Header.module.scss';
 import { LOGGED_LINKS, UNLOGGED_LINKS } from './links';
+import { ContactButton, ContactButtonText, PhoneIcon } from './styles';
 
 export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
@@ -70,15 +70,15 @@ export default function Header() {
               </button>
             </>
           ) : (
-            <Button className={classes.button}>
-              <p className={classes.buttonContactText}>Ligue para nós!</p>
+            <ContactButton>
+              <ContactButtonText>Ligue para nós!</ContactButtonText>
 
-              <div className={classes.buttonContactContent}>
-                <MdPhoneInTalk className={classes.phoneIcon} />
+              <div>
+                <PhoneIcon />
 
-                <p className={classes.buttonContactText}>+55 (14) 99999-9999</p>
+                <ContactButtonText>+55 (14) 99999-9999</ContactButtonText>
               </div>
-            </Button>
+            </ContactButton>
           )}
         </div>
       </div>

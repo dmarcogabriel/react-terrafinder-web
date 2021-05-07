@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { fireEvent, render } from '@testing-library/react';
+import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
 import Header from '..';
 
 let replaceResponse;
@@ -26,10 +26,10 @@ jest.mock('hooks/useUser', () => ({
   }),
 }));
 
-describe('<Header />', () => {
+describe('common/components/Header', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Header />, div);
+    ReactDOM.render(withTheme(<Header />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
@@ -37,7 +37,7 @@ describe('<Header />', () => {
     mockUser = { firstName: 'Tester' };
 
     it('should show grettings', () => {
-      const { getByTestId } = render(<Header />);
+      const { getByTestId } = render(withTheme(<Header />));
 
       const greetings = getByTestId('greetings');
       expect(greetings).toBeInTheDocument();
@@ -45,7 +45,7 @@ describe('<Header />', () => {
     });
 
     it('should show logout button', () => {
-      const { getByTestId } = render(<Header />);
+      const { getByTestId } = render(withTheme(<Header />));
 
       const logoutButton = getByTestId('logoutButton');
       expect(logoutButton).toBeInTheDocument();
@@ -53,7 +53,7 @@ describe('<Header />', () => {
     });
 
     it('should show menu', () => {
-      const { getByTestId } = render(<Header />);
+      const { getByTestId } = render(withTheme(<Header />));
 
       const menuButton = getByTestId('menuButton');
       fireEvent.click(menuButton);
@@ -63,7 +63,7 @@ describe('<Header />', () => {
     });
 
     it('should handle logout', () => {
-      const { getByTestId } = render(<Header />);
+      const { getByTestId } = render(withTheme(<Header />));
 
       const logoutButton = getByTestId('logoutButton');
       fireEvent.click(logoutButton);
@@ -75,7 +75,7 @@ describe('<Header />', () => {
   });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Header />).toJSON();
+    const tree = renderWithTheme(<Header />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

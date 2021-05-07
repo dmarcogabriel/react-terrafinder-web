@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
 import Dashboard from '..';
 
 const Comp = () => (
@@ -24,12 +24,12 @@ jest.mock('hooks/useUser', () => ({
 describe('<Dashboard />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Comp />, div);
+    ReactDOM.render(withTheme(<Comp />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('should open galery', () => {
-    const { getByTestId } = render(<Comp />);
+    const { getByTestId } = render(withTheme(<Comp />));
 
     const fileInput = getByTestId('fileInput');
     const spy = jest.spyOn(fileInput, 'click');
@@ -43,7 +43,7 @@ describe('<Dashboard />', () => {
   // todo: test file upload
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Comp />).toJSON();
+    const tree = renderWithTheme(<Comp />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
