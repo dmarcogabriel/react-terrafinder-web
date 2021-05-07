@@ -1,6 +1,81 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<DetailsForm /> matches snapshot 1`] = `
+exports[`app/CreateProperty/DetailsForm matches snapshot 1`] = `
+.c0 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #62ac43;
+  color: #fff;
+}
+
+.c2 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #16a5df;
+}
+
+.c4 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #333;
+}
+
+.c1 {
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.c3 {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.c5 {
+  background: #16a5df;
+  color: #fff;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c3 {
+    margin: 0;
+    padding: 0.75rem 3rem;
+  }
+}
+
 <div>
   <div>
     <div>
@@ -103,7 +178,7 @@ exports[`<DetailsForm /> matches snapshot 1`] = `
         Cultivo (plantações)
       </p>
       <button
-        className="button"
+        className="c0"
         data-testid="addFarming"
         onClick={[Function]}
         type="button"
@@ -186,7 +261,7 @@ exports[`<DetailsForm /> matches snapshot 1`] = `
         Atividades e Destaques
       </p>
       <button
-        className="button"
+        className="c0"
         data-testid="actButton"
         onClick={[Function]}
         type="button"
@@ -265,8 +340,11 @@ exports[`<DetailsForm /> matches snapshot 1`] = `
       </div>
     </div>
   </div>
-  <div>
+  <div
+    className="c1"
+  >
     <button
+      className="c2 c3"
       data-testid="back"
       onClick={[Function]}
       type="button"
@@ -274,7 +352,7 @@ exports[`<DetailsForm /> matches snapshot 1`] = `
       Voltar
     </button>
     <button
-      className="button"
+      className="c4 c3 c5"
       data-testid="next"
       onClick={[Function]}
       type="button"

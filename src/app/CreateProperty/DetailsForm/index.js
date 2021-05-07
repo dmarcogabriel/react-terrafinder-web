@@ -5,7 +5,7 @@ import api from 'services/api';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import { MdAdd } from 'react-icons/md';
-import Button from 'common/components/Button';
+import Button from 'common/components/atm/Button';
 import { validateArrayOfInputs } from 'utils/validators';
 import { useUser } from 'hooks/useUser';
 import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
@@ -115,7 +115,11 @@ export default function DetailsForm() {
         <div className={classes.col}>
           <p>Cultivo (plantações)</p>
 
-          <Button dataTestId="addFarming" onClick={addFarming}>
+          <Button
+            modifiers="success"
+            dataTestId="addFarming"
+            onClick={addFarming}
+          >
             <MdAdd size={22} />
           </Button>
 
@@ -137,7 +141,11 @@ export default function DetailsForm() {
         <div className={classes.col}>
           <p>Atividades e Destaques</p>
 
-          <Button dataTestId="actButton" onClick={addActivity}>
+          <Button
+            modifiers="success"
+            dataTestId="actButton"
+            onClick={addActivity}
+          >
             <MdAdd size={22} />
           </Button>
 

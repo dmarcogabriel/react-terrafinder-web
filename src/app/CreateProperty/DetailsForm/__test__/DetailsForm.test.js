@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react';
 import { UserProvider } from 'contexts/User';
 import { NotificationProvider } from 'contexts/Notification';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
+import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
 import DetailsForm from '..';
 
 const Comp = () => (
@@ -18,22 +18,22 @@ const Comp = () => (
   </UserProvider>
 );
 
-describe('<DetailsForm />', () => {
+describe('app/CreateProperty/DetailsForm', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Comp />, div);
+    ReactDOM.render(withTheme(<Comp />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Comp />).toJSON();
+    const tree = renderWithTheme(<Comp />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 
   it('should fires go back event', () => {
     const history = createMemoryHistory();
 
-    const { getByTestId } = render(<Comp />);
+    const { getByTestId } = render(withTheme(<Comp />));
 
     const backButton = getByTestId('back');
     fireEvent.click(backButton);
@@ -43,7 +43,7 @@ describe('<DetailsForm />', () => {
 
   describe('activity', () => {
     it('should add activity', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addActivityButton = getByTestId('actButton');
       fireEvent.click(addActivityButton);
@@ -53,7 +53,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should change activity value', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const actInput = getByTestId('actInput-0');
       fireEvent.change(actInput, { target: { value: 'testing' } });
@@ -62,7 +62,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should add 5 activities', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addActivityButton = getByTestId('actButton');
 
@@ -78,7 +78,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should fail to add more than 5 activities', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addActivityButton = getByTestId('actButton');
 
@@ -95,7 +95,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should change the right input', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addActivityButton = getByTestId('actButton');
 
@@ -113,7 +113,7 @@ describe('<DetailsForm />', () => {
 
   describe('farming', () => {
     it('should add farming', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addFarming = getByTestId('addFarming');
       fireEvent.click(addFarming);
@@ -123,7 +123,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should add 5 farmings', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addFarming = getByTestId('addFarming');
       fireEvent.click(addFarming);
@@ -138,7 +138,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should fail fo add more than 5 farmings', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addFarming = getByTestId('addFarming');
       fireEvent.click(addFarming);
@@ -153,7 +153,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should change farming value', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const farmInput = getByTestId('farmInput-0');
       fireEvent.change(farmInput, { target: { value: 'testing' } });
@@ -162,7 +162,7 @@ describe('<DetailsForm />', () => {
     });
 
     it('should change the right input', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const addFarmingButton = getByTestId('addFarming');
 
