@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
-// import { render } from '@testing-library/react';
+import { withTheme, renderWithTheme } from 'helpers/test-helpers/theme';
 import Navigator from '..';
 
-describe('<Navigator />', () => {
+describe('app/CreateProperty/Navigator', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Navigator />, div);
+    ReactDOM.render(withTheme(<Navigator />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  // Add tests here...
+  // todo: add tests here...
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Navigator />).toJSON();
+    const tree = renderWithTheme(<Navigator />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
