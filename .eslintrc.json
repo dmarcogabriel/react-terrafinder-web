@@ -48,7 +48,9 @@
           "services/*",
           "contexts/*",
           "hooks/*",
-          "constants/*"
+          "constants/*",
+          "styles/*",
+          "helpers/*"
         ]
       }
     ],

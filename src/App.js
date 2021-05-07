@@ -12,6 +12,7 @@ import PrivateRoute from 'common/components/PrivateRoute';
 import { USER_KEY } from 'constants/userKey';
 import { NotificationProvider } from 'contexts/Notification';
 import Nofitication from 'common/components/Notification';
+import { ThemeProvider } from 'contexts/Theme';
 import Home from './app/Home';
 import Login from './app/Login';
 import Dashboard from './app/Dashboard';
@@ -21,32 +22,34 @@ export default function App() {
   const storedUser = window.localStorage.getItem(USER_KEY);
 
   return (
-    <UserProvider storedUser={storedUser && JSON.parse(storedUser)}>
-      <NotificationProvider>
-        <Nofitication />
+    <ThemeProvider>
+      <UserProvider storedUser={storedUser && JSON.parse(storedUser)}>
+        <NotificationProvider>
+          <Nofitication />
 
-        <Router>
-          <Switch>
-            <Route path="/home">
-              <Home />
-            </Route>
+          <Router>
+            <Switch>
+              <Route path="/home">
+                <Home />
+              </Route>
 
-            <Route path="/login">
-              <Login />
-            </Route>
+              <Route path="/login">
+                <Login />
+              </Route>
 
-            <PrivateRoute path="/dashboard">
-              <Dashboard />
-            </PrivateRoute>
+              <PrivateRoute path="/dashboard">
+                <Dashboard />
+              </PrivateRoute>
 
-            <PrivateRoute path="/create/property">
-              <CreateProperty />
-            </PrivateRoute>
+              <PrivateRoute path="/create/property">
+                <CreateProperty />
+              </PrivateRoute>
 
-            <Redirect to="/home" />
-          </Switch>
-        </Router>
-      </NotificationProvider>
-    </UserProvider>
+              <Redirect to="/home" />
+            </Switch>
+          </Router>
+        </NotificationProvider>
+      </UserProvider>
+    </ThemeProvider>
   );
 }

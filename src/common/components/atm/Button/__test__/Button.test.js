@@ -1,20 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
-// import { render } from '@testing-library/react';
+import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
 import Button from '..';
 
-describe('<Button />', () => {
+describe('atm/Button', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Button />, div);
+    ReactDOM.render(withTheme(<Button />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  // Add tests here...
+  // todo: add tests here...
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Button />).toJSON();
+    const tree = renderWithTheme(<Button />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });
