@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { NotificationProvider } from 'contexts/Notification';
 import { UserProvider } from 'contexts/User';
+import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
 import UploadPhotos from '..';
 import mockImage from './mockImage.jpg';
 
@@ -18,15 +18,15 @@ const Comp = (props) => (
   </NotificationProvider>
 );
 
-describe('<UploadPhotos />', () => {
+describe('app/CreateProperty/UploadPhotos', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Comp />, div);
+    ReactDOM.render(withTheme(<Comp />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('should open galery', () => {
-    const { getByTestId } = render(<Comp />);
+    const { getByTestId } = render(withTheme(<Comp />));
 
     const uploadInput = getByTestId('uploadInput');
     const mockFn = jest.spyOn(uploadInput, 'click');
@@ -39,7 +39,7 @@ describe('<UploadPhotos />', () => {
 
   // todo: test on change
   it('should fire change file input', () => {
-    const { getByTestId } = render(<Comp />);
+    const { getByTestId } = render(withTheme(<Comp />));
 
     const uploadInput = getByTestId('uploadInput');
     fireEvent.change(uploadInput, { target: { files: [mockImage] } });
@@ -51,7 +51,7 @@ describe('<UploadPhotos />', () => {
 
   describe('drop zone', () => {
     it('should change drop zone opacity', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const dropZone = getByTestId('dropZone');
       fireEvent.dragOver(dropZone);
@@ -60,7 +60,7 @@ describe('<UploadPhotos />', () => {
     });
 
     it('should change drop zone opacity to default', () => {
-      const { getByTestId } = render(<Comp />);
+      const { getByTestId } = render(withTheme(<Comp />));
 
       const dropZone = getByTestId('dropZone');
       fireEvent.dragOver(dropZone);
@@ -71,7 +71,7 @@ describe('<UploadPhotos />', () => {
   });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Comp />).toJSON();
+    const tree = renderWithTheme(<Comp />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

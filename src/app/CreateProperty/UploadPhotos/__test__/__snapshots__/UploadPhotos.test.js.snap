@@ -78,3 +78,155 @@ exports[`<UploadPhotos /> matches snapshot 1`] = `
   </div>
 </div>
 `;
+
+exports[`app/CreateProperty/UploadPhotos matches snapshot 1`] = `
+.c0 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #333;
+}
+
+.c3 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #16a5df;
+}
+
+.c2 {
+  margin: 2rem 0;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column-reverse;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 0 2rem;
+}
+
+.c4 {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.c5 {
+  background: #16a5df;
+  color: #fff;
+}
+
+.c1 {
+  margin: 2rem 0;
+  background: #eee;
+  color: #4b4b4b;
+}
+
+@media (min-width:768px) {
+  .c2 {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 0;
+  }
+}
+
+@media (min-width:768px) {
+  .c4 {
+    margin: 0;
+    padding: 0.75rem 3rem;
+  }
+}
+
+<div>
+  <h2>
+    Imagens do Imóvel
+  </h2>
+  <div
+    data-testid="dropZone"
+    onDragLeave={[Function]}
+    onDragOver={[Function]}
+    onDrop={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+  >
+    <p>
+      Faça o upload ou araste a imagem aqui
+    </p>
+    <input
+      accept="image/png, image/jpg"
+      data-testid="uploadInput"
+      onChange={[Function]}
+      type="file"
+    />
+    <button
+      className="c0 c1"
+      data-testid="uploadButton"
+      onClick={[Function]}
+      type="button"
+    >
+      Upload de Imagens
+    </button>
+    <span>
+      JPG, JPEG, PNG
+    </span>
+    <div>
+      <svg
+        fill="currentColor"
+        height={100}
+        size={100}
+        stroke="currentColor"
+        strokeWidth="0"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width={100}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM14 13v4h-4v-4H7l5-5 5 5h-3z"
+        />
+      </svg>
+    </div>
+    <div />
+  </div>
+  <div
+    className="c2"
+  >
+    <button
+      className="c3 c4"
+      data-testid="back"
+      onClick={[Function]}
+      type="button"
+    >
+      Voltar
+    </button>
+    <button
+      className="c0 c4 c5"
+      data-testid="next"
+      onClick={[Function]}
+      type="button"
+    >
+      Fazer Upload
+    </button>
+  </div>
+</div>
+`;

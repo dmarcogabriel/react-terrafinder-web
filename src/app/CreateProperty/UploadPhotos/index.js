@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import { MdCloudUpload } from 'react-icons/md';
-import Button from 'common/components/Button';
 import { validateFile } from 'utils/validators';
 import { loadBase64Image } from 'utils/fileHelper';
 import { AiFillCloseCircle } from 'react-icons/ai';
@@ -10,6 +9,7 @@ import { NOTIFICATION_TYPES, useNotification } from 'hooks/useNotification';
 import { useUser } from 'hooks/useUser';
 import classes from './UploadPhotos.module.scss';
 import Navigator from '../Navigator';
+import { UploadButton } from './styles';
 
 export default function UploadPhotos() {
   const [opacity, setOpacity] = useState(1);
@@ -127,13 +127,9 @@ export default function UploadPhotos() {
           type="file"
         />
 
-        <Button
-          className={classes.button}
-          dataTestId="uploadButton"
-          onClick={openGalery}
-        >
+        <UploadButton dataTestId="uploadButton" onClick={openGalery}>
           Upload de Imagens
-        </Button>
+        </UploadButton>
 
         <span>JPG, JPEG, PNG</span>
 
