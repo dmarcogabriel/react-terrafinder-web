@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Property from 'common/components/Property';
-import Button from 'common/components/Button';
 import { MdAdd } from 'react-icons/md';
 import { useUser } from 'hooks/useUser';
 import api from 'services/api';
 import { useHistory } from 'react-router-dom';
 import classes from './MyAds.module.scss';
+import { CreateAdButton } from './styles';
 
 export default function MyAds() {
   const { currentUser } = useUser();
@@ -32,15 +32,11 @@ export default function MyAds() {
     <div className={classes.myAds}>
       <h1>Meus anúncios</h1>
 
-      <Button
-        dataTestId="createProperty"
-        className={classes.createButton}
-        onClick={newPropertyAd}
-      >
+      <CreateAdButton dataTestId="createProperty" onClick={newPropertyAd}>
         <MdAdd size={22} />
 
         <p>Criar Anúncio</p>
-      </Button>
+      </CreateAdButton>
 
       <div data-testid="propertyList" className={classes.adsList}>
         {myProperties.map((property, i) => (

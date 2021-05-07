@@ -15,13 +15,13 @@ export default function Select({
   const [defaultValue, setDefaultValue] = useState(value || 'Selecione...');
   const [optionsList, setOptionsList] = useState(options);
 
-  const handleClickOutside = () => {
-    // todo: handle click outside
-    // const { classList } = e.target;
-    // if (!classList.contains('Select_option')) {
-    //   setShowOptions(false);
-    // }
-  };
+  // const handleClickOutside = () => {
+  // todo: handle click outside
+  // const { classList } = e.target;
+  // if (!classList.contains('Select_option')) {
+  //   setShowOptions(false);
+  // }
+  // };
 
   const handleSelectOption = (e) => {
     setOptionsList(

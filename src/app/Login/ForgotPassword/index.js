@@ -1,11 +1,11 @@
 import React from 'react';
-import Button from 'common/components/Button';
+import Button from 'common/components/atm/Button';
 import Input from 'common/components/Input';
 
 import { form, my2, actionButton } from '../Login.module.scss';
 
 export default function ForgotPassword() {
-  const handleEmail = (e) => {
+  const handleEmail = () => {
     // todo: create email state
   };
 

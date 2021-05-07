@@ -62,7 +62,7 @@
         "skipComments": true
       }
     ],
-    "no-unused-vars": "warn",
+    "no-unused-vars": "error",
     "no-underscore-dangle": "off",
     "no-plusplus": "off",
     "no-await-in-loop": "off"

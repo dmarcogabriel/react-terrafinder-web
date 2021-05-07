@@ -8,22 +8,6 @@
     font-size: 2.5rem;
   }
 
-  .createButton {
-    display: flex;
-    margin: 1rem 0;
-    background: $green;
-
-    @media ($desktop) {
-      position: absolute;
-      right: 2rem;
-      top: 9rem;
-    }
-
-    > p {
-      margin-left: 1rem;
-    }
-  }
-
   .adsList {
     margin: 1rem 0;
     display: flex;
