@@ -4,7 +4,21 @@ import { Button as CommonButton } from './Button';
 export default {
   title: 'Common/Button',
   component: CommonButton,
-  argTypes: {},
+  argTypes: {
+    modifiers: {
+      options: ['default', 'primary', 'secondary', 'success', 'custom'],
+    },
+    bg: {
+      name: 'bg',
+      control: { type: 'color' },
+      description: 'Background applied if modifiers value is "custom"',
+    },
+    color: {
+      name: 'color',
+      control: { type: 'color' },
+      description: 'Color applied if modifiers value is "custom"',
+    },
+  },
 };
 
 const Template = (args) => <CommonButton {...args} />;

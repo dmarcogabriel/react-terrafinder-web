@@ -20,22 +20,17 @@ const BaseButton = styled(Button)`
   margin: 1rem 0;
   text-align: center;
 
-  ${({ theme: { breakpoint } }) => css`
+  ${({ theme: { breakpoint, size } }) => css`
     @media (${breakpoint.desktop}) {
       margin: 0;
+      padding: ${size.sm} 3rem;
     }
   `}
 `;
 
 export const BackButton = styled(BaseButton).attrs({
-  modifiers: ['secondary'],
-})`
-  ${({ theme: { breakpoint } }) => css`
-    @media (${breakpoint.desktop}) {
-      font-size: 1.3rem;
-    }
-  `}
-`;
+  modifiers: 'secondary',
+})``;
 
 export const NextButton = styled(BaseButton)`
   ${({ theme: { color } }) => css`

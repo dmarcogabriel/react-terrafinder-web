@@ -18,6 +18,10 @@ const modifierConfig = {
     background: ${color.green.df};
     color: ${color.white.df};
   `,
+  custom: ({ theme: { color: themeColor }, color, bg }) => css`
+    background: ${bg || themeColor.white.df};
+    color: ${color || themeColor.black.df};
+  `,
   // todo: fix rounded button
   rounded: () => css`
     /* border-radius: 20%; */
