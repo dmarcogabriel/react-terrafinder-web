@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { render, waitFor } from '@testing-library/react';
 import api from 'services/api';
+import { withTheme, renderWithTheme } from 'helpers/test-helpers/theme';
 import Property from '..';
 
 jest.mock('react-router-dom', () => ({
@@ -35,7 +35,7 @@ const mockProperty = {
   },
 };
 
-const Comp = (props) => <Property {...props} />;
+const Comp = (props) => withTheme(<Property {...props} />);
 
 describe('<Property />', () => {
   it('renders without crashing', () => {
@@ -95,7 +95,7 @@ describe('<Property />', () => {
   // });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Comp />).toJSON();
+    const tree = renderWithTheme(<Property />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

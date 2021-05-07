@@ -1,6 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Dashboard /> matches snapshot 1`] = `
+.c0 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #62ac43;
+  color: #fff;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 1rem 0;
+}
+
+.c1 > p {
+  margin-left: 1rem;
+}
+
+@media (min-width:768px) {
+  .c1 {
+    position: absolute;
+    right: 2rem;
+    top: 9rem;
+  }
+}
+
 <div>
   <div>
     <div>
@@ -65,7 +96,7 @@ exports[`<Dashboard /> matches snapshot 1`] = `
       Meus anúncios
     </h1>
     <button
-      className="button"
+      className="c0 c1"
       data-testid="createProperty"
       onClick={[Function]}
       type="button"

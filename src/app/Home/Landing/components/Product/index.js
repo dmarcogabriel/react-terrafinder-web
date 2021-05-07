@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'common/components/Button';
+import Button from 'common/components/atm/Button';
 import { MdArrowForward } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
 import classes from './Product.module.scss';

@@ -12,7 +12,7 @@ exports[`app/CreateProperty/Navigator matches snapshot 1`] = `
   color: #16a5df;
 }
 
-.c4 {
+.c3 {
   cursor: pointer;
   text-align: center;
   font-family: Roboto;
@@ -44,7 +44,7 @@ exports[`app/CreateProperty/Navigator matches snapshot 1`] = `
   text-align: center;
 }
 
-.c5 {
+.c4 {
   background: #16a5df;
   color: #fff;
 }
@@ -61,12 +61,7 @@ exports[`app/CreateProperty/Navigator matches snapshot 1`] = `
 @media (min-width:768px) {
   .c2 {
     margin: 0;
-  }
-}
-
-@media (min-width:768px) {
-  .c3 {
-    font-size: 1.3rem;
+    padding: 0.75rem 3rem;
   }
 }
 
@@ -74,14 +69,14 @@ exports[`app/CreateProperty/Navigator matches snapshot 1`] = `
   className="c0"
 >
   <button
-    className="c1 c2 c3"
+    className="c1 c2"
     data-testid="back"
     type="button"
   >
     Voltar
   </button>
   <button
-    className="c4 c2 c5"
+    className="c3 c2 c4"
     data-testid="next"
     type="button"
   >

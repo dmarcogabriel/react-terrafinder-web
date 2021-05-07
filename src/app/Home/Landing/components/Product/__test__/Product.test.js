@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react';
+import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
 import Product from '..';
 
 const mockFn = jest.fn();
@@ -24,12 +24,12 @@ const mockProduct = {
 describe('<Property />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Product {...mockProduct} />, div);
+    ReactDOM.render(withTheme(<Product {...mockProduct} />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('should go to link', () => {
-    const { getByTestId } = render(<Product {...mockProduct} />);
+    const { getByTestId } = render(withTheme(<Product {...mockProduct} />));
 
     const actionButton = getByTestId('actionButton');
     fireEvent.click(actionButton);
@@ -38,7 +38,7 @@ describe('<Property />', () => {
   });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Product {...mockProduct} />).toJSON();
+    const tree = renderWithTheme(<Product {...mockProduct} />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

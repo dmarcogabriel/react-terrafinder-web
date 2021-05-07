@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { NotificationProvider } from 'contexts/Notification';
 import Notification from 'common/components/Notification';
 import api from 'services/api';
+import { withTheme, renderWithTheme } from 'helpers/test-helpers/theme';
 import Register from '..';
 
 let pushResponse;
@@ -30,7 +30,7 @@ const Comp = () => (
 describe('<Register />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Comp />, div);
+    ReactDOM.render(withTheme(<Comp />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
@@ -45,7 +45,7 @@ describe('<Register />', () => {
       )
     );
 
-    const { getByTestId } = render(<Comp />);
+    const { getByTestId } = render(withTheme(<Comp />));
 
     const firstNameInput = getByTestId('firstNameInput');
     const lastNameInput = getByTestId('lastNameInput');
@@ -74,7 +74,7 @@ describe('<Register />', () => {
       .spyOn(api, 'post')
       .mockImplementationOnce(jest.fn(() => Promise.reject()));
 
-    const { getByTestId } = render(<Comp />);
+    const { getByTestId } = render(withTheme(<Comp />));
 
     const firstNameInput = getByTestId('firstNameInput');
     const lastNameInput = getByTestId('lastNameInput');
@@ -97,7 +97,7 @@ describe('<Register />', () => {
   });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Comp />).toJSON();
+    const tree = renderWithTheme(<Comp />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

@@ -47,6 +47,8 @@ export default {
   },
   size: {
     sm: '0.75rem',
+    lg: '1.25rem',
+    full: '100%',
     borderRadius: '0.25rem',
   },
   shadow: '0 0.2rem 0.6rem 0 rgba(0, 0, 0, 0.7)',

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import Button from 'common/components/Button';
+import Button from 'common/components/atm/Button';
 import Input from 'common/components/Input';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';

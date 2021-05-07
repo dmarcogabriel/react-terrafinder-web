@@ -24,17 +24,6 @@
   .buttons {
     display: flex;
     flex-direction: column;
-
-    .button {
-      margin: 1rem 0;
-      background: $blue;
-    }
-
-    .cancelButton {
-      margin: 1rem 0;
-      color: $blue;
-      background: $white;
-    }
   }
 
   > input {

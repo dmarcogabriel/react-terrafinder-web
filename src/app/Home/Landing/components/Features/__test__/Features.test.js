@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { fireEvent, render } from '@testing-library/react';
+import { withTheme, renderWithTheme } from 'helpers/test-helpers/theme';
 import Features from '..';
 
 let pushResponse;
@@ -17,12 +17,12 @@ jest.mock('react-router-dom', () => ({
 describe('<Property />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<Features />, div);
+    ReactDOM.render(withTheme(<Features />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('should to to create property page', () => {
-    const { getByTestId } = render(<Features />);
+    const { getByTestId } = render(withTheme(<Features />));
 
     const createPropertyButton = getByTestId('createProperty');
     fireEvent.click(createPropertyButton);
@@ -32,7 +32,7 @@ describe('<Property />', () => {
   });
 
   it('should to to property list page', () => {
-    const { getByTestId } = render(<Features />);
+    const { getByTestId } = render(withTheme(<Features />));
 
     const findPropertyButton = getByTestId('findProperty');
     fireEvent.click(findPropertyButton);
@@ -42,7 +42,7 @@ describe('<Property />', () => {
   });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<Features />).toJSON();
+    const tree = renderWithTheme(<Features />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

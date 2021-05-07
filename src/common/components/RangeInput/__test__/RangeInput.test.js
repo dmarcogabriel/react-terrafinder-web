@@ -1,18 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer';
 import { render, fireEvent } from '@testing-library/react';
+import { withTheme, renderWithTheme } from 'helpers/test-helpers/theme';
 import RangeInput from '..';
 
 describe('<RangeInput />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<RangeInput />, div);
+    ReactDOM.render(withTheme(<RangeInput />), div);
     ReactDOM.unmountComponentAtNode(div);
   });
 
   it('should change value', () => {
-    const { getByTestId } = render(<RangeInput onChange={() => {}} />);
+    const { getByTestId } = render(
+      withTheme(<RangeInput onChange={() => {}} />)
+    );
 
     const rangeInput = getByTestId('rangeInput');
     const value = getByTestId('value');
@@ -30,7 +32,7 @@ describe('<RangeInput />', () => {
   });
 
   it('should fires cancel event', () => {
-    const { getByTestId } = render(<RangeInput />);
+    const { getByTestId } = render(withTheme(<RangeInput />));
 
     const rangeInput = getByTestId('rangeInput');
     const value = getByTestId('value');
@@ -43,7 +45,7 @@ describe('<RangeInput />', () => {
   });
 
   it('matches snapshot', () => {
-    const tree = renderer.create(<RangeInput />).toJSON();
+    const tree = renderWithTheme(<RangeInput />).toJSON();
     expect(tree).toMatchSnapshot();
   });
 });

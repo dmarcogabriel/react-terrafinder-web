@@ -2,13 +2,42 @@
 
 exports[`<Landing /> matches snapshot 1`] = `
 Array [
-  <div>
+  .c1 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #ffcb08;
+  color: #fff;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  background: #fff;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  width: 100%;
+}
+
+.c2 {
+  font-size: 1rem;
+  padding: 1.25rem;
+}
+
+<div>
     <div>
       <h1>
         Encontre a propriedade ideal para você!
       </h1>
       <div
-        className="Filters__container"
+        className="c0"
         data-testid="filters"
       >
         <div>
@@ -122,7 +151,7 @@ Array [
           </button>
         </div>
         <button
-          className="button searchButton"
+          className="c1 c2"
           data-testid="submitButton"
           onClick={[Function]}
           type="button"
@@ -132,7 +161,18 @@ Array [
       </div>
     </div>
   </div>,
-  <div>
+  .c0 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #333;
+}
+
+<div>
     <h2>
       O que você precisa?
     </h2>
@@ -153,7 +193,7 @@ Array [
           </div>
         </div>
         <button
-          className="button"
+          className="c0"
           data-testid="actionButton"
           onClick={[Function]}
           type="button"
@@ -197,7 +237,7 @@ Array [
           </div>
         </div>
         <button
-          className="button"
+          className="c0"
           data-testid="actionButton"
           onClick={[Function]}
           type="button"
@@ -241,7 +281,7 @@ Array [
           </div>
         </div>
         <button
-          className="button"
+          className="c0"
           data-testid="actionButton"
           onClick={[Function]}
           type="button"
@@ -271,7 +311,18 @@ Array [
       </div>
     </div>
   </div>,
-  <div>
+  .c0 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #333;
+}
+
+<div>
     <div />
     <h1>
       Funcionalidades e Benefícios do Terrafinder
@@ -289,7 +340,7 @@ Array [
         </p>
         <div>
           <button
-            className="button"
+            className="c0"
             data-testid="createProperty"
             onClick={[Function]}
             type="button"
@@ -317,7 +368,7 @@ Array [
             </svg>
           </button>
           <button
-            className="button"
+            className="c0"
             data-testid="findProperty"
             onClick={[Function]}
             type="button"

@@ -113,7 +113,7 @@
   "lint-staged": {
     "*.js": [
       "eslint ./src --fix",
-      "jest --bail --watchAll=false"
+      "jest --bail --findRelatedTests"
     ],
     "*.scss": [
       "stylelint './src/**/*scss' --fix"

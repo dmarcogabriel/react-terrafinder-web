@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Property /> matches snapshot 1`] = `
+.c0 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #333;
+}
+
 <div>
   <div>
     <img
@@ -17,7 +28,7 @@ exports[`<Property /> matches snapshot 1`] = `
     </div>
   </div>
   <button
-    className="button"
+    className="c0"
     data-testid="actionButton"
     onClick={[Function]}
     type="button"

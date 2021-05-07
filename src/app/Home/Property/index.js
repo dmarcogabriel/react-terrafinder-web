@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Button from 'common/components/Button';
+import Button from 'common/components/atm/Button';
 import { useRouteMatch } from 'react-router-dom';
 import api from 'services/api';
 import { moneyFormat, farmingFormat } from 'utils/formatters';

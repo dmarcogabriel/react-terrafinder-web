@@ -1,6 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Property /> matches snapshot 1`] = `
+.c0 {
+  cursor: pointer;
+  text-align: center;
+  font-family: Roboto;
+  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  background: #fff;
+  color: #333;
+}
+
 <div>
   <div />
   <h1>
@@ -19,7 +30,7 @@ exports[`<Property /> matches snapshot 1`] = `
       </p>
       <div>
         <button
-          className="button"
+          className="c0"
           data-testid="createProperty"
           onClick={[Function]}
           type="button"
@@ -47,7 +58,7 @@ exports[`<Property /> matches snapshot 1`] = `
           </svg>
         </button>
         <button
-          className="button"
+          className="c0"
           data-testid="findProperty"
           onClick={[Function]}
           type="button"

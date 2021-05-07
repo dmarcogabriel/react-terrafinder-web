@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'common/components/Modal';
 import Input from 'common/components/Input';
-import Button from 'common/components/Button';
+import Button from 'common/components/atm/Button';
 import classes from './RangeInput.module.scss';
 
 export default function RangeInput({
