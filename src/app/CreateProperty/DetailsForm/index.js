@@ -32,19 +32,11 @@ export default function DetailsForm() {
     async onSubmit() {
       if (validateArrayOfInputs(activities) && validateArrayOfInputs(farming)) {
         try {
-          const res = await api.post(
-            'properties',
-            {
-              ...values,
-              ...state.values,
-              user: currentUser._id,
-            },
-            {
-              headers: {
-                'x-access-token': currentUser.token,
-              },
-            }
-          );
+          const { data: response } = await api.post('properties', {
+            ...values,
+            ...state.values,
+            user: currentUser._id,
+          });
 
           showNotification(
             'Propriedade criada com sucesso!',
@@ -52,9 +44,10 @@ export default function DetailsForm() {
           );
 
           history.push(
-            `/create/property/upload-photos/${res.data.property._id}?step=3`
+            `/create/property/upload-photos/${response.data.property._id}?step=3`
           );
         } catch (err) {
+          console.error('[ERROR]: ', err);
           showNotification(
             'Ops, ocorreu um erro na operação',
             NOTIFICATION_TYPES.ERROR

@@ -25,9 +25,8 @@ export const UserProvider = ({ children, storedUser }) => {
     setLoadingUser(true);
 
     try {
-      const headers = { 'x-access-token': storedUser.token };
-
-      const res = await api.get(`users/${storedUser._id}`, { headers });
+      const { data: res } = await api.get(`users/${storedUser._id}`);
+      console.log(res.data);
       setCurrentUser({ ...res.data.user, token: storedUser.token });
       setLoadingUser(false);
     } catch (err) {
@@ -41,8 +40,11 @@ export const UserProvider = ({ children, storedUser }) => {
   };
 
   useEffect(() => {
+    console.log('<UserProvider /> storedUser: ', storedUser);
     if (storedUser) loadUserData();
   }, []);
+
+  console.log('<UserProvider /> currentUser: ', currentUser);
 
   return (
     <Context.Provider value={{ currentUser, login, logout, updateUser }}>

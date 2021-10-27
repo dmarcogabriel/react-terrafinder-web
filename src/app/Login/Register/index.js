@@ -33,7 +33,7 @@ export default function Register() {
     }),
     async onSubmit() {
       try {
-        await api.post('users', { values });
+        await api.post('users', { ...values });
 
         showNotification(
           'Cadastro efetuado com sucesso',

@@ -21,6 +21,8 @@ import CreateProperty from './app/CreateProperty';
 export default function App() {
   const storedUser = window.localStorage.getItem(USER_KEY);
 
+  console.log('<App /> storedUser', storedUser);
+
   return (
     <ThemeProvider>
       <UserProvider storedUser={storedUser && JSON.parse(storedUser)}>

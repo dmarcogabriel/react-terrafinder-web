@@ -44,7 +44,6 @@ export const Dashboard = () => {
         {
           headers: {
             'Content-Type': 'multipart/form-data',
-            'x-access-token': currentUser.token,
           },
         }
       );
@@ -57,6 +56,7 @@ export const Dashboard = () => {
   };
 
   useEffect(() => {
+    console.log('Current User: ', currentUser);
     if (!currentUser.avatar) {
       setShowModal(true);
     }

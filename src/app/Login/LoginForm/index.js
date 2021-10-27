@@ -24,14 +24,15 @@ export default function LoginForm() {
         .required('Campo Obrigatório'),
     }),
     async onSubmit() {
-      const response = await api.post('login', values);
+      const { data: response } = await api.post('login', values);
 
-      const userData = await api.get(`users/${response.data.userId}`, {
-        headers: {
-          'x-access-token': response.data.token,
-        },
-      });
+      const headers = { 'x-access-token': response.data.token };
 
+      const { data: userData } = await api.get(
+        `users/${response.data.userId}`,
+        { headers }
+      );
+      console.log('User data', userData);
       login({ ...userData.data.user, token: response.data.token });
       history.replace('/dashboard');
     },

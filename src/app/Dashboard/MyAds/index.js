@@ -17,9 +17,13 @@ export default function MyAds() {
   };
 
   const loadMyProperties = async () => {
-    const res = await api.get(`properties/user/${currentUser._id}`);
-
-    setMyProperties(res.data.properties);
+    try {
+      console.log('User loggado', currentUser);
+      const { data: res } = await api.get(`properties/user/${currentUser._id}`);
+      setMyProperties(res.data.properties);
+    } catch (error) {
+      setMyProperties([]);
+    }
   };
 
   const newPropertyAd = () => history.push('/create/property?step=1');
