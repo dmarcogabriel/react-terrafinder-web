@@ -1,0 +1,208 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/templates/HomePageTemplate/Header logged matches snapshot 1`] = `
+.c0 {
+  height: 4rem;
+  cursor: pointer;
+}
+
+<header
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-zhueze-MuiPaper-root-MuiAppBar-root"
+  data-testid="app-bar"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-nb5wfo-MuiToolbar-root"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="logo"
+        className="c0"
+        src="\\"Logo.png\\""
+      />
+    </a>
+    <button
+      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeLarge css-mf1cb5-MuiButtonBase-root-MuiIconButton-root"
+      data-testid="menuButton"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="MenuIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        />
+      </svg>
+      <span
+        className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+  <div
+    className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mzps2i-MuiToolbar-root"
+  >
+    <img
+      alt="logo desktop"
+      className="c0"
+      src="\\"Logo.svg\\""
+    />
+    <a
+      href="/dashboard"
+    >
+      Meus anúncios
+    </a>
+    <a
+      href="/create/property"
+    >
+      Quero anunciar meu imóvel
+    </a>
+    <a
+      href="/home/search-property"
+    >
+      Procurar Imóvel
+    </a>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-jgi19-MuiTypography-root"
+      data-testid="greetings"
+    >
+      Olá, Tester
+    </p>
+    <button
+      className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root css-16nuxne-MuiButtonBase-root-MuiButton-root"
+      data-testid="logoutButton"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      Logout
+      <span
+        className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+      />
+    </button>
+  </div>
+</header>
+`;
+
+exports[`common/components/templates/HomePageTemplate/Header unlogged matches snapshot 1`] = `
+.c0 {
+  height: 4rem;
+  cursor: pointer;
+}
+
+<header
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-zhueze-MuiPaper-root-MuiAppBar-root"
+  data-testid="app-bar"
+>
+  <div
+    className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-nb5wfo-MuiToolbar-root"
+  >
+    <a
+      href="/"
+    >
+      <img
+        alt="logo"
+        className="c0"
+        src="\\"Logo.png\\""
+      />
+    </a>
+    <button
+      className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeLarge css-mf1cb5-MuiButtonBase-root-MuiIconButton-root"
+      data-testid="menuButton"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="MenuIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+        />
+      </svg>
+    </button>
+  </div>
+  <div
+    className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mzps2i-MuiToolbar-root"
+  >
+    <img
+      alt="logo desktop"
+      className="c0"
+      src="\\"Logo.svg\\""
+    />
+    <button
+      className="MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-4umy8a-MuiButtonBase-root-MuiButton-root"
+      disabled={false}
+      onBlur={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        Fale conosco!!
+      </p>
+    </button>
+  </div>
+</header>
+`;
