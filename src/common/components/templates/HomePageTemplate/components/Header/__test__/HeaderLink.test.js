@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { fireEvent, render } from '@testing-library/react';
 import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
 import { HeaderLink } from '../HeaderLink';
 

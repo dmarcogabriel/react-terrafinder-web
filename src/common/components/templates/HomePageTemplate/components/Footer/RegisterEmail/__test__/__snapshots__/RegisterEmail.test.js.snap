@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RegisterEmail /> matches snapshot 1`] = `
+<form>
+  <input
+    data-testid="emailInput"
+    onChange={[Function]}
+    placeholder="Endereço de email"
+    type="email"
+    value=""
+  />
+  <button
+    data-testid="registerEmail"
+    onClick={[Function]}
+    type="button"
+  >
+    Cadastrar
+  </button>
+</form>
+`;
