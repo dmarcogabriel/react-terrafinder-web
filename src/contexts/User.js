@@ -15,6 +15,8 @@ export const UserProvider = ({ children, storedUser }) => {
     setCurrentUser({ ...user, ...data });
   };
 
+  const userIsLogged = () => !!currentUser;
+
   const logout = () => {
     window.localStorage.removeItem(USER_KEY);
     setCurrentUser(null);
@@ -40,14 +42,13 @@ export const UserProvider = ({ children, storedUser }) => {
   };
 
   useEffect(() => {
-    console.log('<UserProvider /> storedUser: ', storedUser);
     if (storedUser) loadUserData();
   }, []);
 
-  console.log('<UserProvider /> currentUser: ', currentUser);
-
   return (
-    <Context.Provider value={{ currentUser, login, logout, updateUser }}>
+    <Context.Provider
+      value={{ currentUser, login, logout, updateUser, userIsLogged }}
+    >
       {!loadingUser && children}
     </Context.Provider>
   );

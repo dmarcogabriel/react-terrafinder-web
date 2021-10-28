@@ -18,3 +18,16 @@ Banco de Dados: SQLite
 
 Controle de versão: Github
 
+ ```json
+ ...
+ "lint-staged": {
+    "*.js": [
+      "eslint ./src --fix",
+      "jest --bail --findRelatedTests"
+    ],
+    "*.scss": [
+      "stylelint './src/**/*.scss' --fix"
+    ]
+  }
+  ...
+```

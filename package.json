@@ -12,8 +12,7 @@
     "start": "node server.js",
     "test": "jest --watch",
     "test:cov": "jest --coverage",
-    "lint": "eslint ./src --fix && yarn lint:css",
-    "lint:css": "stylelint './src/**/*.scss' --fix",
+    "lint": "eslint ./src --fix",
     "css:build": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
     "generate": "hygen",
     "storybook": "start-storybook -p 6006 -s public",
@@ -45,6 +44,11 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.5.0",
+    "@emotion/styled": "^11.3.0",
+    "@mui/icons-material": "^5.0.5",
+    "@mui/material": "^5.0.6",
+    "@mui/styled-engine-sc": "^5.0.4",
     "@testing-library/jest-dom": "^5.11.6",
     "@testing-library/react": "^11.1.2",
     "@testing-library/user-event": "^12.2.0",

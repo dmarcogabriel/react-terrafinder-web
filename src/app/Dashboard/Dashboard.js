@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Header from 'common/components/Header';
 import Footer from 'common/components/Footer';
 import Modal from 'common/components/Modal';
-import { Route, Switch } from 'react-router-dom';
 import { useUser } from 'hooks/useUser';
 import api from 'services/api';
 import { loadBase64Image } from 'utils/fileHelper';
 import { useTheme } from 'hooks/useTheme';
+import Header from '../Home/components/Header';
 import classes from './Dashboard.module.scss';
 import MyAds from './MyAds';
 import { Button } from './styles';
@@ -66,13 +65,7 @@ export const Dashboard = () => {
     <>
       <div className={classes.dashboard}>
         <Header />
-
-        <Switch>
-          <Route path="/">
-            <MyAds />
-          </Route>
-        </Switch>
-
+        <MyAds />
         <Footer />
       </div>
 

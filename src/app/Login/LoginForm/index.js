@@ -6,9 +6,10 @@ import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import api from 'services/api';
 import { useUser } from 'hooks/useUser';
-import { form, actionButton, my, my2 } from '../Login.module.scss';
+import { form, actionButton, my, my2 } from '../components/Login.module.scss';
+import { LoginContainer } from '../components';
 
-export default function LoginForm() {
+export const LoginForm = () => {
   const { login } = useUser();
   const history = useHistory();
 
@@ -39,39 +40,41 @@ export default function LoginForm() {
   });
 
   return (
-    <div className={form}>
-      <h2>Faça login para acessar seu painel</h2>
+    <LoginContainer>
+      <div className={form}>
+        <h2>Faça login para acessar seu painel</h2>
 
-      <p>
-        Não tem conta ainda?
-        <Link to="/login/register"> Cadastre-se aqui</Link>
-      </p>
-
-      <div className={my2}>
-        <Input
-          label="E-mail"
-          value={values.email}
-          onChange={handleChange('email')}
-          errorMessage={errors.email}
-        />
-
-        <Input
-          label="Senha"
-          type="password"
-          value={values.password}
-          onChange={handleChange('password')}
-          errorMessage={errors.password}
-        />
-
-        <p className={my}>
-          Esqueceu sua senha?
-          <Link to="/login/forgot-password">Clique aqui para redefinir</Link>
+        <p>
+          Não tem conta ainda?
+          <Link to="/register"> Cadastre-se aqui</Link>
         </p>
 
-        <Button className={actionButton} onClick={handleSubmit}>
-          Fazer Login
-        </Button>
+        <div className={my2}>
+          <Input
+            label="E-mail"
+            value={values.email}
+            onChange={handleChange('email')}
+            errorMessage={errors.email}
+          />
+
+          <Input
+            label="Senha"
+            type="password"
+            value={values.password}
+            onChange={handleChange('password')}
+            errorMessage={errors.password}
+          />
+
+          <p className={my}>
+            Esqueceu sua senha?
+            <Link to="/forgot-password">Clique aqui para redefinir</Link>
+          </p>
+
+          <Button className={actionButton} onClick={handleSubmit}>
+            Fazer Login
+          </Button>
+        </div>
       </div>
-    </div>
+    </LoginContainer>
   );
-}
+};

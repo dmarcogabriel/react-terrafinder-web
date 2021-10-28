@@ -11,8 +11,9 @@ import { useUser } from 'hooks/useUser';
 import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import classes from './DetailsForm.module.scss';
 import Navigator from '../Navigator';
+import { CreatePropertyContainer } from '../components';
 
-export default function DetailsForm() {
+export const DetailsForm = () => {
   const { state } = useLocation();
   const [farming, setFarming] = useState([{ value: '', error: '' }]);
   const [activities, setActivities] = useState([{ value: '', error: '' }]);
@@ -44,7 +45,7 @@ export default function DetailsForm() {
           );
 
           history.push(
-            `/create/property/upload-photos/${response.data.property._id}?step=3`
+            `/create-property/upload-photos/${response.data.property._id}?step=3`
           );
         } catch (err) {
           console.error('[ERROR]: ', err);
@@ -87,82 +88,84 @@ export default function DetailsForm() {
   const goBack = () => history.goBack();
 
   return (
-    <div className={classes.detailsForm}>
-      <div className={classes.inlineInputs}>
-        <Input
-          label="Quanto quer pela propriedade?"
-          type="number"
-          value={values.amount}
-          onChange={handleChange('amount')}
-          errorMessage={errors.amount}
-        />
-        <Input
-          label="Qual o tamanho da propriedade (em equitares)"
-          value={values.size}
-          onChange={handleChange('size')}
-          errorMessage={errors.size}
-        />
-      </div>
+    <CreatePropertyContainer>
+      <div className={classes.detailsForm}>
+        <div className={classes.inlineInputs}>
+          <Input
+            label="Quanto quer pela propriedade?"
+            type="number"
+            value={values.amount}
+            onChange={handleChange('amount')}
+            errorMessage={errors.amount}
+          />
+          <Input
+            label="Qual o tamanho da propriedade (em equitares)"
+            value={values.size}
+            onChange={handleChange('size')}
+            errorMessage={errors.size}
+          />
+        </div>
 
-      <div className={classes.inlineInputs}>
-        <div className={classes.col}>
-          <p>Cultivo (plantações)</p>
+        <div className={classes.inlineInputs}>
+          <div className={classes.col}>
+            <p>Cultivo (plantações)</p>
 
-          <Button
-            modifiers="success"
-            dataTestId="addFarming"
-            onClick={addFarming}
-          >
-            <MdAdd size={22} />
-          </Button>
+            <Button
+              modifiers="success"
+              dataTestId="addFarming"
+              onClick={addFarming}
+            >
+              <MdAdd size={22} />
+            </Button>
 
-          <div data-testid="farms">
-            {farming.map((farm, i) => (
-              <div data-testid={`farm-${i}`} key={String(i)}>
-                <Input
-                  dataTestId={`farmInput-${i}`}
-                  key={String(i)}
-                  value={farm.value}
-                  onChange={(e) => handleChangeFarm(e, i)}
-                  errorMessage={farm.error}
-                />
-              </div>
-            ))}
+            <div data-testid="farms">
+              {farming.map((farm, i) => (
+                <div data-testid={`farm-${i}`} key={String(i)}>
+                  <Input
+                    dataTestId={`farmInput-${i}`}
+                    key={String(i)}
+                    value={farm.value}
+                    onChange={(e) => handleChangeFarm(e, i)}
+                    errorMessage={farm.error}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className={classes.col}>
+            <p>Atividades e Destaques</p>
+
+            <Button
+              modifiers="success"
+              dataTestId="actButton"
+              onClick={addActivity}
+            >
+              <MdAdd size={22} />
+            </Button>
+
+            <div data-testid="acts">
+              {activities.map((act, i) => (
+                <div key={String(i)} data-testid={`act-${i}`}>
+                  <Input
+                    dataTestId={`actInput-${i}`}
+                    key={String(i)}
+                    value={act.value}
+                    onChange={(e) => handleChangeActivity(e, i)}
+                    errorMessage={act.error}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        <div className={classes.col}>
-          <p>Atividades e Destaques</p>
-
-          <Button
-            modifiers="success"
-            dataTestId="actButton"
-            onClick={addActivity}
-          >
-            <MdAdd size={22} />
-          </Button>
-
-          <div data-testid="acts">
-            {activities.map((act, i) => (
-              <div key={String(i)} data-testid={`act-${i}`}>
-                <Input
-                  dataTestId={`actInput-${i}`}
-                  key={String(i)}
-                  value={act.value}
-                  onChange={(e) => handleChangeActivity(e, i)}
-                  errorMessage={act.error}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+        <Navigator
+          onBack={goBack}
+          onNext={handleSubmit}
+          nextButtonText="Cadastrar"
+        />
       </div>
-
-      <Navigator
-        onBack={goBack}
-        onNext={handleSubmit}
-        nextButtonText="Cadastrar"
-      />
-    </div>
+    </CreatePropertyContainer>
   );
-}
+};

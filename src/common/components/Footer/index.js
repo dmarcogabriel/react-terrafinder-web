@@ -26,16 +26,16 @@ export default function Footer() {
 
           <ul>
             <li className={text}>
-              <Link to="/home">Página Inicial</Link>
+              <Link to="/">Página Inicial</Link>
             </li>
             <li className={text}>
-              <Link to="/home/about">Quem somos</Link>
+              <Link to="/about">Quem somos</Link>
             </li>
             <li className={text}>
-              <Link to="/home/privacy-policy">Política de privacidade</Link>
+              <Link to="/privacy-policy">Política de privacidade</Link>
             </li>
             <li className={text}>
-              <Link to="/home/support">Fale Conosco</Link>
+              <Link to="/support">Fale Conosco</Link>
             </li>
           </ul>
         </div>
@@ -48,7 +48,7 @@ export default function Footer() {
               <Link to="/login">Quero anunciar meu imóvel</Link>
             </li>
             <li className={text}>
-              <Link to="/home/search-property">Quero comprar um imóvel</Link>
+              <Link to="/search-property">Quero comprar um imóvel</Link>
             </li>
             <li className={text}>
               <Link to="/home">Preços e planos</Link>

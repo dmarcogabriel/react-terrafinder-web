@@ -8,16 +8,17 @@ import Plans from './components/Plans';
 import Product from './components/Product';
 import productImg from './static/product.jpg';
 import PRODUCT_CARDS from './productCards';
+import { PageTemplate } from '../components';
 
-export default function Landing() {
+export const Landing = () => {
   const history = useHistory();
 
   const goPropertiesListWithFilters = (e) => {
-    history.push(`/home/search-property?${queryString.stringify(e)}`);
+    history.push(`/search-property?${queryString.stringify(e)}`);
   };
 
   return (
-    <>
+    <PageTemplate>
       <div className={classes.background}>
         <div className={classes.content}>
           <h1 className={classes.title}>
@@ -44,6 +45,6 @@ export default function Landing() {
       <Features />
 
       <Plans />
-    </>
+    </PageTemplate>
   );
-}
+};

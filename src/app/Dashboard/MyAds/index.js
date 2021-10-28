@@ -26,7 +26,7 @@ export default function MyAds() {
     }
   };
 
-  const newPropertyAd = () => history.push('/create/property?step=1');
+  const newPropertyAd = () => history.push('/create-property?step=1');
 
   useEffect(() => {
     loadMyProperties();

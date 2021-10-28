@@ -9,8 +9,9 @@ import { NOTIFICATION_TYPES, useNotification } from 'hooks/useNotification';
 import classes from './UploadPhotos.module.scss';
 import Navigator from '../Navigator';
 import { UploadButton } from './styles';
+import { CreatePropertyContainer } from '../components';
 
-export default function UploadPhotos() {
+export const UploadPhotos = () => {
   const [opacity, setOpacity] = useState(1);
   const [selectedFiles, setSelectedFiles] = useState([]);
   const [, setUploading] = useState(false); // todo: show modal
@@ -101,66 +102,68 @@ export default function UploadPhotos() {
   };
 
   return (
-    <div className={classes.uploadPhotos}>
-      <h2>Imagens do Imóvel</h2>
+    <CreatePropertyContainer>
+      <div className={classes.uploadPhotos}>
+        <h2>Imagens do Imóvel</h2>
 
-      <div
-        data-testid="dropZone"
-        className={classes.dropZone}
-        onDrop={handleDrop}
-        onDragOver={handleDragOver}
-        onDragLeave={handleDragLeave}
-        style={{ opacity }}
-      >
-        <p className={classes.helperText}>
-          Faça o upload ou araste a imagem aqui
-        </p>
+        <div
+          data-testid="dropZone"
+          className={classes.dropZone}
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          style={{ opacity }}
+        >
+          <p className={classes.helperText}>
+            Faça o upload ou araste a imagem aqui
+          </p>
 
-        <input
-          data-testid="uploadInput"
-          onChange={handleChangeFileInput}
-          ref={inputRef}
-          accept="image/png, image/jpg"
-          type="file"
-        />
+          <input
+            data-testid="uploadInput"
+            onChange={handleChangeFileInput}
+            ref={inputRef}
+            accept="image/png, image/jpg"
+            type="file"
+          />
 
-        <UploadButton dataTestId="uploadButton" onClick={openGalery}>
-          Upload de Imagens
-        </UploadButton>
+          <UploadButton dataTestId="uploadButton" onClick={openGalery}>
+            Upload de Imagens
+          </UploadButton>
 
-        <span>JPG, JPEG, PNG</span>
+          <span>JPG, JPEG, PNG</span>
 
-        {!selectedFiles.length && (
-          <div className={classes.icon}>
-            <MdCloudUpload size={100} />
-          </div>
-        )}
-
-        <div className={classes.previewImages}>
-          {selectedFiles.map((file, i) => (
-            <div data-testid={`image-${i}`} key={String(i)}>
-              <button
-                data-testid={`delete-${i}`}
-                type="button"
-                onClick={() => removeImage(i)}
-              >
-                <AiFillCloseCircle
-                  size={26}
-                  className={classes.removeImageIcon}
-                />
-              </button>
-
-              <img src={file.data} alt={file.name} />
+          {!selectedFiles.length && (
+            <div className={classes.icon}>
+              <MdCloudUpload size={100} />
             </div>
-          ))}
-        </div>
-      </div>
+          )}
 
-      <Navigator
-        nextButtonText="Fazer Upload"
-        onBack={goBack}
-        onNext={uploadPhotos}
-      />
-    </div>
+          <div className={classes.previewImages}>
+            {selectedFiles.map((file, i) => (
+              <div data-testid={`image-${i}`} key={String(i)}>
+                <button
+                  data-testid={`delete-${i}`}
+                  type="button"
+                  onClick={() => removeImage(i)}
+                >
+                  <AiFillCloseCircle
+                    size={26}
+                    className={classes.removeImageIcon}
+                  />
+                </button>
+
+                <img src={file.data} alt={file.name} />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <Navigator
+          nextButtonText="Fazer Upload"
+          onBack={goBack}
+          onNext={uploadPhotos}
+        />
+      </div>
+    </CreatePropertyContainer>
   );
-}
+};

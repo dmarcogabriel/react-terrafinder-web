@@ -9,8 +9,9 @@ import { useHistory } from 'react-router-dom';
 import classes from './GeneralForm.module.scss';
 import Navigator from '../Navigator';
 import PROPERTY_KINDS from './propertyKinds';
+import { CreatePropertyContainer } from '../components';
 
-export default function GeneralForm() {
+export const GeneralForm = () => {
   const { currentUser } = useUser();
   const history = useHistory();
 
@@ -34,73 +35,76 @@ export default function GeneralForm() {
       cep: string().required('Campo obrigatório'),
     }),
     async onSubmit() {
-      history.push('/create/property/details?step=2', { values });
+      console.log('%cEntrou aqui', 'color: cyan');
+      history.push('/create-property/details?step=2', { values });
     },
   });
 
   return (
-    <div className={classes.generalForm}>
-      <div className={classes.inlineInputs}>
-        <Input
-          dataTestId="propNameInput"
-          label="Nome da Propriedade"
-          value={values.name}
-          onChange={handleChange('name')}
-          errorMessage={errors.name}
+    <CreatePropertyContainer>
+      <div className={classes.generalForm}>
+        <div className={classes.inlineInputs}>
+          <Input
+            dataTestId="propNameInput"
+            label="Nome da Propriedade"
+            value={values.name}
+            onChange={handleChange('name')}
+            errorMessage={errors.name}
+          />
+          <Input
+            dataTestId="ownerNameInput"
+            label="Nome do Proprietário"
+            value={values.ownerName}
+            onChange={handleChange('ownerName')}
+            errorMessage={errors.ownerName}
+          />
+        </div>
+
+        <TextArea
+          dataTestId="descInput"
+          label="Descrição"
+          value={values.description}
+          onChange={handleChange('description')}
+          errorMessage={errors.description}
         />
-        <Input
-          dataTestId="ownerNameInput"
-          label="Nome do Proprietário"
-          value={values.ownerName}
-          onChange={handleChange('ownerName')}
-          errorMessage={errors.ownerName}
+        <Select
+          dataTestId="propertyKind"
+          valueDataTestId="propertyKindValue"
+          label="Tipo de Imóvel"
+          options={PROPERTY_KINDS}
+          value={values.propertyKind}
+          onChange={(e) => handleChange('propertyKind')(e.name)}
+          errorMessage={errors.propertyKind}
         />
+
+        <div className={classes.inlineInputs}>
+          <Input
+            dataTestId="stateInput"
+            label="Estado (em que o imóvel se encontra)"
+            value={values.state}
+            onChange={handleChange('state')}
+            maxLength={2}
+            errorMessage={errors.state}
+          />
+          <Input
+            dataTestId="nearbyInput"
+            label="Cidade Mais Próxima ao imóvel"
+            value={values.nearbyCity}
+            onChange={handleChange('nearbyCity')}
+            errorMessage={errors.nearbyCity}
+          />
+        </div>
+
+        <Input
+          dataTestId="cepInput"
+          label="CEP da Propriedade"
+          value={values.cep}
+          onChange={handleChange('cep')}
+          errorMessage={errors.cep}
+        />
+
+        <Navigator onBack={history.goBack} onNext={handleSubmit} />
       </div>
-
-      <TextArea
-        dataTestId="descInput"
-        label="Descrição"
-        value={values.description}
-        onChange={handleChange('description')}
-        errorMessage={errors.description}
-      />
-      <Select
-        dataTestId="propertyKind"
-        valueDataTestId="propertyKindValue"
-        label="Tipo de Imóvel"
-        options={PROPERTY_KINDS}
-        value={values.propertyKind}
-        onChange={(e) => handleChange('propertyKind')(e.name)}
-        errorMessage={errors.propertyKind}
-      />
-
-      <div className={classes.inlineInputs}>
-        <Input
-          dataTestId="stateInput"
-          label="Estado (em que o imóvel se encontra)"
-          value={values.state}
-          onChange={handleChange('state')}
-          maxLength={2}
-          errorMessage={errors.state}
-        />
-        <Input
-          dataTestId="nearbyInput"
-          label="Cidade Mais Próxima ao imóvel"
-          value={values.nearbyCity}
-          onChange={handleChange('nearbyCity')}
-          errorMessage={errors.nearbyCity}
-        />
-      </div>
-
-      <Input
-        dataTestId="cepInput"
-        label="CEP da Propriedade"
-        value={values.cep}
-        onChange={handleChange('cep')}
-        errorMessage={errors.cep}
-      />
-
-      <Navigator onBack={history.goBack} onNext={handleSubmit} />
-    </div>
+    </CreatePropertyContainer>
   );
-}
+};
