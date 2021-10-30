@@ -1,0 +1,375 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`common/components/templates/HomePageTemplate matches snapshot 1`] = `
+Array [
+  .c0 {
+  height: 4rem;
+  cursor: pointer;
+}
+
+<header
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionFixed mui-fixed css-zhueze-MuiPaper-root-MuiAppBar-root"
+    data-testid="app-bar"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-nb5wfo-MuiToolbar-root"
+    >
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        <img
+          alt="logo"
+          className="c0"
+          src="\\"Logo.png\\""
+        />
+      </a>
+      <button
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeLarge css-mf1cb5-MuiButtonBase-root-MuiIconButton-root"
+        data-testid="menuButton"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="MenuIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mzps2i-MuiToolbar-root"
+    >
+      <img
+        alt="logo desktop"
+        className="c0"
+        src="\\"Logo.svg\\""
+      />
+      <button
+        className="MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-4umy8a-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+        >
+          Fale conosco!!
+        </p>
+      </button>
+    </div>
+  </header>,
+  <footer
+    className="MuiBox-root css-108tvhz"
+  >
+    <hr
+      className="MuiDivider-root MuiDivider-fullWidth css-tz2ti8-MuiDivider-root"
+    />
+    <div
+      className="MuiBox-root css-zitybv"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-15anx50-MuiTypography-root"
+      >
+        Terrafinder
+      </h3>
+      <ul
+        className="MuiList-root MuiList-padding css-12n6fjr-MuiList-root"
+      >
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-xqtpgv-MuiTypography-root"
+        >
+          Institucional
+        </h6>
+        <li
+          className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+          disabled={false}
+        >
+          <div
+            className="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+            data-testid="link-t1-l1"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Página Inicial
+          </div>
+        </li>
+        <li
+          className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+          disabled={false}
+        >
+          <div
+            className="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+            data-testid="link-t1-l2"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Quem somos
+          </div>
+        </li>
+        <li
+          className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+          disabled={false}
+        >
+          <div
+            className="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+            data-testid="link-t1-l3"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Política de privacidade
+          </div>
+        </li>
+        <li
+          className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+          disabled={false}
+        >
+          <div
+            className="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+            data-testid="link-t1-l4"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Fale Conosco
+          </div>
+        </li>
+      </ul>
+      <ul
+        className="MuiList-root MuiList-padding css-12n6fjr-MuiList-root"
+      >
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-xqtpgv-MuiTypography-root"
+        >
+          Funcionalidades
+        </h6>
+        <li
+          className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+          disabled={false}
+        >
+          <div
+            className="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+            data-testid="link-t2-l1"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Quero anunciar meu imóvel
+          </div>
+        </li>
+        <li
+          className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+          disabled={false}
+        >
+          <div
+            className="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+            data-testid="link-t2-l2"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Quero comprar um imóvel
+          </div>
+        </li>
+        <li
+          className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+          disabled={false}
+        >
+          <div
+            className="MuiListItemButton-root MuiListItemButton-gutters MuiButtonBase-root css-cvhtoe-MuiButtonBase-root-MuiListItemButton-root"
+            data-testid="link-t2-l3"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Preços e planos
+          </div>
+        </li>
+      </ul>
+      <h6
+        className="MuiTypography-root MuiTypography-h6 css-xqtpgv-MuiTypography-root"
+      >
+        Fique por dentro das novidades!
+      </h6>
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-15wu8wo-MuiTypography-root"
+      >
+        Se inscreva em nossa newsletter para receber os anúncios com os melhores preços!
+      </p>
+      <form
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-np4jd-MuiPaper-root"
+        noValidate={true}
+        onSubmit={[Function]}
+      >
+        <div
+          className="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth css-13bnupw-MuiInputBase-root"
+          onClick={[Function]}
+        >
+          <input
+            aria-invalid={false}
+            className="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+            data-testid="emailInput"
+            inputMode="email"
+            onAnimationStart={[Function]}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            placeholder="Informe seu e-mail aqui"
+            type="text"
+            value=""
+          />
+        </div>
+        <button
+          className="MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1h0hyhf-MuiButtonBase-root-MuiButton-root"
+          data-testid="registerEmail"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          Cadastrar
+        </button>
+      </form>
+    </div>
+    <hr
+      className="MuiDivider-root MuiDivider-fullWidth css-tz2ti8-MuiDivider-root"
+    />
+    <h6
+      className="MuiTypography-root MuiTypography-subtitle2 css-qwq8wp-MuiTypography-root"
+    >
+      Copyright C 2020 Terrafinder. Todos os direitos reservados.
+    </h6>
+  </footer>,
+]
+`;
