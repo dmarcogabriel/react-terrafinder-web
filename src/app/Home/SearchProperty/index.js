@@ -4,8 +4,8 @@ import { useHistory, useLocation } from 'react-router-dom';
 import api from 'services/api';
 import queryString from 'query-string';
 import Filters from 'common/components/Filters';
+import { HomePageTemplate } from 'common/components';
 import classes from './SearchProperty.module.scss';
-import { PageTemplate } from '../components';
 
 export const SearchProperty = () => {
   const history = useHistory();
@@ -33,7 +33,7 @@ export const SearchProperty = () => {
   }, []);
 
   return (
-    <PageTemplate>
+    <HomePageTemplate>
       <div className={classes.container}>
         <h1>Use os filtros abaixo para melhorar o resultado de sua busca</h1>
 
@@ -62,6 +62,6 @@ export const SearchProperty = () => {
           ))}
         </div>
       </div>
-    </PageTemplate>
+    </HomePageTemplate>
   );
 };

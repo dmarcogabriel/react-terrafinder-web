@@ -3,11 +3,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from './PrivacyPolicy.module.scss';
-import { PageTemplate } from '../components'
+import { HomePageTemplate } from 'common/components'
 
 export const PrivacyPolicy = () => {
   return (
-    <PageTemplate>
+    <HomePageTemplate>
       <div className={classes.privacyPolicy}>
         <h1>Política de Privacidade</h1>
 
@@ -259,6 +259,6 @@ export const PrivacyPolicy = () => {
           </p>
         </div>
       </div>
-    </PageTemplate>
+    </HomePageTemplate>
   );
 };

@@ -1,7 +1,5 @@
-import { Landing } from './Landing';
-import { SearchProperty } from './SearchProperty';
-import { Property } from './Property';
-import { About } from './About';
-import { PrivacyPolicy } from './PrivacyPolicy';
-
-export { Landing, SearchProperty, Property, About, PrivacyPolicy };
+export * from './Landing';
+export * from './SearchProperty';
+export * from './Property';
+export * from './About';
+export * from './PrivacyPolicy';

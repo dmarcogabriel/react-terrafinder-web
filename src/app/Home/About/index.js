@@ -1,11 +1,11 @@
 import React from 'react';
 import LogoImg from 'common/static/Logo.svg';
+import { HomePageTemplate } from 'common/components';
 import classes from './About.module.scss';
-import { PageTemplate } from '../components';
 
 export const About = () => {
   return (
-    <PageTemplate>
+    <HomePageTemplate>
       <div className={classes.about}>
         <h1>Quem somos?</h1>
 
@@ -66,6 +66,6 @@ export const About = () => {
           </div>
         </div>
       </div>
-    </PageTemplate>
+    </HomePageTemplate>
   );
 };

@@ -1,11 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
-import Footer from 'common/components/Footer';
 import Modal from 'common/components/Modal';
 import { useUser } from 'hooks/useUser';
 import api from 'services/api';
 import { loadBase64Image } from 'utils/fileHelper';
 import { useTheme } from 'hooks/useTheme';
-import Header from '../Home/components/Header';
+import { HomePageTemplate } from 'common/components';
 import classes from './Dashboard.module.scss';
 import MyAds from './MyAds';
 import { Button } from './styles';
@@ -62,11 +61,9 @@ export const Dashboard = () => {
   }, []);
 
   return (
-    <>
+    <HomePageTemplate>
       <div className={classes.dashboard}>
-        <Header />
         <MyAds />
-        <Footer />
       </div>
 
       <Modal show={showModal}>
@@ -120,6 +117,6 @@ export const Dashboard = () => {
           />
         </div>
       </Modal>
-    </>
+    </HomePageTemplate>
   );
 };

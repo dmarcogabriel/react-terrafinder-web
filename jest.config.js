@@ -7,7 +7,6 @@ module.exports = {
   testURL: 'http://test.com',
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '^[./a-zA-Z0-9$_-]+\\.(bmp|gif|jpg|jpeg|png|psd|svg|webp)$':
-      '<rootDir>/jest/mediaFileTransformer.js',
+    '\\.(gif|jpg|jpeg|png|svg)$': '<rootDir>/jest/mediaFileTransformer.js',
   },
 };

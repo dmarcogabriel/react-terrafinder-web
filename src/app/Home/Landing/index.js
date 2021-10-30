@@ -2,13 +2,13 @@ import React from 'react';
 import Filters from 'common/components/Filters';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
+import { HomePageTemplate } from 'common/components';
 import classes from './Landing.module.scss';
 import Features from './components/Features';
 import Plans from './components/Plans';
 import Product from './components/Product';
 import productImg from './static/product.jpg';
 import PRODUCT_CARDS from './productCards';
-import { PageTemplate } from '../components';
 
 export const Landing = () => {
   const history = useHistory();
@@ -18,7 +18,7 @@ export const Landing = () => {
   };
 
   return (
-    <PageTemplate>
+    <HomePageTemplate>
       <div className={classes.background}>
         <div className={classes.content}>
           <h1 className={classes.title}>
@@ -45,6 +45,6 @@ export const Landing = () => {
       <Features />
 
       <Plans />
-    </PageTemplate>
+    </HomePageTemplate>
   );
 };

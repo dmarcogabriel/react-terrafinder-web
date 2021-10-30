@@ -50,7 +50,8 @@
           "hooks/*",
           "constants/*",
           "styles/*",
-          "helpers/*"
+          "helpers/*",
+          "assets/*"
         ]
       }
     ],
@@ -66,6 +67,6 @@
     "no-underscore-dangle": "off",
     "no-plusplus": "off",
     "no-await-in-loop": "off",
-    "linebreak-style": 0
+    "linebreak-style": "off"
   }
 }

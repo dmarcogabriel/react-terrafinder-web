@@ -4,10 +4,10 @@ import { useRouteMatch } from 'react-router-dom';
 import api from 'services/api';
 import { moneyFormat, farmingFormat } from 'utils/formatters';
 import propertyImagePlaceholder from 'common/static/soja.jpg';
+import { HomePageTemplate } from 'common/components';
 import classes from './Property.module.scss';
 import ownerPlaceholderImg from './ownerPlaceholder.png';
 import { message } from './message';
-import { PageTemplate } from '../components';
 
 export const Property = () => {
   const { params } = useRouteMatch();
@@ -43,7 +43,7 @@ export const Property = () => {
   if (error) return <p data-testid="error">{error}</p>;
 
   return (
-    <PageTemplate>
+    <HomePageTemplate>
       {!loading && (
         <div data-testid="property" className={classes.container}>
           <h1>{property.name}</h1>
@@ -143,6 +143,6 @@ export const Property = () => {
           </div>
         </div>
       )}
-    </PageTemplate>
+    </HomePageTemplate>
   );
 };

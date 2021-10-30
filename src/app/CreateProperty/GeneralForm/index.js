@@ -28,17 +28,26 @@ export const GeneralForm = () => {
     validationSchema: object().shape({
       name: string().required('Campo obrigatório'),
       ownerName: string().required('Campo obrigatório'),
-      description: string().required('Campo obrigatório'),
+      description: string().min(6).required('Campo obrigatório'),
       propertyKind: string().required('Campo obrigatório'),
-      state: string().required('Campo obrigatório'),
+      state: string()
+        .max(2, 'Estado deve ter 2 letras')
+        .required('Campo obrigatório'),
       nearbyCity: string().required('Campo obrigatório'),
-      cep: string().required('Campo obrigatório'),
+      cep: string()
+        .min(14, 'Cep deve conter ao menos 12 caracteres')
+        .max(14, 'Cep deve conter 12 caracteres')
+        .required('Campo obrigatório'),
     }),
     async onSubmit() {
-      console.log('%cEntrou aqui', 'color: cyan');
       history.push('/create-property/details?step=2', { values });
     },
   });
+
+  const mask = (value) => {
+    const regex = /(\d{3})(\d{3})(\d{3})(\d{2})/;
+    return value.replace(regex, '$1.$2.$3-$4');
+  };
 
   return (
     <CreatePropertyContainer>
@@ -99,7 +108,7 @@ export const GeneralForm = () => {
           dataTestId="cepInput"
           label="CEP da Propriedade"
           value={values.cep}
-          onChange={handleChange('cep')}
+          onChange={(value) => handleChange('cep')(mask(value))}
           errorMessage={errors.cep}
         />
 

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 import { render, fireEvent, waitFor } from '@testing-library/react';
 import { UserProvider } from 'contexts/User';
-import GeneralForm from '..';
+import { GeneralForm } from '..';
 
 let pushResponse;
 const mockPush = jest.fn((url) => {
@@ -79,7 +79,7 @@ describe('<GeneralForm />', () => {
     expect(propertyKindValue).toHaveTextContent('Fazenda');
     expect(mockPush).toHaveBeenCalled();
 
-    expect(pushResponse).toEqual('/create/property/details?step=2');
+    expect(pushResponse).toEqual('/create-property/details?step=2');
   });
 
   it('matches snapshot', () => {
