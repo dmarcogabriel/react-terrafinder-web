@@ -1,65 +1,97 @@
 import React from 'react';
-import Select from 'common/components/Select';
-import RangeInput from 'common/components/RangeInput';
 import { useFormik } from 'formik';
+import { SelectInput, RangeInput } from 'common/components';
+import { moneyFormat } from 'utils/formatters';
+import { Card, Box, Button } from '@mui/material';
 import { PROPERTY_KINDS, STATES } from './filtersList';
-import { Container, SearchButton } from './styles';
 
-export const Filters = ({ onSubmit, className = '' }) => {
+export const Filters = ({ onSubmit }) => {
   const { values, handleChange, handleSubmit } = useFormik({
     initialValues: {
       propertyKind: '',
       state: '',
-      size: '',
-      amount: '',
+      size: '[0, 1000]',
+      amount: '[0, 1000000]',
     },
     onSubmit() {
-      // Here we remove empty fields
-      Object.keys(values).forEach((key) => {
-        if (!values[key]) delete values[key];
-      });
+      const filters = {};
+      if (values.propertyKind) {
+        filters.propertyKind = values.propertyKind;
+      }
+      if (values.state) {
+        filters.state = values.state;
+      }
+      if (values.size) {
+        filters.size = values.size;
+      }
+      if (values.amount) {
+        filters.amount = values.amount;
+      }
 
-      onSubmit(values);
+      onSubmit(filters);
     },
   });
 
+  const sizeRangeLabelFormat = (value) => `${value}ah`;
+
+  const amountRangeLabelFormat = (value) => moneyFormat(value);
+
   return (
-    <Container data-testid="filters" className={className}>
-      <Select
-        id="propertyKind"
-        dataTestId="propertyKind"
-        valueDataTestId="propertyKindValue"
-        label="Tipo de Propriedade"
-        options={PROPERTY_KINDS}
-        value={values.propertyKind}
-        onChange={(e) => handleChange('propertyKind')(e.name)}
-      />
+    <Card data-testid="filters" sx={{ width: { xs: '80%', md: '50%' } }}>
+      <Box sx={{ p: 3 }}>
+        <SelectInput
+          label="Tipo de Propriedade"
+          options={PROPERTY_KINDS}
+          onChange={handleChange('propertyKind')}
+          dataTestId="propertyKind"
+          value={values.propertyKind}
+        />
 
-      <RangeInput
-        dataTestId="propertySize"
-        valueDataTestId="propertySizeValue"
-        label="Área do Imóvel"
-        onChange={(e) => handleChange('size')(JSON.stringify(e))}
-      />
+        <RangeInput
+          value={values.size}
+          dataTestId="propertySize"
+          valueDataTestId="propertySizeValue"
+          label="Área do Imóvel"
+          min={10}
+          max={5000}
+          minDistance={100}
+          step={100}
+          valueLabelFormat={sizeRangeLabelFormat}
+          onChange={(e) => handleChange('size')(JSON.stringify(e))}
+        />
 
-      <Select
-        dataTestId="state"
-        valueDataTestId="stateValue"
-        label="Estado"
-        options={STATES}
-        onChange={(e) => handleChange('state')(e.name)}
-      />
+        <SelectInput
+          dataTestId="state"
+          valueDataTestId="stateValue"
+          label="Estado"
+          options={STATES}
+          value={values.state}
+          onChange={handleChange('state')}
+        />
 
-      <RangeInput
-        dataTestId="amount"
-        valueDataTestId="amountValue"
-        label="Intervalo de Preço"
-        onChange={(e) => handleChange('amount')(JSON.stringify(e))}
-      />
+        <RangeInput
+          value={values.amount}
+          dataTestId="amount"
+          valueDataTestId="amountValue"
+          min={0}
+          max={99999999}
+          step={1000}
+          label="Intervalo de Preço"
+          valueLabelFormat={amountRangeLabelFormat}
+          onChange={(e) => handleChange('amount')(JSON.stringify(e))}
+        />
+      </Box>
 
-      <SearchButton dataTestId="submitButton" onClick={handleSubmit}>
+      <Button
+        variant="contained"
+        color="warning"
+        fullWidth
+        sx={{ py: 2 }}
+        data-testid="submitButton"
+        onClick={handleSubmit}
+      >
         Procurar Imóvel
-      </SearchButton>
-    </Container>
+      </Button>
+    </Card>
   );
 };

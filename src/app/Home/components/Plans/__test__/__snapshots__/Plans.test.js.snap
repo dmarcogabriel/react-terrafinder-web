@@ -3,7 +3,7 @@
 exports[`<Plans /> matches snapshot 1`] = `
 <div>
   <h1>
-    Conheça nosso planos de anúncio
+    Conheça nossos planos de anúncio
   </h1>
   <h2>
     Escolha o que melhor se encaixa para você

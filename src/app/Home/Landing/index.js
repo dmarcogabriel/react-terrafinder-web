@@ -3,10 +3,10 @@ import Filters from 'common/components/Filters';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
 import { HomePageTemplate } from 'common/components';
+import { Box } from '@mui/material';
 import classes from './Landing.module.scss';
 import Features from './components/Features';
-import Product from './components/Product';
-import productImg from './static/product.jpg';
+import { Product } from './components/Product';
 import PRODUCT_CARDS from './productCards';
 import { Plans } from '../components';
 
@@ -35,11 +35,18 @@ export const Landing = () => {
       <div className={classes.session}>
         <h2 className={classes.subtitle}>O que você precisa?</h2>
 
-        <div className={classes.products}>
+        <Box
+          sx={{
+            px: 3,
+            display: 'flex',
+            flexDirection: { md: 'row', xs: 'column' },
+            justifyContent: 'space-between',
+          }}
+        >
           {PRODUCT_CARDS.map((product, i) => (
-            <Product key={String(i)} product={product} image={productImg} />
+            <Product key={String(i)} product={product} />
           ))}
-        </div>
+        </Box>
       </div>
 
       <Features />

@@ -101,7 +101,7 @@ Array [
   />,
   <div>
     <h1>
-      Conheça nosso planos de anúncio
+      Conheça nossos planos de anúncio
     </h1>
     <h2>
       Escolha o que melhor se encaixa para você
@@ -509,13 +509,17 @@ Array [
       className="MuiDivider-root MuiDivider-fullWidth css-tz2ti8-MuiDivider-root"
     />
     <div
-      className="MuiBox-root css-zitybv"
+      className="MuiBox-root css-1tzh91j"
     >
-      <h3
-        className="MuiTypography-root MuiTypography-h3 css-15anx50-MuiTypography-root"
+      <div
+        className="MuiBox-root css-1cobzap"
       >
-        Terrafinder
-      </h3>
+        <h3
+          className="MuiTypography-root MuiTypography-h3 css-15anx50-MuiTypography-root"
+        >
+          Terrafinder
+        </h3>
+      </div>
       <ul
         className="MuiList-root MuiList-padding css-12n6fjr-MuiList-root"
       >
@@ -716,62 +720,66 @@ Array [
           </div>
         </li>
       </ul>
-      <h6
-        className="MuiTypography-root MuiTypography-h6 css-xqtpgv-MuiTypography-root"
+      <div
+        className="MuiBox-root css-1inbg9r"
       >
-        Fique por dentro das novidades!
-      </h6>
-      <p
-        className="MuiTypography-root MuiTypography-body1 css-15wu8wo-MuiTypography-root"
-      >
-        Se inscreva em nossa newsletter para receber os anúncios com os melhores preços!
-      </p>
-      <form
-        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-np4jd-MuiPaper-root"
-        noValidate={true}
-        onSubmit={[Function]}
-      >
-        <div
-          className="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth css-13bnupw-MuiInputBase-root"
-          onClick={[Function]}
+        <h6
+          className="MuiTypography-root MuiTypography-h6 css-xqtpgv-MuiTypography-root"
         >
-          <input
-            aria-invalid={false}
-            className="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
-            data-testid="emailInput"
-            inputMode="email"
-            onAnimationStart={[Function]}
+          Fique por dentro das novidades!
+        </h6>
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-15wu8wo-MuiTypography-root"
+        >
+          Se inscreva em nossa newsletter para receber os anúncios com os melhores preços!
+        </p>
+        <form
+          className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 css-np4jd-MuiPaper-root"
+          noValidate={true}
+          onSubmit={[Function]}
+        >
+          <div
+            className="MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth css-13bnupw-MuiInputBase-root"
+            onClick={[Function]}
+          >
+            <input
+              aria-invalid={false}
+              className="MuiInputBase-input css-yz9k0d-MuiInputBase-input"
+              data-testid="emailInput"
+              inputMode="email"
+              onAnimationStart={[Function]}
+              onBlur={[Function]}
+              onChange={[Function]}
+              onFocus={[Function]}
+              placeholder="Informe seu e-mail aqui"
+              type="text"
+              value=""
+            />
+          </div>
+          <button
+            className="MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1h0hyhf-MuiButtonBase-root-MuiButton-root"
+            data-testid="registerEmail"
+            disabled={false}
             onBlur={[Function]}
-            onChange={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
             onFocus={[Function]}
-            placeholder="Informe seu e-mail aqui"
-            type="text"
-            value=""
-          />
-        </div>
-        <button
-          className="MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-1h0hyhf-MuiButtonBase-root-MuiButton-root"
-          data-testid="registerEmail"
-          disabled={false}
-          onBlur={[Function]}
-          onClick={[Function]}
-          onContextMenu={[Function]}
-          onDragLeave={[Function]}
-          onFocus={[Function]}
-          onKeyDown={[Function]}
-          onKeyUp={[Function]}
-          onMouseDown={[Function]}
-          onMouseLeave={[Function]}
-          onMouseUp={[Function]}
-          onTouchEnd={[Function]}
-          onTouchMove={[Function]}
-          onTouchStart={[Function]}
-          tabIndex={0}
-          type="button"
-        >
-          Cadastrar
-        </button>
-      </form>
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+            type="button"
+          >
+            Cadastrar
+          </button>
+        </form>
+      </div>
     </div>
     <hr
       className="MuiDivider-root MuiDivider-fullWidth css-tz2ti8-MuiDivider-root"

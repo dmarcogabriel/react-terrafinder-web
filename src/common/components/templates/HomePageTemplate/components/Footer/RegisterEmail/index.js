@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paper, Button, Typography } from '@mui/material';
+import { Paper, Button, Typography, Box } from '@mui/material';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
@@ -32,7 +32,7 @@ export const RegisterEmail = () => {
   });
 
   return (
-    <>
+    <Box sx={{ maxWidth: { md: '30%' } }}>
       <RegisterEmailTitle variant="h6">
         Fique por dentro das novidades!
       </RegisterEmailTitle>
@@ -71,6 +71,6 @@ export const RegisterEmail = () => {
           Cadastrar
         </Button>
       </Paper>
-    </>
+    </Box>
   );
 };

@@ -1,59 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Property /> matches snapshot 1`] = `
-.c0 {
-  cursor: pointer;
-  text-align: center;
-  font-family: Roboto;
-  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  background: #fff;
-  color: #333;
-}
-
-<div>
-  <div>
-    <img
-      alt="test"
-      src=""
-    />
-    <div>
-      <p>
-        test
-      </p>
-      <p>
-        This is a test
-      </p>
-    </div>
+exports[`app/Home/Landing/components/Product matches snapshot 1`] = `
+<div
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-awtcu7-MuiPaper-root-MuiCard-root"
+>
+  <div
+    alt="test"
+    className="MuiCardMedia-root css-muxve-MuiCardMedia-root"
+    role="img"
+    style={
+      Object {
+        "backgroundImage": "url(\\"image-test\\")",
+      }
+    }
+  />
+  <div
+    className="MuiBox-root css-ro5zyg"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-10oj567-MuiTypography-root"
+    >
+      test
+    </p>
+    <p
+      className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+    >
+      This is a test
+    </p>
   </div>
   <button
-    className="c0"
+    className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-nx6gxd-MuiButtonBase-root-MuiButton-root"
     data-testid="actionButton"
+    disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
     type="button"
   >
-    <p>
-      Go to test
-    </p>
-    <svg
-      fill="currentColor"
-      height="1em"
-      stroke="currentColor"
-      strokeWidth="0"
-      style={
-        Object {
-          "color": undefined,
-        }
-      }
-      viewBox="0 0 24 24"
-      width="1em"
-      xmlns="http://www.w3.org/2000/svg"
+    Go to test
+    <span
+      className="MuiButton-endIcon MuiButton-iconSizeMedium css-9tj150-MuiButton-endIcon"
     >
-      <path
-        d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-      />
-    </svg>
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+        data-testid="ArrowForwardIcon"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+        />
+      </svg>
+    </span>
   </button>
 </div>
 `;

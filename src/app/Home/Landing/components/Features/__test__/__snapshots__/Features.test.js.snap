@@ -1,17 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Property /> matches snapshot 1`] = `
-.c0 {
-  cursor: pointer;
-  text-align: center;
-  font-family: Roboto;
-  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  background: #fff;
-  color: #333;
-}
-
 <div>
   <div />
   <h1>
@@ -26,97 +15,192 @@ exports[`<Property /> matches snapshot 1`] = `
         Você que quer vender seu imóvel rural, encontrou o lugar ideal para anuncia-lo. É simples, rápido e eficiente.
       </p>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt deserunt quisquam accusantium accusamus aliquid laborum nam quasi earum quaerat voluptate ratione cumque tempora minima, nihil sequi. Culpa, ut ad? At?
+        Ou caso tenha interesse em comprar algum imóvel rural em determinado lugar, você achou o lugar correto! Escolha uma das opções abaixo para entender e aprender a criar ou procurar sua propriedade rural.
       </p>
       <div>
         <button
-          className="c0"
+          className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-sghohy-MuiButtonBase-root-MuiButton-root"
           data-testid="createProperty"
+          disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
           type="button"
         >
-          <p>
-            Quero anunciar meu imóvel
-          </p>
-          <svg
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            strokeWidth="0"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          Quero anunciar meu imóvel
+          <span
+            className="MuiButton-endIcon MuiButton-iconSizeMedium css-9tj150-MuiButton-endIcon"
           >
-            <path
-              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="ArrowForwardIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </span>
         </button>
         <button
-          className="c0"
+          className="MuiButton-root MuiButton-contained MuiButton-containedSuccess MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-ke5b6m-MuiButtonBase-root-MuiButton-root"
           data-testid="findProperty"
+          disabled={false}
+          onBlur={[Function]}
           onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
           type="button"
         >
-          <p>
-            Quero achar uma propriedade
-          </p>
-          <svg
-            fill="currentColor"
-            height="1em"
-            stroke="currentColor"
-            strokeWidth="0"
-            style={
-              Object {
-                "color": undefined,
-              }
-            }
-            viewBox="0 0 24 24"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
+          Quero achar uma propriedade
+          <span
+            className="MuiButton-endIcon MuiButton-iconSizeMedium css-9tj150-MuiButton-endIcon"
           >
-            <path
-              d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
-            />
-          </svg>
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+              data-testid="ArrowForwardIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="m12 4-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"
+              />
+            </svg>
+          </span>
         </button>
       </div>
     </div>
-    <div>
-      <div>
-        <div>
-          <p>
+    <div
+      className="MuiBox-root css-33ooz8"
+    >
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-9xljzi-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiBox-root css-pmxlne"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1kicsxo-MuiSvgIcon-root"
+            data-testid="AccessTimeIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"
+            />
+            <path
+              d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z"
+            />
+          </svg>
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-ndaqpv-MuiTypography-root"
+          >
             Pague apenas pelo tempo do seu anúncio
           </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eius eum praesentium quos delectus vero commodi ipsum molestiae quod vel nostrum rerum alias minima explicabo dignissimos, iste tempora nulla perferendis.
-          </p>
         </div>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        >
+          Para anunciar na plataforma, selecione o plano de anúncio que melhor se encaixa para você e pague apenas pelo tempo em que ele ficar publicado.
+        </p>
       </div>
-      <div>
-        <div>
-          <p>
-            Pague apenas pelo tempo do seu anúncio
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eius eum praesentium quos delectus vero commodi ipsum molestiae quod vel nostrum rerum alias minima explicabo dignissimos, iste tempora nulla perferendis.
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-i8o2f6-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiBox-root css-pmxlne"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8p38gn-MuiSvgIcon-root"
+            data-testid="TrackChangesIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="m19.07 4.93-1.41 1.41C19.1 7.79 20 9.79 20 12c0 4.42-3.58 8-8 8s-8-3.58-8-8c0-4.08 3.05-7.44 7-7.93v2.02C8.16 6.57 6 9.03 6 12c0 3.31 2.69 6 6 6s6-2.69 6-6c0-1.66-.67-3.16-1.76-4.24l-1.41 1.41C15.55 9.9 16 10.9 16 12c0 2.21-1.79 4-4 4s-4-1.79-4-4c0-1.86 1.28-3.41 3-3.86v2.14c-.6.35-1 .98-1 1.72 0 1.1.9 2 2 2s2-.9 2-2c0-.74-.4-1.38-1-1.72V2h-1C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10c0-2.76-1.12-5.26-2.93-7.07z"
+            />
+          </svg>
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-ndaqpv-MuiTypography-root"
+          >
+            Quero um anúncio profissional
           </p>
         </div>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        >
+          Nós oferecemos um serviço que profissionaliza o seu anúncio. Temos uma equipe que pode ir até seu imóvel, fotografa-lo e gravar vídeos sensacionais com drones. Impossível não vender assim!
+        </p>
       </div>
-      <div>
-        <div>
-          <p>
-            Pague apenas pelo tempo do seu anúncio
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea eius eum praesentium quos delectus vero commodi ipsum molestiae quod vel nostrum rerum alias minima explicabo dignissimos, iste tempora nulla perferendis.
+      <div
+        className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-i8o2f6-MuiPaper-root-MuiCard-root"
+      >
+        <div
+          className="MuiBox-root css-pmxlne"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-8p38gn-MuiSvgIcon-root"
+            data-testid="SupportAgentIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M21 12.22C21 6.73 16.74 3 12 3c-4.69 0-9 3.65-9 9.28-.6.34-1 .98-1 1.72v2c0 1.1.9 2 2 2h1v-6.1c0-3.87 3.13-7 7-7s7 3.13 7 7V19h-8v2h8c1.1 0 2-.9 2-2v-1.22c.59-.31 1-.92 1-1.64v-2.3c0-.7-.41-1.31-1-1.62z"
+            />
+            <circle
+              cx="9"
+              cy="13"
+              r="1"
+            />
+            <circle
+              cx="15"
+              cy="13"
+              r="1"
+            />
+            <path
+              d="M18 11.03C17.52 8.18 15.04 6 12.05 6c-3.03 0-6.29 2.51-6.03 6.45 2.47-1.01 4.33-3.21 4.86-5.89 1.31 2.63 4 4.44 7.12 4.47z"
+            />
+          </svg>
+          <p
+            className="MuiTypography-root MuiTypography-body1 css-ndaqpv-MuiTypography-root"
+          >
+            Precisa de ajuda?
           </p>
         </div>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+        >
+          Entre em contato através dos nossos canais de atendimento.
+
+WhatsApp: (14)99999-8888
+        </p>
       </div>
     </div>
   </div>

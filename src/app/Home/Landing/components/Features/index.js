@@ -1,10 +1,11 @@
 import React from 'react';
-import Button from 'common/components/atm/Button';
-import { MdArrowForward } from 'react-icons/md';
+// import Button from 'common/components/atm/Button';
+// import { MdArrowForward } from 'react-icons/md';
 import { useHistory } from 'react-router-dom';
+import { Box, Card, Typography, Button } from '@mui/material';
+import { ArrowForward } from '@mui/icons-material';
 import classes from './Features.module.scss';
-
-const CARDS = Array.from(Array(3));
+import { CARDS_CONTENT } from './cardsContent.object';
 
 export default function Features() {
   const history = useHistory();
@@ -32,52 +33,67 @@ export default function Features() {
           </p>
 
           <p className={classes.text}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt
-            deserunt quisquam accusantium accusamus aliquid laborum nam quasi
-            earum quaerat voluptate ratione cumque tempora minima, nihil sequi.
-            Culpa, ut ad? At?
+            Ou caso tenha interesse em comprar algum imóvel rural em determinado
+            lugar, você achou o lugar correto! Escolha uma das opções abaixo
+            para entender e aprender a criar ou procurar sua propriedade rural.
           </p>
 
           <div className={classes.actionButtons}>
             <Button
-              dataTestId="createProperty"
-              className={classes.actionButton}
+              data-testid="createProperty"
+              variant="contained"
+              color="primary"
+              endIcon={<ArrowForward />}
               onClick={handleCreateProperty}
             >
-              <p>Quero anunciar meu imóvel</p>
-
-              <MdArrowForward />
+              Quero anunciar meu imóvel
             </Button>
-
             <Button
-              dataTestId="findProperty"
-              className={classes.greenActionButton}
+              data-testid="findProperty"
+              variant="contained"
+              color="success"
+              endIcon={<ArrowForward />}
               onClick={handleFindProperty}
             >
-              <p>Quero achar uma propriedade</p>
-              <MdArrowForward />
+              Quero achar uma propriedade
             </Button>
           </div>
         </div>
 
-        <div className={classes.column}>
-          {CARDS.map((_, i) => (
-            <div className={classes.cards} key={String(i)}>
-              <div className={classes.card}>
-                <p className={classes.cardTitle}>
-                  Pague apenas pelo tempo do seu anúncio
-                </p>
-
-                <p className={classes.cardText}>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-                  eius eum praesentium quos delectus vero commodi ipsum
-                  molestiae quod vel nostrum rerum alias minima explicabo
-                  dignissimos, iste tempora nulla perferendis.
-                </p>
-              </div>
-            </div>
+        <Box
+          sx={{
+            px: { xs: 3 },
+            display: { md: 'grid' },
+            gridTemplateColumns: { md: 'repeat(2, 1fr)' },
+          }}
+        >
+          {CARDS_CONTENT.map((card) => (
+            <Card
+              key={card.key}
+              sx={{
+                m: 1,
+                p: 1,
+                background: card.colors.bg,
+                color: card.colors.text,
+              }}
+            >
+              <Box
+                sx={{
+                  display: 'flex',
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  mb: 1,
+                }}
+              >
+                <card.IconComponent sx={{ mr: 2, color: card.colors.icon }} />
+                <Typography sx={{ fontWeight: 'bold' }} variant="body1">
+                  {card.title}
+                </Typography>
+              </Box>
+              <Typography variant="body2">{card.text}</Typography>
+            </Card>
           ))}
-        </div>
+        </Box>
       </div>
     </div>
   );

@@ -1,153 +1,431 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`common/components/Filters matches snapshot 1`] = `
-.c1 {
-  cursor: pointer;
-  text-align: center;
-  font-family: Roboto;
-  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
-  padding: 0.75rem;
-  border-radius: 0.25rem;
-  background: #ffcb08;
-  color: #fff;
-}
-
-.c0 {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background: #fff;
-  box-shadow: 0 0.2rem 0.6rem 0 rgba(0,0,0,0.7);
-  width: 100%;
-}
-
-.c2 {
-  font-size: 1rem;
-  padding: 1.25rem;
-}
-
 <div
-  className="c0"
+  className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-wlvy8x-MuiPaper-root-MuiCard-root"
   data-testid="filters"
 >
-  <div>
-    <button
-      data-testid="propertyKind"
-      onClick={[Function]}
-      type="button"
+  <div
+    className="MuiBox-root css-19kzrtu"
+  >
+    <div
+      className="MuiFormControl-root css-cq5a0p-MuiFormControl-root"
     >
-      <p
-        label="propertyKind"
+      <label
+        className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+        data-shrink={false}
       >
         Tipo de Propriedade
-      </p>
-      <div>
-        <p
-          data-testid="propertyKindValue"
+      </label>
+      <div
+        className="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiSelect-root css-1480iag-MuiInputBase-root-MuiInput-root"
+        onClick={[Function]}
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          className="MuiSelect-select MuiSelect-standard MuiInput-input MuiInputBase-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          role="button"
+          tabIndex={0}
         >
-          Selecione...
-        </p>
-        <svg
-          data-testid="arrowDropDown"
-          fill="currentColor"
-          height={22}
-          size={22}
-          stroke="currentColor"
-          strokeWidth="0"
-          style={
-            Object {
-              "color": undefined,
+          <span
+            className="notranslate"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
             }
-          }
+          />
+        </div>
+        <input
+          aria-hidden={true}
+          className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+          data-testid="propertyKind"
+          disabled={false}
+          onAnimationStart={[Function]}
+          onChange={[Function]}
+          required={false}
+          tabIndex={-1}
+          value=""
+        />
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
           viewBox="0 0 24 24"
-          width={22}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M7 10l5 5 5-5z"
           />
         </svg>
       </div>
-    </button>
-  </div>
-  <div>
-    <button
-      data-testid="propertySize"
-      onClick={[Function]}
-      type="button"
+    </div>
+    <div
+      className="MuiBox-root css-0"
     >
-      <p>
+      <label
+        className="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-9npbnl-MuiFormLabel-root-MuiInputLabel-root"
+      >
         Área do Imóvel
-      </p>
-      <div
-        data-testid="propertySizeValue"
+      </label>
+      <span
+        className="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
+        data-testid="propertySize"
+        onMouseDown={[Function]}
+        valueDataTestId="propertySizeValue"
       >
-        0 até 1
-      </div>
-    </button>
-  </div>
-  <div>
-    <button
-      data-testid="state"
-      onClick={[Function]}
-      type="button"
-    >
-      <p>
-        Estado
-      </p>
-      <div>
-        <p
-          data-testid="stateValue"
-        >
-          Selecione...
-        </p>
-        <svg
-          data-testid="arrowDropDown"
-          fill="currentColor"
-          height={22}
-          size={22}
-          stroke="currentColor"
-          strokeWidth="0"
+        <span
+          className="MuiSlider-rail css-14pt78w-MuiSlider-rail"
+        />
+        <span
+          className="MuiSlider-track css-1gv0vcd-MuiSlider-track"
           style={
             Object {
-              "color": undefined,
+              "left": "0%",
+              "width": "19.839679358717436%",
             }
           }
+        />
+        <span
+          className="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
+          data-index={0}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "left": "0%",
+              "pointerEvents": "none",
+            }
+          }
+        >
+          <input
+            aria-orientation="horizontal"
+            aria-valuemax={5000}
+            aria-valuemin={10}
+            aria-valuenow={10}
+            data-index={0}
+            disabled={false}
+            max={5000}
+            min={10}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            step={100}
+            style={
+              Object {
+                "border": 0,
+                "clip": "rect(0 0 0 0)",
+                "direction": "ltr",
+                "height": "100%",
+                "margin": -1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "whiteSpace": "nowrap",
+                "width": "100%",
+              }
+            }
+            type="range"
+            value={10}
+          />
+          <span
+            aria-hidden={true}
+            className="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+          >
+            <span
+              className="MuiSlider-valueLabelCircle"
+            >
+              <span
+                className="MuiSlider-valueLabelLabel"
+              >
+                10ah
+              </span>
+            </span>
+          </span>
+        </span>
+        <span
+          className="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
+          data-index={1}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "left": "19.839679358717436%",
+              "pointerEvents": "none",
+            }
+          }
+        >
+          <input
+            aria-orientation="horizontal"
+            aria-valuemax={5000}
+            aria-valuemin={10}
+            aria-valuenow={1000}
+            data-index={1}
+            disabled={false}
+            max={5000}
+            min={10}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            step={100}
+            style={
+              Object {
+                "border": 0,
+                "clip": "rect(0 0 0 0)",
+                "direction": "ltr",
+                "height": "100%",
+                "margin": -1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "whiteSpace": "nowrap",
+                "width": "100%",
+              }
+            }
+            type="range"
+            value={1000}
+          />
+          <span
+            aria-hidden={true}
+            className="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+          >
+            <span
+              className="MuiSlider-valueLabelCircle"
+            >
+              <span
+                className="MuiSlider-valueLabelLabel"
+              >
+                1000ah
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>
+    </div>
+    <div
+      className="MuiFormControl-root css-cq5a0p-MuiFormControl-root"
+    >
+      <label
+        className="MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-standard MuiFormLabel-root MuiFormLabel-colorPrimary css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root"
+        data-shrink={false}
+      >
+        Estado
+      </label>
+      <div
+        className="MuiInput-root MuiInput-underline MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl MuiSelect-root css-1480iag-MuiInputBase-root-MuiInput-root"
+        onClick={[Function]}
+        valueDataTestId="stateValue"
+      >
+        <div
+          aria-expanded="false"
+          aria-haspopup="listbox"
+          className="MuiSelect-select MuiSelect-standard MuiInput-input MuiInputBase-input css-1rxz5jq-MuiSelect-select-MuiInputBase-input-MuiInput-input"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onMouseDown={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          <span
+            className="notranslate"
+            dangerouslySetInnerHTML={
+              Object {
+                "__html": "&#8203;",
+              }
+            }
+          />
+        </div>
+        <input
+          aria-hidden={true}
+          className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+          data-testid="state"
+          disabled={false}
+          onAnimationStart={[Function]}
+          onChange={[Function]}
+          required={false}
+          tabIndex={-1}
+          value=""
+        />
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconStandard css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon"
+          data-testid="ArrowDropDownIcon"
+          focusable="false"
           viewBox="0 0 24 24"
-          width={22}
-          xmlns="http://www.w3.org/2000/svg"
         >
           <path
             d="M7 10l5 5 5-5z"
           />
         </svg>
       </div>
-    </button>
-  </div>
-  <div>
-    <button
-      data-testid="amount"
-      onClick={[Function]}
-      type="button"
+    </div>
+    <div
+      className="MuiBox-root css-0"
     >
-      <p>
-        Intervalo de Preço
-      </p>
-      <div
-        data-testid="amountValue"
+      <label
+        className="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-9npbnl-MuiFormLabel-root-MuiInputLabel-root"
       >
-        0 até 1
-      </div>
-    </button>
+        Intervalo de Preço
+      </label>
+      <span
+        className="MuiSlider-colorPrimary MuiSlider-sizeMedium MuiSlider-root css-187mznn-MuiSlider-root"
+        data-testid="amount"
+        onMouseDown={[Function]}
+        valueDataTestId="amountValue"
+      >
+        <span
+          className="MuiSlider-rail css-14pt78w-MuiSlider-rail"
+        />
+        <span
+          className="MuiSlider-track css-1gv0vcd-MuiSlider-track"
+          style={
+            Object {
+              "left": "0%",
+              "width": "1.0000000100000002%",
+            }
+          }
+        />
+        <span
+          className="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
+          data-index={0}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "left": "0%",
+              "pointerEvents": "none",
+            }
+          }
+        >
+          <input
+            aria-orientation="horizontal"
+            aria-valuemax={99999999}
+            aria-valuemin={0}
+            aria-valuenow={0}
+            data-index={0}
+            disabled={false}
+            max={99999999}
+            min={0}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            step={1000}
+            style={
+              Object {
+                "border": 0,
+                "clip": "rect(0 0 0 0)",
+                "direction": "ltr",
+                "height": "100%",
+                "margin": -1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "whiteSpace": "nowrap",
+                "width": "100%",
+              }
+            }
+            type="range"
+            value={0}
+          />
+          <span
+            aria-hidden={true}
+            className="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+          >
+            <span
+              className="MuiSlider-valueLabelCircle"
+            >
+              <span
+                className="MuiSlider-valueLabelLabel"
+              >
+                R$ 0,00
+              </span>
+            </span>
+          </span>
+        </span>
+        <span
+          className="MuiSlider-thumbColorPrimary MuiSlider-thumbSizeMedium MuiSlider-thumb css-eg0mwd-MuiSlider-thumb"
+          data-index={1}
+          onMouseLeave={[Function]}
+          onMouseOver={[Function]}
+          style={
+            Object {
+              "left": "1.0000000100000002%",
+              "pointerEvents": "none",
+            }
+          }
+        >
+          <input
+            aria-orientation="horizontal"
+            aria-valuemax={99999999}
+            aria-valuemin={0}
+            aria-valuenow={1000000}
+            data-index={1}
+            disabled={false}
+            max={99999999}
+            min={0}
+            onBlur={[Function]}
+            onChange={[Function]}
+            onFocus={[Function]}
+            step={1000}
+            style={
+              Object {
+                "border": 0,
+                "clip": "rect(0 0 0 0)",
+                "direction": "ltr",
+                "height": "100%",
+                "margin": -1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "absolute",
+                "whiteSpace": "nowrap",
+                "width": "100%",
+              }
+            }
+            type="range"
+            value={1000000}
+          />
+          <span
+            aria-hidden={true}
+            className="MuiSlider-valueLabel css-1kz0hui-MuiSlider-valueLabel"
+          >
+            <span
+              className="MuiSlider-valueLabelCircle"
+            >
+              <span
+                className="MuiSlider-valueLabelLabel"
+              >
+                R$ 1.000.000,00
+              </span>
+            </span>
+          </span>
+        </span>
+      </span>
+    </div>
   </div>
   <button
-    className="c1 c2"
+    className="MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root css-13wdhlw-MuiButtonBase-root-MuiButton-root"
     data-testid="submitButton"
+    disabled={false}
+    onBlur={[Function]}
     onClick={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
     type="button"
   >
     Procurar Imóvel
