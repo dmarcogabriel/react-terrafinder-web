@@ -1,17 +1,13 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import Button from 'common/components/atm/Button';
-import Input from 'common/components/Input';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import api from 'services/api';
 import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
-import {
-  form,
-  groupedInputs,
-  actionButton,
-} from '../components/Login.module.scss';
-import { LoginContainer } from '../components';
+import { TextInput } from 'common/components';
+import { maskCpf, maskPhone } from 'utils/masks';
+import { Box, Typography, Button } from '@mui/material';
+import { LoginContainer, LoginH2, LoginSubtitle } from '../components';
 
 export const Register = () => {
   const history = useHistory();
@@ -30,8 +26,12 @@ export const Register = () => {
       firstName: string().required('Campo obrigatório!'),
       lastName: string().required('Campo obrigatório!'),
       email: string().email().required('Campo obrigatório!'),
-      cpf: string().required('Campo obrigatório!'),
-      phone: string().required('Campo obrigatório!'),
+      cpf: string()
+        .min(14, 'Tamanho mínimo não satisfeito.')
+        .required('Campo obrigatório!'),
+      phone: string()
+        .min(15, 'Tamanho mínimo não satisfeito')
+        .required('Campo obrigatório!'),
       password: string()
         .min(6, 'Mínimo 6 caracteres')
         .required('Campo obrigatório!'),
@@ -53,83 +53,106 @@ export const Register = () => {
 
   return (
     <LoginContainer>
-      <div className={form}>
-        <h2>Cadastre-se para cadastrar seu anúncio</h2>
-
-        <p>
-          Já tem uma conta?
-          <Link to="/login"> Faça o login aqui</Link>
-        </p>
-
-        <div className={groupedInputs}>
-          <Input
-            dataTestId="firstNameInput"
-            label="Primeiro nome"
-            value={values.firstName}
-            onChange={handleChange('firstName')}
-            errorMessage={errors.firstName}
-          />
-
-          <Input
-            dataTestId="lastNameInput"
-            label="Sobrenome"
-            value={values.lastName}
-            onChange={handleChange('lastName')}
-            errorMessage={errors.lastName}
-          />
-        </div>
-
-        <Input
-          dataTestId="emailInput"
-          label="E-mail"
-          type="email"
-          value={values.email}
-          onChange={handleChange('email')}
-          errorMessage={errors.email}
+      <Box sx={{ textAlign: 'center', mb: 3 }}>
+        <LoginH2>Cadastre-se para criar seus anúncios</LoginH2>
+        <LoginSubtitle>
+          Já possui uma conta?{' '}
+          <RouterLink to="/login">Faça o login aqui</RouterLink>
+        </LoginSubtitle>
+      </Box>
+      <Box
+        sx={{
+          display: { md: 'flex' },
+          justifyContent: { md: 'space-between' },
+          alignItems: 'flex-start',
+          my: 2,
+        }}
+      >
+        <TextInput
+          dataTestId="firstNameInput"
+          label="Primeiro nome"
+          value={values.firstName}
+          onChange={handleChange('firstName')}
+          errorMessage={errors.firstName}
+          containerSx={{ mb: { xs: 2, md: 0 } }}
         />
 
-        <div className={groupedInputs}>
-          <Input
-            dataTestId="phoneInput"
-            label="Telefone para contato"
-            value={values.phone}
-            onChange={handleChange('phone')}
-            errorMessage={errors.phone}
-          />
-
-          <Input
-            dataTestId="cpfInput"
-            label="CPF"
-            value={values.cpf}
-            onChange={handleChange('cpf')}
-            errorMessage={errors.cpf}
-          />
-        </div>
-
-        <Input
-          dataTestId="passInput"
-          label="Senha"
-          type="password"
-          value={values.password}
-          errorMessage={errors.password}
-          onChange={handleChange('password')}
+        <TextInput
+          containerSx={{ mt: { xs: 2, md: 0 } }}
+          dataTestId="lastNameInput"
+          label="Sobrenome"
+          value={values.lastName}
+          onChange={handleChange('lastName')}
+          errorMessage={errors.lastName}
+        />
+      </Box>
+      <TextInput
+        containerSx={{ my: 2 }}
+        dataTestId="emailInput"
+        label="E-mail"
+        value={values.email}
+        onChange={handleChange('email')}
+        errorMessage={errors.email}
+        inputProps={{ type: 'email' }}
+        placeholder="exemplo@email.com.br"
+      />
+      <Box
+        sx={{
+          display: { md: 'flex' },
+          justifyContent: { md: 'space-between' },
+          alignItems: 'flex-start',
+          my: 2,
+        }}
+      >
+        <TextInput
+          dataTestId="phoneInput"
+          label="Telefone para contato"
+          value={values.phone}
+          onChange={handleChange('phone')}
+          errorMessage={errors.phone}
+          placeholder="(14) 99999-8888"
+          formatter={maskPhone}
+          inputProps={{ maxLength: 15 }}
+          containerSx={{ mb: { xs: 2, md: 0 } }}
         />
 
-        <Button
-          dataTestId="registerButton"
-          className={actionButton}
-          onClick={handleSubmit}
-        >
-          Cadastrar
-        </Button>
-
-        <p>
-          Se cadastrando, você concorda com nossos
-          <Link to="/">Termos de Uso</Link>
-          {' e '}
-          <Link to="/">Política de privacidade</Link>
-        </p>
-      </div>
+        <TextInput
+          dataTestId="cpfInput"
+          label="CPF"
+          value={values.cpf}
+          onChange={handleChange('cpf')}
+          errorMessage={errors.cpf}
+          placeholder="xxx.xxx.xxx-xx"
+          formatter={maskCpf}
+          inputProps={{ maxLength: 14 }}
+          containerSx={{ mt: { xs: 2, md: 0 } }}
+        />
+      </Box>
+      <TextInput
+        dataTestId="passInput"
+        label="Senha"
+        value={values.password}
+        errorMessage={errors.password}
+        onChange={handleChange('password')}
+        inputProps={{ type: 'password' }}
+        containerSx={{ my: 2 }}
+      />
+      <Button
+        data-testid="registerButton"
+        onClick={handleSubmit}
+        color="success"
+        variant="contained"
+        fullWidth
+        sx={{ mt: 5, mb: 3 }}
+      >
+        Cadastrar
+      </Button>
+      <Typography variant="body2" sx={{ textAlign: 'center' }}>
+        Se cadastrando, você concorda com nossos{' '}
+        <RouterLink to="/privacy-policy">
+          Termos de uso e política de privacidade
+        </RouterLink>
+      </Typography>
     </LoginContainer>
   );
 };

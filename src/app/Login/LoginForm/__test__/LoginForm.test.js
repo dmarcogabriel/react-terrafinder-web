@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import { withTheme, renderWithTheme } from 'helpers/test-helpers/theme';
-import LoginForm from '..';
+import { LoginForm } from '..';
 
 const Component = () => (
   <BrowserRouter>

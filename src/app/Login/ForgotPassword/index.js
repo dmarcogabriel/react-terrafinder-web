@@ -1,27 +1,27 @@
 import React from 'react';
-import Button from 'common/components/atm/Button';
-import Input from 'common/components/Input';
-import { form, my2, actionButton } from '../components/Login.module.scss';
-import { LoginContainer } from '../components';
+import { Box, Button } from '@mui/material';
+import { TextInput } from 'common/components';
+import { LoginContainer, LoginH2, LoginSubtitle } from '../components';
 
 export const ForgotPassword = () => {
-  const handleEmail = () => {
-    // todo: create email state
-  };
-
   return (
     <LoginContainer>
-      <div className={form}>
-        <h2>Faça login para acessar seu painel</h2>
-
-        <p>Insira seu e-mail abaixo para redefinir a senha</p>
-
-        <div className={my2}>
-          <Input label="E-mail" onChange={handleEmail} />
-
-          <Button className={actionButton}>Redefinir Senha</Button>
-        </div>
-      </div>
+      <Box sx={{ textAlign: 'center', mb: 3 }}>
+        <LoginH2>Esqueceu sua senha?</LoginH2>
+        <LoginSubtitle>
+          Insira seu e-mail abaixo para redefinir a senha
+        </LoginSubtitle>
+      </Box>
+      <TextInput
+        label="E-mail"
+        containerSx={{ my: 2 }}
+        // value={values.email}
+        // onChange={handleChange('email')}
+        // errorMessage={errors.email}
+      />
+      <Button fullWidth color="success" variant="contained" sx={{ mt: 5 }}>
+        Redefinir Senha
+      </Button>
     </LoginContainer>
   );
 };

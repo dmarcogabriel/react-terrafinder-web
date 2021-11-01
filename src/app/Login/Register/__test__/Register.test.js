@@ -5,7 +5,7 @@ import { NotificationProvider } from 'contexts/Notification';
 import Notification from 'common/components/Notification';
 import api from 'services/api';
 import { withTheme, renderWithTheme } from 'helpers/test-helpers/theme';
-import Register from '..';
+import { Register } from '..';
 
 let pushResponse;
 const mockPush = jest.fn((url) => {
@@ -17,6 +17,12 @@ jest.mock('react-router-dom', () => ({
     push: mockPush,
   }),
   Link: ({ to, children }) => <a href={to}>{children}</a>,
+}));
+
+jest.mock('hooks/useUser', () => ({
+  useUser: jest.fn(() => ({
+    currentUser: null,
+  })),
 }));
 
 const Comp = () => (

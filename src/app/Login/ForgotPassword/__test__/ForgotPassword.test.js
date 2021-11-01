@@ -2,7 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
 // import { render } from '@testing-library/react';
-import ForgotPassword from '..';
+import { ForgotPassword } from '..';
+
+jest.mock('hooks/useUser', () => ({
+  useUser: jest.fn(() => ({
+    currentUser: null,
+  })),
+}));
 
 describe('<ForgotPassword />', () => {
   it('renders without crashing', () => {

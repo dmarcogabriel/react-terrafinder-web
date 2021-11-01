@@ -1,13 +1,12 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import Button from 'common/components/atm/Button';
-import Input from 'common/components/Input';
+import { Link as RouterLink, useHistory } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import api from 'services/api';
 import { useUser } from 'hooks/useUser';
-import { form, actionButton, my, my2 } from '../components/Login.module.scss';
-import { LoginContainer } from '../components';
+import { Box, Typography, Button } from '@mui/material';
+import { TextInput } from 'common/components';
+import { LoginContainer, LoginH2, LoginSubtitle } from '../components';
 
 export const LoginForm = () => {
   const { login } = useUser();
@@ -41,40 +40,44 @@ export const LoginForm = () => {
 
   return (
     <LoginContainer>
-      <div className={form}>
-        <h2>Faça login para acessar seu painel</h2>
+      <Box sx={{ textAlign: 'center', mb: 3 }}>
+        <LoginH2>Faça login para acessar seu painel</LoginH2>
+        <LoginSubtitle>
+          Não tem conta ainda?{' '}
+          <RouterLink to="/register">Cadastre-se aqui</RouterLink>
+        </LoginSubtitle>
+      </Box>
+      <TextInput
+        label="E-mail"
+        value={values.email}
+        onChange={handleChange('email')}
+        errorMessage={errors.email}
+        containerSx={{ my: 2 }}
+      />
+      <TextInput
+        label="Senha"
+        value={values.password}
+        onChange={handleChange('password')}
+        errorMessage={errors.password}
+        inputProps={{ type: 'password' }}
+        containerSx={{ my: 2 }}
+      />
 
-        <p>
-          Não tem conta ainda?
-          <Link to="/register"> Cadastre-se aqui</Link>
-        </p>
+      <Typography variant="body2" sx={{ textAlign: 'center', mt: 2, my: 3 }}>
+        Esqueceu sua senha?{' '}
+        <RouterLink to="/forgot-password">
+          Clique aqui para redefinir
+        </RouterLink>
+      </Typography>
 
-        <div className={my2}>
-          <Input
-            label="E-mail"
-            value={values.email}
-            onChange={handleChange('email')}
-            errorMessage={errors.email}
-          />
-
-          <Input
-            label="Senha"
-            type="password"
-            value={values.password}
-            onChange={handleChange('password')}
-            errorMessage={errors.password}
-          />
-
-          <p className={my}>
-            Esqueceu sua senha?
-            <Link to="/forgot-password">Clique aqui para redefinir</Link>
-          </p>
-
-          <Button className={actionButton} onClick={handleSubmit}>
-            Fazer Login
-          </Button>
-        </div>
-      </div>
+      <Button
+        fullWidth
+        color="success"
+        variant="contained"
+        onClick={handleSubmit}
+      >
+        Fazer Login
+      </Button>
     </LoginContainer>
   );
 };
