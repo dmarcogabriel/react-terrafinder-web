@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`common/components/templates/HomePageTemplate matches snapshot 1`] = `
+exports[`app/Home/Plans.page should match snapshot 1`] = `
 Array [
   .c0 {
   height: 4rem;
@@ -96,6 +96,412 @@ Array [
       </button>
     </div>
   </header>,
+  <div
+    className="MuiBox-root css-1c9l5hu"
+  />,
+  <div>
+    <h1>
+      Conheça nosso planos de anúncio
+    </h1>
+    <h2>
+      Escolha o que melhor se encaixa para você
+    </h2>
+    <div>
+      <div
+        style={
+          Object {
+            "zIndex": 0,
+          }
+        }
+      >
+        <div>
+          <p
+            className="text-lime-green"
+          >
+            Grátis
+          </p>
+          <p />
+        </div>
+        <div
+          className="bg-lime-green"
+        >
+          <p>
+            Básico
+          </p>
+          <ul>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+              <span>
+                Duração de 7 dias
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+              <span>
+                Até 15 fotos
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+              <span>
+                Sem demarcação do imóvel no mapa
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+              <span>
+                Sem suporte
+              </span>
+            </li>
+          </ul>
+          <button
+            className="text-lime-green"
+            type="button"
+          >
+            Quero esse
+          </button>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "zIndex": 500,
+          }
+        }
+      >
+        <div>
+          <p
+            className="text-yellow"
+          >
+            R$ 50
+          </p>
+          <p>
+            por anúncio
+          </p>
+        </div>
+        <div
+          className="bg-yellow"
+        >
+          <p>
+            PREMIUM
+          </p>
+          <ul>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+              <span>
+                Duração do anúncio de 90 dias
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+              <span>
+                Visibilidade aumentada na plataforma
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+              <span>
+                Até 30 fotos e 1 vídeo
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+              <span>
+                Sem filmagens por drone nem tratamento de fotos
+              </span>
+            </li>
+          </ul>
+          <button
+            className="text-yellow"
+            type="button"
+          >
+            Quero esse
+          </button>
+        </div>
+      </div>
+      <div
+        style={
+          Object {
+            "zIndex": 0,
+          }
+        }
+      >
+        <div>
+          <p
+            className="text-pink"
+          >
+            A definir
+          </p>
+          <p>
+            Faça uma cotação com nossos especialistas
+          </p>
+        </div>
+        <div
+          className="bg-blue"
+        >
+          <p>
+            Profissional
+          </p>
+          <ul>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+              <span>
+                Duração de até 365 dias
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+              <span>
+                Maior visibilidade da plataforma
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+              <span>
+                Gravação da propriedade com drones e tratamento de imagens
+              </span>
+            </li>
+            <li>
+              <svg
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                strokeWidth="0"
+                style={
+                  Object {
+                    "color": undefined,
+                  }
+                }
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+              <span>
+                Suporte exclusivo
+              </span>
+            </li>
+          </ul>
+          <button
+            className="text-pink"
+            type="button"
+          >
+            Quero esse
+          </button>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>
+        <b>
+          Gratuito:
+        </b>
+         Recomendado para iniciantes, é uma ótima forma de testar a plataforma. Você pode testar a plataforma. Você pode criar um anúncio gratuíto da sua propriedade, com as informações gerais do imóvel, e dura 7 dias.
+      </p>
+      <p>
+        <b>
+          Premium:
+        </b>
+         Recomendado para quem já tem conteúdos da propriedade como fotos, detalhes do imóvel como tipo de solo, atividades, topografia. Ele custa R$ 50,00 e seu anúncio ganha mais visibilidade dentro da plataforma.
+      </p>
+      <p>
+        <b>
+          Proffissional:
+        </b>
+         Entre em contato conosco para conversarmos e conhecermos melhor o seu imóvel rural. Iremos até a propriedade, colheremos as informações mais importanjtes dela e faremos excelentes gravações explorando o imóvel através de dones de ponta. Essa é a maneira mais fácil de vender.
+      </p>
+    </div>
+  </div>,
   <footer
     className="MuiBox-root css-108tvhz"
   >

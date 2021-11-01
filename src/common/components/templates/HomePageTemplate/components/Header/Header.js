@@ -72,7 +72,9 @@ export default function Header() {
             justifyContent: 'space-between',
           }}
         >
-          <Logo alt="logo desktop" src={logoImageDesktop} />
+          <RouterLink to="/">
+            <Logo alt="logo desktop" src={logoImageDesktop} />
+          </RouterLink>
           {links.map((link) => (
             <RouterLink key={link.key} to={link.href} component={HeaderLink}>
               {link.name}

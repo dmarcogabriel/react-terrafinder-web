@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import PrivateRoute from 'common/components/PrivateRoute';
-
 import {
   Landing,
   SearchProperty,
   Property,
   About,
   PrivacyPolicy,
+  PlansPage,
 } from './app/Home';
 import { LoginForm, ForgotPassword, Register } from './app/Login';
 import { Dashboard } from './app/Dashboard';
@@ -30,6 +30,9 @@ export const Routes = () => (
       </Route>
       <Route path="/privacy-policy">
         <PrivacyPolicy />
+      </Route>
+      <Route path="/plans">
+        <PlansPage />
       </Route>
       <Route path="/login">
         <LoginForm />

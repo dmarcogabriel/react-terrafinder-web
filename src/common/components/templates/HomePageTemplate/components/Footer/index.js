@@ -53,7 +53,7 @@ const MOCK_LIST = [
       {
         key: 'l3',
         text: 'Preços e planos',
-        href: '/', // todo: link com ancoragem para preços e planos
+        href: '/plans',
       },
     ],
   },

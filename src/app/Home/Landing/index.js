@@ -5,10 +5,10 @@ import queryString from 'query-string';
 import { HomePageTemplate } from 'common/components';
 import classes from './Landing.module.scss';
 import Features from './components/Features';
-import Plans from './components/Plans';
 import Product from './components/Product';
 import productImg from './static/product.jpg';
 import PRODUCT_CARDS from './productCards';
+import { Plans } from '../components';
 
 export const Landing = () => {
   const history = useHistory();

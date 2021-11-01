@@ -61,11 +61,15 @@ exports[`common/components/templates/HomePageTemplate/Header logged matches snap
   <div
     className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mzps2i-MuiToolbar-root"
   >
-    <img
-      alt="logo desktop"
-      className="c0"
-      src="\\"Logo.svg\\""
-    />
+    <a
+      href="/"
+    >
+      <img
+        alt="logo desktop"
+        className="c0"
+        src="\\"Logo.svg\\""
+      />
+    </a>
     <a
       href="/dashboard"
     >
@@ -174,11 +178,15 @@ exports[`common/components/templates/HomePageTemplate/Header unlogged matches sn
   <div
     className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-mzps2i-MuiToolbar-root"
   >
-    <img
-      alt="logo desktop"
-      className="c0"
-      src="\\"Logo.svg\\""
-    />
+    <a
+      href="/"
+    >
+      <img
+        alt="logo desktop"
+        className="c0"
+        src="\\"Logo.svg\\""
+      />
+    </a>
     <button
       className="MuiButton-root MuiButton-contained MuiButton-containedWarning MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButtonBase-root css-4umy8a-MuiButtonBase-root-MuiButton-root"
       disabled={false}

@@ -99,8 +99,7 @@ describe('<Footer />', () => {
       const listItem = getByTestId('link-t2-l3');
       fireEvent.click(listItem);
 
-      // todo: this need to be updated
-      expect(mockUrl).toBe('/');
+      expect(mockUrl).toBe('/plans');
     });
   });
 });
