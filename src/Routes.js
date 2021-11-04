@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import PrivateRoute from 'common/components/PrivateRoute';
 import {
   Landing,
-  SearchProperty,
+  Properties,
   Property,
   About,
   PrivacyPolicy,
@@ -11,7 +11,13 @@ import {
 } from './app/Home';
 import { LoginForm, ForgotPassword, Register } from './app/Login';
 import { Dashboard } from './app/Dashboard';
-import { GeneralForm, DetailsForm, UploadPhotos } from './app/CreateProperty';
+import {
+  GeneralForm,
+  DetailsForm,
+  UploadPhotos,
+  ChosePlan,
+  Review,
+} from './app/CreateProperty';
 
 export const Routes = () => (
   <BrowserRouter>
@@ -20,7 +26,7 @@ export const Routes = () => (
         <Landing />
       </Route>
       <Route path="/search-property">
-        <SearchProperty />
+        <Properties />
       </Route>
       <Route path="/property/:id">
         <Property />
@@ -47,6 +53,9 @@ export const Routes = () => (
         <Dashboard />
       </PrivateRoute>
       <PrivateRoute exact path="/create-property">
+        <ChosePlan />
+      </PrivateRoute>
+      <PrivateRoute exact path="/create-property/general">
         <GeneralForm />
       </PrivateRoute>
       <PrivateRoute path="/create-property/details">
@@ -54,6 +63,9 @@ export const Routes = () => (
       </PrivateRoute>
       <PrivateRoute path="/create-property/upload-photos/:id">
         <UploadPhotos />
+      </PrivateRoute>
+      <PrivateRoute path="/create-property/review">
+        <Review />
       </PrivateRoute>
       <Route path="**">
         <Redirect to="/" />

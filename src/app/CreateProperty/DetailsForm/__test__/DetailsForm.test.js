@@ -6,7 +6,7 @@ import { NotificationProvider } from 'contexts/Notification';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
-import DetailsForm from '..';
+import { DetailsForm } from '..';
 
 const Comp = () => (
   <UserProvider>
@@ -45,17 +45,17 @@ describe('app/CreateProperty/DetailsForm', () => {
     it('should add activity', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addActivityButton = getByTestId('actButton');
+      const addActivityButton = getByTestId('add-activity-button');
       fireEvent.click(addActivityButton);
 
-      const activity = getByTestId('act-1');
+      const activity = getByTestId('activity-input-1');
       expect(activity).toBeInTheDocument();
     });
 
     it('should change activity value', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const actInput = getByTestId('actInput-0');
+      const actInput = getByTestId('activity-input-0');
       fireEvent.change(actInput, { target: { value: 'testing' } });
 
       expect(actInput).toHaveValue('testing');
@@ -64,23 +64,23 @@ describe('app/CreateProperty/DetailsForm', () => {
     it('should add 5 activities', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addActivityButton = getByTestId('actButton');
+      const addActivityButton = getByTestId('add-activity-button');
 
       fireEvent.click(addActivityButton);
       fireEvent.click(addActivityButton);
       fireEvent.click(addActivityButton);
       fireEvent.click(addActivityButton);
 
-      const acts = getByTestId('acts');
-      const lastActivity = getByTestId('act-4');
+      const acts = getByTestId('activities');
+      const lastActivity = getByTestId('activity-input-4');
       expect(lastActivity).toBeInTheDocument();
-      expect(acts.childElementCount).toEqual(5);
+      expect(acts.childElementCount).toEqual(6);
     });
 
     it('should fail to add more than 5 activities', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addActivityButton = getByTestId('actButton');
+      const addActivityButton = getByTestId('add-activity-button');
 
       fireEvent.click(addActivityButton);
       fireEvent.click(addActivityButton);
@@ -90,24 +90,24 @@ describe('app/CreateProperty/DetailsForm', () => {
       fireEvent.click(addActivityButton);
       fireEvent.click(addActivityButton);
 
-      const acts = getByTestId('acts');
-      expect(acts.childElementCount).toEqual(5);
+      const acts = getByTestId('activities');
+      expect(acts.childElementCount).toEqual(6);
     });
 
     it('should change the right input', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addActivityButton = getByTestId('actButton');
+      const addActivityButton = getByTestId('add-activity-button');
 
       fireEvent.click(addActivityButton);
       fireEvent.click(addActivityButton);
 
-      const selectedInput = getByTestId('actInput-1');
+      const selectedInput = getByTestId('activity-input-1');
       fireEvent.change(selectedInput, { target: { value: 'testing' } });
 
       expect(selectedInput).toHaveValue('testing');
-      expect(getByTestId('actInput-0')).toHaveValue('');
-      expect(getByTestId('actInput-2')).toHaveValue('');
+      expect(getByTestId('activity-input-0')).toHaveValue('');
+      expect(getByTestId('activity-input-2')).toHaveValue('');
     });
   });
 
@@ -115,32 +115,33 @@ describe('app/CreateProperty/DetailsForm', () => {
     it('should add farming', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addFarming = getByTestId('addFarming');
+      const addFarming = getByTestId('add-farming-button');
       fireEvent.click(addFarming);
 
-      const farm = getByTestId('farm-1');
+      const farm = getByTestId('farming-input-1');
       expect(farm).toBeInTheDocument();
     });
 
     it('should add 5 farmings', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addFarming = getByTestId('addFarming');
+      const addFarming = getByTestId('add-farming-button');
       fireEvent.click(addFarming);
       fireEvent.click(addFarming);
       fireEvent.click(addFarming);
       fireEvent.click(addFarming);
 
       const farms = getByTestId('farms');
-      const farm = getByTestId('farm-4');
+      const farm = getByTestId('farming-input-4');
       expect(farm).toBeInTheDocument();
-      expect(farms.childElementCount).toEqual(5);
+      expect(farms.childElementCount).toEqual(6);
     });
 
     it('should fail fo add more than 5 farmings', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addFarming = getByTestId('addFarming');
+      const addFarming = getByTestId('add-farming-button');
+      fireEvent.click(addFarming);
       fireEvent.click(addFarming);
       fireEvent.click(addFarming);
       fireEvent.click(addFarming);
@@ -149,13 +150,13 @@ describe('app/CreateProperty/DetailsForm', () => {
       fireEvent.click(addFarming);
 
       const farms = getByTestId('farms');
-      expect(farms.childElementCount).toEqual(5);
+      expect(farms.childElementCount).toEqual(6);
     });
 
     it('should change farming value', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const farmInput = getByTestId('farmInput-0');
+      const farmInput = getByTestId('farming-input-0');
       fireEvent.change(farmInput, { target: { value: 'testing' } });
 
       expect(farmInput).toHaveValue('testing');
@@ -164,17 +165,17 @@ describe('app/CreateProperty/DetailsForm', () => {
     it('should change the right input', () => {
       const { getByTestId } = render(withTheme(<Comp />));
 
-      const addFarmingButton = getByTestId('addFarming');
+      const addFarmingButton = getByTestId('add-farming-button');
 
       fireEvent.click(addFarmingButton);
       fireEvent.click(addFarmingButton);
 
-      const selectedInput = getByTestId('farmInput-1');
+      const selectedInput = getByTestId('farming-input-1');
       fireEvent.change(selectedInput, { target: { value: 'testing' } });
 
       expect(selectedInput).toHaveValue('testing');
-      expect(getByTestId('farmInput-0')).toHaveValue('');
-      expect(getByTestId('farmInput-2')).toHaveValue('');
+      expect(getByTestId('farming-input-0')).toHaveValue('');
+      expect(getByTestId('farming-input-2')).toHaveValue('');
     });
   });
 });

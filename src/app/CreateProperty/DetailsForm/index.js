@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
-import Input from 'common/components/Input';
 import { useLocation, useHistory } from 'react-router-dom';
 import api from 'services/api';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
-import { MdAdd } from 'react-icons/md';
-import Button from 'common/components/atm/Button';
 import { validateArrayOfInputs } from 'utils/validators';
 import { useUser } from 'hooks/useUser';
 import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
+import { TextInput } from 'common/components';
+import { Box, Typography, IconButton } from '@mui/material';
+import { Add as AddIcon } from '@mui/icons-material';
+import { maskMoney } from 'utils/masks';
 import classes from './DetailsForm.module.scss';
 import Navigator from '../Navigator';
 import { CreatePropertyContainer } from '../components';
@@ -33,10 +34,13 @@ export const DetailsForm = () => {
     async onSubmit() {
       if (validateArrayOfInputs(activities) && validateArrayOfInputs(farming)) {
         try {
+          const { plan } = state;
           const { data: response } = await api.post('properties', {
             ...values,
-            ...state.values,
+            ...state.property,
             user: currentUser._id,
+            activities: activities.map((activity) => activity.value),
+            farming: farming.map((farm) => farm.value),
           });
 
           showNotification(
@@ -45,7 +49,8 @@ export const DetailsForm = () => {
           );
 
           history.push(
-            `/create-property/upload-photos/${response.data.property._id}?step=3`
+            `/create-property/upload-photos/${response.data.property._id}?step=4`,
+            { plan }
           );
         } catch (err) {
           console.error('[ERROR]: ', err);
@@ -55,10 +60,17 @@ export const DetailsForm = () => {
           );
         }
       } else {
-        showNotification(
-          'Ops, ocorreu um erro na operação',
-          NOTIFICATION_TYPES.ERROR
-        );
+        farming.forEach((farm) => {
+          if (!farm.value) {
+            farm.error = 'Campo obrigatório';
+          }
+        });
+
+        activities.forEach((activity) => {
+          if (!activity.value) {
+            activity.error = 'Campo obrigatório';
+          }
+        });
       }
     },
   });
@@ -91,74 +103,79 @@ export const DetailsForm = () => {
     <CreatePropertyContainer>
       <div className={classes.detailsForm}>
         <div className={classes.inlineInputs}>
-          <Input
+          <TextInput
             label="Quanto quer pela propriedade?"
-            type="number"
+            inputProps={{ maxLength: 14 }}
             value={values.amount}
             onChange={handleChange('amount')}
             errorMessage={errors.amount}
+            formatter={maskMoney}
+            prefix="R$"
           />
-          <Input
+          <TextInput
             label="Qual o tamanho da propriedade (em equitares)"
             value={values.size}
             onChange={handleChange('size')}
             errorMessage={errors.size}
+            inputProps={{ maxLength: 4 }}
           />
         </div>
 
-        <div className={classes.inlineInputs}>
-          <div className={classes.col}>
-            <p>Cultivo (plantações)</p>
-
-            <Button
-              modifiers="success"
-              dataTestId="addFarming"
-              onClick={addFarming}
-            >
-              <MdAdd size={22} />
-            </Button>
-
-            <div data-testid="farms">
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { md: 'row', xs: 'column' },
+            justifyContent: 'space-between',
+            my: 2,
+          }}
+        >
+          <Box>
+            <Typography>Cultivo (plantações)</Typography>
+            <Box data-testid="farms">
               {farming.map((farm, i) => (
-                <div data-testid={`farm-${i}`} key={String(i)}>
-                  <Input
-                    dataTestId={`farmInput-${i}`}
-                    key={String(i)}
-                    value={farm.value}
-                    onChange={(e) => handleChangeFarm(e, i)}
-                    errorMessage={farm.error}
-                  />
-                </div>
+                <TextInput
+                  label={`Cultivo #${i + 1}`}
+                  key={String(i)}
+                  dataTestId={`farming-input-${i}`}
+                  value={farm.value}
+                  onChange={(e) => handleChangeFarm(e, i)}
+                  errorMessage={farm.error}
+                />
               ))}
-            </div>
-          </div>
-
-          <div className={classes.col}>
-            <p>Atividades e Destaques</p>
-
-            <Button
-              modifiers="success"
-              dataTestId="actButton"
-              onClick={addActivity}
-            >
-              <MdAdd size={22} />
-            </Button>
-
-            <div data-testid="acts">
-              {activities.map((act, i) => (
-                <div key={String(i)} data-testid={`act-${i}`}>
-                  <Input
-                    dataTestId={`actInput-${i}`}
-                    key={String(i)}
-                    value={act.value}
-                    onChange={(e) => handleChangeActivity(e, i)}
-                    errorMessage={act.error}
-                  />
-                </div>
+              <IconButton
+                variant="contained"
+                color="success"
+                data-testid="add-farming-button"
+                onClick={addFarming}
+              >
+                <AddIcon />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box>
+            <Typography>Atividades e destaques</Typography>
+            <Box data-testid="activities">
+              {activities.map((activity, i) => (
+                <TextInput
+                  label={`Atividade #${i + 1}`}
+                  key={String(i)}
+                  dataTestId={`activity-input-${i}`}
+                  value={activity.value}
+                  onChange={(e) => handleChangeActivity(e, i)}
+                  errorMessage={activity.error}
+                />
               ))}
-            </div>
-          </div>
-        </div>
+              <IconButton
+                variant="contained"
+                color="success"
+                data-testid="add-activity-button"
+                onClick={addActivity}
+              >
+                <AddIcon />
+              </IconButton>
+            </Box>
+          </Box>
+        </Box>
 
         <Navigator
           onBack={goBack}

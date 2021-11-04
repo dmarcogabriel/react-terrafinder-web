@@ -1,14 +1,25 @@
 import React from 'react';
-import { Container, BackButton, NextButton } from './styles';
+import { Button } from '@mui/material';
+import { NavigationContainer } from './styles';
 
-export const Navigator = ({ onBack, onNext, nextButtonText = 'Próximo' }) => (
-  <Container>
-    <BackButton data-testid="back" onClick={onBack}>
-      Voltar
-    </BackButton>
+export const Navigator = ({
+  onBack,
+  backButtonText = 'Voltar',
+  onNext,
+  nextButtonText = 'Próximo',
+}) => (
+  <NavigationContainer sx={{ px: { md: 0, xs: 2 }, mt: 2 }}>
+    <Button sx={{ my: { xs: 1, md: 0 } }} data-testid="back" onClick={onBack}>
+      {backButtonText}
+    </Button>
 
-    <NextButton dataTestId="next" onClick={onNext}>
+    <Button
+      sx={{ my: { xs: 1, md: 0 } }}
+      variant="contained"
+      data-testid="next"
+      onClick={onNext}
+    >
       {nextButtonText}
-    </NextButton>
-  </Container>
+    </Button>
+  </NavigationContainer>
 );

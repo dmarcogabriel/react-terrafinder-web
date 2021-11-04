@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import { parseSearch } from 'utils/parseSearch';
 import classes from './CreateProperty.module.scss';
-import STEPS from '../../steps';
+import { STEPS } from '../../steps.obj';
 
 export const CreatePropertyContainer = ({ children }) => {
   const { search } = useLocation();
@@ -11,7 +11,7 @@ export const CreatePropertyContainer = ({ children }) => {
   return (
     <div className={classes.createProperty}>
       <div className={classes.form}>
-        <h1>Anúncio de Imóvel Rural</h1>
+        {/* <h1>Anúncio de Imóvel Rural</h1> */}
         {children}
       </div>
 

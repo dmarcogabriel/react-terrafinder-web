@@ -1,5 +1,6 @@
+/* eslint-disable react/jsx-no-duplicate-props */
 import React from 'react';
-import { Box, TextField, InputLabel } from '@mui/material';
+import { Box, TextField, InputLabel, InputAdornment } from '@mui/material';
 import {
   Mood as ValidIcon,
   SentimentDissatisfied as InvalidIcon,
@@ -14,6 +15,7 @@ export const TextInput = ({
   inputProps,
   formatter,
   containerSx = {},
+  prefix,
   ...props
 }) => {
   const handleChange = ({ target: { value: text } }) => {
@@ -48,6 +50,11 @@ export const TextInput = ({
         error={!!errorMessage}
         helperText={errorMessage}
         inputProps={{ 'data-testid': dataTestId, ...inputProps }}
+        InputProps={{
+          startAdornment: prefix && (
+            <InputAdornment position="start">{prefix}</InputAdornment>
+          ),
+        }}
         {...props}
       />
     </Box>

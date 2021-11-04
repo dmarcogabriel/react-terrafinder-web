@@ -10,8 +10,8 @@ export const Filters = ({ onSubmit }) => {
     initialValues: {
       propertyKind: '',
       state: '',
-      size: '[0, 1000]',
-      amount: '[0, 1000000]',
+      size: '[0, 9999]',
+      amount: '[0, 999999999]',
     },
     onSubmit() {
       const filters = {};
@@ -40,6 +40,7 @@ export const Filters = ({ onSubmit }) => {
     <Card data-testid="filters" sx={{ width: { xs: '80%', md: '50%' } }}>
       <Box sx={{ p: 3 }}>
         <SelectInput
+          noValidation
           label="Tipo de Propriedade"
           options={PROPERTY_KINDS}
           onChange={handleChange('propertyKind')}
@@ -50,7 +51,6 @@ export const Filters = ({ onSubmit }) => {
         <RangeInput
           value={values.size}
           dataTestId="propertySize"
-          valueDataTestId="propertySizeValue"
           label="Área do Imóvel"
           min={10}
           max={5000}
@@ -61,8 +61,8 @@ export const Filters = ({ onSubmit }) => {
         />
 
         <SelectInput
+          noValidation
           dataTestId="state"
-          valueDataTestId="stateValue"
           label="Estado"
           options={STATES}
           value={values.state}
@@ -72,7 +72,6 @@ export const Filters = ({ onSubmit }) => {
         <RangeInput
           value={values.amount}
           dataTestId="amount"
-          valueDataTestId="amountValue"
           min={0}
           max={99999999}
           step={1000}

@@ -1,11 +1,11 @@
 export const PROPERTY_KINDS = [
   {
-    key: 'none',
+    key: 'p1',
     value: '',
     name: 'Nenhum',
   },
   {
-    key: 'farm',
+    key: 'p2',
     value: 'Fazenda',
     name: 'Fazenda',
   },

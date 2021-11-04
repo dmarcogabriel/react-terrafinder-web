@@ -1,11 +1,10 @@
 import React from 'react';
-import Input from 'common/components/Input';
-import TextArea from 'common/components/TextArea';
-import Select from 'common/components/Select';
+import { TextInput, SelectInput } from 'common/components';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import { useUser } from 'hooks/useUser';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
+import { maskCep } from 'utils/masks';
 import classes from './GeneralForm.module.scss';
 import Navigator from '../Navigator';
 import PROPERTY_KINDS from './propertyKinds';
@@ -14,6 +13,7 @@ import { CreatePropertyContainer } from '../components';
 export const GeneralForm = () => {
   const { currentUser } = useUser();
   const history = useHistory();
+  const { state } = useLocation();
 
   const { values, handleChange, handleSubmit, errors } = useFormik({
     initialValues: {
@@ -35,33 +35,31 @@ export const GeneralForm = () => {
         .required('Campo obrigatório'),
       nearbyCity: string().required('Campo obrigatório'),
       cep: string()
-        .min(14, 'Cep deve conter ao menos 12 caracteres')
-        .max(14, 'Cep deve conter 12 caracteres')
+        .min(9, 'Cep deve conter ao menos 8 caracteres')
+        .max(9, 'Cep deve conter 8 caracteres')
         .required('Campo obrigatório'),
     }),
     async onSubmit() {
-      history.push('/create-property/details?step=2', { values });
+      history.push('/create-property/details?step=3', {
+        property: { ...values },
+        plan: state.plan,
+      });
     },
   });
-
-  const mask = (value) => {
-    const regex = /(\d{3})(\d{3})(\d{3})(\d{2})/;
-    return value.replace(regex, '$1.$2.$3-$4');
-  };
 
   return (
     <CreatePropertyContainer>
       <div className={classes.generalForm}>
         <div className={classes.inlineInputs}>
-          <Input
-            dataTestId="propNameInput"
+          <TextInput
+            inputProps={{ 'data-testid': 'propNameInput' }}
             label="Nome da Propriedade"
             value={values.name}
             onChange={handleChange('name')}
             errorMessage={errors.name}
           />
-          <Input
-            dataTestId="ownerNameInput"
+          <TextInput
+            inputProps={{ 'data-testid': 'ownerNameInput' }}
             label="Nome do Proprietário"
             value={values.ownerName}
             onChange={handleChange('ownerName')}
@@ -69,34 +67,36 @@ export const GeneralForm = () => {
           />
         </div>
 
-        <TextArea
-          dataTestId="descInput"
+        <TextInput
+          inputProps={{ 'data-testid': 'descInput' }}
           label="Descrição"
           value={values.description}
           onChange={handleChange('description')}
           errorMessage={errors.description}
+          multiline
+          rows={5}
         />
-        <Select
-          dataTestId="propertyKind"
-          valueDataTestId="propertyKindValue"
+        <SelectInput
+          variant="outlined"
+          inputProps={{ 'data-testid': 'propertyKind' }}
           label="Tipo de Imóvel"
           options={PROPERTY_KINDS}
           value={values.propertyKind}
-          onChange={(e) => handleChange('propertyKind')(e.name)}
+          onChange={handleChange('propertyKind')}
           errorMessage={errors.propertyKind}
+          size="small"
         />
 
         <div className={classes.inlineInputs}>
-          <Input
-            dataTestId="stateInput"
+          <TextInput
             label="Estado (em que o imóvel se encontra)"
             value={values.state}
             onChange={handleChange('state')}
-            maxLength={2}
+            inputProps={{ maxLength: 2, 'data-testid': 'stateInput' }}
             errorMessage={errors.state}
           />
-          <Input
-            dataTestId="nearbyInput"
+          <TextInput
+            inputProps={{ 'data-testid': 'nearbyInput' }}
             label="Cidade Mais Próxima ao imóvel"
             value={values.nearbyCity}
             onChange={handleChange('nearbyCity')}
@@ -104,12 +104,13 @@ export const GeneralForm = () => {
           />
         </div>
 
-        <Input
-          dataTestId="cepInput"
+        <TextInput
           label="CEP da Propriedade"
           value={values.cep}
-          onChange={(value) => handleChange('cep')(mask(value))}
+          onChange={handleChange('cep')}
+          formatter={maskCep}
           errorMessage={errors.cep}
+          inputProps={{ maxLength: 9, 'data-testid': 'cepInput' }}
         />
 
         <Navigator onBack={history.goBack} onNext={handleSubmit} />

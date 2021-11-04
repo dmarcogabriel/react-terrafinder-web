@@ -15,7 +15,8 @@ $inactive-bg: rgb(159, 204, 128);
   .form {
     @media ($desktop) {
       width: 65%;
-      padding: 3rem 10rem;
+      padding: 2rem 2rem;
+      margin-right: 3rem;
     }
 
     > h1 {
@@ -35,6 +36,7 @@ $inactive-bg: rgb(159, 204, 128);
     @media ($desktop) {
       padding-top: 0;
       padding-right: 4rem;
+      width: 25%;
     }
 
     .progressContainer {

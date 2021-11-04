@@ -2,9 +2,19 @@ import { farmingFormat, moneyFormat } from '../formatters';
 
 describe('utils/formatters', () => {
   describe('farmingFormat', () => {
+    it('should format correctly with 1 item', () => {
+      const formattedText = farmingFormat(['item1']);
+      expect(formattedText).toBe('item1');
+    });
+
     it('should format correctly', () => {
+      const formattedText = farmingFormat(['item1', 'item2']);
+      expect(formattedText).toBe('item1 / item2');
+    });
+
+    it('should format correctly with multiple items', () => {
       const formattedText = farmingFormat(['item1', 'item2', 'item3']);
-      expect(formattedText).toBe('item1 / item2 / item3');
+      expect(formattedText).toBe('item1 / item2');
     });
 
     it('should fail to format with string', () => {

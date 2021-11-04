@@ -105,16 +105,16 @@ export const Property = () => {
                     </Typography>
                     <Typography>{property.propertyKind}</Typography>
                   </Box>
-                  {/* <Box sx={{ display: 'flex' }}>
-                  <Typography sx={{ fontWeight: 'bold', mr: 2 }}>
-                    Cultivo:
-                  </Typography>
-                  <Typography>{property.farming}</Typography>
-                </Box> */}
                   <Box sx={{ my: 3 }}>
                     <Typography variant="h4">Atividades e Destaques</Typography>
                     {property.activities.map((activity, i) => (
                       <Typography key={String(i)}>{activity}</Typography>
+                    ))}
+                  </Box>
+                  <Box sx={{ my: 3 }}>
+                    <Typography variant="h4">Plantações (cultivos)</Typography>
+                    {property.farming.map((farm, i) => (
+                      <Typography key={String(i)}>{farm}</Typography>
                     ))}
                   </Box>
                 </Box>

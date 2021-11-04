@@ -3,9 +3,11 @@ import { MdCloudUpload } from 'react-icons/md';
 import { validateFile } from 'utils/validators';
 import { loadBase64Image } from 'utils/fileHelper';
 import { AiFillCloseCircle } from 'react-icons/ai';
-import { useHistory, useRouteMatch } from 'react-router-dom';
+import { useHistory, useRouteMatch, useLocation } from 'react-router-dom';
 import api from 'services/api';
 import { NOTIFICATION_TYPES, useNotification } from 'hooks/useNotification';
+import { Modal, useModal } from 'common/components';
+import { Typography, Button, Box } from '@mui/material';
 import classes from './UploadPhotos.module.scss';
 import Navigator from '../Navigator';
 import { UploadButton } from './styles';
@@ -19,6 +21,8 @@ export const UploadPhotos = () => {
   const { params } = useRouteMatch();
   const { showNotification } = useNotification();
   const inputRef = useRef();
+  const { state } = useLocation();
+  const { open, triggerModal } = useModal();
 
   const handleDrop = async (e) => {
     e.preventDefault();
@@ -55,8 +59,6 @@ export const UploadPhotos = () => {
     setSelectedFiles(selectedFiles.filter((_, i) => i !== index));
   };
 
-  const goBack = () => history.replace('/dashboard');
-
   const uploadPhotos = async () => {
     try {
       setUploading(true);
@@ -74,7 +76,10 @@ export const UploadPhotos = () => {
       });
 
       setUploading(false);
-      history.replace('/dashboard');
+      history.replace('/create-property/review?step=5', {
+        plan: state.plan,
+        propertyId: params.id,
+      });
       showNotification(
         'Fotos enviadas com sucesso!',
         NOTIFICATION_TYPES.SUCCESS
@@ -91,7 +96,6 @@ export const UploadPhotos = () => {
   const openGalery = () => inputRef.current.click();
 
   const handleChangeFileInput = async (e) => {
-    console.log('Event: ', e.target.files);
     if (selectedFiles.length < 3) {
       const [file] = e.target.files;
 
@@ -100,6 +104,12 @@ export const UploadPhotos = () => {
       setSelectedFiles((old) => [...old, file]);
     }
   };
+
+  const handleSendPhotosLater = () =>
+    history.replace('/create-property/review?step=5', {
+      plan: state.plan,
+      propertyId: params.id,
+    });
 
   return (
     <CreatePropertyContainer>
@@ -115,7 +125,7 @@ export const UploadPhotos = () => {
           style={{ opacity }}
         >
           <p className={classes.helperText}>
-            Faça o upload ou araste a imagem aqui
+            Faça o upload ou arraste a imagem aqui
           </p>
 
           <input
@@ -160,10 +170,31 @@ export const UploadPhotos = () => {
 
         <Navigator
           nextButtonText="Fazer Upload"
-          onBack={goBack}
+          backButtonText="Enviar mais tarde"
+          onBack={triggerModal}
           onNext={uploadPhotos}
         />
       </div>
+      <Modal show={open} onClose={triggerModal}>
+        <Typography sx={{ mb: 2 }}>
+          Tem certeza de que deseja enviar fotos mais tarde?
+        </Typography>
+
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            justifyContent: 'space-between',
+          }}
+        >
+          <Button variant="contained" sx={{ my: 1 }} onClick={triggerModal}>
+            Voltar para enviar
+          </Button>
+          <Button sx={{ my: 1 }} color="error" onClick={handleSendPhotosLater}>
+            Enviar mais tarde
+          </Button>
+        </Box>
+      </Modal>
     </CreatePropertyContainer>
   );
 };

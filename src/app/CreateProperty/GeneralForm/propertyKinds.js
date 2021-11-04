@@ -2,11 +2,11 @@ export default [
   {
     key: 'p1',
     name: 'Fazenda',
-    selected: false,
+    value: 'Fazenda',
   },
   {
     key: 'p2',
     name: 'Sítio',
-    selected: false,
+    value: 'Sítio',
   },
 ];

@@ -5,6 +5,14 @@ import api from 'services/api';
 import queryString from 'query-string';
 import Filters from 'common/components/Filters';
 import { HomePageTemplate } from 'common/components';
+import {
+  Accordion,
+  AccordionSummary,
+  AccordionDetails,
+  Typography,
+  Button,
+} from '@mui/material';
+import { ExpandMore as ExpandIcon } from '@mui/icons-material';
 import classes from './SearchProperty.module.scss';
 
 export const Properties = () => {
@@ -17,15 +25,22 @@ export const Properties = () => {
   };
 
   const loadProperties = async (queryParams = null) => {
-    const { data: res } = await api.get(`properties${queryParams || search}`);
+    const isActiveParam = `isActive=true`;
+    let query = `?${isActiveParam}`;
+    if (queryParams) query += `&${queryParams}`;
+    else if (search) query += `&${search}`;
+
+    const { data: res } = await api.get(`properties${query}`);
 
     setProperties(res.data.properties);
   };
 
-  const cleanFilters = () => {};
+  const handleCleanFilters = () => {
+    // todo: add clean filters
+  };
 
   const handleFilter = async (e) => {
-    await loadProperties(`?${queryString.stringify(e)}`);
+    await loadProperties(`${queryString.stringify(e)}`);
   };
 
   useEffect(() => {
@@ -37,24 +52,24 @@ export const Properties = () => {
       <div className={classes.container}>
         <h1>Use os filtros abaixo para melhorar o resultado de sua busca</h1>
 
-        <div className={classes.filtersCard}>
-          <Filters onSubmit={handleFilter} className={classes.filters} />
+        <Accordion>
+          <AccordionSummary expandIcon={<ExpandIcon />}>
+            <Typography>Filtros</Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            <Filters onSubmit={handleFilter} />
+            <Button fullWidth onClick={handleCleanFilters}>
+              Limpar Filtros
+            </Button>
+          </AccordionDetails>
+        </Accordion>
 
-          <button
-            type="button"
-            className={classes.buttonLinkKind}
-            onClick={cleanFilters}
-          >
-            Limpar Filtro
-          </button>
-        </div>
         {/* 
         //todo: add loading here
       */}
         <div className={classes.propertiesList}>
-          {properties.map((property, i) => (
+          {properties.map((property) => (
             <Property
-              i={i}
               key={property._id}
               property={property}
               onSelect={selectProperty}

@@ -18,7 +18,8 @@ export const moneyFormat = (value, cents = true) => {
 
 export const farmingFormat = (farming) => {
   if (isArray(farming)) {
-    return farming.join(' / ');
+    const slicedFarming = farming.slice(0, 2);
+    return slicedFarming.join(' / ');
   }
   return '';
 };

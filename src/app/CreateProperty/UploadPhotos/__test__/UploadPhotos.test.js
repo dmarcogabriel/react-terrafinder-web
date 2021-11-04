@@ -5,7 +5,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { NotificationProvider } from 'contexts/Notification';
 import { UserProvider } from 'contexts/User';
 import { renderWithTheme, withTheme } from 'helpers/test-helpers/theme';
-import UploadPhotos from '..';
+import { UploadPhotos } from '..';
 import mockImage from './mockImage.jpg';
 
 const Comp = (props) => (

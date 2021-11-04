@@ -1,12 +1,32 @@
 import React from 'react';
-import { Select, FormControl, InputLabel, MenuItem } from '@mui/material';
+import {
+  Select,
+  Box,
+  InputLabel,
+  MenuItem,
+  FormHelperText,
+} from '@mui/material';
+import {
+  Mood as ValidIcon,
+  SentimentDissatisfied as InvalidIcon,
+} from '@mui/icons-material';
+
+const ValidationIcon = ({ errorMessage }) =>
+  errorMessage ? (
+    <InvalidIcon fontSize="small" color="error" />
+  ) : (
+    <ValidIcon fontSize="small" color="success" />
+  );
 
 export const SelectInput = ({
   value,
   label,
   onChange,
-  dataTestId = '',
+  dataTestId = 'select-input',
   options,
+  variant = 'standard',
+  noValidation,
+  errorMessage,
   ...props
 }) => {
   const handleChange = ({ target: { value: selectedOption } }) => {
@@ -14,20 +34,47 @@ export const SelectInput = ({
   };
 
   return (
-    <FormControl variant="standard" sx={{ width: '100%', my: 2 }}>
-      <InputLabel>{label}</InputLabel>
+    <Box
+      variant={variant}
+      sx={{
+        width: '100%',
+        my: 2,
+      }}
+    >
+      <Box
+        sx={{
+          display: 'flex',
+          alingItems: 'center',
+          justifyContent: 'space-between',
+        }}
+      >
+        <InputLabel error={!!errorMessage}>{label}</InputLabel>
+        {!noValidation && <ValidationIcon errorMessage={errorMessage} />}
+      </Box>
       <Select
         inputProps={{ 'data-testid': dataTestId }}
         value={value}
         onChange={handleChange}
+        fullWidth
+        size="small"
+        error={!!errorMessage}
         {...props}
       >
         {options.map((option) => (
-          <MenuItem key={option.key} value={option.value}>
+          <MenuItem
+            data-testid={`option-${option.key}`}
+            key={option.key}
+            value={option.value}
+          >
             {option.name}
           </MenuItem>
         ))}
       </Select>
-    </FormControl>
+      {!!errorMessage && (
+        <FormHelperText sx={{ ml: '14px' }} error>
+          {errorMessage}
+        </FormHelperText>
+      )}
+    </Box>
   );
 };
