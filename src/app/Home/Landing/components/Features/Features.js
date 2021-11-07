@@ -5,6 +5,7 @@ import { ArrowForward } from '@mui/icons-material';
 import { CARDS_CONTENT } from './cardsContent.object';
 import { FEATURES } from './features.string';
 import {
+  FeaturesContainer,
   FeaturesBackgroundImage,
   FeaturesBoxFlex,
   FeaturesTitle,
@@ -18,7 +19,7 @@ export const Features = () => {
   const handleFindProperty = () => history.push('/search-property');
 
   return (
-    <div className={classes.container}>
+    <FeaturesContainer sx={{ py: 4 }}>
       <FeaturesBackgroundImage />
 
       <FeaturesTitle>{FEATURES.title}</FeaturesTitle>
@@ -98,6 +99,6 @@ export const Features = () => {
           ))}
         </Box>
       </FeaturesBoxFlex>
-    </div>
+    </FeaturesContainer>
   );
 };

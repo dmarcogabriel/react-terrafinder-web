@@ -3,6 +3,12 @@ import { styled } from '@mui/material/styles';
 import { Box, Typography } from '@mui/material';
 import backgroundImage from './featuresBackground.png';
 
+export const FeaturesContainer = styled(Box)({
+  position: 'relative',
+  backgroundColor: '#f0e3d0',
+  zIndex: 5,
+});
+
 export const FeaturesBackgroundImage = styled(Box)({
   position: 'absolute',
   height: '100%',
