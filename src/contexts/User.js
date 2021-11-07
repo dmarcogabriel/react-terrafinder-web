@@ -28,7 +28,6 @@ export const UserProvider = ({ children, storedUser }) => {
 
     try {
       const { data: res } = await api.get(`users/${storedUser._id}`);
-      console.log(res.data);
       setCurrentUser({ ...res.data.user, token: storedUser.token });
       setLoadingUser(false);
     } catch (err) {
@@ -41,13 +40,22 @@ export const UserProvider = ({ children, storedUser }) => {
     setCurrentUser((old) => ({ ...old, ...data }));
   };
 
+  const setUserPlan = (plan) => setCurrentUser((old) => ({ ...old, plan }));
+
   useEffect(() => {
     if (storedUser) loadUserData();
   }, []);
 
   return (
     <Context.Provider
-      value={{ currentUser, login, logout, updateUser, userIsLogged }}
+      value={{
+        currentUser,
+        login,
+        logout,
+        updateUser,
+        userIsLogged,
+        setUserPlan,
+      }}
     >
       {!loadingUser && children}
     </Context.Provider>

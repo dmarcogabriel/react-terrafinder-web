@@ -28,7 +28,7 @@ describe('<Property />', () => {
     fireEvent.click(createPropertyButton);
 
     expect(mockPush).toHaveBeenCalled();
-    expect(pushResponse).toEqual('/create/property?step=1');
+    expect(pushResponse).toEqual('/create-property?step=1');
   });
 
   it('should to to property list page', () => {
@@ -38,7 +38,7 @@ describe('<Property />', () => {
     fireEvent.click(findPropertyButton);
 
     expect(mockPush).toHaveBeenCalled();
-    expect(pushResponse).toEqual('home/search-property');
+    expect(pushResponse).toEqual('/search-property');
   });
 
   it('matches snapshot', () => {

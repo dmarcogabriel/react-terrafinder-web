@@ -9,6 +9,7 @@ import { useFormik } from 'formik';
 import { object, string, number } from 'yup';
 import { Modal, useModal } from 'common/components';
 import { isBefore, getMonth, getYear, getDay } from 'date-fns';
+import { useUser } from 'hooks/useUser';
 import Navigator from '../Navigator';
 import { CreatePropertyContainer } from '../components';
 import { CreditCardForm } from './components';
@@ -20,6 +21,7 @@ export const Review = () => {
   const [property, setProperty] = useState();
   const { showNotification } = useNotification();
   const { open, triggerModal } = useModal();
+  const { currentUser, setUserPlan } = useUser();
 
   const handleGoBack = () => {
     triggerModal();
@@ -30,10 +32,22 @@ export const Review = () => {
     setProperty(res.data.property);
   };
 
-  const isPremiumPlan = () => state.plan === 'premium-plan';
+  const isPremiumPlan = () => {
+    if (currentUser.plan) {
+      return currentUser.plan.type === 'premium-plan';
+    }
+    return state.plan === 'premium-plan';
+  };
 
   const handleFreeActivation = async () => {
     try {
+      if (!currentUser.plan) {
+        const { data } = await api.post('/plans', {
+          type: state.plan,
+          user: currentUser._id,
+        });
+        setUserPlan(data.data.plan);
+      }
       const { data: res } = await api.put(
         `properties/activate/${state.propertyId}`
       );
