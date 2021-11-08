@@ -1,131 +1,182 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Plans /> matches snapshot 1`] = `
-<div>
-  <h1>
+<div
+  className="MuiBox-root css-uwkh73"
+>
+  <h4
+    className="MuiTypography-root MuiTypography-h4 css-10ultvr-MuiTypography-root"
+  >
     Conheça nossos planos de anúncio
-  </h1>
-  <h2>
+  </h4>
+  <h5
+    className="MuiTypography-root MuiTypography-h5 css-i7xlex-MuiTypography-root"
+  >
     Escolha o que melhor se encaixa para você
-  </h2>
-  <div>
+  </h5>
+  <div
+    className="MuiBox-root css-hqsvoc"
+  >
     <div
-      style={
-        Object {
-          "zIndex": 0,
-        }
-      }
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-9ww2aq-MuiPaper-root-MuiCard-root"
     >
-      <div>
+      <div
+        className="MuiBox-root css-1q82e8"
+      >
         <p
-          className="text-lime-green"
+          className="MuiTypography-root MuiTypography-h3 css-gepadz-MuiTypography-root"
         >
           Grátis
         </p>
-        <p />
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-1py0gvv-MuiTypography-root"
+        />
       </div>
       <div
-        className="bg-lime-green"
+        className="MuiCardContent-root css-6z18u9-MuiCardContent-root"
       >
-        <p>
+        <p
+          className="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
           Básico
         </p>
-        <ul>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+        <ul
+          className="MuiList-root MuiList-padding css-1vsvtj8-MuiList-root"
+        >
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-              />
-            </svg>
-            <span>
-              Duração de 7 dias
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Duração de 7 dias
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-              />
-            </svg>
-            <span>
-              Até 15 fotos
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Até 15 fotos
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </svg>
-            <span>
-              Sem demarcação do imóvel no mapa
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CloseIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Sem demarcação do imóvel no mapa
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </svg>
-            <span>
-              Sem suporte
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CloseIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Sem suporte
+              </p>
+            </div>
           </li>
         </ul>
         <button
-          className="text-lime-green"
+          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root css-3xtg2n-MuiButtonBase-root-MuiButton-root"
+          data-testid="plan-button-p1"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
           type="button"
         >
           Quero esse
@@ -133,124 +184,167 @@ exports[`<Plans /> matches snapshot 1`] = `
       </div>
     </div>
     <div
-      style={
-        Object {
-          "zIndex": 500,
-        }
-      }
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-1vtrsxw-MuiPaper-root-MuiCard-root"
     >
-      <div>
+      <div
+        className="MuiBox-root css-1enlqw"
+      >
         <p
-          className="text-yellow"
+          className="MuiTypography-root MuiTypography-h3 css-gepadz-MuiTypography-root"
         >
           R$ 50
         </p>
-        <p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-1py0gvv-MuiTypography-root"
+        >
           por anúncio
         </p>
       </div>
       <div
-        className="bg-yellow"
+        className="MuiCardContent-root css-trkami-MuiCardContent-root"
       >
-        <p>
+        <p
+          className="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
           PREMIUM
         </p>
-        <ul>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+        <ul
+          className="MuiList-root MuiList-padding css-1vsvtj8-MuiList-root"
+        >
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-              />
-            </svg>
-            <span>
-              Duração do anúncio de 90 dias
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Duração do anúncio de 90 dias
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-              />
-            </svg>
-            <span>
-              Visibilidade aumentada na plataforma
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Visibilidade aumentada na plataforma
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-              />
-            </svg>
-            <span>
-              Até 30 fotos e 1 vídeo
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Até 30 fotos e 1 vídeo
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </svg>
-            <span>
-              Sem filmagens por drone nem tratamento de fotos
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CloseIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Sem filmagens por drone nem tratamento de fotos
+              </p>
+            </div>
           </li>
         </ul>
         <button
-          className="text-yellow"
+          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root css-z4v7o8-MuiButtonBase-root-MuiButton-root"
+          data-testid="plan-button-p2"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
           type="button"
         >
           Quero esse
@@ -258,124 +352,167 @@ exports[`<Plans /> matches snapshot 1`] = `
       </div>
     </div>
     <div
-      style={
-        Object {
-          "zIndex": 0,
-        }
-      }
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-9ww2aq-MuiPaper-root-MuiCard-root"
     >
-      <div>
+      <div
+        className="MuiBox-root css-1q5hivw"
+      >
         <p
-          className="text-pink"
+          className="MuiTypography-root MuiTypography-h3 css-gepadz-MuiTypography-root"
         >
           A definir
         </p>
-        <p>
+        <p
+          className="MuiTypography-root MuiTypography-body2 css-1py0gvv-MuiTypography-root"
+        >
           Faça uma cotação com nossos especialistas
         </p>
       </div>
       <div
-        className="bg-blue"
+        className="MuiCardContent-root css-fuewyq-MuiCardContent-root"
       >
-        <p>
+        <p
+          className="MuiTypography-root MuiTypography-h5 css-ag7rrr-MuiTypography-root"
+        >
           Profissional
         </p>
-        <ul>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+        <ul
+          className="MuiList-root MuiList-padding css-1vsvtj8-MuiList-root"
+        >
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-              />
-            </svg>
-            <span>
-              Duração de até 365 dias
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Duração de até 365 dias
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
-              />
-            </svg>
-            <span>
-              Maior visibilidade da plataforma
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Maior visibilidade da plataforma
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </svg>
-            <span>
-              Gravação da propriedade com drones e tratamento de imagens
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Gravação da propriedade com drones e tratamento de imagens
+              </p>
+            </div>
           </li>
-          <li>
-            <svg
-              fill="currentColor"
-              height="1em"
-              stroke="currentColor"
-              strokeWidth="0"
-              style={
-                Object {
-                  "color": undefined,
-                }
-              }
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+          <li
+            className="MuiListItem-root MuiListItem-gutters css-1nxmd3h-MuiListItem-root"
+            disabled={false}
+          >
+            <div
+              className="MuiListItemIcon-root css-cveggr-MuiListItemIcon-root"
             >
-              <path
-                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-              />
-            </svg>
-            <span>
-              Suporte exclusivo
-            </span>
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-1w3q91v-MuiSvgIcon-root"
+                data-testid="CheckIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"
+                />
+              </svg>
+            </div>
+            <div
+              className="MuiListItemText-root css-tlelie-MuiListItemText-root"
+            >
+              <p
+                className="MuiTypography-root MuiTypography-body2 css-e784if-MuiTypography-root"
+              >
+                Suporte exclusivo
+              </p>
+            </div>
           </li>
         </ul>
         <button
-          className="text-pink"
+          className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root css-1t7ftwz-MuiButtonBase-root-MuiButton-root"
+          data-testid="plan-button-p3"
+          disabled={false}
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
           type="button"
         >
           Quero esse
@@ -383,22 +520,30 @@ exports[`<Plans /> matches snapshot 1`] = `
       </div>
     </div>
   </div>
-  <div>
-    <p>
+  <div
+    className="MuiBox-root css-1s8uw1l"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1fyq76y-MuiTypography-root"
+    >
       <b>
         Gratuito:
       </b>
        Recomendado para iniciantes, é uma ótima forma de testar a plataforma. Você pode testar a plataforma. Você pode criar um anúncio gratuíto da sua propriedade, com as informações gerais do imóvel, e dura 7 dias.
     </p>
-    <p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1fyq76y-MuiTypography-root"
+    >
       <b>
         Premium:
       </b>
        Recomendado para quem já tem conteúdos da propriedade como fotos, detalhes do imóvel como tipo de solo, atividades, topografia. Ele custa R$ 50,00 e seu anúncio ganha mais visibilidade dentro da plataforma.
     </p>
-    <p>
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1fyq76y-MuiTypography-root"
+    >
       <b>
-        Proffissional:
+        Profissional:
       </b>
        Entre em contato conosco para conversarmos e conhecermos melhor o seu imóvel rural. Iremos até a propriedade, colheremos as informações mais importanjtes dela e faremos excelentes gravações explorando o imóvel através de dones de ponta. Essa é a maneira mais fácil de vender.
     </p>
