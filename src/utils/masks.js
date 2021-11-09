@@ -37,13 +37,13 @@ export const maskMoney = (value) => {
   formated = formated.replace(/([0-9]{2})$/g, ',$1');
 
   if (formated.length > 6) {
-    formated = formated.replace(/([0-9]{3}),([0-9]{2}$)/g, '.$1,$2');
+    formated = formated.replace(/([0-9])([0-9]{3}),([0-9]{2}$)/g, '$1.$2,$3');
   }
 
   if (formated.length > 9) {
     formated = formated.replace(
-      /([0-9]{3}).([0-9]{3}),([0-9]{2}$)/g,
-      '.$1.$2,$3'
+      /([0-9])([0-9]{3}).([0-9]{3}),([0-9]{2}$)/g,
+      '$1.$2.$3,$4'
     );
   }
 

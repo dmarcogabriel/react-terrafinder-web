@@ -10,7 +10,7 @@
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "start": "node server.js",
-    "test": "jest --watch",
+    "test": "jest --watch --onlyChanged",
     "test:cov": "jest --coverage",
     "lint": "eslint ./src --fix",
     "css:build": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
