@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Property from 'common/components/Property';
-import { MdAdd } from 'react-icons/md';
 import { useUser } from 'hooks/useUser';
 import api from 'services/api';
 import { useHistory } from 'react-router-dom';
+import { Add as AddIcon } from '@mui/icons-material';
+import { Typography } from '@mui/material';
 import classes from './MyAds.module.scss';
-import { CreateAdButton } from './styles';
+import { MyAdsHeader, CreateAdButton } from './styles';
 
 export default function MyAds() {
   const { currentUser } = useUser();
@@ -18,7 +19,6 @@ export default function MyAds() {
 
   const loadMyProperties = async () => {
     try {
-      console.log('User loggado', currentUser);
       const { data: res } = await api.get(`properties/user/${currentUser._id}`);
       setMyProperties(res.data.properties);
     } catch (error) {
@@ -28,19 +28,30 @@ export default function MyAds() {
 
   const newPropertyAd = () => history.push('/create-property?step=1');
 
+  const handleClickEdit = (propertyId) =>
+    history.push('/dashboard/edit-property', { propertyId });
+
   useEffect(() => {
     loadMyProperties();
   }, []);
 
   return (
     <div className={classes.myAds}>
-      <h1>Meus anúncios</h1>
+      <MyAdsHeader>
+        <Typography component="h1" variant="h2">
+          Meus anúncios
+        </Typography>
 
-      <CreateAdButton dataTestId="createProperty" onClick={newPropertyAd}>
-        <MdAdd size={22} />
-
-        <p>Criar Anúncio</p>
-      </CreateAdButton>
+        <CreateAdButton
+          startIcon={<AddIcon />}
+          variant="contained"
+          color="success"
+          data-testid="createProperty"
+          onClick={newPropertyAd}
+        >
+          Criar Anúncio
+        </CreateAdButton>
+      </MyAdsHeader>
 
       <div data-testid="propertyList" className={classes.adsList}>
         {myProperties.map((property, i) => (
@@ -50,6 +61,8 @@ export default function MyAds() {
             index={i}
             property={property}
             onSelect={handleSelect}
+            isEditable
+            onClickEdit={handleClickEdit}
           />
         ))}
       </div>

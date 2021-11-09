@@ -25,7 +25,7 @@ export default function Header() {
 
   const handleLogout = () => {
     logout();
-    history.replace('/home');
+    history.replace('/');
   };
 
   const handleShowMenu = (event) => setShowMenu(event.currentTarget);

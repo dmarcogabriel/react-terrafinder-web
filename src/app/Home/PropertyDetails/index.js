@@ -25,7 +25,7 @@ export const Property = () => {
   const loadPropertyDetails = async () => {
     try {
       setLoading(true);
-      const { data: res } = await api.get(`property/${params.id}`);
+      const { data: res } = await api.get(`properties/${params.id}`);
 
       setProperty(res.data.property);
       setOwner(res.data.property.user);

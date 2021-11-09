@@ -28,7 +28,7 @@ export const Review = () => {
   };
 
   const loadProperty = async () => {
-    const { data: res } = await api.get(`property/${state.propertyId}`);
+    const { data: res } = await api.get(`properties/${state.propertyId}`);
     setProperty(res.data.property);
   };
 
@@ -49,7 +49,10 @@ export const Review = () => {
         setUserPlan(data.data.plan);
       }
       const { data: res } = await api.put(
-        `properties/activate/${state.propertyId}`
+        `properties/activate/${state.propertyId}`,
+        {
+          userId: currentUser._id,
+        }
       );
       showNotification(res.message, NOTIFICATION_TYPES.SUCCESS);
       history.push('/dashboard');

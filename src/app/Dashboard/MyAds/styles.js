@@ -1,19 +1,32 @@
-import styled, { css } from 'styled-components';
-import Button from 'common/components/atm/Button';
+import { styled } from '@mui/material/styles';
+import { Button, Box } from '@mui/material';
 
-export const CreateAdButton = styled(Button).attrs({ modifiers: 'success' })`
-  display: flex;
-  margin: 1rem 0;
+export const MyAdsHeader = styled(Box)(({ theme }) => ({
+  [theme.breakpoints.up('md')]: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+}));
 
-  ${({ theme: { breakpoint } }) => css`
-    @media (${breakpoint.desktop}) {
-      position: absolute;
-      right: 2rem;
-      top: 9rem;
-    }
-  `}
+export const CreateAdButton = styled(Button)({
+  margin: '1rem 0',
+});
 
-  > p {
-    margin-left: 1rem;
-  }
-`;
+// export const CreateAdButton = styled(Button).attrs({ modifiers: 'success' })`
+//   display: flex;
+//   margin: 1rem 0;
+
+//   ${({ theme: { breakpoint } }) => css`
+//     @media (${breakpoint.desktop}) {
+//       position: absolute;
+//       right: 2rem;
+//       top: 9rem;
+//     }
+//   `}
+
+//   > p {
+//     margin-left: 1rem;
+//   }
+// `;

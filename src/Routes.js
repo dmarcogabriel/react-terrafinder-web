@@ -10,7 +10,7 @@ import {
   PlansPage,
 } from './app/Home';
 import { LoginForm, ForgotPassword, Register } from './app/Login';
-import { Dashboard } from './app/Dashboard';
+import { Dashboard, EditPropertyPage } from './app/Dashboard';
 import {
   GeneralForm,
   DetailsForm,
@@ -49,8 +49,11 @@ export const Routes = () => (
       <Route path="/register">
         <Register />
       </Route>
-      <PrivateRoute path="/dashboard">
+      <PrivateRoute exact path="/dashboard">
         <Dashboard />
+      </PrivateRoute>
+      <PrivateRoute path="/dashboard/edit-property">
+        <EditPropertyPage />
       </PrivateRoute>
       <PrivateRoute exact path="/create-property">
         <ChosePlan />

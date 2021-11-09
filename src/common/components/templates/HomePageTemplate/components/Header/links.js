@@ -5,12 +5,12 @@ export const LOGGED_LINKS = [
     key: 'l1',
   },
   {
-    href: '/create/property',
+    href: '/create-property',
     name: 'Quero anunciar meu imóvel',
     key: 'l2',
   },
   {
-    href: '/home/search-property',
+    href: '/search-property',
     name: 'Procurar Imóvel',
     key: 'l3',
   },
@@ -23,7 +23,7 @@ export const UNLOGGED_LINKS = [
     key: 'l1',
   },
   {
-    href: '/create/property',
+    href: '/create-property',
     name: 'Quero anunciar meu imóvel',
     key: 'l2',
   },

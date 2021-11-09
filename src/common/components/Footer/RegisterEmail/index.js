@@ -1,13 +1,23 @@
 import React, { useState } from 'react';
+import api from 'services/api';
+import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import { container } from './RegisterEmail.module.scss';
 
 export default function RegisterEmail() {
   const [email, setEmail] = useState('');
+  const { showNotification } = useNotification();
 
-  function registerEmail() {
-    // todo: validate email
-    // todo: send email to api
-  }
+  const registerEmail = async () => {
+    try {
+      await api.post('password/forgot', { email });
+      showNotification(
+        'Email de recuperação de senha enviado.',
+        NOTIFICATION_TYPES.SUCCESS
+      );
+    } catch (error) {
+      showNotification('Erro ao enviar email.', NOTIFICATION_TYPES.ERROR);
+    }
+  };
 
   return (
     <form className={container}>

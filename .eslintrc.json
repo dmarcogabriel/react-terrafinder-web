@@ -23,7 +23,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "prettier"],
+  "plugins": ["react", "prettier", "react-hooks"],
   "rules": {
     "prettier/prettier": "error",
     "react/jsx-filename-extension": [
@@ -67,6 +67,7 @@
     "no-underscore-dangle": "off",
     "no-plusplus": "off",
     "no-await-in-loop": "off",
-    "linebreak-style": "off"
+    "linebreak-style": "off",
+    "react-hooks/exhaustive-deps": "warn"
   }
 }

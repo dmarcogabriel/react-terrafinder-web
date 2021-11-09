@@ -13,22 +13,6 @@ a {
   text-decoration: none;
 }
 
-button {
-  border: none;
-  transition-duration: 0.4s;
-  background: none;
-  text-align: start;
-
-  &:focus {
-    outline: none;
-  }
-
-  &:hover {
-    opacity: 0.8;
-    transition: opacity 0.8s;
-  }
-}
-
 li {
   list-style: none;
 }

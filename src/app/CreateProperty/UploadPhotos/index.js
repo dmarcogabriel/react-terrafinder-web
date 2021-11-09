@@ -8,6 +8,7 @@ import api from 'services/api';
 import { NOTIFICATION_TYPES, useNotification } from 'hooks/useNotification';
 import { Modal, useModal } from 'common/components';
 import { Typography, Button, Box } from '@mui/material';
+import { useUser } from 'hooks/useUser';
 import classes from './UploadPhotos.module.scss';
 import Navigator from '../Navigator';
 import { UploadButton } from './styles';
@@ -23,6 +24,7 @@ export const UploadPhotos = () => {
   const inputRef = useRef();
   const { state } = useLocation();
   const { open, triggerModal } = useModal();
+  const { currentUser } = useUser();
 
   const handleDrop = async (e) => {
     e.preventDefault();
@@ -69,11 +71,15 @@ export const UploadPhotos = () => {
         data.append(`photo${i + 1}`, file);
       });
 
-      await api.put(`property/upload-photos/${params.id}`, data, {
-        headers: {
-          'Content-Type': 'multipart/form-data',
-        },
-      });
+      await api.put(
+        `properties/upload-photos/${params.id}`,
+        { ...data, userId: currentUser._id },
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+      );
 
       setUploading(false);
       history.replace('/create-property/review?step=5', {
