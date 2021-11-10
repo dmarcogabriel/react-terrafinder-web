@@ -1,4 +1,4 @@
-O TerraFinder consiste em criar uma plataforma digital cujo objetivo é facilitar e conectar pessoas que possuem terras, lotes, sítios ou chácaras a vendas e/ou para arrendamentos com pessoas que tem interesse em compra-las ou aluga-las.
+O TerraFinder é uma plataforma digital cujo objetivo é facilitar e conectar pessoas que possuem terras, lotes, sítios ou chácaras a vendas e/ou para arrendamentos com pessoas que tem interesse em compra-las ou aluga-las.
 
 ### Integrantes
 
