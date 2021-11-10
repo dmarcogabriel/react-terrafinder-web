@@ -21,6 +21,7 @@ import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import { useUser } from 'hooks/useUser';
 import { maskCep, maskMoney } from 'utils/masks';
+import { moneyFormat } from 'utils/formatters';
 import propertyImagePlaceholder from 'common/static/soja.jpg';
 import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import { EditPropertyPageActionButtons, Image } from './styles';
@@ -110,7 +111,7 @@ export const EditPropertyPage = () => {
         state: property.state,
         nearbyCity: property.nearbyCity,
         cep: maskCep(property.cep),
-        amount: maskMoney(property.amount),
+        amount: moneyFormat(property.amount, true, true),
         size: property.size,
         farming: property.farming,
         activities: property.activities,
@@ -133,9 +134,6 @@ export const EditPropertyPage = () => {
   React.useEffect(() => {
     loadProperty();
   }, [loadProperty]);
-
-  console.log('foi editado', isEdited);
-  console.log('está válido', isValid);
 
   return (
     <DashboardTemplate>
