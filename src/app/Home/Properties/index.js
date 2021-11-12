@@ -3,79 +3,96 @@ import Property from 'common/components/Property';
 import { useHistory, useLocation } from 'react-router-dom';
 import api from 'services/api';
 import queryString from 'query-string';
-import Filters from 'common/components/Filters';
 import { HomePageTemplate } from 'common/components';
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Typography,
-  Button,
-} from '@mui/material';
-import { ExpandMore as ExpandIcon } from '@mui/icons-material';
+import { Typography } from '@mui/material';
+import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import classes from './SearchProperty.module.scss';
+import { AdvancedFilters } from './components';
 
 export const Properties = () => {
   const history = useHistory();
   const { search } = useLocation();
   const [properties, setProperties] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const { showNotification } = useNotification();
 
   const selectProperty = (id) => {
     history.push(`/property/${id}`);
   };
 
-  const loadProperties = async (queryParams = null) => {
-    const isActiveParam = `isActive=true`;
-    let query = `?${isActiveParam}`;
-    if (queryParams) query += `&${queryParams}`;
-    else if (search) query += `&${search}`;
+  const loadProperties = React.useCallback(
+    async (queryParams = null) => {
+      try {
+        console.log('QUERY PARAMS: ', queryParams);
+        setIsLoading(true);
+        let query = '?';
+        if (queryParams)
+          query += queryString.stringify({ isActive: true, ...queryParams });
+        else if (search)
+          query += queryString.stringify({
+            isActive: true,
+            ...queryString.parse(search),
+          });
 
-    const { data: res } = await api.get(`properties${query}`);
+        const { data: res } = await api.get(`properties${query}`);
 
-    setProperties(res.data.properties);
-  };
+        setProperties(res.data.properties);
+        setIsLoading(false);
+      } catch (error) {
+        setIsLoading(false);
+        showNotification(
+          'Ocorreu um erro ao buscar anúncios.',
+          NOTIFICATION_TYPES.ERROR
+        );
+      }
+    },
+    [search, showNotification]
+  );
 
   const handleCleanFilters = () => {
     // todo: add clean filters
   };
 
   const handleFilter = async (e) => {
-    await loadProperties(`${queryString.stringify(e)}`);
+    console.log('onFilter', e);
+    // await loadProperties(e);
+  };
+
+  const handleChange = (field) => (value) => {
+    console.log(field, value);
   };
 
   useEffect(() => {
     loadProperties();
-  }, []);
+  }, [loadProperties]);
 
   return (
     <HomePageTemplate>
       <div className={classes.container}>
         <h1>Use os filtros abaixo para melhorar o resultado de sua busca</h1>
 
-        <Accordion>
-          <AccordionSummary expandIcon={<ExpandIcon />}>
-            <Typography>Filtros</Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Filters onSubmit={handleFilter} />
-            <Button fullWidth onClick={handleCleanFilters}>
-              Limpar Filtros
-            </Button>
-          </AccordionDetails>
-        </Accordion>
+        <AdvancedFilters onSearch={handleFilter} onChange={handleChange} />
 
         {/* 
         //todo: add loading here
-      */}
-        <div className={classes.propertiesList}>
-          {properties.map((property) => (
-            <Property
-              key={property._id}
-              property={property}
-              onSelect={selectProperty}
-            />
-          ))}
-        </div>
+        */}
+        {!isLoading && !!properties.length && (
+          <div className={classes.propertiesList}>
+            {properties.map((property) => (
+              <Property
+                key={property._id}
+                property={property}
+                onSelect={selectProperty}
+              />
+            ))}
+          </div>
+        )}
+        {!isLoading && !properties.length && (
+          <Typography>
+            Não encontramos nenhum resultado para a sua pesquisa, utilize os
+            filtros acima para procurar outros
+          </Typography>
+        )}
       </div>
     </HomePageTemplate>
   );

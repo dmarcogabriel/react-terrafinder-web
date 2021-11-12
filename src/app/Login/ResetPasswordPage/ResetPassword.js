@@ -1,31 +1,37 @@
 import React from 'react';
 import { Box, Button } from '@mui/material';
 import { TextInput } from 'common/components';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import { string } from 'yup';
 import api from 'services/api';
 import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import { LoginContainer, LoginH2, LoginSubtitle } from '../components';
 
-export const ForgotPassword = () => {
-  const [email, setEmail] = React.useState('');
-  const [emailError, setEmailError] = React.useState(false);
+export const ResetPassword = () => {
+  const [password, setPassword] = React.useState('');
+  const [passwordError, setPasswordError] = React.useState(false);
   const history = useHistory();
-  const schema = string().email().required();
+  const schema = string().min(6).required();
   const { showNotification } = useNotification();
+  const { params } = useRouteMatch();
 
   const handleGoBack = () => history.goBack();
 
   const handleSubmit = async () => {
     try {
-      await api.post('password/forgot', { email });
+      const userId = Buffer.from(params.userId, 'base64').toString('binary');
+      await api.post(`password/reset/${userId}`, { password });
       showNotification(
-        'Um e-mail foi enviado para sua caixa de entrada',
+        'Senha atualizada com sucesso',
         NOTIFICATION_TYPES.SUCCESS
       );
+      setTimeout(() => {
+        history.push('/login');
+      }, 500);
     } catch (error) {
+      console.log(error);
       showNotification(
-        'Ocorreu um erro ao enviar e-mail, por favor tente novamente mais tarde',
+        'Ocorreu um erro ao atualizar sua senha.',
         NOTIFICATION_TYPES.ERROR
       );
     }
@@ -33,26 +39,28 @@ export const ForgotPassword = () => {
 
   React.useEffect(() => {
     const validateEmail = async () => {
-      const isValid = await schema.isValid(email);
-      setEmailError(isValid ? null : 'Campo obrigatório');
+      const isValid = await schema.isValid(password);
+      setPasswordError(isValid ? null : 'Campo obrigatório');
     };
     validateEmail();
-  }, [email, schema]);
+  }, [password, schema]);
 
   return (
     <LoginContainer>
       <Box sx={{ textAlign: 'center', mb: 3 }}>
         <LoginH2>Esqueceu sua senha?</LoginH2>
         <LoginSubtitle>
-          Insira seu e-mail abaixo para redefinir a senha
+          Cadastre uma nova senha para sua conta abaixo:
         </LoginSubtitle>
       </Box>
       <TextInput
-        label="E-mail"
+        inputProps={{ type: 'password' }}
+        label="Senha"
         containerSx={{ my: 2 }}
-        value={email}
-        onChange={setEmail}
-        errorMessage={emailError}
+        value={password}
+        onChange={setPassword}
+        errorMessage={passwordError}
+        placeholder="Insira sua nova senha aqui..."
       />
       <Button
         fullWidth

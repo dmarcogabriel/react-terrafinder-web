@@ -1,10 +1,13 @@
+import { purple } from '@mui/material/colors';
+
 export const PLANS = [
   {
     id: 'p1',
     amount: 'Grátis',
     kind: 'Básico',
-    color: 'limegreen',
-    bgColor: 'limegreen',
+    color: '#32cd8b',
+    bgColor: '#32cd8b',
+    link: '/',
     features: [
       {
         id: 'f1',
@@ -30,11 +33,12 @@ export const PLANS = [
   },
   {
     id: 'p2',
-    amount: 'R$ 50',
+    amount: 'R$ 129,00',
     plan: 'por anúncio',
     kind: 'PREMIUM',
-    color: 'yellow',
-    bgColor: 'yellow',
+    color: '#cd8632',
+    bgColor: '#cd8632',
+    link: '/',
     features: [
       {
         id: 'f1',
@@ -63,8 +67,9 @@ export const PLANS = [
     amount: 'A definir',
     plan: 'Faça uma cotação com nossos especialistas',
     kind: 'Profissional',
-    color: 'pink',
-    bgColor: 'blue',
+    color: purple[300],
+    bgColor: ' #3279cd',
+    link: '/contact-us',
     features: [
       {
         id: 'f1',

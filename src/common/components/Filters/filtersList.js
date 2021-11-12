@@ -9,6 +9,21 @@ export const PROPERTY_KINDS = [
     value: 'Fazenda',
     name: 'Fazenda',
   },
+  {
+    key: 'p3',
+    value: 'Chácara',
+    name: 'Chácara',
+  },
+  {
+    key: 'p4',
+    value: 'Haras',
+    name: 'Haras',
+  },
+  {
+    key: 'p5',
+    value: 'Sítio',
+    name: 'Sítio',
+  },
 ];
 
 export const STATES = [

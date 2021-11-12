@@ -1,9 +1,25 @@
 import { styled } from '@mui/material/styles';
-import { Button } from '@mui/material';
+import { Button, Box, Card as MuiCard } from '@mui/material';
+
+export const ProductWrapper = styled(Box)(({ theme }) => ({
+  position: 'relative',
+  width: '100%',
+  [theme.breakpoints.up('md')]: {
+    width: '30%',
+  },
+}));
+
+export const Card = styled(MuiCard)({
+  display: 'flex',
+  flexDirection: 'column',
+  height: '305px',
+});
 
 export const MoreButton = styled(Button)({
-  // todo: fix it to go out from card
-  // alignSelf: 'center',
-  // position: 'absolute',
-  // bottom: '-1.5rem',
+  position: 'absolute',
+  bottom: '-1.2rem',
+  left: 0,
+  right: 0,
+  marginLeft: 'auto',
+  marginRight: 'auto',
 });

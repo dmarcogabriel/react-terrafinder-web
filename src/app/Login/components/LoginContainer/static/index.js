@@ -1,4 +1,3 @@
-import backgroundImg from './background-mobile.jpeg';
-import backgroundDesktopImg from './background.jpg';
+import backgroundImg from './background.jpg';
 
-export { backgroundImg, backgroundDesktopImg };
+export { backgroundImg };

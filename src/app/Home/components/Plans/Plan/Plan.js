@@ -10,10 +10,14 @@ import {
 } from '@mui/material';
 import { Check as CheckIcon, Close as CloseIcon } from '@mui/icons-material';
 import { grey } from '@mui/material/colors';
+import { useHistory } from 'react-router-dom';
 import { PlanHeader, PlanButton } from './styles';
 
 export const Plan = ({ plan, i }) => {
   const isPremiumCard = () => i === 1;
+  const history = useHistory();
+
+  const handleNavigate = () => history.push(plan.link);
 
   return (
     <Card
@@ -65,7 +69,7 @@ export const Plan = ({ plan, i }) => {
         <PlanButton
           data-testid={`plan-button-${plan.id}`}
           sx={{ color: plan.color, my: 2 }}
-          // todo: add action to this button
+          onClick={handleNavigate}
         >
           Quero esse
         </PlanButton>

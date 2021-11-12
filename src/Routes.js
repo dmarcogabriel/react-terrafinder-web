@@ -8,8 +8,14 @@ import {
   About,
   PrivacyPolicy,
   PlansPage,
+  ContactUsPage,
 } from './app/Home';
-import { LoginForm, ForgotPassword, Register } from './app/Login';
+import {
+  LoginForm,
+  ForgotPassword,
+  Register,
+  ResetPasswordPage,
+} from './app/Login';
 import { Dashboard, EditPropertyPage } from './app/Dashboard';
 import {
   GeneralForm,
@@ -46,8 +52,14 @@ export const Routes = () => (
       <Route path="/forgot-password">
         <ForgotPassword />
       </Route>
+      <Route path="/reset-password/:userId">
+        <ResetPasswordPage />
+      </Route>
       <Route path="/register">
         <Register />
+      </Route>
+      <Route path="/contact-us">
+        <ContactUsPage />
       </Route>
       <PrivateRoute exact path="/dashboard">
         <Dashboard />

@@ -38,6 +38,8 @@ export const LoginForm = () => {
     },
   });
 
+  const handleGoBack = () => history.goBack();
+
   return (
     <LoginContainer>
       <Box sx={{ textAlign: 'center', mb: 3 }}>
@@ -47,37 +49,46 @@ export const LoginForm = () => {
           <RouterLink to="/register">Cadastre-se aqui</RouterLink>
         </LoginSubtitle>
       </Box>
-      <TextInput
-        label="E-mail"
-        value={values.email}
-        onChange={handleChange('email')}
-        errorMessage={errors.email}
-        containerSx={{ my: 2 }}
-      />
-      <TextInput
-        label="Senha"
-        value={values.password}
-        onChange={handleChange('password')}
-        errorMessage={errors.password}
-        inputProps={{ type: 'password' }}
-        containerSx={{ my: 2 }}
-      />
-
-      <Typography variant="body2" sx={{ textAlign: 'center', mt: 2, my: 3 }}>
-        Esqueceu sua senha?{' '}
-        <RouterLink to="/forgot-password">
-          Clique aqui para redefinir
-        </RouterLink>
-      </Typography>
-
-      <Button
-        fullWidth
-        color="success"
-        variant="contained"
-        onClick={handleSubmit}
+      <Box
+        sx={{
+          px: { xs: 0, md: 15 },
+        }}
       >
-        Fazer Login
-      </Button>
+        <TextInput
+          label="E-mail"
+          value={values.email}
+          onChange={handleChange('email')}
+          errorMessage={errors.email}
+          containerSx={{ my: 2 }}
+        />
+        <TextInput
+          label="Senha"
+          value={values.password}
+          onChange={handleChange('password')}
+          errorMessage={errors.password}
+          inputProps={{ type: 'password' }}
+          containerSx={{ my: 2 }}
+        />
+
+        <Typography variant="body2" sx={{ textAlign: 'center', mt: 2, my: 3 }}>
+          Esqueceu sua senha?{' '}
+          <RouterLink to="/forgot-password">
+            Clique aqui para redefinir
+          </RouterLink>
+        </Typography>
+
+        <Button
+          fullWidth
+          color="success"
+          variant="contained"
+          onClick={handleSubmit}
+        >
+          Fazer Login
+        </Button>
+        <Button sx={{ mt: 2 }} fullWidth onClick={handleGoBack}>
+          Voltar
+        </Button>
+      </Box>
     </LoginContainer>
   );
 };

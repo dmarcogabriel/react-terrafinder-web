@@ -1,7 +1,7 @@
 import React from 'react';
 import {
-  Select,
   Box,
+  Select,
   InputLabel,
   MenuItem,
   FormHelperText,
@@ -27,6 +27,8 @@ export const SelectInput = ({
   variant = 'standard',
   noValidation,
   errorMessage,
+  isLoading,
+  inputProps = {},
   ...props
 }) => {
   const handleChange = ({ target: { value: selectedOption } }) => {
@@ -52,23 +54,25 @@ export const SelectInput = ({
         {!noValidation && <ValidationIcon errorMessage={errorMessage} />}
       </Box>
       <Select
-        inputProps={{ 'data-testid': dataTestId }}
-        value={value}
+        inputProps={{ 'data-testid': dataTestId, ...inputProps }}
+        value={isLoading ? 'Carregando...' : value}
         onChange={handleChange}
         fullWidth
         size="small"
         error={!!errorMessage}
+        disabled={isLoading}
         {...props}
       >
-        {options.map((option) => (
-          <MenuItem
-            data-testid={`option-${option.key}`}
-            key={option.key}
-            value={option.value}
-          >
-            {option.name}
-          </MenuItem>
-        ))}
+        {!isLoading &&
+          options.map((option, i) => (
+            <MenuItem
+              data-testid={`option-${i}`}
+              key={String(i)}
+              value={option}
+            >
+              {option}
+            </MenuItem>
+          ))}
       </Select>
       {!!errorMessage && (
         <FormHelperText sx={{ ml: '14px' }} error>

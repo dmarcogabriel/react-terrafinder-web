@@ -6,6 +6,13 @@ import {
   SentimentDissatisfied as InvalidIcon,
 } from '@mui/icons-material';
 
+const ValidationIcon = ({ errorMessage }) =>
+  errorMessage ? (
+    <InvalidIcon fontSize="small" color="error" />
+  ) : (
+    <ValidIcon fontSize="small" color="success" />
+  );
+
 export const TextInput = ({
   label,
   value,
@@ -15,6 +22,7 @@ export const TextInput = ({
   inputProps,
   formatter,
   containerSx = {},
+  noValidation,
   prefix,
   ...props
 }) => {
@@ -35,12 +43,8 @@ export const TextInput = ({
           justifyContent: 'space-between',
         }}
       >
-        <InputLabel>{label}</InputLabel>
-        {errorMessage ? (
-          <InvalidIcon fontSize="small" color="error" />
-        ) : (
-          <ValidIcon fontSize="small" color="success" />
-        )}
+        <InputLabel error={!!errorMessage}>{label}</InputLabel>
+        {!noValidation && <ValidationIcon errorMessage={errorMessage} />}
       </Box>
       <TextField
         size="small"

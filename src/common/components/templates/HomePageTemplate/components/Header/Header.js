@@ -135,7 +135,7 @@ export default function Header() {
         ) : (
           <MenuItem>
             <Button variant="contained" color="warning">
-              <Typography>Fale conosco!!</Typography>
+              <Typography>Fale conosco!</Typography>
             </Button>
           </MenuItem>
         )}

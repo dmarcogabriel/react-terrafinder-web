@@ -3,32 +3,39 @@ import { useFormik } from 'formik';
 import { SelectInput, RangeInput } from 'common/components';
 import { moneyFormat } from 'utils/formatters';
 import { Card, Box, Button } from '@mui/material';
-import { PROPERTY_KINDS, STATES } from './filtersList';
+import api from 'services/api';
+import queryString from 'query-string';
 
-export const Filters = ({ onSubmit }) => {
-  const { values, handleChange, handleSubmit } = useFormik({
+export const Filters = ({ onSubmit, showCleanButton = false }) => {
+  const [filters, setFilters] = React.useState({
+    kinds: ['Carregando...'],
+    states: ['Carregando...'],
+  });
+  const [isLoading, setIsLoading] = React.useState(true);
+
+  const { values, handleChange, handleSubmit, resetForm } = useFormik({
     initialValues: {
       propertyKind: '',
       state: '',
-      size: '[0, 9999]',
-      amount: '[0, 999999999]',
+      size: '[1, 350]',
+      amount: '[5000, 50000000]',
     },
     onSubmit() {
-      const filters = {};
+      const filtersValues = {};
       if (values.propertyKind) {
-        filters.propertyKind = values.propertyKind;
+        filtersValues.propertyKind = values.propertyKind;
       }
       if (values.state) {
-        filters.state = values.state;
+        filtersValues.state = values.state;
       }
       if (values.size) {
-        filters.size = values.size;
+        filtersValues.size = values.size;
       }
       if (values.amount) {
-        filters.amount = values.amount;
+        filtersValues.amount = values.amount;
       }
 
-      onSubmit(filters);
+      onSubmit(filtersValues);
     },
   });
 
@@ -36,24 +43,48 @@ export const Filters = ({ onSubmit }) => {
 
   const amountRangeLabelFormat = (value) => moneyFormat(value);
 
+  const handleCleanFilters = () => resetForm();
+
+  const loadFilters = React.useCallback(async () => {
+    try {
+      setIsLoading(true);
+      const response = await api.get(
+        `properties/filters?${queryString.stringify({
+          ...values,
+          isActive: true,
+        })}`
+      );
+      setFilters(response.data.filters);
+      console.log(response.data.filters);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+    }
+  }, [values]);
+
+  React.useEffect(() => {
+    loadFilters();
+  }, [loadFilters]);
+
   return (
     <Card data-testid="filters" sx={{ width: { xs: '80%', md: '50%' } }}>
       <Box sx={{ p: 3 }}>
         <SelectInput
           noValidation
           label="Tipo de Propriedade"
-          options={PROPERTY_KINDS}
+          options={filters.kinds}
           onChange={handleChange('propertyKind')}
           dataTestId="propertyKind"
           value={values.propertyKind}
+          isLoading={isLoading}
         />
 
         <RangeInput
           value={values.size}
           dataTestId="propertySize"
           label="Área do Imóvel"
-          min={10}
-          max={5000}
+          min={1}
+          max={350}
           minDistance={100}
           step={100}
           valueLabelFormat={sizeRangeLabelFormat}
@@ -64,16 +95,17 @@ export const Filters = ({ onSubmit }) => {
           noValidation
           dataTestId="state"
           label="Estado"
-          options={STATES}
+          options={filters.states}
           value={values.state}
           onChange={handleChange('state')}
+          isLoading={isLoading}
         />
 
         <RangeInput
           value={values.amount}
           dataTestId="amount"
-          min={0}
-          max={99999999}
+          min={5000}
+          max={50000000}
           step={1000}
           label="Intervalo de Preço"
           valueLabelFormat={amountRangeLabelFormat}
@@ -91,6 +123,11 @@ export const Filters = ({ onSubmit }) => {
       >
         Procurar Imóvel
       </Button>
+      {showCleanButton && (
+        <Button fullWidth onClick={handleCleanFilters}>
+          Limpar Filtros
+        </Button>
+      )}
     </Card>
   );
 };

@@ -7,13 +7,11 @@ import {
   ContentBox,
   GreetingText,
 } from './styles';
-import { backgroundDesktopImg, backgroundImg } from './static';
+import { backgroundImg } from './static';
 
 export const LoginContainer = ({ children }) => {
   const { currentUser } = useUser();
   const history = useHistory();
-
-  const loadBackgroundImage = (bgImage) => `url(${bgImage});`;
 
   useEffect(() => {
     if (currentUser) {
@@ -30,10 +28,7 @@ export const LoginContainer = ({ children }) => {
       <WelcomeBox
         sx={{
           minHeight: { md: '100vh' },
-          backgroundImage: {
-            md: loadBackgroundImage(backgroundDesktopImg),
-            xs: loadBackgroundImage(backgroundImg),
-          },
+          backgroundImage: `url(${backgroundImg});`,
           p: 3,
           width: { md: '50%' },
         }}
