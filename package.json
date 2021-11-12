@@ -2,10 +2,6 @@
   "name": "terrafinder",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": ">=14.15.0",
-    "yarn": ">=1.22.5"
-  },
   "scripts": {
     "dev": "react-scripts start",
     "build": "react-scripts build",
