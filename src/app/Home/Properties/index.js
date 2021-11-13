@@ -23,7 +23,6 @@ export const Properties = () => {
   const loadProperties = React.useCallback(
     async (queryParams = null) => {
       try {
-        console.log('QUERY PARAMS: ', queryParams);
         setIsLoading(true);
         let query = '?';
         if (queryParams)
@@ -35,6 +34,7 @@ export const Properties = () => {
           });
 
         const { data: res } = await api.get(`properties${query}`);
+        console.log(res.data);
 
         setProperties(res.data.properties);
         setIsLoading(false);
@@ -49,13 +49,8 @@ export const Properties = () => {
     [search, showNotification]
   );
 
-  const handleCleanFilters = () => {
-    // todo: add clean filters
-  };
-
-  const handleFilter = async (e) => {
-    console.log('onFilter', e);
-    // await loadProperties(e);
+  const handleSearch = async (e) => {
+    await loadProperties(e);
   };
 
   const handleChange = (field) => (value) => {
@@ -71,7 +66,7 @@ export const Properties = () => {
       <div className={classes.container}>
         <h1>Use os filtros abaixo para melhorar o resultado de sua busca</h1>
 
-        <AdvancedFilters onSearch={handleFilter} onChange={handleChange} />
+        <AdvancedFilters onSearch={handleSearch} onChange={handleChange} />
 
         {/* 
         //todo: add loading here

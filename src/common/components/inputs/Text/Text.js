@@ -35,7 +35,13 @@ export const TextInput = ({
   };
 
   return (
-    <Box sx={containerSx}>
+    <Box
+      sx={{
+        width: '100%',
+        my: 2,
+        ...containerSx,
+      }}
+    >
       <Box
         sx={{
           display: 'flex',
