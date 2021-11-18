@@ -34,6 +34,8 @@ export default function Header() {
 
   const handleClickMenuItem = (url) => history.push(url);
 
+  const handleClickContactUs = () => history.push('contact-us');
+
   useEffect(() => {
     if (currentUser) {
       setLinks(LOGGED_LINKS);
@@ -94,7 +96,11 @@ export default function Header() {
               </Button>
             </>
           ) : (
-            <Button variant="contained" color="warning">
+            <Button
+              variant="contained"
+              color="warning"
+              onClick={handleClickContactUs}
+            >
               <Typography>Fale conosco!!</Typography>
             </Button>
           )}

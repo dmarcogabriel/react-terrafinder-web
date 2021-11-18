@@ -6,11 +6,13 @@ import api from 'services/api';
 import { useUser } from 'hooks/useUser';
 import { Box, Typography, Button } from '@mui/material';
 import { TextInput } from 'common/components';
+import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import { LoginContainer, LoginH2, LoginSubtitle } from '../components';
 
 export const LoginForm = () => {
   const { login } = useUser();
   const history = useHistory();
+  const { showNotification } = useNotification();
 
   const { values, handleChange, errors, handleSubmit } = useFormik({
     initialValues: {
@@ -24,17 +26,23 @@ export const LoginForm = () => {
         .required('Campo Obrigatório'),
     }),
     async onSubmit() {
-      const { data: response } = await api.post('login', values);
+      try {
+        const { data: response } = await api.post('login', values);
 
-      const headers = { 'x-access-token': response.data.token };
+        const headers = { 'x-access-token': response.data.token };
 
-      const { data: userData } = await api.get(
-        `users/${response.data.userId}`,
-        { headers }
-      );
-      console.log('User data', userData);
-      login({ ...userData.data.user, token: response.data.token });
-      history.replace('/dashboard');
+        const {
+          data: userData,
+        } = await api.get(`users/${response.data.userId}`, { headers });
+        login({ ...userData.data.user, token: response.data.token });
+        showNotification('Logado com sucesso!', NOTIFICATION_TYPES.SUCCESS);
+        history.replace('/dashboard');
+      } catch (error) {
+        showNotification(
+          'E-mail ou senha incorretos.',
+          NOTIFICATION_TYPES.ERROR
+        );
+      }
     },
   });
 
