@@ -63,6 +63,7 @@ export default function MyAds() {
             onSelect={handleSelect}
             isEditable
             onClickEdit={handleClickEdit}
+            isPremium={property.plan && property.plan.type === 'premium-plan'}
           />
         ))}
       </div>

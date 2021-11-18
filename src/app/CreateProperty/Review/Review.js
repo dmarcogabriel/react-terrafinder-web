@@ -32,28 +32,14 @@ export const Review = () => {
     setProperty(res.data.property);
   };
 
-  const isPremiumPlan = () => {
-    if (currentUser.plan) {
-      return currentUser.plan.type === 'premium-plan';
-    }
-    return state.plan === 'premium-plan';
-  };
+  const isPremiumPlan = () => state.plan === 'premium-plan';
 
   const handleFreeActivation = async () => {
     try {
-      if (!currentUser.plan) {
-        const { data } = await api.post('/plans', {
-          type: state.plan,
-          user: currentUser._id,
-        });
-        setUserPlan(data.data.plan);
-      }
-      const { data: res } = await api.put(
-        `properties/activate/${state.propertyId}`,
-        {
-          userId: currentUser._id,
-        }
-      );
+      const { data: res } = await api.post(`plans`, {
+        type: state.plan,
+        property: state.propertyId,
+      });
       showNotification(res.message, NOTIFICATION_TYPES.SUCCESS);
       history.push('/dashboard');
     } catch (error) {

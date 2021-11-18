@@ -18,7 +18,9 @@ export const GeneralForm = () => {
   const { values, handleChange, handleSubmit, errors } = useFormik({
     initialValues: {
       name: '',
-      ownerName: currentUser ? currentUser.firstName : '',
+      ownerName: currentUser
+        ? `${currentUser.firstName} ${currentUser.lastName}`
+        : '',
       description: '',
       propertyKind: '',
       state: '',

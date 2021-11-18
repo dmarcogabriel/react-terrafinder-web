@@ -78,6 +78,9 @@ export const Properties = () => {
                 key={property._id}
                 property={property}
                 onSelect={selectProperty}
+                isPremium={
+                  property.plan && property.plan.type === 'premium-plan'
+                }
               />
             ))}
           </div>
