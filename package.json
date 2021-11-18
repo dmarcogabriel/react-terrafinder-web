@@ -4,7 +4,6 @@
   "private": true,
   "scripts": {
     "dev": "react-scripts start",
-    "build": "react-scripts build",
     "start": "node server.js",
     "test": "jest --watch --onlyChanged",
     "test:cov": "jest --coverage",
