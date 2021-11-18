@@ -11,7 +11,8 @@
     "css:build": "tailwindcss build src/tailwind.css -o src/tailwind.output.css",
     "generate": "hygen",
     "storybook": "start-storybook -p 6006 -s public",
-    "build-storybook": "build-storybook -s public"
+    "build-storybook": "build-storybook -s public",
+    "build:prod": "react-scripts build"
   },
   "eslintConfig": {
     "extends": "react-app",
