@@ -115,7 +115,6 @@ export const Filters = ({ onSubmit, showCleanButton = false }) => {
 
       <Button
         variant="contained"
-        color="warning"
         fullWidth
         sx={{ py: 2 }}
         data-testid="submitButton"

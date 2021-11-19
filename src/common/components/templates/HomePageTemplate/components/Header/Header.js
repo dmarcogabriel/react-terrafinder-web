@@ -96,11 +96,7 @@ export default function Header() {
               </Button>
             </>
           ) : (
-            <Button
-              variant="contained"
-              color="warning"
-              onClick={handleClickContactUs}
-            >
+            <Button variant="contained" onClick={handleClickContactUs}>
               <Typography>Fale conosco!!</Typography>
             </Button>
           )}

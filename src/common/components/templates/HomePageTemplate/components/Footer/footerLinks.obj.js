@@ -21,7 +21,7 @@ export const FOOTER_LINKS = [
       {
         key: 'l4',
         text: 'Fale Conosco',
-        href: '/support',
+        href: '/contact-us',
       },
     ],
   },

@@ -11,7 +11,7 @@ export const About = () => {
 
         <div className={classes.card}>
           <div className={classes.row}>
-            <div>
+            <div className={classes.aboutText}>
               <p>
                 O Brasil é o quinto país com maior extensão territorial do
                 mundo, com cerca de 152,5 milhões de hectares (17,9% do

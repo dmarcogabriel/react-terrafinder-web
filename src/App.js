@@ -5,6 +5,7 @@ import { UserProvider } from 'contexts/User';
 import { USER_KEY } from 'constants/userKey';
 import { NotificationProvider } from 'contexts/Notification';
 import Nofitication from 'common/components/Notification';
+import { OldThemeProvider } from 'contexts/OldTheme';
 import { ThemeProvider } from 'contexts/Theme';
 import { QueryClientProvider, QueryClient } from 'react-query';
 import { Routes } from './Routes';
@@ -14,15 +15,17 @@ export default function App() {
   const queryClient = new QueryClient();
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <ThemeProvider>
-        <UserProvider storedUser={storedUser && JSON.parse(storedUser)}>
-          <NotificationProvider>
-            <Nofitication />
-            <Routes />
-          </NotificationProvider>
-        </UserProvider>
-      </ThemeProvider>
-    </QueryClientProvider>
+    <ThemeProvider>
+      <QueryClientProvider client={queryClient}>
+        <OldThemeProvider>
+          <UserProvider storedUser={storedUser && JSON.parse(storedUser)}>
+            <NotificationProvider>
+              <Nofitication />
+              <Routes />
+            </NotificationProvider>
+          </UserProvider>
+        </OldThemeProvider>
+      </QueryClientProvider>
+    </ThemeProvider>
   );
 }
