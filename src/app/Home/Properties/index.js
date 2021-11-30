@@ -39,7 +39,6 @@ export const Properties = () => {
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
-        console.log('erro', error);
         showNotification(
           'Ocorreu um erro ao buscar anúncios.',
           NOTIFICATION_TYPES.ERROR

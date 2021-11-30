@@ -55,7 +55,6 @@ export const Filters = ({ onSubmit, showCleanButton = false }) => {
         })}`
       );
       setFilters(response.data.filters);
-      console.log(response.data.filters);
       setIsLoading(false);
     } catch (error) {
       setIsLoading(false);

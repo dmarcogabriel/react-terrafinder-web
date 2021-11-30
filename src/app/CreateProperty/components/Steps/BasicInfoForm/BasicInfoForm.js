@@ -126,7 +126,7 @@ export const BasicInfoForm = () => {
         <SelectInput
           label="Estado (em que o imóvel se encontra)"
           value={values.state}
-          options={data.data.map((uf) => uf.sigla)}
+          options={data ? data.data.map((uf) => uf.sigla) : []}
           isLoading={isLoading}
           onChange={handleChange('state')}
           inputProps={{ maxLength: 2, 'data-testid': 'stateInput' }}

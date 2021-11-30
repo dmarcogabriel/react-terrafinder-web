@@ -29,7 +29,6 @@ export const ResetPassword = () => {
         history.push('/login');
       }, 500);
     } catch (error) {
-      console.log(error);
       showNotification(
         'Ocorreu um erro ao atualizar sua senha.',
         NOTIFICATION_TYPES.ERROR

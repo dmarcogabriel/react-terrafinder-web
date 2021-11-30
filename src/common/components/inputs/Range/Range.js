@@ -39,7 +39,6 @@ export const RangeInput = ({
     onChange(changedValue);
   };
 
-  // todo: change colors
   return (
     <Box>
       <InputLabel>{label}</InputLabel>

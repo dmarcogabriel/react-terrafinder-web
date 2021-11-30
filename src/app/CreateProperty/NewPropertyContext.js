@@ -13,14 +13,6 @@ export const NewPropertyProvider = ({ children }) => {
 
   const nextStep = () => setStep(step + 1);
 
-  React.useEffect(() => {
-    console.log('STEP', step);
-  }, [step]);
-
-  React.useEffect(() => {
-    console.log('PROPERTY', property);
-  }, [property]);
-
   return (
     <Context.Provider
       value={{
