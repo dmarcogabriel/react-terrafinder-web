@@ -63,22 +63,21 @@ export const Register = () => {
       <Box
         sx={{
           display: { md: 'flex' },
-          justifyContent: { md: 'space-between' },
-          alignItems: 'flex-start',
+          alignItems: 'center',
           my: 2,
         }}
       >
         <TextInput
+          containerSx={{ my: 1, mx: 1 }}
           dataTestId="firstNameInput"
           label="Primeiro nome"
           value={values.firstName}
           onChange={handleChange('firstName')}
           errorMessage={errors.firstName}
-          containerSx={{ mb: { xs: 2, md: 0 } }}
         />
 
         <TextInput
-          containerSx={{ mt: { xs: 2, md: 0 } }}
+          containerSx={{ my: 1, mx: 1 }}
           dataTestId="lastNameInput"
           label="Sobrenome"
           value={values.lastName}
@@ -87,7 +86,7 @@ export const Register = () => {
         />
       </Box>
       <TextInput
-        containerSx={{ my: 2 }}
+        containerSx={{ my: 1, mx: 1 }}
         dataTestId="emailInput"
         label="E-mail"
         value={values.email}
@@ -105,6 +104,7 @@ export const Register = () => {
         }}
       >
         <TextInput
+          containerSx={{ my: 1, mx: 1 }}
           dataTestId="phoneInput"
           label="Telefone para contato"
           value={values.phone}
@@ -113,10 +113,10 @@ export const Register = () => {
           placeholder="(14) 99999-8888"
           formatter={maskPhone}
           inputProps={{ maxLength: 15 }}
-          containerSx={{ mb: { xs: 2, md: 0 } }}
         />
 
         <TextInput
+          containerSx={{ my: 1, mx: 1 }}
           dataTestId="cpfInput"
           label="CPF"
           value={values.cpf}
@@ -125,17 +125,16 @@ export const Register = () => {
           placeholder="xxx.xxx.xxx-xx"
           formatter={maskCpf}
           inputProps={{ maxLength: 14 }}
-          containerSx={{ mt: { xs: 2, md: 0 } }}
         />
       </Box>
       <TextInput
+        containerSx={{ my: 1, mx: 1 }}
         dataTestId="passInput"
         label="Senha"
         value={values.password}
         errorMessage={errors.password}
         onChange={handleChange('password')}
         inputProps={{ type: 'password' }}
-        containerSx={{ my: 2 }}
       />
       <Button
         data-testid="registerButton"

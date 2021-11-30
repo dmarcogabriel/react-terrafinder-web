@@ -11,7 +11,6 @@ import {
   MenuItem,
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import logoImageDesktop from './static/Logo.svg';
 import logoImage from './static/Logo.png';
 import { LOGGED_LINKS, UNLOGGED_LINKS } from './links';
 import { Logo } from './styles';
@@ -75,7 +74,7 @@ export default function Header() {
           }}
         >
           <RouterLink to="/">
-            <Logo alt="logo desktop" src={logoImageDesktop} />
+            <Logo alt="logo desktop" src={logoImage} />
           </RouterLink>
           {links.map((link) => (
             <RouterLink key={link.key} to={link.href} component={HeaderLink}>

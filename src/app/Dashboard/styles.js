@@ -1,6 +1,16 @@
-import styled from 'styled-components';
-import CommonButton from 'common/components/atm/Button';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/material';
 
-export const Button = styled(CommonButton)`
-  margin: 1rem 0;
-`;
+export const AvatarPreview = styled('img')({
+  width: '100%',
+  maxHeight: '150px',
+});
+
+export const ModalButtons = styled(Box)({
+  display: 'flex',
+  flexDirection: 'column',
+});
+
+export const FileInput = styled('input')({
+  display: 'none',
+});

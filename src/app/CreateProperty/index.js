@@ -1,7 +1,3 @@
-import { ChosePlan } from './ChosePlan';
-import { GeneralForm } from './GeneralForm';
-import { DetailsForm } from './DetailsForm';
-import { UploadPhotos } from './UploadPhotos';
-import Review from './Review';
+import { CreateProperty } from './CreateProperty';
 
-export { ChosePlan, GeneralForm, DetailsForm, UploadPhotos, Review };
+export { CreateProperty };

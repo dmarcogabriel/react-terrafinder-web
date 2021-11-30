@@ -7,7 +7,7 @@ export const PLANS = [
     kind: 'Básico',
     color: '#32cd8b',
     bgColor: '#32cd8b',
-    link: '/',
+    link: '/login',
     features: [
       {
         id: 'f1',
@@ -38,7 +38,7 @@ export const PLANS = [
     kind: 'PREMIUM',
     color: '#cd8632',
     bgColor: '#cd8632',
-    link: '/',
+    link: '/login',
     features: [
       {
         id: 'f1',

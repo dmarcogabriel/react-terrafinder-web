@@ -1,0 +1,81 @@
+@import 'styles';
+
+.uploadPhotos {
+  padding: 0 2rem;
+
+  @media ($desktop) {
+    padding: 0;
+  }
+
+  color: $gray-dark;
+
+  > h2 {
+    text-align: center;
+    font-weight: normal;
+    margin: 1rem 0;
+    font-size: 1.5rem;
+  }
+
+  .dropZone {
+    border: 2px dashed #70707033;
+    border-radius: 0.2rem;
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: $gray-dark;
+    background: #F8FAFC;
+
+    > input {
+      display: none;
+    }
+
+    > span {
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .icon {
+      margin: 2rem 0;
+    }
+
+    .previewImages {
+      @media ($desktop) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      padding: 0 1rem;
+
+      > div {
+        position: relative;
+        margin: 1rem 0;
+
+        @media ($desktop) {
+          margin: 0;
+        }
+
+        > img {
+          width: 100%;
+          max-height: 15rem;
+
+          @media ($desktop) {
+            max-height: none;
+          }
+        }
+
+        .removeImageIcon {
+          position: absolute;
+          top: 0.5rem;
+          right: 0.5rem;
+          color: $orange;
+          background: black;
+          border-radius: 100%;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

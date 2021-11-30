@@ -7,7 +7,7 @@ import api from 'services/api';
 import { useQuery } from 'react-query';
 import { maskMoney } from 'utils/masks';
 import { omitBy } from 'lodash';
-import { AdvancedFiltersForms, InlineFilters } from './styles';
+import { AdvancedFiltersForms } from './styles';
 
 export const AdvancedFilters = ({ onSearch }) => {
   const { data, isLoading } = useQuery('filters', () =>
@@ -26,7 +26,6 @@ export const AdvancedFilters = ({ onSearch }) => {
     },
     async onSubmit(formData) {
       // * Removes empty fields
-      console.log(formData);
       onSearch(omitBy(formData, (value) => !value));
     },
   });
@@ -41,60 +40,56 @@ export const AdvancedFilters = ({ onSearch }) => {
       <CardContent>
         {!!data && (
           <AdvancedFiltersForms sx={{ my: 1 }}>
-            <InlineFilters>
-              <SelectInput
-                label="Estado"
-                noValidation
-                value={values.state}
-                options={data.data.filters.states}
-                onChange={handleChange('state')}
-                isLoading={isLoading}
-              />
-              <TextInput
-                label="Cidade"
-                noValidation
-                value={values.city}
-                onChange={handleChange('city')}
-              />
-              <SelectInput
-                label="Área da propriedade"
-                options={data.data.filters.sizes}
-                noValidation
-                value={values.size}
-                onChange={handleChange('size')}
-                isLoading={isLoading}
-              />
-            </InlineFilters>
-            <InlineFilters>
-              <SelectInput
-                label="Tipo de propriedade"
-                options={data.data.filters.kinds}
-                noValidation
-                value={values.propertyKind}
-                onChange={handleChange('propertyKind')}
-                isLoading={isLoading}
-              />
-              <TextInput
-                label="De"
-                noValidation
-                formatter={maskMoney}
-                value={values.amountMin}
-                onChange={handleChange('amountMin')}
-              />
-              <TextInput
-                label="Até"
-                noValidation
-                formatter={maskMoney}
-                value={values.amountMax}
-                onChange={handleChange('amountMax')}
-              />
-              <TextInput
-                label="Código do imóvel"
-                noValidation
-                value={values.code}
-                onChange={handleChange('code')}
-              />
-            </InlineFilters>
+            <SelectInput
+              label="Estado"
+              noValidation
+              value={values.state}
+              options={data.data.filters.states}
+              onChange={handleChange('state')}
+              isLoading={isLoading}
+            />
+            <TextInput
+              label="Cidade"
+              noValidation
+              value={values.city}
+              onChange={handleChange('city')}
+            />
+            <SelectInput
+              label="Área da propriedade"
+              options={data.data.filters.sizes}
+              noValidation
+              value={values.size}
+              onChange={handleChange('size')}
+              isLoading={isLoading}
+            />
+            <SelectInput
+              label="Tipo de propriedade"
+              options={data.data.filters.kinds}
+              noValidation
+              value={values.propertyKind}
+              onChange={handleChange('propertyKind')}
+              isLoading={isLoading}
+            />
+            <TextInput
+              label="De"
+              noValidation
+              formatter={maskMoney}
+              value={values.amountMin}
+              onChange={handleChange('amountMin')}
+            />
+            <TextInput
+              label="Até"
+              noValidation
+              formatter={maskMoney}
+              value={values.amountMax}
+              onChange={handleChange('amountMax')}
+            />
+            <TextInput
+              label="Código do imóvel"
+              noValidation
+              value={values.code}
+              onChange={handleChange('code')}
+            />
           </AdvancedFiltersForms>
         )}
         <Box

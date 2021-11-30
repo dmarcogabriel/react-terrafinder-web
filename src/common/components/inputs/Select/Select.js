@@ -29,6 +29,7 @@ export const SelectInput = ({
   errorMessage,
   isLoading,
   inputProps = {},
+  containerSx = {},
   ...props
 }) => {
   const handleChange = ({ target: { value: selectedOption } }) => {
@@ -41,6 +42,7 @@ export const SelectInput = ({
       sx={{
         width: '100%',
         my: 2,
+        ...containerSx,
       }}
     >
       <Box

@@ -25,9 +25,8 @@ export const Property = ({
   isEditable,
   onClickEdit,
   containerSx = {},
+  photo,
 }) => {
-  const [photo] = property.photos;
-
   const handleSelect = () => onSelect && onSelect(property._id);
 
   const handleEdit = () => onClickEdit && onClickEdit(property._id);
@@ -36,6 +35,7 @@ export const Property = ({
     <Card
       data-testid={dataTestId || 'property'}
       sx={{ my: 1, cursor: 'pointer', position: 'relative', ...containerSx }}
+      onClick={handleSelect}
     >
       {isPremium && (
         <PropertyPremiumLabel sx={{ p: 1 }}>
@@ -53,13 +53,9 @@ export const Property = ({
         </PropertyEditButton>
       )}
       <CardMedia
-        image={
-          photo
-            ? `${process.env.REACT_APP_STATIC}/images/${photo}`
-            : imagePlaceholder
-        }
+        image={photo || imagePlaceholder}
         alt={property.name}
-        sx={{ height: 200 }}
+        sx={{ height: 300 }}
       />
       <Box
         sx={{
@@ -69,27 +65,30 @@ export const Property = ({
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
-        onClick={handleSelect}
       >
         <Typography variant="h6">{property.name}</Typography>
         <PropertyAmount sx={{ p: 1 }}>
           {moneyFormat(property.amount, false)}
         </PropertyAmount>
       </Box>
-      <PropertyAtributesBox sx={{ py: 2, px: 2 }}>
+      <PropertyAtributesBox sx={{ py: 2, px: { xs: 2, md: 10 } }}>
         <PropertyAttribute sx={{ my: { xs: 1, md: 0 } }}>
           <SizeIcon color="success" />
-          <Typography sx={{ ml: 1 }}>{property.size}ha</Typography>
+          <Typography sx={{ ml: 1, fontWeight: 'bold' }}>
+            {property.size}ha
+          </Typography>
         </PropertyAttribute>
         <PropertyAttribute sx={{ my: { xs: 1, md: 0 } }}>
           <FarmingIcon color="success" />
-          <Typography sx={{ ml: 1 }}>
+          <Typography sx={{ ml: 1, fontWeight: 'bold' }}>
             {farmingFormat(property.farming)}
           </Typography>
         </PropertyAttribute>
         <PropertyAttribute sx={{ my: { xs: 1, md: 0 } }}>
           <MapIcon color="success" />
-          <Typography sx={{ ml: 1 }}>{property.state}</Typography>
+          <Typography sx={{ ml: 1, fontWeight: 'bold' }}>
+            {property.state}
+          </Typography>
         </PropertyAttribute>
       </PropertyAtributesBox>
     </Card>

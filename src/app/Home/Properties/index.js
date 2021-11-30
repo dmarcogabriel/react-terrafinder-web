@@ -34,12 +34,12 @@ export const Properties = () => {
           });
 
         const { data: res } = await api.get(`properties${query}`);
-        console.log(res.data);
 
         setProperties(res.data.properties);
         setIsLoading(false);
       } catch (error) {
         setIsLoading(false);
+        console.log('erro', error);
         showNotification(
           'Ocorreu um erro ao buscar anúncios.',
           NOTIFICATION_TYPES.ERROR
@@ -80,6 +80,10 @@ export const Properties = () => {
                 onSelect={selectProperty}
                 isPremium={
                   property.plan && property.plan.type === 'premium-plan'
+                }
+                photo={
+                  property.photos[0] &&
+                  `${process.env.REACT_APP_STATIC}/images/${property.photos[0]}`
                 }
               />
             ))}

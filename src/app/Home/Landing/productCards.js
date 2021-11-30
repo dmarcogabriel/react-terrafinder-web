@@ -33,6 +33,6 @@ export default [
     description:
       'Quero contratar o serviço de criação de aunúncio profissional.',
     buttonText: 'Virar Pro',
-    link: 'login/register',
+    link: 'contact-us',
   },
 ];

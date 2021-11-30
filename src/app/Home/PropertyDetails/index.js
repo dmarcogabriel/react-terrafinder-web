@@ -37,9 +37,10 @@ export const Property = () => {
   };
 
   const handleSendMessage = () => {
-    window.location.href = `https://api.whatsapp.com/send?phone=55${
+    const url = `https://api.whatsapp.com/send?phone=55${
       owner.phone
     }&text=${message(owner.firstName, property.name)}`;
+    window.open(url, '_blank');
   };
 
   useEffect(() => {
@@ -51,7 +52,7 @@ export const Property = () => {
   return (
     <HomePageTemplate>
       {!loading && (
-        <Box data-testid="property" sx={{ mt: 12, px: 2 }}>
+        <Box data-testid="property" sx={{ mt: 12, px: { xs: 2, md: 10 } }}>
           <Typography component="h1" variant="h2">
             {property.name}
           </Typography>

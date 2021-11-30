@@ -2,12 +2,24 @@ import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
 import { useUser } from 'hooks/useUser';
 
-export default function PrivateRoute({ path, children }) {
+export default function PrivateRoute({ children, ...props }) {
   const { currentUser } = useUser();
 
-  // todo: prev route when unlogged
-
-  if (currentUser && currentUser.token)
-    return <Route path={path}>{children}</Route>;
-  return <Redirect to="/login" />;
+  return (
+    <Route
+      {...props}
+      render={({ location }) =>
+        currentUser && currentUser.token ? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: '/login',
+              state: { from: location },
+            }}
+          />
+        )
+      }
+    />
+  );
 }

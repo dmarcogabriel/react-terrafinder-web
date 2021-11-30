@@ -1,6 +1,5 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material/styles';
 
-export const Logo = styled.img`
-  height: 4rem;
-  cursor: pointer;
-`;
+export const Logo = styled('img')({
+  height: '10%',
+});

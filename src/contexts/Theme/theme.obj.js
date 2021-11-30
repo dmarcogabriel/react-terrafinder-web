@@ -1,6 +1,8 @@
 import { createTheme } from '@mui/material/styles';
 import { grey } from '@mui/material/colors';
 
+const white = grey[50];
+
 export default createTheme({
   palette: {
     primary: {
@@ -8,7 +10,15 @@ export default createTheme({
     },
     success: {
       main: '#5ecc33',
-      contrastText: grey[50],
+      contrastText: white,
+    },
+    info: {
+      main: '#2575FC',
+      contrastText: white,
+    },
+    grey: {
+      main: '#EAEAEA',
+      contrastText: '#909090',
     },
   },
 });

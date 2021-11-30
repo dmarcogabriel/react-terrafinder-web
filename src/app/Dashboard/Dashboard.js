@@ -5,9 +5,11 @@ import api from 'services/api';
 import { loadBase64Image } from 'utils/fileHelper';
 import { useTheme } from 'hooks/useTheme';
 import { HomePageTemplate } from 'common/components';
+import { Box, Typography, Button } from '@mui/material';
+import { useNotification, NOTIFICATION_TYPES } from 'hooks/useNotification';
 import classes from './Dashboard.module.scss';
 import MyAds from './MyAds';
-import { Button } from './styles';
+import { AvatarPreview, ModalButtons, FileInput } from './styles';
 
 export const Dashboard = () => {
   const { currentUser, updateUser } = useUser();
@@ -15,6 +17,7 @@ export const Dashboard = () => {
   const [avatar, setAvatar] = useState();
   const inputRef = useRef();
   const { color } = useTheme();
+  const { showNotification } = useNotification();
 
   const openGalery = () => {
     inputRef.current.click();
@@ -48,17 +51,23 @@ export const Dashboard = () => {
 
       updateUser({ avatar: res.data.avatar });
       setShowModal(false);
+      showNotification(
+        'Avatar adicionado com sucesso!',
+        NOTIFICATION_TYPES.SUCCESS
+      );
     } catch (error) {
-      console.log('erro', error.response);
+      showNotification(
+        'Ocorreu um erro ao tentar adicionar avatar, tente novamente mais tarde',
+        NOTIFICATION_TYPES.ERROR
+      );
     }
   };
 
   useEffect(() => {
-    console.log('Current User: ', currentUser);
     if (!currentUser.avatar) {
       setShowModal(true);
     }
-  }, []);
+  }, [currentUser.avatar]);
 
   return (
     <HomePageTemplate>
@@ -67,55 +76,65 @@ export const Dashboard = () => {
       </div>
 
       <Modal show={showModal}>
-        <div className={classes.modal}>
-          <h1>{`Bem vindo, ${currentUser.firstName}!`}</h1>
-
+        <Box>
+          <Typography
+            variant="h4"
+            component="p"
+            px={{ mb: 1 }}
+          >{`Bem vindo, ${currentUser.firstName}!`}</Typography>
           {avatar ? (
-            <p>Confirma essa foto?</p>
+            <Typography sx={{ my: 1 }}>Confirma essa foto?</Typography>
           ) : (
-            <p>
+            <Typography sx={{ my: 1 }}>
               Seu perfil está quase completo! Adicione uma foto sua para chamar
               a atenção dos futuros compradores.
-            </p>
+            </Typography>
           )}
 
-          {avatar && <img src={avatar.data} alt="avatar" />}
+          {avatar && (
+            <AvatarPreview sx={{ my: 1 }} src={avatar.data} alt="avatar" />
+          )}
 
-          <div className={classes.buttons}>
+          <ModalButtons sx={{ mt: 1 }}>
             {avatar ? (
               <Button
-                modifiers="custom"
-                bg={color.blue.df}
-                color={color.white.df}
+                sx={{ mb: 1 }}
+                variant="contained"
+                color="success"
                 onClick={uploadPhoto}
               >
                 Confirmar
               </Button>
             ) : (
               <Button
-                modifiers="custom"
-                bg={color.blue.df}
-                color={color.white.df}
-                dataTestId="uploadPhoto"
+                sx={{ mb: 1 }}
+                variant="contained"
+                color="info"
+                data-testid="uploadPhoto"
                 onClick={openGalery}
               >
                 Upload de foto
               </Button>
             )}
 
-            <Button modifiers="secondary" onClick={handleCloseModal}>
+            <Button
+              sx={{ mt: 1 }}
+              color="info"
+              modifiers="secondary"
+              onClick={handleCloseModal}
+            >
               {avatar ? 'Cancelar' : 'Agora não'}
             </Button>
-          </div>
+          </ModalButtons>
 
-          <input
+          <FileInput
             data-testid="fileInput"
             type="file"
             ref={inputRef}
-            accept="image/png, image/jpeg"
+            accept="image/*"
             onChange={handleFileInputChange}
           />
-        </div>
+        </Box>
       </Modal>
     </HomePageTemplate>
   );

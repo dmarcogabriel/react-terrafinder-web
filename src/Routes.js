@@ -17,13 +17,7 @@ import {
   ResetPasswordPage,
 } from './app/Login';
 import { Dashboard, EditPropertyPage } from './app/Dashboard';
-import {
-  GeneralForm,
-  DetailsForm,
-  UploadPhotos,
-  ChosePlan,
-  Review,
-} from './app/CreateProperty';
+import { CreateProperty } from './app/CreateProperty';
 
 export const Routes = () => (
   <BrowserRouter>
@@ -68,19 +62,7 @@ export const Routes = () => (
         <EditPropertyPage />
       </PrivateRoute>
       <PrivateRoute exact path="/create-property">
-        <ChosePlan />
-      </PrivateRoute>
-      <PrivateRoute exact path="/create-property/general">
-        <GeneralForm />
-      </PrivateRoute>
-      <PrivateRoute path="/create-property/details">
-        <DetailsForm />
-      </PrivateRoute>
-      <PrivateRoute path="/create-property/upload-photos/:id">
-        <UploadPhotos />
-      </PrivateRoute>
-      <PrivateRoute path="/create-property/review">
-        <Review />
+        <CreateProperty />
       </PrivateRoute>
       <Route path="**">
         <Redirect to="/" />

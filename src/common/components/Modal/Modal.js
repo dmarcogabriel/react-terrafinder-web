@@ -6,7 +6,12 @@ export const Modal = ({ show = false, children, onClose, ...props }) => (
     data-testid="modal"
     open={show}
     onClose={onClose && onClose}
-    sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+    sx={{
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      px: 2,
+    }}
     {...props}
   >
     <Paper elevation={6} sx={{ p: 2 }}>

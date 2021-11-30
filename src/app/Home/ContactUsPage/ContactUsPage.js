@@ -44,7 +44,11 @@ export const ContactUsPage = () => {
   return (
     <HomePageTemplate>
       <Box sx={{ mt: 12, px: 1, pb: 2 }}>
-        <Typography component="h1" variant="h2">
+        <Typography
+          component="h1"
+          variant="h2"
+          sx={{ textAlign: 'center', my: 2 }}
+        >
           Fale Conosco
         </Typography>
         <ContactUsContent sx={{ p: 1 }}>
