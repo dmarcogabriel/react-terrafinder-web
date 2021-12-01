@@ -1,6 +1,6 @@
 {
   "name": "terrafinder",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "private": true,
   "scripts": {
     "dev": "react-scripts start",
@@ -52,8 +52,8 @@
     "classnames": "^2.2.6",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
     "date-fns": "^2.25.0",
-    "dotenv": "^10.0.0",
     "express": "^4.17.1",
     "express-sslify": "^1.2.0",
     "fontsource-roboto": "^3.0.3",

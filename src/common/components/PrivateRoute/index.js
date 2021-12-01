@@ -5,6 +5,8 @@ import { useUser } from 'hooks/useUser';
 export default function PrivateRoute({ children, ...props }) {
   const { currentUser } = useUser();
 
+  console.log('%cCURRENT USER', 'color: cyan', currentUser);
+
   return (
     <Route
       {...props}

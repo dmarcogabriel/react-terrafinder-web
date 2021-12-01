@@ -49,7 +49,7 @@ export const UserProvider = ({ children }) => {
     loadUserData();
   }, [loadUserData]);
 
-  if (loadingUser) return null;
+  if (loadingUser && !currentUser) return null;
 
   return (
     <Context.Provider

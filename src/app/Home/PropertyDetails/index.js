@@ -26,7 +26,16 @@ export const Property = () => {
   const { currentUser } = useUser();
   const { push } = useHistory();
 
-  const isEditable = () => currentUser._id === property.user._id;
+  const isEditable = () => {
+    if (!currentUser) return false;
+    try {
+      console.log(currentUser);
+      return currentUser._id === property.user._id;
+    } catch (err) {
+      console.log('error na comparation', err);
+      return false;
+    }
+  };
 
   const handleEdit = () => push(`/dashboard/edit-property/${property._id}`);
 
@@ -46,10 +55,13 @@ export const Property = () => {
       setOwner(res.data.property.user);
       setLoading(false);
     } catch (err) {
-      setError('Falha ao carregar propriedade! Por favor tente mais tarde.');
+      Object.keys(err).forEach((key) => console.log(key, err[key]));
+      setError(
+        'Falha ao carregar propriedade! Por favor tente novament mais tarde.'
+      );
       setLoading(false);
     }
-  }, [params]);
+  }, [params.id]);
 
   useEffect(() => {
     loadPropertyDetails();

@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Typography, Box, Button, CircularProgress } from '@mui/material';
 import { Announcement as AdIcon } from '@mui/icons-material';
 import api from 'services/api';
@@ -16,8 +15,8 @@ import { ReviewContentBox, LoadingModalBox } from './styles';
 import { useNewProperty } from '../../../NewPropertyContext';
 import StepTtitle from '../../StepTtitle';
 
-export const Review = () => {
-  const history = useHistory();
+export const Review = ({ history }) => {
+  const { push } = history;
   const { showNotification } = useNotification();
   const { open, triggerModal } = useModal();
   const { currentUser } = useUser();
@@ -65,9 +64,7 @@ export const Review = () => {
         'Anúncio criado com sucesso!',
         NOTIFICATION_TYPES.SUCCESS
       );
-      setTimeout(() => {
-        history.push('/dashboard');
-      }, 1000);
+      push('/');
     } catch (error) {
       setLoadingMessage('Criando anúncio...');
       setIsLoading(false);
@@ -78,7 +75,7 @@ export const Review = () => {
     }
   };
 
-  const handleCancel = () => history.push('/dashboard');
+  const handleCancel = () => push('/dashboard');
 
   const { errors, values, handleChange, handleSubmit } = useFormik({
     initialValues: {

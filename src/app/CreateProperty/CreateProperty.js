@@ -4,6 +4,7 @@ import {
   Switch,
   Route,
   useRouteMatch,
+  useHistory,
 } from 'react-router-dom';
 import {
   CreatePropertyProgress,
@@ -17,6 +18,7 @@ import { NewPropertyProvider } from './NewPropertyContext';
 
 export const CreateProperty = () => {
   const { path } = useRouteMatch();
+  const history = useHistory();
 
   return (
     <NewPropertyProvider>
@@ -36,7 +38,7 @@ export const CreateProperty = () => {
               <UploadPhotos />
             </Route>
             <Route path={`${path}/review`}>
-              <Review />
+              <Review history={history} />
             </Route>
           </Switch>
         </Router>
