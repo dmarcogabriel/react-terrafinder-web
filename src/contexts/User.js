@@ -1,10 +1,10 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useCallback } from 'react';
 import { USER_KEY } from 'constants/userKey';
 import api from 'services/api';
 
 export const Context = createContext();
 
-export const UserProvider = ({ children, storedUser }) => {
+export const UserProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
   const [loadingUser, setLoadingUser] = useState();
 
@@ -20,21 +20,24 @@ export const UserProvider = ({ children, storedUser }) => {
   const logout = () => {
     window.localStorage.removeItem(USER_KEY);
     setCurrentUser(null);
-    window.location.href = '/home';
+    window.location.href = '/';
   };
 
-  const loadUserData = async () => {
+  const loadUserData = useCallback(async () => {
     setLoadingUser(true);
 
     try {
-      const { data: res } = await api.get(`users/${storedUser._id}`);
-      setCurrentUser({ ...res.data.user, token: storedUser.token });
+      const storedUser = JSON.parse(window.localStorage.getItem(USER_KEY));
+      if (storedUser) {
+        const { data: res } = await api.get(`users/${storedUser._id}`);
+        setCurrentUser({ ...res.data.user, token: storedUser.token });
+      }
       setLoadingUser(false);
     } catch (err) {
       logout();
       setLoadingUser(false);
     }
-  };
+  }, []);
 
   const updateUser = (data) => {
     setCurrentUser((old) => ({ ...old, ...data }));
@@ -43,8 +46,10 @@ export const UserProvider = ({ children, storedUser }) => {
   const setUserPlan = (plan) => setCurrentUser((old) => ({ ...old, plan }));
 
   useEffect(() => {
-    if (storedUser) loadUserData();
-  }, []);
+    loadUserData();
+  }, [loadUserData]);
+
+  if (loadingUser) return null;
 
   return (
     <Context.Provider
@@ -57,7 +62,7 @@ export const UserProvider = ({ children, storedUser }) => {
         setUserPlan,
       }}
     >
-      {!loadingUser && children}
+      {children}
     </Context.Provider>
   );
 };

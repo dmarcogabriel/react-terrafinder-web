@@ -7,6 +7,7 @@ export const RangeInput = ({
   onChange,
   dataTestId,
   minDistance = 10,
+  containerSx = {},
   ...props
 }) => {
   const parseDefaultValue = () => {
@@ -40,16 +41,25 @@ export const RangeInput = ({
   };
 
   return (
-    <Box>
+    <Box sx={{ my: 2, ...containerSx }}>
       <InputLabel>{label}</InputLabel>
-      <Slider
-        value={value}
-        onChange={handleChange}
-        valueLabelDisplay="auto"
-        data-testid={dataTestId}
-        disableSwap
-        {...props}
-      />
+      <Box
+        sx={{
+          mx: 2,
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <Slider
+          value={value}
+          onChange={handleChange}
+          valueLabelDisplay="auto"
+          data-testid={dataTestId}
+          disableSwap
+          {...props}
+        />
+      </Box>
     </Box>
   );
 };

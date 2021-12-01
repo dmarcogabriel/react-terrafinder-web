@@ -48,8 +48,8 @@ export const Properties = () => {
     [search, showNotification]
   );
 
-  const handleSearch = async (e) => {
-    await loadProperties(e);
+  const handleSearch = async (filters) => {
+    await loadProperties(filters);
   };
 
   const handleChange = (field) => (value) => {

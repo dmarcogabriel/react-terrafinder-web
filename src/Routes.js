@@ -58,7 +58,7 @@ export const Routes = () => (
       <PrivateRoute exact path="/dashboard">
         <Dashboard />
       </PrivateRoute>
-      <PrivateRoute path="/dashboard/edit-property">
+      <PrivateRoute path="/dashboard/edit-property/:id">
         <EditPropertyPage />
       </PrivateRoute>
       <PrivateRoute exact path="/create-property">

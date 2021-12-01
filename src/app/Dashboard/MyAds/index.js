@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Property from 'common/components/Property';
 import { useUser } from 'hooks/useUser';
 import api from 'services/api';
@@ -10,30 +10,30 @@ import { MyAdsHeader, CreateAdButton } from './styles';
 
 export default function MyAds() {
   const { currentUser } = useUser();
-  const history = useHistory();
+  const { push } = useHistory();
   const [myProperties, setMyProperties] = useState([]);
 
   const handleSelect = (id) => {
-    history.push(`property/${id}`);
+    push(`property/${id}`);
   };
 
-  const loadMyProperties = async () => {
+  const loadMyProperties = useCallback(async () => {
     try {
       const { data: res } = await api.get(`properties/user/${currentUser._id}`);
       setMyProperties(res.data.properties);
     } catch (error) {
       setMyProperties([]);
     }
-  };
+  }, [currentUser._id]);
 
-  const newPropertyAd = () => history.push('/create-property?step=1');
+  const newPropertyAd = () => push('/create-property');
 
   const handleClickEdit = (propertyId) =>
-    history.push('/dashboard/edit-property', { propertyId });
+    push(`/dashboard/edit-property/${propertyId}`);
 
   useEffect(() => {
     loadMyProperties();
-  }, []);
+  }, [loadMyProperties]);
 
   return (
     <div className={classes.myAds}>
@@ -61,7 +61,6 @@ export default function MyAds() {
             index={i}
             property={property}
             onSelect={handleSelect}
-            isEditable
             onClickEdit={handleClickEdit}
             isPremium={property.plan && property.plan.type === 'premium-plan'}
           />

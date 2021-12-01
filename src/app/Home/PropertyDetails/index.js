@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { useRouteMatch } from 'react-router-dom';
+import React, { useCallback, useEffect, useState } from 'react';
+import { useRouteMatch, useHistory } from 'react-router-dom';
 import api from 'services/api';
 import { moneyFormat /* , farmingFormat */ } from 'utils/formatters';
 import propertyImagePlaceholder from 'common/static/soja.jpg';
@@ -12,6 +12,8 @@ import {
   Avatar,
   Button,
 } from '@mui/material';
+import { useUser } from 'hooks/useUser';
+import { Edit as EditIcon } from '@mui/icons-material';
 import ownerPlaceholderImg from './ownerPlaceholder.png';
 import { message } from './message';
 
@@ -21,8 +23,21 @@ export const Property = () => {
   const [owner, setOwner] = useState();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const { currentUser } = useUser();
+  const { push } = useHistory();
 
-  const loadPropertyDetails = async () => {
+  const isEditable = () => currentUser._id === property.user._id;
+
+  const handleEdit = () => push(`/dashboard/edit-property/${property._id}`);
+
+  const handleSendMessage = () => {
+    const url = `https://api.whatsapp.com/send?phone=55${
+      owner.phone
+    }&text=${message(owner.firstName, property.name)}`;
+    window.open(url, '_blank');
+  };
+
+  const loadPropertyDetails = useCallback(async () => {
     try {
       setLoading(true);
       const { data: res } = await api.get(`properties/${params.id}`);
@@ -34,18 +49,11 @@ export const Property = () => {
       setError('Falha ao carregar propriedade! Por favor tente mais tarde.');
       setLoading(false);
     }
-  };
-
-  const handleSendMessage = () => {
-    const url = `https://api.whatsapp.com/send?phone=55${
-      owner.phone
-    }&text=${message(owner.firstName, property.name)}`;
-    window.open(url, '_blank');
-  };
+  }, [params]);
 
   useEffect(() => {
     loadPropertyDetails();
-  }, []);
+  }, [loadPropertyDetails]);
 
   if (error) return <p data-testid="error">{error}</p>;
 
@@ -75,7 +83,24 @@ export const Property = () => {
                 }}
               >
                 <Box>
+                  {isEditable() && (
+                    <Button
+                      variant="contained"
+                      color="secondary"
+                      startIcon={<EditIcon />}
+                      onClick={handleEdit}
+                      sx={{ my: 1 }}
+                    >
+                      Editar Anúncio
+                    </Button>
+                  )}
                   <Typography variant="h4">Resumo</Typography>
+                  <Box sx={{ display: 'flex' }}>
+                    <Typography sx={{ fontWeight: 'bold', mr: 2 }}>
+                      Código:
+                    </Typography>
+                    <Typography>{property._id}</Typography>
+                  </Box>
                   <Box sx={{ display: 'flex' }}>
                     <Typography sx={{ fontWeight: 'bold', mr: 2 }}>
                       Valor:

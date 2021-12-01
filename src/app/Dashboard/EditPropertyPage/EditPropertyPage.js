@@ -15,7 +15,7 @@ import {
   ExpandMore as ExpandIcon,
 } from '@mui/icons-material';
 import api from 'services/api';
-import { useLocation, useHistory } from 'react-router-dom';
+import { useHistory, useRouteMatch } from 'react-router-dom';
 import { TextInput, SelectInput } from 'common/components';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
@@ -34,10 +34,10 @@ export const EditPropertyPage = () => {
   const [loadingProperty, setLoadingProperty] = React.useState(true);
   const [propertyData, setPropertyData] = React.useState();
   const [isEdited, setIsEdited] = React.useState(false);
-  const { state } = useLocation();
   const { currentUser } = useUser();
-  const history = useHistory();
+  const { goBack } = useHistory();
   const { showNotification } = useNotification();
+  const { params } = useRouteMatch();
 
   const {
     values,
@@ -97,12 +97,12 @@ export const EditPropertyPage = () => {
     handleChange(fieldName)(newValue);
   };
 
-  const handleBack = () => history.goBack();
+  const handleBack = () => goBack();
 
   const loadProperty = React.useCallback(async () => {
     setLoadingProperty(true);
     try {
-      const { data } = await api.get(`properties/${state.propertyId}`);
+      const { data } = await api.get(`properties/${params.id}`);
       const { property } = data.data;
       setValues({
         name: property.name,
@@ -129,7 +129,7 @@ export const EditPropertyPage = () => {
     } catch (error) {
       setLoadingProperty(false);
     }
-  }, [state.propertyId, setValues]);
+  }, [setValues, params]);
 
   React.useEffect(() => {
     loadProperty();

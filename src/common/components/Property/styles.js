@@ -1,6 +1,10 @@
 import React from 'react';
 import { styled } from '@mui/material/styles';
-import { Typography, Box, Button } from '@mui/material';
+import { Typography, Box, Button, ButtonBase } from '@mui/material';
+
+export const ClickableArea = styled(ButtonBase)({
+  // styles here...
+});
 
 export const PropertyPremiumLabel = styled(Typography)({
   backgroundColor: '#ffcb08',
@@ -10,13 +14,6 @@ export const PropertyPremiumLabel = styled(Typography)({
   left: '1.5rem',
   display: 'flex',
   alignItems: 'center',
-});
-
-export const PropertyEditButton = styled(Button)({
-  position: 'absolute',
-  right: '1rem',
-  top: '1rem',
-  zIndex: 1000,
 });
 
 export const PropertyAmount = styled(({ children, ...props }) => (

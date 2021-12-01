@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link as RouterLink, useHistory } from 'react-router-dom';
+import { Link as RouterLink, useHistory, useLocation } from 'react-router-dom';
 import { useFormik } from 'formik';
 import { object, string } from 'yup';
 import api from 'services/api';
@@ -13,6 +13,7 @@ export const LoginForm = () => {
   const { login } = useUser();
   const history = useHistory();
   const { showNotification } = useNotification();
+  const { state } = useLocation();
 
   const { values, handleChange, errors, handleSubmit } = useFormik({
     initialValues: {
@@ -26,6 +27,7 @@ export const LoginForm = () => {
         .required('Campo Obrigatório'),
     }),
     async onSubmit() {
+      const to = (state && state.from) || '/dashboard';
       try {
         const { data: response } = await api.post('login', values);
 
@@ -36,7 +38,7 @@ export const LoginForm = () => {
         } = await api.get(`users/${response.data.userId}`, { headers });
         login({ ...userData.data.user, token: response.data.token });
         showNotification('Logado com sucesso!', NOTIFICATION_TYPES.SUCCESS);
-        history.replace('/dashboard');
+        history.replace(to);
       } catch (error) {
         showNotification(
           'E-mail ou senha incorretos.',

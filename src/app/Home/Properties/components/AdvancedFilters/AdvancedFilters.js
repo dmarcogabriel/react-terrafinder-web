@@ -1,39 +1,70 @@
 import React from 'react';
-import { TextInput, SelectInput } from 'common/components';
+import { TextInput, SelectInput, RangeInput } from 'common/components';
 import { Card, CardContent, Box, Button } from '@mui/material';
 import { Search as SearchIcon } from '@mui/icons-material';
 import { useFormik } from 'formik';
 import api from 'services/api';
 import { useQuery } from 'react-query';
-import { maskMoney } from 'utils/masks';
-import { omitBy } from 'lodash';
+import { omitBy, isEmpty } from 'lodash';
+import { useLocation } from 'react-router-dom';
+import { parse } from 'query-string';
+import { moneyFormat } from 'utils/formatters';
 import { AdvancedFiltersForms } from './styles';
 
 export const AdvancedFilters = ({ onSearch }) => {
+  const { search } = useLocation();
   const { data, isLoading } = useQuery('filters', () =>
     api.get('properties/filters')
   );
 
-  const { values, handleChange, handleSubmit, resetForm } = useFormik({
+  const parseQueryValues = (name, defaultValue) => {
+    const queryObj = parse(search);
+    if (!isEmpty(queryObj)) {
+      const values = [];
+      [`${name}Min`, `${name}Max`].forEach((key) => {
+        if (queryObj[key]) values.push(parseInt(queryObj[key], 10));
+      });
+      return isEmpty(values) ? defaultValue : JSON.stringify(values);
+    }
+    return defaultValue;
+  };
+
+  const { values, handleChange, handleSubmit, setValues } = useFormik({
     initialValues: {
-      state: '',
-      city: '',
-      size: '',
-      propertyKind: '',
-      amountMin: '',
-      amountMax: '',
+      state: parse(search).state || '',
+      nearbyCity: '',
+      size: parseQueryValues('size', '[1, 350]'),
+      propertyKind: parse(search).propertyKind || '',
+      amount: parseQueryValues('amount', '[5000, 50000000]'),
       code: '',
     },
-    async onSubmit(formData) {
+    async onSubmit({ amount, size, ...formData }) {
+      const [amountMin, amountMax] = JSON.parse(amount);
+      const [sizeMin, sizeMax] = JSON.parse(size);
       // * Removes empty fields
-      onSearch(omitBy(formData, (value) => !value));
+      onSearch(
+        omitBy(
+          { amountMin, amountMax, sizeMin, sizeMax, ...formData },
+          (value) => !value
+        )
+      );
     },
   });
 
   const handleCleanFilters = () => {
-    resetForm();
+    setValues({
+      state: '',
+      nearbyCity: '',
+      size: '[1, 350]',
+      propertyKind: '',
+      amount: '[5000, 50000000]',
+      code: '',
+    });
     handleSubmit();
   };
+
+  const sizeRangeLabelFormat = (value) => `${value}ah`;
+  const amountRangeLabelFormat = (value) => moneyFormat(value);
 
   return (
     <Card sx={{ my: 1 }}>
@@ -49,18 +80,21 @@ export const AdvancedFilters = ({ onSearch }) => {
               isLoading={isLoading}
             />
             <TextInput
-              label="Cidade"
+              label="Cidade mais Próxima"
               noValidation
-              value={values.city}
-              onChange={handleChange('city')}
+              value={values.nearbyCity}
+              onChange={handleChange('nearbyCity')}
             />
-            <SelectInput
-              label="Área da propriedade"
-              options={data.data.filters.sizes}
-              noValidation
+            <RangeInput
               value={values.size}
-              onChange={handleChange('size')}
-              isLoading={isLoading}
+              dataTestId="propertySize"
+              label="Área do Imóvel"
+              min={1}
+              max={350}
+              minDistance={10}
+              step={10}
+              valueLabelFormat={sizeRangeLabelFormat}
+              onChange={(e) => handleChange('size')(JSON.stringify(e))}
             />
             <SelectInput
               label="Tipo de propriedade"
@@ -70,19 +104,16 @@ export const AdvancedFilters = ({ onSearch }) => {
               onChange={handleChange('propertyKind')}
               isLoading={isLoading}
             />
-            <TextInput
-              label="De"
-              noValidation
-              formatter={maskMoney}
-              value={values.amountMin}
-              onChange={handleChange('amountMin')}
-            />
-            <TextInput
-              label="Até"
-              noValidation
-              formatter={maskMoney}
-              value={values.amountMax}
-              onChange={handleChange('amountMax')}
+            <RangeInput
+              value={values.amount}
+              dataTestId="propertyAmount"
+              label="Intervalo de Preço"
+              min={5000}
+              max={50000000}
+              minDistance={1000}
+              step={1000}
+              valueLabelFormat={amountRangeLabelFormat}
+              onChange={(e) => handleChange('amount')(JSON.stringify(e))}
             />
             <TextInput
               label="Código do imóvel"

@@ -7,14 +7,12 @@ import {
   Map as MapIcon,
   Spa as FarmingIcon,
   Star as StarIcon,
-  Edit as EditIcon,
 } from '@mui/icons-material';
 import {
   PropertyAmount,
   PropertyAtributesBox,
   PropertyAttribute,
   PropertyPremiumLabel,
-  PropertyEditButton,
 } from './styles';
 
 export const Property = ({
@@ -22,14 +20,10 @@ export const Property = ({
   property,
   onSelect,
   isPremium,
-  isEditable,
-  onClickEdit,
   containerSx = {},
   photo,
 }) => {
   const handleSelect = () => onSelect && onSelect(property._id);
-
-  const handleEdit = () => onClickEdit && onClickEdit(property._id);
 
   return (
     <Card
@@ -42,15 +36,6 @@ export const Property = ({
           <StarIcon fontSize="small" sx={{ mr: 1 }} />
           Anúncio Premium
         </PropertyPremiumLabel>
-      )}
-      {isEditable && (
-        <PropertyEditButton
-          variant="contained"
-          color="secondary"
-          onClick={handleEdit}
-        >
-          <EditIcon fontSize="large" />
-        </PropertyEditButton>
       )}
       <CardMedia
         image={photo || imagePlaceholder}
